@@ -1,0 +1,55 @@
+{
+  "pageTitle": "4x4 Expeditionsmobile",
+  "pageDescription": "FAS 4x4 Expeditionsmobile – Kompakte Geländefahrzeuge für anspruchsvolle Abenteuer. Individuelle Konfigurationen ab €189.000.",
+  "altSlug": {
+    "de": "4x4",
+    "en": "4x4"
+  },
+  "hero": {
+    "title": "4x4 Systeme",
+    "subtitle": "Kompakt, wendig und geländetauglich – die agile Plattform für anspruchsvolle Expeditionen.",
+    "image": "/assets/images/vehicles/4x4-detail.svg"
+  },
+  "overview": {
+    "description": "Unsere 4x4-Plattform bietet die perfekte Balance aus Agilität und Geländefähigkeit. Basierend auf bewährten Fahrgestellen mit permanentem Allradantrieb, sperrbaren Differenzialen und Geländeuntersetzung meistern diese Fahrzeuge jedes Terrain. Der modulare Aufbau ermöglicht individuelle Konfigurationen für Expeditionen, Rettungseinsätze oder mobile Arbeitsplätze."
+  },
+  "specs": {
+    "power": { "label": "Leistung", "value": "Bis zu 450 PS" },
+    "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 5.500 kg" },
+    "range": { "label": "Reichweite", "value": "Bis zu 1.200 km" },
+    "cabin": { "label": "Kabine", "value": "2–3 Personen" }
+  },
+  "configurations": [
+    { "name": "Explorer 4x4 Base", "price": "ab €189.000" },
+    { "name": "Explorer 4x4 Comfort", "price": "ab €245.000" },
+    { "name": "Explorer 4x4 Expedition", "price": "ab €298.000" }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Geländetauglichkeit",
+      "description": "Permanenter Allradantrieb mit sperrbaren Differenzialen und Geländeuntersetzung für maximale Traktion in jedem Terrain."
+    },
+    {
+      "icon": "cog",
+      "title": "Modularer Aufbau",
+      "description": "Austauschbare Wohn- und Arbeitsmodule für flexible Konfiguration je nach Einsatzzweck."
+    },
+    {
+      "icon": "shield",
+      "title": "Schutzpakete",
+      "description": "Optionale ballistische Schutzpakete bis VR7 für Einsätze in Krisengebieten und unsicheren Regionen."
+    },
+    {
+      "icon": "gauge",
+      "title": "Leistung",
+      "description": "Bis zu 450 PS für maximale Traktion und souveräne Fahrleistungen auch unter Volllast."
+    }
+  ],
+  "cta": {
+    "title": "Ihr 4x4 konfigurieren",
+    "description": "Stellen Sie Ihr perfektes 4x4-Expeditionsfahrzeug zusammen – individuell nach Ihren Anforderungen.",
+    "buttonText": "Zum Konfigurator",
+    "buttonUrl": "/de/konfigurator"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "pageTitle": "8x8 Expeditionsmobile",
+  "pageDescription": "FAS 8x8 Expeditionsmobile – Maximale Leistung und Kapazität für extremste Anforderungen. Konfigurationen ab €685.000.",
+  "altSlug": { "de": "8x8", "en": "8x8" },
+  "hero": {
+    "title": "8x8 Systeme",
+    "subtitle": "Maximale Leistung und Kapazität für extremste Anforderungen",
+    "image": "/assets/images/vehicles/8x8-detail.svg"
+  },
+  "overview": {
+    "description": "Unsere 8x8-Plattform ist die ultimative Lösung für Expeditionen unter extremsten Bedingungen. Vier angetriebene Achsen bieten unübertroffene Geländefähigkeit und Tragfähigkeit. Der massive Radstand ermöglicht großzügige Wohn- und Arbeitsbereiche auf Expeditionsniveau. Konzipiert für autarke Langzeitmissionen in den entlegensten Regionen der Erde."
+  },
+  "specs": {
+    "power": { "label": "Leistung", "value": "Bis zu 680 PS" },
+    "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 36.000 kg" },
+    "range": { "label": "Reichweite", "value": "Bis zu 2.500 km" },
+    "cabin": { "label": "Kabine", "value": "6–10 Personen" }
+  },
+  "configurations": [
+    { "name": "Titan 8x8 Base", "price": "ab €685.000" },
+    { "name": "Titan 8x8 Comfort", "price": "ab €845.000" },
+    { "name": "Titan 8x8 Expedition Elite", "price": "ab €1.120.000" }
+  ],
+  "features": [
+    { "icon": "mountain", "title": "Vierachsantrieb", "description": "Permanenter Allradantrieb auf vier Achsen mit einzeln sperrbaren Differenzialen für absolute Geländehoheit." },
+    { "icon": "cog", "title": "Modularer Großraumaufbau", "description": "Erweiterbares Aufbausystem mit mehreren Wohn-, Arbeits- und Lagermodulen für vollständige Autarkie." },
+    { "icon": "shield", "title": "Maximaler Schutz", "description": "Ballistische Schutzpakete bis VR9 und CBRN-Schutzbelüftung für Einsätze unter höchsten Sicherheitsanforderungen." },
+    { "icon": "gauge", "title": "Extreme Reichweite", "description": "Mehrfachtankanlage mit bis zu 1.200 Litern Kapazität für wochenlange autonome Einsätze ohne Infrastruktur." }
+  ],
+  "cta": {
+    "title": "Ihr 8x8 konfigurieren",
+    "description": "Stellen Sie Ihr individuelles 8x8-Expeditionsfahrzeug für extremste Missionen zusammen.",
+    "buttonText": "Zum Konfigurator",
+    "buttonUrl": "/de/konfigurator"
+  }
+}

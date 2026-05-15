@@ -1,0 +1,89 @@
+{# Vehicle Detail Page Partial #}
+{% from "macros/buttons.njk" import primaryBtn %}
+{% from "macros/cards.njk" import featureCard %}
+
+{# ═══════════════════════════════════════════════════════════════════
+   HERO — Full-width background with gradient overlay
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="{{ page.hero.image }}" alt="{{ page.hero.title }}" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  </div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">{{ page.hero.title }}</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300">{{ page.hero.subtitle }}</p>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   OVERVIEW — Description + Specs Grid
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="py-24 lg:py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">Übersicht</h2>
+    <p class="text-lg text-zinc-300 max-w-3xl mb-12">{{ page.overview.description }}</p>
+
+    {# Specs Grid #}
+    <div class="grid grid-cols-2 gap-6">
+      <div>
+        <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ page.specs.power.label }}</span>
+        <span class="text-white font-bold">{{ page.specs.power.value }}</span>
+      </div>
+      <div>
+        <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ page.specs.gvw.label }}</span>
+        <span class="text-white font-bold">{{ page.specs.gvw.value }}</span>
+      </div>
+      <div>
+        <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ page.specs.range.label }}</span>
+        <span class="text-white font-bold">{{ page.specs.range.value }}</span>
+      </div>
+      <div>
+        <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ page.specs.cabin.label }}</span>
+        <span class="text-white font-bold">{{ page.specs.cabin.value }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   CONFIGURATIONS — List with name and price
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="py-24 lg:py-32 bg-zinc-950">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">Konfigurationen</h2>
+    <ul class="space-y-4">
+      {% for config in page.configurations %}
+      <li class="flex justify-between items-center border-b border-zinc-800 pb-4">
+        <span class="text-white">{{ config.name }}</span>
+        <span class="text-zinc-400 text-sm">{{ config.price }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   FEATURES — Responsive grid using featureCard macro
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="py-24 lg:py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-12">Ausstattung</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for feature in page.features %}
+        {{ featureCard(feature.icon, feature.title, feature.description) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   CTA — Call to action with button
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="py-24 lg:py-32 bg-zinc-950">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-6">{{ page.cta.title }}</h2>
+    <p class="text-xl text-zinc-400 max-w-2xl mx-auto mb-10">{{ page.cta.description }}</p>
+    {{ primaryBtn(page.cta.buttonText, page.cta.buttonUrl, true) }}
+  </div>
+</section>
