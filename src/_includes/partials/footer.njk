@@ -12,13 +12,13 @@
         </a>
         <p class="text-zinc-400 text-sm mb-6">{{ translations["footer.tagline"] }}</p>
         <div class="flex space-x-3">
-          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Instagram">
+          <a href="https://www.instagram.com/fas.expedition/" target="_blank" rel="noopener" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Instagram">
             {{ instagram("w-5 h-5") }}
           </a>
-          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Facebook">
+          <a href="https://www.facebook.com/fas.expedition" target="_blank" rel="noopener" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Facebook">
             {{ facebook("w-5 h-5") }}
           </a>
-          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="YouTube">
+          <a href="https://www.youtube.com/@fasexpeditiongmbh7094/featured" target="_blank" rel="noopener" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="YouTube">
             {{ youtube("w-5 h-5") }}
           </a>
           <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="LinkedIn">
@@ -31,10 +31,10 @@
       <div>
         <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.products"] }}</h4>
         <ul class="space-y-3">
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.4x4"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.6x6"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.8x8"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.modularSystems"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.4x4"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.6x6"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.8x8"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.modularSystems"] }}</a></li>
         </ul>
       </div>
 
@@ -42,10 +42,10 @@
       <div>
         <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.company"] }}</h4>
         <ul class="space-y-3">
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.about"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.team"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.careers"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.contact"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}ueber-uns{% else %}about{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.about"] }}</a></li>
+          <li><a href="/{{ locale }}/team/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.team"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}karriere{% else %}careers{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.careers"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}kontakt{% else %}contact{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.contact"] }}</a></li>
         </ul>
       </div>
 
@@ -53,9 +53,9 @@
       <div>
         <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.support"] }}</h4>
         <ul class="space-y-3">
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.documentation"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.warranty"] }}</a></li>
-          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.service"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}dokumentation{% else %}documentation{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.documentation"] }}</a></li>
+          <li><a href="/{{ locale }}/{% if locale == 'de' %}garantie{% else %}warranty{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.warranty"] }}</a></li>
+          <li><a href="/{{ locale }}/service/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.service"] }}</a></li>
         </ul>
       </div>
 
@@ -65,8 +65,8 @@
     <div class="border-t border-zinc-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-zinc-400 text-sm">{{ translations["footer.copyright"] }}</p>
       <div class="flex space-x-6">
-        <a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
-        <a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}</a>
+        <a href="/{{ locale }}/{% if locale == 'de' %}datenschutz{% else %}privacy{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
+        <a href="/{{ locale }}/{% if locale == 'de' %}agb{% else %}terms{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}</a>
       </div>
     </div>
   </div>

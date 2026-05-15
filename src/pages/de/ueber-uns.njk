@@ -1,0 +1,58 @@
+---
+pageTitle: "Über uns"
+pageDescription: "FAS Expedition – Ihr Spezialist für maßgeschneiderte Expeditionsmobile. Fahrzeugbau, Kabinenbau und Services aus einer Hand."
+altSlug:
+  de: "ueber-uns"
+  en: "about"
+---
+
+{% from "macros/buttons.njk" import primaryBtn %}
+
+{# Hero #}
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-zinc-950"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">Über uns</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300">Ihr Expeditionsmobil-Spezialist</p>
+  </div>
+</section>
+
+{# Content #}
+<section class="bg-zinc-950 py-24 lg:py-32">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-3xl font-bold tracking-wider uppercase mb-8">Wer wir sind</h2>
+        <div class="space-y-6 text-zinc-300 leading-relaxed">
+          <p>FAS Expedition vereint Kompetenzen aus dem Karosserie- und Nutzfahrzeugbau, Ingenieurskunst, technischer Zeichnung, Elektrotechnik und hochwertiges Interieurdesign mit einem erheblichen Zusatz von Innovation.</p>
+          <p>Wir bieten unseren Kunden ein Expeditionsmobil aus einer Hand. Der Motor, der unser Team antreibt, sind Off-road-Begeisterung und Reiseleidenschaft.</p>
+          <p>Wir haben den Ansporn, unseren Kunden ein Weltreisemobil zu erschaffen, mit dem die Freude am autarken Reisen im Vordergrund steht. Wir bauen mit Erfahrung — unsere Produkte sind erprobt, getestet und durften sich bereits vielfach bewähren.</p>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <div class="border border-zinc-800 p-8">
+          <h3 class="text-sm font-bold tracking-widest uppercase text-white mb-4">Fahrzeugbau</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Chassis-Modifikationen, Zwischenrahmen, Radstandsverlängerungen und Kabinenkürzungen — alles was Ihr Fahrzeug zum echten Weltreisemobil macht.</p>
+        </div>
+        <div class="border border-zinc-800 p-8">
+          <h3 class="text-sm font-bold tracking-widest uppercase text-white mb-4">Kabinenbau</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Innovative Kabinenkonstruktion mit handwerklich erstklassig verarbeitetem Interieur — für alle Off-road Level gewappnet.</p>
+        </div>
+        <div class="border border-zinc-800 p-8">
+          <h3 class="text-sm font-bold tracking-widest uppercase text-white mb-4">Services</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">On- und Off-road Training, Beratung zu Bergemitteln, Änderungswünsche — für alle Eigentümer von Expeditionsmobilen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="bg-black py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold tracking-wider uppercase mb-6">Lernen Sie unser Team kennen</h2>
+    <p class="text-zinc-400 text-lg mb-10">Kaum ein Mitarbeiter, der nicht vom Camping- und Reisefieber infiziert ist.</p>
+    {{ primaryBtn("Zum Team", "/" + locale + "/team/", true) }}
+  </div>
+</section>

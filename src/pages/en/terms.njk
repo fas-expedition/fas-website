@@ -1,0 +1,23 @@
+---
+pageTitle: "Terms of Service"
+pageDescription: "FAS Expedition – Terms of service."
+altSlug:
+  de: "agb"
+  en: "terms"
+---
+
+{% from "macros/buttons.njk" import secondaryBtn %}
+
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="text-center">
+    <h1 class="text-4xl lg:text-6xl font-bold tracking-wider uppercase text-center">
+      {{ translations["footer.terms"] }}
+    </h1>
+    <p class="mt-6 text-lg text-zinc-300 max-w-md mx-auto">
+      {{ translations["ui.comingSoon"] }}
+    </p>
+    <div class="mt-10">
+      {{ secondaryBtn(translations["ui.backToHome"], "/" + locale + "/") }}
+    </div>
+  </div>
+</section>
