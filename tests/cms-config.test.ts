@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
 import * as yaml from 'js-yaml';
 import * as cheerio from 'cheerio';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync } from 'fs';
 import { getAllHtmlFiles, loadHtml } from './helpers';
 
 // ─── Load test fixtures ──────────────────────────────────────────────────────
@@ -62,13 +62,7 @@ describe('Unit: Backend, media, and editorial workflow configuration', () => {
     expect(config.public_folder).toBe('/assets/images');
   });
 
-  it('media_library max_file_size is not configured (using built-in defaults)', () => {
-    // media_library section removed - using Decap CMS built-in file upload
-    expect(config.media_library).toBeUndefined();
-  });
-
-  it('media handling uses built-in upload (no external library)', () => {
-    // No external media library configured - using built-in git-based upload
+  it('media handling uses built-in upload (no external library configured)', () => {
     expect(config.media_library).toBeUndefined();
   });
 });
@@ -157,8 +151,8 @@ describe('Unit: Eleventy configuration', () => {
     expect(eleventyConfig).toContain('addPassthroughCopy("src/admin")');
   });
 
-  it('.eleventy.js includes passthrough copy for src/assets/images/uploads', () => {
-    expect(eleventyConfig).toContain('addPassthroughCopy("src/assets/images/uploads")');
+  it('.eleventy.js includes passthrough copy for src/assets/images', () => {
+    expect(eleventyConfig).toContain('addPassthroughCopy("src/assets/images")');
   });
 });
 

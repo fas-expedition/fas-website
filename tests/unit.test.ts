@@ -223,11 +223,11 @@ describe('Unit Tests: Configuration and Content Validation', () => {
       const editions = data.editions.items;
       expect(editions).toHaveLength(2);
 
-      const edition700 = editions.find((e: any) => e.name.includes('700'));
+      const edition700 = editions.find((e: { name: string }) => e.name.includes('700'));
       expect(edition700).toBeDefined();
       expect(edition700.specs.power.value).toBe('700 HP');
 
-      const edition900 = editions.find((e: any) => e.name.includes('900'));
+      const edition900 = editions.find((e: { name: string }) => e.name.includes('900'));
       expect(edition900).toBeDefined();
       expect(edition900.specs.power.value).toBe('900 HP');
     });
@@ -237,11 +237,11 @@ describe('Unit Tests: Configuration and Content Validation', () => {
       const editions = data.editions.items;
       expect(editions).toHaveLength(2);
 
-      const edition700 = editions.find((e: any) => e.name.includes('700'));
+      const edition700 = editions.find((e: { name: string }) => e.name.includes('700'));
       expect(edition700).toBeDefined();
       expect(edition700.specs.power.value).toBe('700 PS');
 
-      const edition900 = editions.find((e: any) => e.name.includes('900'));
+      const edition900 = editions.find((e: { name: string }) => e.name.includes('900'));
       expect(edition900).toBeDefined();
       expect(edition900.specs.power.value).toBe('900 PS');
     });
