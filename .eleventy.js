@@ -93,6 +93,63 @@ module.exports = function(eleventyConfig) {
   // Passthrough copy for CMS admin panel
   eleventyConfig.addPassthroughCopy("src/admin");
 
+  // Blog date filter: formats ISO date as "DD. MMMM YYYY" in German
+  const MONTHS_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+  eleventyConfig.addFilter("blogDate", function(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    const day = d.getUTCDate();
+    const month = MONTHS_DE[d.getUTCMonth()];
+    const year = d.getUTCFullYear();
+    return `${day}. ${month} ${year}`;
+  });
+
+  // Markdown: open external links in new tab
+  const markdownIt = require('markdown-it');
+  const md = markdownIt({ html: true, linkify: true });
+  const defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+    return self.renderToken(tokens, idx, options);
+  };
+  md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
+    const href = tokens[idx].attrGet('href');
+    if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+      tokens[idx].attrSet('target', '_blank');
+      tokens[idx].attrSet('rel', 'noopener noreferrer');
+    }
+    return defaultRender(tokens, idx, options, env, self);
+  };
+  eleventyConfig.setLibrary("md", md);
+
+  // Blog collection: published posts sorted by date descending (German)
+  eleventyConfig.addCollection("publishedBlog", function(collectionApi) {
+    return collectionApi.getFilteredByTag("blog_de")
+      .filter(post => post.data.status === "published")
+      .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
+  });
+
+  // Blog collection: published posts sorted by date descending (English)
+  eleventyConfig.addCollection("publishedBlogEn", function(collectionApi) {
+    return collectionApi.getFilteredByTag("blog_en")
+      .filter(post => post.data.status === "published")
+      .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
+  });
+
+  // Blog categories: distinct categories from published posts (German)
+  eleventyConfig.addCollection("blogCategories", function(collectionApi) {
+    const posts = collectionApi.getFilteredByTag("blog_de")
+      .filter(post => post.data.status === "published");
+    const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+    return categories.sort();
+  });
+
+  // Blog categories: distinct categories from published posts (English)
+  eleventyConfig.addCollection("blogCategoriesEn", function(collectionApi) {
+    const posts = collectionApi.getFilteredByTag("blog_en")
+      .filter(post => post.data.status === "published");
+    const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+    return categories.sort();
+  });
+
   // Build-time validation of vehicle detail page data
   eleventyConfig.on('eleventy.before', () => {
     const vehicleFiles = ['4x4.json', '6x6.json', '8x8.json'];

@@ -1,0 +1,73 @@
+{# Homepage Blog Section #}
+{% set posts = collections.publishedBlog %}
+
+{% if posts | length > 0 %}
+<section class="py-24 lg:py-32 bg-zinc-950">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    {# Section Heading #}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-4">Blog</h2>
+      <p class="text-xl text-zinc-300">Aktuelle Neuigkeiten und Expeditionsberichte</p>
+    </div>
+
+    {# Blog Cards Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="homepage-blog-grid">
+      {% for post in posts %}
+      <a href="/{{ post.data.slug }}/" class="homepage-blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden {% if loop.index > 3 %}hidden{% endif %}">
+        {# Image #}
+        <div class="relative h-48 overflow-hidden">
+          {% if post.data.image %}
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          {% else %}
+          <div class="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          {% endif %}
+          {% if post.data.category %}
+          <span class="absolute top-3 left-3 bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-2 py-1 font-bold">{{ post.data.category }}</span>
+          {% endif %}
+        </div>
+        {# Content #}
+        <div class="p-6">
+          <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-2">{{ post.data.publishDate | blogDate }}</span>
+          <h3 class="text-white text-sm font-bold tracking-widest uppercase mb-2 group-hover:text-zinc-300 transition-colors">{{ post.data.title }}</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">{{ post.data.excerpt | truncate(150, true, "...") }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {# Load More Button #}
+    {% if posts | length > 3 %}
+    <div class="text-center mt-12" id="load-more-container">
+      <button id="load-more-btn" class="inline-flex items-center space-x-3 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
+        <span>Weitere Beiträge</span>
+      </button>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if posts | length > 3 %}
+<script>
+(function() {
+  var btn = document.getElementById('load-more-btn');
+  var cards = document.querySelectorAll('.homepage-blog-card');
+  var container = document.getElementById('load-more-container');
+  var shown = 3;
+  var batchSize = 3;
+
+  if (!btn) return;
+
+  btn.addEventListener('click', function() {
+    var newShown = Math.min(shown + batchSize, cards.length);
+    for (var i = shown; i < newShown; i++) {
+      cards[i].classList.remove('hidden');
+    }
+    shown = newShown;
+    if (shown >= cards.length) {
+      container.classList.add('hidden');
+    }
+  });
+})();
+</script>
+{% endif %}
+{% endif %}

@@ -7,7 +7,35 @@ publish_mode: editorial_workflow
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
+i18n:
+  structure: multiple_folders
+  locales: [de, en]
+  default_locale: de
+
 collections:
+  # ─── Blog Posts ─────────────────────────────────────────────────
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sort: "publishDate:desc"
+    i18n: true
+    fields:
+      - { label: "Titel", name: "title", widget: "string", required: true, i18n: true, pattern: [".{1,120}", "Maximal 120 Zeichen"] }
+      - { label: "Slug", name: "slug", widget: "string", required: true, i18n: duplicate, pattern: ["^[a-z0-9-]+$", "Nur Kleinbuchstaben, Zahlen und Bindestriche"] }
+      - { label: "Veröffentlichungsdatum", name: "publishDate", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, required: true, i18n: duplicate }
+      - { label: "Status", name: "status", widget: "select", options: ["published", "draft"], default: "draft", required: true, i18n: duplicate }
+      - { label: "Auszug", name: "excerpt", widget: "text", required: true, i18n: true, pattern: [".{1,300}", "Maximal 300 Zeichen"] }
+      - { label: "Autor", name: "author", widget: "string", required: true, default: "FAS Team", i18n: duplicate }
+      - { label: "Kategorie", name: "category", widget: "select", options: ["Auslieferung", "Expedition", "BRABUS", "Technologie", "Neuigkeiten"], required: true, i18n: true }
+      - { label: "Titelbild", name: "image", widget: "image", required: false, i18n: duplicate }
+      - { label: "Header-Bild", name: "headerImage", widget: "image", required: false, i18n: duplicate }
+      - { label: "Audio URL", name: "audioUrl", widget: "string", required: false, i18n: duplicate }
+      - { label: "Inhalt", name: "body", widget: "markdown", required: true, i18n: true }
+
   # ─── Page Content ───────────────────────────────────────────────
   - name: "pages"
     label: "Pages"
