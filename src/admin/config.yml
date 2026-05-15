@@ -224,113 +224,81 @@ collections:
         label: "Translations (DE)"
         file: "src/_data/de/translations.json"
         fields:
-          - label: "Navigation"
-            name: "nav"
-            widget: "object"
-            fields:
-              - { label: "Home", name: "nav.home", widget: "string" }
-              - { label: "Expeditionsmobile", name: "nav.expeditionMobile", widget: "string" }
-              - { label: "Modulare Systeme", name: "nav.modularSystems", widget: "string" }
-              - { label: "BRABUS", name: "nav.brabus", widget: "string" }
-              - { label: "Konfigurator", name: "nav.configurator", widget: "string" }
-              - { label: "Blog", name: "nav.blog", widget: "string" }
-              - { label: "Kundenportal", name: "nav.customerPortal", widget: "string" }
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "hero.title", widget: "string" }
-              - { label: "Subtitle", name: "hero.subtitle", widget: "string" }
-              - { label: "CTA", name: "hero.cta", widget: "string" }
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Company", name: "footer.company", widget: "string" }
-              - { label: "About", name: "footer.about", widget: "string" }
-              - { label: "Team", name: "footer.team", widget: "string" }
-              - { label: "Careers", name: "footer.careers", widget: "string" }
-              - { label: "Contact", name: "footer.contact", widget: "string" }
-              - { label: "Products", name: "footer.products", widget: "string" }
-              - { label: "4x4", name: "footer.4x4", widget: "string" }
-              - { label: "6x6", name: "footer.6x6", widget: "string" }
-              - { label: "8x8", name: "footer.8x8", widget: "string" }
-              - { label: "Modular Systems", name: "footer.modularSystems", widget: "string" }
-              - { label: "Support", name: "footer.support", widget: "string" }
-              - { label: "Documentation", name: "footer.documentation", widget: "string" }
-              - { label: "Warranty", name: "footer.warranty", widget: "string" }
-              - { label: "Service", name: "footer.service", widget: "string" }
-              - { label: "Rights", name: "footer.rights", widget: "string" }
-              - { label: "Copyright", name: "footer.copyright", widget: "string" }
-              - { label: "Privacy", name: "footer.privacy", widget: "string" }
-              - { label: "Terms", name: "footer.terms", widget: "string" }
-              - { label: "Tagline", name: "footer.tagline", widget: "string" }
-          - label: "UI"
-            name: "ui"
-            widget: "object"
-            fields:
-              - { label: "Explore More", name: "ui.exploreMore", widget: "string" }
-              - { label: "Configurator", name: "ui.configurator", widget: "string" }
-              - { label: "Inquire Now", name: "ui.inquireNow", widget: "string" }
-              - { label: "Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
-              - { label: "Coming Soon", name: "ui.comingSoon", widget: "string" }
-              - { label: "Back to Home", name: "ui.backToHome", widget: "string" }
+          - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - Expeditionsmobile", name: "nav.expeditionMobile", widget: "string" }
+          - { label: "Nav - Modulare Systeme", name: "nav.modularSystems", widget: "string" }
+          - { label: "Nav - BRABUS", name: "nav.brabus", widget: "string" }
+          - { label: "Nav - Konfigurator", name: "nav.configurator", widget: "string" }
+          - { label: "Nav - Blog", name: "nav.blog", widget: "string" }
+          - { label: "Nav - Kundenportal", name: "nav.customerPortal", widget: "string" }
+          - { label: "Hero - Title", name: "hero.title", widget: "string" }
+          - { label: "Hero - Subtitle", name: "hero.subtitle", widget: "string" }
+          - { label: "Hero - CTA", name: "hero.cta", widget: "string" }
+          - { label: "Footer - Company", name: "footer.company", widget: "string" }
+          - { label: "Footer - About", name: "footer.about", widget: "string" }
+          - { label: "Footer - Team", name: "footer.team", widget: "string" }
+          - { label: "Footer - Careers", name: "footer.careers", widget: "string" }
+          - { label: "Footer - Contact", name: "footer.contact", widget: "string" }
+          - { label: "Footer - Products", name: "footer.products", widget: "string" }
+          - { label: "Footer - 4x4", name: "footer.4x4", widget: "string" }
+          - { label: "Footer - 6x6", name: "footer.6x6", widget: "string" }
+          - { label: "Footer - 8x8", name: "footer.8x8", widget: "string" }
+          - { label: "Footer - Modular Systems", name: "footer.modularSystems", widget: "string" }
+          - { label: "Footer - Support", name: "footer.support", widget: "string" }
+          - { label: "Footer - Documentation", name: "footer.documentation", widget: "string" }
+          - { label: "Footer - Warranty", name: "footer.warranty", widget: "string" }
+          - { label: "Footer - Service", name: "footer.service", widget: "string" }
+          - { label: "Footer - Rights", name: "footer.rights", widget: "string" }
+          - { label: "Footer - Copyright", name: "footer.copyright", widget: "string" }
+          - { label: "Footer - Privacy", name: "footer.privacy", widget: "string" }
+          - { label: "Footer - Terms", name: "footer.terms", widget: "string" }
+          - { label: "Footer - Tagline", name: "footer.tagline", widget: "string" }
+          - { label: "UI - Explore More", name: "ui.exploreMore", widget: "string" }
+          - { label: "UI - Configurator", name: "ui.configurator", widget: "string" }
+          - { label: "UI - Inquire Now", name: "ui.inquireNow", widget: "string" }
+          - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
+          - { label: "UI - Coming Soon", name: "ui.comingSoon", widget: "string" }
+          - { label: "UI - Back to Home", name: "ui.backToHome", widget: "string" }
 
       - name: "translations_en"
         label: "Translations (EN)"
         file: "src/_data/en/translations.json"
         fields:
-          - label: "Navigation"
-            name: "nav"
-            widget: "object"
-            fields:
-              - { label: "Home", name: "nav.home", widget: "string" }
-              - { label: "Expedition Vehicles", name: "nav.expeditionMobile", widget: "string" }
-              - { label: "Modular Systems", name: "nav.modularSystems", widget: "string" }
-              - { label: "BRABUS", name: "nav.brabus", widget: "string" }
-              - { label: "Configurator", name: "nav.configurator", widget: "string" }
-              - { label: "Blog", name: "nav.blog", widget: "string" }
-              - { label: "Customer Portal", name: "nav.customerPortal", widget: "string" }
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "hero.title", widget: "string" }
-              - { label: "Subtitle", name: "hero.subtitle", widget: "string" }
-              - { label: "CTA", name: "hero.cta", widget: "string" }
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Company", name: "footer.company", widget: "string" }
-              - { label: "About", name: "footer.about", widget: "string" }
-              - { label: "Team", name: "footer.team", widget: "string" }
-              - { label: "Careers", name: "footer.careers", widget: "string" }
-              - { label: "Contact", name: "footer.contact", widget: "string" }
-              - { label: "Products", name: "footer.products", widget: "string" }
-              - { label: "4x4", name: "footer.4x4", widget: "string" }
-              - { label: "6x6", name: "footer.6x6", widget: "string" }
-              - { label: "8x8", name: "footer.8x8", widget: "string" }
-              - { label: "Modular Systems", name: "footer.modularSystems", widget: "string" }
-              - { label: "Support", name: "footer.support", widget: "string" }
-              - { label: "Documentation", name: "footer.documentation", widget: "string" }
-              - { label: "Warranty", name: "footer.warranty", widget: "string" }
-              - { label: "Service", name: "footer.service", widget: "string" }
-              - { label: "Rights", name: "footer.rights", widget: "string" }
-              - { label: "Copyright", name: "footer.copyright", widget: "string" }
-              - { label: "Privacy", name: "footer.privacy", widget: "string" }
-              - { label: "Terms", name: "footer.terms", widget: "string" }
-              - { label: "Tagline", name: "footer.tagline", widget: "string" }
-          - label: "UI"
-            name: "ui"
-            widget: "object"
-            fields:
-              - { label: "Explore More", name: "ui.exploreMore", widget: "string" }
-              - { label: "Configurator", name: "ui.configurator", widget: "string" }
-              - { label: "Inquire Now", name: "ui.inquireNow", widget: "string" }
-              - { label: "Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
-              - { label: "Coming Soon", name: "ui.comingSoon", widget: "string" }
-              - { label: "Back to Home", name: "ui.backToHome", widget: "string" }
+          - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - Expedition Vehicles", name: "nav.expeditionMobile", widget: "string" }
+          - { label: "Nav - Modular Systems", name: "nav.modularSystems", widget: "string" }
+          - { label: "Nav - BRABUS", name: "nav.brabus", widget: "string" }
+          - { label: "Nav - Configurator", name: "nav.configurator", widget: "string" }
+          - { label: "Nav - Blog", name: "nav.blog", widget: "string" }
+          - { label: "Nav - Customer Portal", name: "nav.customerPortal", widget: "string" }
+          - { label: "Hero - Title", name: "hero.title", widget: "string" }
+          - { label: "Hero - Subtitle", name: "hero.subtitle", widget: "string" }
+          - { label: "Hero - CTA", name: "hero.cta", widget: "string" }
+          - { label: "Footer - Company", name: "footer.company", widget: "string" }
+          - { label: "Footer - About", name: "footer.about", widget: "string" }
+          - { label: "Footer - Team", name: "footer.team", widget: "string" }
+          - { label: "Footer - Careers", name: "footer.careers", widget: "string" }
+          - { label: "Footer - Contact", name: "footer.contact", widget: "string" }
+          - { label: "Footer - Products", name: "footer.products", widget: "string" }
+          - { label: "Footer - 4x4", name: "footer.4x4", widget: "string" }
+          - { label: "Footer - 6x6", name: "footer.6x6", widget: "string" }
+          - { label: "Footer - 8x8", name: "footer.8x8", widget: "string" }
+          - { label: "Footer - Modular Systems", name: "footer.modularSystems", widget: "string" }
+          - { label: "Footer - Support", name: "footer.support", widget: "string" }
+          - { label: "Footer - Documentation", name: "footer.documentation", widget: "string" }
+          - { label: "Footer - Warranty", name: "footer.warranty", widget: "string" }
+          - { label: "Footer - Service", name: "footer.service", widget: "string" }
+          - { label: "Footer - Rights", name: "footer.rights", widget: "string" }
+          - { label: "Footer - Copyright", name: "footer.copyright", widget: "string" }
+          - { label: "Footer - Privacy", name: "footer.privacy", widget: "string" }
+          - { label: "Footer - Terms", name: "footer.terms", widget: "string" }
+          - { label: "Footer - Tagline", name: "footer.tagline", widget: "string" }
+          - { label: "UI - Explore More", name: "ui.exploreMore", widget: "string" }
+          - { label: "UI - Configurator", name: "ui.configurator", widget: "string" }
+          - { label: "UI - Inquire Now", name: "ui.inquireNow", widget: "string" }
+          - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
+          - { label: "UI - Coming Soon", name: "ui.comingSoon", widget: "string" }
+          - { label: "UI - Back to Home", name: "ui.backToHome", widget: "string" }
 
   # ─── Site Settings ──────────────────────────────────────────────
   - name: "settings"

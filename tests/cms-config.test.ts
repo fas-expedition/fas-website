@@ -54,26 +54,22 @@ describe('Unit: Backend, media, and editorial workflow configuration', () => {
     expect(config.publish_mode).toBe('editorial_workflow');
   });
 
-  it('media_folder is src/assets/images/uploads', () => {
-    expect(config.media_folder).toBe('src/assets/images/uploads');
+  it('media_folder is src/assets/images', () => {
+    expect(config.media_folder).toBe('src/assets/images');
   });
 
-  it('public_folder is /assets/images/uploads', () => {
-    expect(config.public_folder).toBe('/assets/images/uploads');
+  it('public_folder is /assets/images', () => {
+    expect(config.public_folder).toBe('/assets/images');
   });
 
-  it('media_library max_file_size is 5242880 (5 MB)', () => {
-    expect(config.media_library.max_file_size).toBe(5242880);
+  it('media_library max_file_size is not configured (using built-in defaults)', () => {
+    // media_library section removed - using Decap CMS built-in file upload
+    expect(config.media_library).toBeUndefined();
   });
 
-  it('media_library allowed_extensions includes only image types', () => {
-    const allowed = config.media_library.allowed_extensions;
-    const imageTypes = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg'];
-    expect(allowed).toEqual(expect.arrayContaining(imageTypes));
-    // Ensure no non-image types
-    for (const ext of allowed) {
-      expect(imageTypes).toContain(ext);
-    }
+  it('media handling uses built-in upload (no external library)', () => {
+    // No external media library configured - using built-in git-based upload
+    expect(config.media_library).toBeUndefined();
   });
 });
 
@@ -139,11 +135,11 @@ describe('Unit: Site settings and translation collections', () => {
     expect(enEntry).toBeDefined();
   });
 
-  it('translation fields use object widget for category grouping', () => {
+  it('translation fields use string widget for flat JSON structure', () => {
     const translationsCollection = config.collections.find((c: any) => c.name === 'translations');
     const deEntry = translationsCollection.files.find((f: any) => f.name === 'translations_de');
     for (const field of deEntry.fields) {
-      expect(field.widget).toBe('object');
+      expect(field.widget).toBe('string');
     }
   });
 
@@ -298,14 +294,10 @@ describe('Property 7: Translation key coverage', () => {
     const translationsCollection = config.collections.find((c: any) => c.name === 'translations');
     const deEntry = translationsCollection.files.find((f: any) => f.name === 'translations_de');
 
-    // Collect all field names from the translations config (nested in object widgets)
+    // Collect all field names from the translations config (flat list)
     const configFieldNames: string[] = [];
-    for (const group of deEntry.fields) {
-      if (group.fields) {
-        for (const field of group.fields) {
-          configFieldNames.push(field.name);
-        }
-      }
+    for (const field of deEntry.fields) {
+      configFieldNames.push(field.name);
     }
 
     fc.assert(
