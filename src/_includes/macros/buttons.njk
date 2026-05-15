@@ -1,0 +1,18 @@
+{# Button Macros #}
+
+{% macro primaryBtn(text, href, icon=false) %}
+<a href="{{ href }}" class="inline-flex items-center space-x-3 bg-white text-black px-10 py-4 text-sm tracking-widest uppercase font-bold hover:bg-zinc-200 transition-colors group">
+  <span>{{ text }}</span>
+  {% if icon %}
+  <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+  </svg>
+  {% endif %}
+</a>
+{% endmacro %}
+
+{% macro secondaryBtn(text, href) %}
+<a href="{{ href }}" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
+  <span>{{ text }}</span>
+</a>
+{% endmacro %}

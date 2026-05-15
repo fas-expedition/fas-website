@@ -5,6 +5,9 @@ node_modules/
 _site/
 dist/
 
+# Tailwind CSS compiled output
+src/assets/css/output.css
+
 # Environment variables
 .env
 .env.*

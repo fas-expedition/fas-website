@@ -1,0 +1,119 @@
+---
+eleventyComputed:
+  pageTitle: "{{ pageContent.expeditionsmobile.pageTitle }}"
+  pageDescription: "{{ pageContent.expeditionsmobile.pageDescription }}"
+altSlug:
+  de: "expeditionsmobile"
+  en: "expedition-vehicles"
+---
+{% from "macros/buttons.njk" import primaryBtn %}
+
+{% set page = pageContent.expeditionsmobile %}
+
+{# Hero Section #}
+<section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="{{ page.hero.image }}" alt="{{ page.hero.title }}" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  </div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">{{ page.hero.title }}</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300">{{ page.hero.subtitle }}</p>
+  </div>
+</section>
+
+{# Vehicle Type Sections #}
+{% for vehicle in page.vehicleTypes %}
+<section class="{% if loop.index % 2 == 1 %}bg-black{% else %}bg-zinc-950{% endif %} py-24 lg:py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {# Vehicle Image #}
+      <div class="border border-zinc-800">
+        <img src="{{ vehicle.image }}" alt="{{ vehicle.title }}" class="w-full h-auto object-cover">
+      </div>
+
+      {# Vehicle Details #}
+      <div>
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-3">{{ vehicle.title }}</h2>
+        <p class="text-xl text-zinc-300 mb-8">{{ vehicle.subtitle }}</p>
+
+        {# Specs Grid - 2x2 #}
+        <div class="grid grid-cols-2 gap-6 mb-10">
+          <div>
+            <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ vehicle.specs.power.label }}</span>
+            <span class="text-white font-bold">{{ vehicle.specs.power.value }}</span>
+          </div>
+          <div>
+            <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ vehicle.specs.gvw.label }}</span>
+            <span class="text-white font-bold">{{ vehicle.specs.gvw.value }}</span>
+          </div>
+          <div>
+            <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ vehicle.specs.range.label }}</span>
+            <span class="text-white font-bold">{{ vehicle.specs.range.value }}</span>
+          </div>
+          <div>
+            <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-1">{{ vehicle.specs.cabin.label }}</span>
+            <span class="text-white font-bold">{{ vehicle.specs.cabin.value }}</span>
+          </div>
+        </div>
+
+        {# Configurations List #}
+        <div class="mb-10">
+          <h3 class="text-sm font-bold tracking-widest uppercase text-zinc-400 mb-4">Configurations</h3>
+          <ul class="space-y-3">
+            {% for config in vehicle.configurations %}
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-3">
+              <span class="text-white">{{ config.name }}</span>
+              <span class="text-zinc-400 text-sm">{{ config.price }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# CTA Button #}
+        {{ primaryBtn(vehicle.ctaText, vehicle.ctaUrl, true) }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{# Core Technologies Section #}
+<section class="bg-zinc-950 py-24 lg:py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-4">{{ page.coreTechnologies.title }}</h2>
+      <p class="text-xl text-zinc-300">{{ page.coreTechnologies.subtitle }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for item in page.coreTechnologies.items %}
+      <div class="border border-zinc-800 hover:border-zinc-600 transition-colors p-8">
+        <div class="text-white mb-4">
+          {% if item.icon == "drivetrain" %}
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 010-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          {% elif item.icon == "hybrid" %}
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+          </svg>
+          {% elif item.icon == "armor" %}
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+          </svg>
+          {% elif item.icon == "service" %}
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.1-5.1a2.5 2.5 0 010-3.54l.7-.7a2.5 2.5 0 013.54 0l.36.36.36-.36a2.5 2.5 0 013.54 0l.7.7a2.5 2.5 0 010 3.54l-5.1 5.1a.5.5 0 01-.7 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"/>
+          </svg>
+          {% endif %}
+        </div>
+        <h3 class="text-white text-sm font-bold tracking-widest uppercase mb-3">{{ item.title }}</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

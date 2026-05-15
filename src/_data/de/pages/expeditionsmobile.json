@@ -1,0 +1,95 @@
+{
+  "pageTitle": "Expeditionsmobile",
+  "pageDescription": "FAS Expeditionsmobile – Entdecken Sie unsere 4x4, 6x6 und 8x8 Expeditionsfahrzeuge. Maßgeschneiderte Konfigurationen für jedes Abenteuer.",
+  "altSlug": { "de": "expeditionsmobile", "en": "expedition-vehicles" },
+  "hero": {
+    "title": "Expeditionsmobile",
+    "subtitle": "Drei Plattformen. Grenzenlose Möglichkeiten.",
+    "image": "/assets/images/vehicles/fleet-hero.svg"
+  },
+  "vehicleTypes": [
+    {
+      "id": "4x4",
+      "title": "4x4 Expeditionsmobile",
+      "subtitle": "Kompakt, wendig und geländetauglich",
+      "image": "/assets/images/vehicles/4x4-detail.svg",
+      "specs": {
+        "power": { "label": "Leistung", "value": "Bis zu 450 PS" },
+        "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 5.500 kg" },
+        "range": { "label": "Reichweite", "value": "Bis zu 1.200 km" },
+        "cabin": { "label": "Kabine", "value": "2–3 Personen" }
+      },
+      "configurations": [
+        { "name": "Explorer 4x4 Base", "price": "ab €189.000" },
+        { "name": "Explorer 4x4 Comfort", "price": "ab €245.000" },
+        { "name": "Explorer 4x4 Expedition", "price": "ab €298.000" }
+      ],
+      "ctaText": "4x4 konfigurieren",
+      "ctaUrl": "/de/konfigurator"
+    },
+    {
+      "id": "6x6",
+      "title": "6x6 Expeditionsmobile",
+      "subtitle": "Erweiterte Kapazität für anspruchsvolle Missionen",
+      "image": "/assets/images/vehicles/6x6-detail.svg",
+      "specs": {
+        "power": { "label": "Leistung", "value": "Bis zu 530 PS" },
+        "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 12.000 kg" },
+        "range": { "label": "Reichweite", "value": "Bis zu 1.800 km" },
+        "cabin": { "label": "Kabine", "value": "4–6 Personen" }
+      },
+      "configurations": [
+        { "name": "Pathfinder 6x6 Base", "price": "ab €385.000" },
+        { "name": "Pathfinder 6x6 Comfort", "price": "ab €465.000" },
+        { "name": "Pathfinder 6x6 Expedition Pro", "price": "ab €548.000" }
+      ],
+      "ctaText": "6x6 konfigurieren",
+      "ctaUrl": "/de/konfigurator"
+    },
+    {
+      "id": "8x8",
+      "title": "8x8 Expeditionsmobile",
+      "subtitle": "Maximale Leistung für extreme Expeditionen",
+      "image": "/assets/images/vehicles/8x8-detail.svg",
+      "specs": {
+        "power": { "label": "Leistung", "value": "Bis zu 625 PS" },
+        "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 18.000 kg" },
+        "range": { "label": "Reichweite", "value": "Bis zu 2.500 km" },
+        "cabin": { "label": "Kabine", "value": "6–10 Personen" }
+      },
+      "configurations": [
+        { "name": "Titan 8x8 Base", "price": "ab €685.000" },
+        { "name": "Titan 8x8 Expedition", "price": "ab €845.000" },
+        { "name": "Titan 8x8 Ultimate", "price": "ab €1.150.000" }
+      ],
+      "ctaText": "8x8 konfigurieren",
+      "ctaUrl": "/de/konfigurator"
+    }
+  ],
+  "coreTechnologies": {
+    "title": "Kerntechnologien",
+    "subtitle": "Ingenieurskunst auf höchstem Niveau",
+    "items": [
+      {
+        "icon": "drivetrain",
+        "title": "Fortschrittlicher Antrieb",
+        "description": "Permanenter Allradantrieb mit sperrbaren Differenzialen und Geländeuntersetzung für maximale Traktion."
+      },
+      {
+        "icon": "hybrid",
+        "title": "Hybrid-Antrieb",
+        "description": "Optionales Hybrid-System für erweiterte Reichweite und leisen Betrieb im Camp."
+      },
+      {
+        "icon": "armor",
+        "title": "Gepanzerter Schutz",
+        "description": "Optionale ballistische Schutzpakete bis VR7 für Einsätze in Krisengebieten."
+      },
+      {
+        "icon": "service",
+        "title": "Feldwartung",
+        "description": "Modularer Aufbau ermöglicht Wartung und Reparatur unter Feldbedingungen ohne Spezialwerkzeug."
+      }
+    ]
+  }
+}

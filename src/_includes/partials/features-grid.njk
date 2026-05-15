@@ -1,0 +1,25 @@
+{# Features Grid Section Partial #}
+{% from "macros/cards.njk" import featureCard %}
+
+{% set features = pageContent.home.features %}
+
+<section class="bg-zinc-950 py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    {# Section Heading #}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-4">
+        {{ features.title }}
+      </h2>
+      <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+        {{ features.subtitle }}
+      </p>
+    </div>
+
+    {# Feature Cards Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for item in features.items %}
+        {{ featureCard(item.icon, item.title, item.description) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

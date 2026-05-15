@@ -1,0 +1,28 @@
+{# Hero Section Partial #}
+{% from "macros/buttons.njk" import primaryBtn %}
+
+{% set hero = pageContent.home.hero %}
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  {# Background Image #}
+  <div class="absolute inset-0">
+    <img src="{{ hero.image }}" alt="{{ hero.title }}" class="w-full h-full object-cover">
+  </div>
+
+  {# Gradient Overlay #}
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+
+  {# Content #}
+  <div class="relative z-10 text-center max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">
+      {{ hero.title }}
+    </h1>
+    <p class="text-xl lg:text-2xl text-zinc-300 mb-4">
+      {{ hero.subtitle }}
+    </p>
+    <p class="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
+      {{ hero.description }}
+    </p>
+    {{ primaryBtn(hero.ctaText, hero.ctaUrl, true) }}
+  </div>
+</section>

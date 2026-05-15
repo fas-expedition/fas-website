@@ -1,0 +1,73 @@
+{% from "macros/icons.njk" import instagram, facebook, youtube, linkedin %}
+
+<footer class="bg-zinc-950 border-t border-zinc-900">
+  <div class="max-w-site mx-auto px-6 lg:px-12 py-16 lg:py-24">
+    {# 4-column grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      {# Column 1: Company info with logo + tagline + social icons #}
+      <div>
+        <a href="/{{ locale }}/" class="inline-block mb-4">
+          <span class="text-xl font-bold tracking-widest uppercase text-white">FAS</span>
+        </a>
+        <p class="text-zinc-400 text-sm mb-6">{{ translations["footer.tagline"] }}</p>
+        <div class="flex space-x-3">
+          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Instagram">
+            {{ instagram("w-5 h-5") }}
+          </a>
+          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="Facebook">
+            {{ facebook("w-5 h-5") }}
+          </a>
+          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="YouTube">
+            {{ youtube("w-5 h-5") }}
+          </a>
+          <a href="#" class="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:border-zinc-600 transition-colors" aria-label="LinkedIn">
+            {{ linkedin("w-5 h-5") }}
+          </a>
+        </div>
+      </div>
+
+      {# Column 2: Products #}
+      <div>
+        <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.products"] }}</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.4x4"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.6x6"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.8x8"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.modularSystems"] }}</a></li>
+        </ul>
+      </div>
+
+      {# Column 3: Company #}
+      <div>
+        <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.company"] }}</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.about"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.team"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.careers"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.contact"] }}</a></li>
+        </ul>
+      </div>
+
+      {# Column 4: Support #}
+      <div>
+        <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.support"] }}</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.documentation"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.warranty"] }}</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.service"] }}</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    {# Bottom bar #}
+    <div class="border-t border-zinc-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-zinc-400 text-sm">{{ translations["footer.copyright"] }}</p>
+      <div class="flex space-x-6">
+        <a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
+        <a href="#" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

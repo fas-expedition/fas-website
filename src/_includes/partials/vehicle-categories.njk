@@ -1,0 +1,22 @@
+{# Vehicle Categories Section Partial #}
+{% from "macros/cards.njk" import vehicleCard %}
+
+{% set vehicles = pageContent.home.vehicles %}
+
+<section class="py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    {# Section Heading #}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-4">
+        {{ vehicles.title }}
+      </h2>
+    </div>
+
+    {# Vehicle Cards Grid #}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {% for item in vehicles.items %}
+        {{ vehicleCard(item.image, item.title, item.description, item.specs, "/" + locale + "/" + item.id) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

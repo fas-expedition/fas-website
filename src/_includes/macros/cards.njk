@@ -1,0 +1,42 @@
+{# Card Macros #}
+{% from "macros/icons.njk" import mountain, cog, shield, gauge %}
+
+{% macro featureCard(icon, title, description) %}
+<div class="border border-zinc-800 hover:border-zinc-600 transition-colors p-8">
+  <div class="text-white mb-4">
+    {% if icon == "mountain" %}
+      {{ mountain() }}
+    {% elif icon == "cog" %}
+      {{ cog() }}
+    {% elif icon == "shield" %}
+      {{ shield() }}
+    {% elif icon == "gauge" %}
+      {{ gauge() }}
+    {% endif %}
+  </div>
+  <h3 class="text-white text-sm font-bold tracking-widest uppercase mb-3">{{ title }}</h3>
+  <p class="text-zinc-400 text-sm leading-relaxed">{{ description }}</p>
+</div>
+{% endmacro %}
+
+{% macro vehicleCard(image, title, description, specs, link) %}
+<div class="relative group border border-zinc-800 hover:border-zinc-600 transition-colors h-96 overflow-hidden">
+  <img src="{{ image }}" alt="{{ title }}" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+  <div class="absolute bottom-0 left-0 right-0 p-6">
+    {% if specs %}
+    <span class="text-zinc-400 text-xs tracking-widest uppercase mb-2 block">{{ specs }}</span>
+    {% endif %}
+    <h3 class="text-white text-xl font-bold tracking-wider uppercase mb-2">{{ title }}</h3>
+    <p class="text-zinc-300 text-sm mb-4">{{ description }}</p>
+    {% if link %}
+    <a href="{{ link }}" class="inline-flex items-center space-x-2 text-white text-sm tracking-widest uppercase font-bold hover:text-zinc-300 transition-colors">
+      <span>Explore Platform</span>
+      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
