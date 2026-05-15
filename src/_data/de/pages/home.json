@@ -1,0 +1,71 @@
+{
+  "pageTitle": "Home",
+  "pageDescription": "FAS Expedition – Maßgeschneiderte Expeditionsfahrzeuge für extreme Abenteuer. Komplettfahrzeuge und modulare Systeme in 4x4, 6x6 und 8x8.",
+  "altSlug": { "de": "", "en": "" },
+  "hero": {
+    "title": "Expeditionsmobile in Perfektion",
+    "subtitle": "Abenteuer trifft Ingenieurskunst",
+    "description": "Komplettfahrzeuge und modulare Systeme für das ultimative Abenteuer.",
+    "image": "/assets/images/vehicles/arocs-title.png",
+    "ctaText": "Jetzt konfigurieren",
+    "ctaUrl": "/de/konfigurator"
+  },
+  "features": {
+    "title": "Engineering Excellence",
+    "subtitle": "Präzisionstechnik, modulare Flexibilität und kompromisslose Leistung.",
+    "items": [
+      {
+        "icon": "mountain",
+        "title": "Geländetauglichkeit",
+        "description": "Gebaut, um jedes Gelände zu meistern – von Wüstensand bis arktischem Eis."
+      },
+      {
+        "icon": "cog",
+        "title": "Modulare Systeme",
+        "description": "Vollständig anpassbare Plattform mit austauschbaren Komponenten für jede Mission."
+      },
+      {
+        "icon": "shield",
+        "title": "Luxus-Interieur",
+        "description": "Hochwertigste Materialien und Verarbeitung für maximalen Komfort unterwegs."
+      },
+      {
+        "icon": "gauge",
+        "title": "Sicherheit",
+        "description": "Modernste Sicherheitssysteme und gepanzerte Schutzoptionen für jede Situation."
+      }
+    ]
+  },
+  "vehicles": {
+    "title": "Wählen Sie Ihre Plattform",
+    "items": [
+      {
+        "id": "4x4",
+        "title": "4x4 Systeme",
+        "description": "Die perfekte Balance aus Agilität und Geländefähigkeit",
+        "image": "/assets/images/vehicles/4x4.png",
+        "specs": "Bis zu 5.500 kg zGG"
+      },
+      {
+        "id": "6x6",
+        "title": "6x6 Systeme",
+        "description": "Erweiterte Reichweite und Nutzlastkapazität",
+        "image": "/assets/images/vehicles/6x6.png",
+        "specs": "Bis zu 12.000 kg zGG"
+      },
+      {
+        "id": "8x8",
+        "title": "8x8 Systeme",
+        "description": "Maximale Leistungsfähigkeit für extreme Expeditionen",
+        "image": "/assets/images/vehicles/8x8.png",
+        "specs": "Bis zu 18.000 kg zGG"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Verwirklichen Sie Ihre Vision",
+    "description": "Konfigurieren Sie Ihr perfektes Expeditionsfahrzeug mit unserem modularen System.",
+    "ctaText": "Konfigurator starten",
+    "ctaUrl": "/de/konfigurator"
+  }
+}

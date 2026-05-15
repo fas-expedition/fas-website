@@ -1,0 +1,84 @@
+{
+  "pageTitle": "BRABUS",
+  "pageDescription": "FAS × BRABUS – Limitierte Performance-Editionen. Expeditionsfahrzeuge mit bis zu 900 PS und exklusiver BRABUS-Veredelung.",
+  "altSlug": { "de": "brabus", "en": "brabus" },
+  "hero": {
+    "title": "BRABUS",
+    "subtitle": "Performance × Expedition",
+    "description": "Die ultimative Verbindung aus BRABUS-Performance und Expeditionstauglichkeit. Limitierte Editionen für Kenner.",
+    "image": "/assets/images/vehicles/brabus-hero.svg",
+    "ctaText": "Editionen entdecken",
+    "ctaUrl": "#editions"
+  },
+  "editions": {
+    "title": "Limitierte Editionen",
+    "subtitle": "Exklusivität trifft Leistung",
+    "items": [
+      {
+        "name": "BRABUS 700 Adventure",
+        "image": "/assets/images/vehicles/brabus-700.svg",
+        "badge": "Limitiert",
+        "specs": {
+          "power": { "label": "Leistung", "value": "700 PS" },
+          "acceleration": { "label": "0–100 km/h", "value": "4,3 s" },
+          "topSpeed": { "label": "Höchstgeschwindigkeit", "value": "240 km/h" },
+          "price": { "label": "Ab", "value": "€385.000" }
+        },
+        "ctaText": "Jetzt anfragen",
+        "ctaUrl": "/de/konfigurator"
+      },
+      {
+        "name": "BRABUS 900 Desert Storm",
+        "image": "/assets/images/vehicles/brabus-900.svg",
+        "badge": "Limitiert",
+        "specs": {
+          "power": { "label": "Leistung", "value": "900 PS" },
+          "acceleration": { "label": "0–100 km/h", "value": "3,7 s" },
+          "topSpeed": { "label": "Höchstgeschwindigkeit", "value": "270 km/h" },
+          "price": { "label": "Ab", "value": "€585.000" }
+        },
+        "ctaText": "Jetzt anfragen",
+        "ctaUrl": "/de/konfigurator"
+      }
+    ]
+  },
+  "dna": {
+    "title": "BRABUS DNA",
+    "subtitle": "Was jede BRABUS-Edition auszeichnet",
+    "image": "/assets/images/vehicles/brabus-dna.svg",
+    "features": [
+      {
+        "title": "PowerXtra Leistungssteigerung",
+        "description": "BRABUS-eigene ECU-Optimierung mit erhöhtem Ladedruck und angepasster Kennfeldabstimmung."
+      },
+      {
+        "title": "Carbon-Paket",
+        "description": "Sichtbare Carbon-Elemente an Motorhaube, Kotflügeln, Schwellerverkleidungen und Dachspoiler."
+      },
+      {
+        "title": "Exklusives Interieur",
+        "description": "Handgenähtes Leder, Alcantara-Applikationen und individuell konfigurierbare Farbkombinationen."
+      },
+      {
+        "title": "Monoblock Felgen",
+        "description": "BRABUS Monoblock Leichtmetallfelgen in exklusivem Design mit Hochleistungsreifen."
+      },
+      {
+        "title": "Sport-Abgasanlage",
+        "description": "Klappengesteuerte Edelstahl-Abgasanlage mit charakteristischem BRABUS-Sound."
+      },
+      {
+        "title": "Sport-Fahrwerk",
+        "description": "Adaptives Luftfederfahrwerk mit BRABUS-Abstimmung für Straße und Gelände."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Exzellenz erleben",
+    "description": "Vereinbaren Sie eine persönliche Beratung und erleben Sie die BRABUS-Welt hautnah.",
+    "primaryCtaText": "Termin vereinbaren",
+    "primaryCtaUrl": "/de/konfigurator",
+    "secondaryCtaText": "Spezialisten kontaktieren",
+    "secondaryCtaUrl": "/de/konfigurator"
+  }
+}

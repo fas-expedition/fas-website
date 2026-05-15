@@ -1,0 +1,171 @@
+---
+pageTitle: "{{ pageContent.brabus.pageTitle }}"
+pageDescription: "{{ pageContent.brabus.pageDescription }}"
+altSlug:
+  de: "{{ pageContent.brabus.altSlug.de }}"
+  en: "{{ pageContent.brabus.altSlug.en }}"
+---
+
+{% from "macros/buttons.njk" import primaryBtn, secondaryBtn %}
+{% set page = pageContent.brabus %}
+
+{# ═══════════════════════════════════════════════════════════════════
+   HERO — Full-screen with BRABUS branding
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  {# Background image #}
+  <div class="absolute inset-0">
+    <img src="{{ page.hero.image }}" alt="{{ page.hero.title }}" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
+  </div>
+
+  {# Content #}
+  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+    {# Decorative divider with award icon #}
+    <div class="flex items-center justify-center space-x-4 mb-8">
+      <div class="w-16 h-px bg-[rgb(204,69,61)]"></div>
+      <svg class="w-6 h-6 text-[rgb(204,69,61)]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+      <div class="w-16 h-px bg-[rgb(204,69,61)]"></div>
+    </div>
+
+    {# Title #}
+    <h1 class="text-7xl lg:text-9xl tracking-[0.2em] uppercase font-bold mb-6" style="font-family: Georgia, 'Times New Roman', serif;">
+      {{ page.hero.title }}
+    </h1>
+
+    {# Subtitle #}
+    <p class="text-xl lg:text-2xl text-zinc-300 tracking-widest uppercase mb-6">
+      {{ page.hero.subtitle }}
+    </p>
+
+    {# Description #}
+    <p class="text-lg text-zinc-400 max-w-2xl mx-auto mb-10">
+      {{ page.hero.description }}
+    </p>
+
+    {# CTA #}
+    {{ primaryBtn(page.hero.ctaText, page.hero.ctaUrl, true) }}
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   LIMITED EDITIONS — 2-column grid of edition cards
+   ═══════════════════════════════════════════════════════════════════ #}
+<section id="editions" class="bg-zinc-950 py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    {# Section heading #}
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-wider uppercase mb-4">
+        {{ page.editions.title }}
+      </h2>
+      <p class="text-xl text-zinc-400">
+        {{ page.editions.subtitle }}
+      </p>
+    </div>
+
+    {# Edition cards grid #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {% for edition in page.editions.items %}
+      <div class="border border-zinc-800 hover:border-zinc-600 transition-colors">
+        {# Image with badge #}
+        <div class="relative overflow-hidden">
+          <img src="{{ edition.image }}" alt="{{ edition.name }}" class="w-full h-72 object-cover">
+          <span class="absolute top-4 left-4 bg-[rgb(204,69,61)] text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">
+            {{ edition.badge }}
+          </span>
+        </div>
+
+        {# Card content #}
+        <div class="p-8">
+          {# Edition name #}
+          <h3 class="text-2xl font-bold tracking-wider uppercase mb-6">
+            {{ edition.name }}
+          </h3>
+
+          {# Specs grid (2x2) #}
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="border border-zinc-800 p-4">
+              <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">{{ edition.specs.power.label }}</p>
+              <p class="text-lg font-bold">{{ edition.specs.power.value }}</p>
+            </div>
+            <div class="border border-zinc-800 p-4">
+              <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">{{ edition.specs.acceleration.label }}</p>
+              <p class="text-lg font-bold">{{ edition.specs.acceleration.value }}</p>
+            </div>
+            <div class="border border-zinc-800 p-4">
+              <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">{{ edition.specs.topSpeed.label }}</p>
+              <p class="text-lg font-bold">{{ edition.specs.topSpeed.value }}</p>
+            </div>
+            <div class="border border-zinc-800 p-4">
+              <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">{{ edition.specs.price.label }}</p>
+              <p class="text-lg font-bold">{{ edition.specs.price.value }}</p>
+            </div>
+          </div>
+
+          {# CTA #}
+          {{ primaryBtn(edition.ctaText, edition.ctaUrl, true) }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   BRABUS DNA — 2-column layout with features + image
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="bg-black py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    {# Section heading #}
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-wider uppercase mb-4">
+        {{ page.dna.title }}
+      </h2>
+      <p class="text-xl text-zinc-400">
+        {{ page.dna.subtitle }}
+      </p>
+    </div>
+
+    {# 2-column layout #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {# Left — Feature list #}
+      <div class="space-y-8">
+        {% for feature in page.dna.features %}
+        <div class="border-l-2 border-[rgb(204,69,61)] pl-6">
+          <h3 class="text-lg font-bold tracking-wider uppercase mb-2">
+            {{ feature.title }}
+          </h3>
+          <p class="text-zinc-400">
+            {{ feature.description }}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# Right — Full-height image #}
+      <div class="hidden lg:block">
+        <img src="{{ page.dna.image }}" alt="{{ page.dna.title }}" class="w-full h-full object-cover border border-zinc-800">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════
+   CTA SECTION — Experience Excellence
+   ═══════════════════════════════════════════════════════════════════ #}
+<section class="bg-zinc-950 py-32">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-wider uppercase mb-6">
+      {{ page.cta.title }}
+    </h2>
+    <p class="text-xl text-zinc-400 mb-10">
+      {{ page.cta.description }}
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      {{ primaryBtn(page.cta.primaryCtaText, page.cta.primaryCtaUrl, true) }}
+      {{ secondaryBtn(page.cta.secondaryCtaText, page.cta.secondaryCtaUrl) }}
+    </div>
+  </div>
+</section>

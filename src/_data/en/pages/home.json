@@ -1,0 +1,71 @@
+{
+  "pageTitle": "Home",
+  "pageDescription": "FAS Expedition - Custom-built expedition vehicles for extreme adventures",
+  "altSlug": { "de": "", "en": "" },
+  "hero": {
+    "title": "Expedition Vehicles in Perfection",
+    "subtitle": "Adventure meets Engineering",
+    "description": "Complete vehicles and modular systems for the ultimate adventure.",
+    "image": "/assets/images/vehicles/arocs-title.png",
+    "ctaText": "Configure Now",
+    "ctaUrl": "/en/configurator"
+  },
+  "features": {
+    "title": "Engineering Excellence",
+    "subtitle": "Precision engineering, modular flexibility, and uncompromising performance.",
+    "items": [
+      {
+        "icon": "mountain",
+        "title": "OFF-ROAD CAPABILITY",
+        "description": "Built to conquer any terrain on earth."
+      },
+      {
+        "icon": "cog",
+        "title": "Modular Systems",
+        "description": "Fully customizable platform with interchangeable components."
+      },
+      {
+        "icon": "shield",
+        "title": "Luxury Interior",
+        "description": "Premium materials crafted for maximum durability and comfort."
+      },
+      {
+        "icon": "gauge",
+        "title": "Security",
+        "description": "Engineered for maximum performance, efficiency, and reliability."
+      }
+    ]
+  },
+  "vehicles": {
+    "title": "Choose Your Platform",
+    "items": [
+      {
+        "id": "4x4",
+        "title": "4x4 Systems",
+        "description": "Perfect balance of agility and capability",
+        "image": "/assets/images/vehicles/4x4.png",
+        "specs": "Up to 5,500kg GVW"
+      },
+      {
+        "id": "6x6",
+        "title": "6x6 Systems",
+        "description": "Extended range and payload capacity",
+        "image": "/assets/images/vehicles/6x6.png",
+        "specs": "Up to 12,000kg GVW"
+      },
+      {
+        "id": "8x8",
+        "title": "8x8 Systems",
+        "description": "Maximum capability for extreme expeditions",
+        "image": "/assets/images/vehicles/8x8.png",
+        "specs": "Up to 18,000kg GVW"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Build Your Vision",
+    "description": "Configure your perfect expedition vehicle with our advanced modular system.",
+    "ctaText": "Launch Configurator",
+    "ctaUrl": "/en/configurator"
+  }
+}

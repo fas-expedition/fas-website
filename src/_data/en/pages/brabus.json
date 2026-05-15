@@ -1,0 +1,84 @@
+{
+  "pageTitle": "BRABUS",
+  "pageDescription": "FAS × BRABUS – Limited performance editions. Expedition vehicles with up to 900 HP and exclusive BRABUS refinement.",
+  "altSlug": { "de": "brabus", "en": "brabus" },
+  "hero": {
+    "title": "BRABUS",
+    "subtitle": "Performance × Expedition",
+    "description": "The ultimate fusion of BRABUS performance and expedition capability. Limited editions for connoisseurs.",
+    "image": "/assets/images/vehicles/brabus-hero.svg",
+    "ctaText": "Explore Editions",
+    "ctaUrl": "#editions"
+  },
+  "editions": {
+    "title": "Limited Editions",
+    "subtitle": "Exclusivity meets performance",
+    "items": [
+      {
+        "name": "BRABUS 700 Adventure",
+        "image": "/assets/images/vehicles/brabus-700.svg",
+        "badge": "Limited",
+        "specs": {
+          "power": { "label": "Power", "value": "700 HP" },
+          "acceleration": { "label": "0–100 km/h", "value": "4.3 s" },
+          "topSpeed": { "label": "Top Speed", "value": "240 km/h" },
+          "price": { "label": "From", "value": "€385,000" }
+        },
+        "ctaText": "Inquire Now",
+        "ctaUrl": "/en/configurator"
+      },
+      {
+        "name": "BRABUS 900 Desert Storm",
+        "image": "/assets/images/vehicles/brabus-900.svg",
+        "badge": "Limited",
+        "specs": {
+          "power": { "label": "Power", "value": "900 HP" },
+          "acceleration": { "label": "0–100 km/h", "value": "3.7 s" },
+          "topSpeed": { "label": "Top Speed", "value": "270 km/h" },
+          "price": { "label": "From", "value": "€585,000" }
+        },
+        "ctaText": "Inquire Now",
+        "ctaUrl": "/en/configurator"
+      }
+    ]
+  },
+  "dna": {
+    "title": "BRABUS DNA",
+    "subtitle": "What defines every BRABUS edition",
+    "image": "/assets/images/vehicles/brabus-dna.svg",
+    "features": [
+      {
+        "title": "PowerXtra Upgrade",
+        "description": "BRABUS-proprietary ECU optimization with increased boost pressure and custom mapping."
+      },
+      {
+        "title": "Carbon Fiber Package",
+        "description": "Visible carbon fiber elements on hood, fenders, side skirts, and roof spoiler."
+      },
+      {
+        "title": "Exclusive Interior",
+        "description": "Hand-stitched leather, Alcantara accents, and individually configurable color combinations."
+      },
+      {
+        "title": "Monoblock Wheels",
+        "description": "BRABUS Monoblock forged alloy wheels in exclusive design with high-performance tires."
+      },
+      {
+        "title": "Sport Exhaust",
+        "description": "Valve-controlled stainless steel exhaust system with signature BRABUS sound."
+      },
+      {
+        "title": "Sport Suspension",
+        "description": "Adaptive air suspension with BRABUS tuning for road and off-road performance."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Experience Excellence",
+    "description": "Schedule a private consultation and experience the world of BRABUS firsthand.",
+    "primaryCtaText": "Schedule Appointment",
+    "primaryCtaUrl": "/en/configurator",
+    "secondaryCtaText": "Contact Specialist",
+    "secondaryCtaUrl": "/en/configurator"
+  }
+}

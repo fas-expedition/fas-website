@@ -1,0 +1,107 @@
+{
+  "pageTitle": "Modulare Systeme",
+  "pageDescription": "FAS Modulare Heckträgersysteme – Flexibles Rastersystem mit über 20 Modulen für individuelle Expeditionsausrüstung.",
+  "altSlug": { "de": "modulare-systeme", "en": "modular-systems" },
+  "hero": {
+    "title": "Modulare Heckträgersysteme",
+    "subtitle": "Maximale Flexibilität für jede Mission",
+    "image": "/assets/images/vehicles/modular-hero.svg"
+  },
+  "overview": {
+    "title": "Ein System. Unendliche Möglichkeiten.",
+    "description": "Unser patentiertes Rastersystem ermöglicht die schnelle und werkzeuglose Montage von Ausrüstungsmodulen. Jedes Modul rastet sicher ein und kann in Sekunden gewechselt werden – perfekt für wechselnde Anforderungen auf langen Expeditionen.",
+    "features": [
+      "Werkzeugloser Modulwechsel in unter 60 Sekunden",
+      "Korrosionsbeständige Aluminium-Konstruktion",
+      "Kompatibel mit allen FAS Fahrzeugplattformen",
+      "TÜV-geprüft und straßenzugelassen",
+      "Erweiterbar durch Zusatzmodule jederzeit nachrüstbar"
+    ],
+    "ctaText": "System konfigurieren",
+    "ctaUrl": "/de/konfigurator"
+  },
+  "stats": [
+    {
+      "label": "Modulares Raster",
+      "value": "200 × 200 mm",
+      "description": "Standardisiertes Rastmaß"
+    },
+    {
+      "label": "Sicherheitsverriegelung",
+      "value": "4-Punkt",
+      "description": "Patentiertes Verschlusssystem"
+    },
+    {
+      "label": "Tragfähigkeit",
+      "value": "Bis zu 850 kg",
+      "description": "Maximale Systemlast"
+    },
+    {
+      "label": "Module",
+      "value": "20+",
+      "description": "Verfügbare Ausstattungsmodule"
+    }
+  ],
+  "modules": {
+    "title": "Verfügbare Module",
+    "subtitle": "Wählen Sie die Module für Ihre individuelle Konfiguration",
+    "items": [
+      {
+        "category": "Basis",
+        "title": "Plattform-Basis",
+        "sizes": ["1200 × 800 mm", "1600 × 800 mm", "2000 × 800 mm"],
+        "loadCapacity": "850 kg",
+        "material": "Aluminium T6061"
+      },
+      {
+        "category": "Transport",
+        "title": "Fahrradträger-Modul",
+        "sizes": ["2 Räder", "4 Räder"],
+        "loadCapacity": "60 kg",
+        "material": "Aluminium / Stahl"
+      },
+      {
+        "category": "Stauraum",
+        "title": "Staubox",
+        "sizes": ["80 L", "120 L", "160 L"],
+        "loadCapacity": "120 kg",
+        "material": "Aluminium pulverbeschichtet"
+      },
+      {
+        "category": "Sicherheit",
+        "title": "Reserveradhalter",
+        "sizes": ["255/70 R17", "285/70 R17", "315/70 R17"],
+        "loadCapacity": "85 kg",
+        "material": "Stahl verzinkt"
+      },
+      {
+        "category": "Erweiterung",
+        "title": "Quad-Erweiterung",
+        "sizes": ["ATV Standard", "ATV Breit"],
+        "loadCapacity": "450 kg",
+        "material": "Stahl / Aluminium"
+      },
+      {
+        "category": "Versorgung",
+        "title": "Kanisterhalter",
+        "sizes": ["2 × 20 L", "4 × 20 L"],
+        "loadCapacity": "100 kg",
+        "material": "Edelstahl"
+      },
+      {
+        "category": "Werkzeug",
+        "title": "Werkzeugbox-Modul",
+        "sizes": ["60 L", "90 L"],
+        "loadCapacity": "80 kg",
+        "material": "Aluminium eloxiert"
+      },
+      {
+        "category": "Bergung",
+        "title": "Sandblech-Halter",
+        "sizes": ["2 Bleche", "4 Bleche"],
+        "loadCapacity": "40 kg",
+        "material": "Aluminium / Edelstahl"
+      }
+    ]
+  }
+}

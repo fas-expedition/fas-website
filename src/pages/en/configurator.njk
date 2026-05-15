@@ -1,0 +1,23 @@
+---
+pageTitle: "Configurator"
+pageDescription: "FAS Expedition Configurator - Coming Soon"
+altSlug:
+  de: "konfigurator"
+  en: "configurator"
+---
+
+{% from "macros/buttons.njk" import secondaryBtn %}
+
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="text-center">
+    <h1 class="text-4xl lg:text-6xl font-bold tracking-wider uppercase text-center">
+      {{ translations["ui.comingSoon"] }}
+    </h1>
+    <p class="mt-6 text-lg text-zinc-300 max-w-md mx-auto">
+      {{ pageTitle }} — {{ translations["ui.comingSoon"] }}
+    </p>
+    <div class="mt-10">
+      {{ secondaryBtn(translations["ui.backToHome"], "/" + locale + "/") }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+{
+  "name": "FAS Expedition",
+  "url": "https://fas-expedition.de",
+  "defaultLocale": "de",
+  "locales": ["de", "en"]
+}

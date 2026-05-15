@@ -1,0 +1,28 @@
+{
+  "name": "fas-expedition-site",
+  "version": "1.0.0",
+  "description": "FAS Expedition - Static website built with Eleventy",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npx @11ty/eleventy --serve --watch\" \"npx tailwindcss -i src/assets/css/main.css -o src/assets/css/output.css --watch\"",
+    "build:css": "npx tailwindcss -i src/assets/css/main.css -o src/assets/css/output.css --minify",
+    "build:11ty": "npx @11ty/eleventy",
+    "build": "npm run build:css && npm run build:11ty",
+    "clean": "rm -rf _site || true",
+    "test": "vitest --run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "autoprefixer": "^10.4.0",
+    "cheerio": "^1.0.0",
+    "concurrently": "^8.0.0",
+    "fast-check": "^3.0.0",
+    "glob": "^10.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "vitest": "^2.0.0"
+  }
+}

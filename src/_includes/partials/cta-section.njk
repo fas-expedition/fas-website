@@ -1,0 +1,16 @@
+{# CTA Section Partial #}
+{% from "macros/buttons.njk" import primaryBtn %}
+
+{% set cta = pageContent.home.cta %}
+
+<section class="bg-zinc-950 py-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-6">
+      {{ cta.title }}
+    </h2>
+    <p class="text-zinc-400 text-lg max-w-2xl mx-auto mb-10">
+      {{ cta.description }}
+    </p>
+    {{ primaryBtn(cta.ctaText, cta.ctaUrl, true) }}
+  </div>
+</section>
