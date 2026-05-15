@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="{{ locale }}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,11 @@
   {% endif %}
   <meta property="og:title" content="{{ title | truncate(60, true, '...') }}">
   <meta property="og:description" content="{{ excerpt | truncate(160, true, '...') if excerpt else content | striptags | truncate(160, true, '...') }}">
-  <meta property="og:locale" content="de_DE">
-  <link rel="canonical" href="{{ site.url }}/{{ slug }}/">
+  <meta property="og:locale" content="{{ 'de_DE' if locale == 'de' else 'en_GB' }}">
+  <link rel="canonical" href="{{ site.url }}{% if locale == 'en' %}/en{% endif %}/{{ slug }}/">
+  <link rel="alternate" hreflang="de" href="{{ site.url }}/{{ slug }}">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ slug }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ slug }}">
   <link rel="stylesheet" href="/assets/css/output.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -26,11 +29,11 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
       </div>
       <div class="relative z-10 max-w-[1800px] mx-auto px-6 lg:px-12 pb-16 w-full">
-        <a href="/de/blog/" class="inline-flex items-center space-x-2 text-zinc-400 hover:text-white text-sm tracking-widest uppercase mb-6 transition-colors">
+        <a href="/{{ locale }}/blog/" class="inline-flex items-center space-x-2 text-zinc-400 hover:text-white text-sm tracking-widest uppercase mb-6 transition-colors">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
           </svg>
-          <span>Zurück zum Blog</span>
+          <span>{{ "Zurück zum Blog" if locale == "de" else "Back to Blog" }}</span>
         </a>
         <div class="flex items-center space-x-4 mb-4">
           {% if category %}

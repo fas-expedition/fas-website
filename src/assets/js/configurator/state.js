@@ -1,6 +1,5 @@
 // state.js - Configuration state management with subscriber notifications
-
-const STEPS = ['platform', 'cabinSize', 'equipmentLine', 'accessories', 'summary'];
+import { STEPS } from './navigation.js';
 
 /**
  * Create a state store for the vehicle configurator.
