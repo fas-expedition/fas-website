@@ -74,6 +74,24 @@ audioUrl: ""
 
 Categories for English posts: `Delivery`, `Expedition`, `BRABUS`, `Technology`, `News`.
 
+## Commit Convention
+
+This repo uses [Conventional Commits](https://www.conventionalcommits.org/) with automated semantic versioning via Release Please.
+
+Commit message format: `<type>(<scope>): <description>`
+
+| Prefix | Version Bump | Use for |
+|--------|-------------|---------|
+| `feat:` | minor | New features, new pages, new components |
+| `fix:` | patch | Bug fixes, broken links, rendering issues |
+| `docs:` | — | README, AGENTS.md, comments |
+| `chore:` | — | Dependencies, config, CI |
+| `refactor:` | — | Code restructuring without behavior change |
+| `perf:` | patch | Performance improvements |
+| `test:` | — | Adding or fixing tests |
+
+Breaking changes: Add `!` after type (e.g., `feat!: remove old blog`) or add `BREAKING CHANGE:` in commit body → triggers major bump.
+
 ## Do NOT
 
 - Add new npm dependencies without strong justification
