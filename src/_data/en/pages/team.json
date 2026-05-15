@@ -1,0 +1,151 @@
+{
+  "pageTitle": "Our Team",
+  "pageDescription": "FAS Expedition – Our team of engineers, designers, and craftsmen with a passion for expedition vehicles.",
+  "altSlug": { "de": "team", "en": "team" },
+  "intro": "Hardly a team member who isn't infected by the camping and travel bug — our team lives and loves what it does!",
+  "subtitle": "Allow us to introduce ourselves:",
+  "sections": [
+    {
+      "title": "Leadership & Administration",
+      "people": [
+        {
+          "name": "Andreas Böttcher",
+          "qualifications": ["Diploma Engineer (BA) in Production Technology"],
+          "roles": ["Chief Executive Officer (CEO)", "Technical Director and Head of Cabin Construction"],
+          "description": "",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302909_be.jpg"
+        },
+        {
+          "name": "Márika Böttcher",
+          "qualifications": ["Diploma in Business Administration (BA) for Logistics"],
+          "roles": ["Commercial Director", "Sales and Controlling"],
+          "description": "",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302978_be.jpg"
+        },
+        {
+          "name": "Stefan",
+          "qualifications": [],
+          "roles": ["Chief Commercial Officer (CCO)", "Sales, Marketing and Strategy"],
+          "description": "Stefan brings entrepreneurial and sales expertise, complemented by a generous portion of enthusiasm and reliability. Customers can expect the extra mile throughout their project journey.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/Gemini_Generated_Image_lf5632lf5632lf56.png"
+        },
+        {
+          "name": "Monika",
+          "qualifications": ["Qualified Transport Clerk"],
+          "roles": ["Administration"],
+          "description": "Our dear Monika lends a hand wherever needed — always with a smile. Her dedicated support in accounting, HR, and the many small things of daily business allows us to focus on what matters most.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/1000064694_be.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Engineering",
+      "people": [
+        {
+          "name": "Nils",
+          "qualifications": ["B.Eng. Aerospace Engineering", "Welding Engineer"],
+          "roles": ["Vehicle Construction Engineer"],
+          "description": "Nils is our first-hour employee. Calm precision defines him, bringing new technical wonders to life. His thoughtful designs contribute significantly to the perception and recognition of FAS products.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302938_be.jpg"
+        },
+        {
+          "name": "Christine",
+          "qualifications": ["Diploma Designer (FH) in Product Design"],
+          "roles": ["Cabin Construction Designer"],
+          "description": "Christine is our creative wellspring. Her spatial and color understanding is highly valued by our customers. She also gladly picks up tools herself, supporting the cabin team in implementing her own interior designs.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302918_be.jpg"
+        },
+        {
+          "name": "Martin",
+          "qualifications": ["M.Sc. Automotive Engineering"],
+          "roles": ["Engineer"],
+          "description": "What Martin engineers is solid. He takes nothing for granted and enriches the team with calm composure, rich experience, and exactly the right sense of humor.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/Gemini_Generated_Image_nfv79mnfv79mnfv7.png"
+        },
+        {
+          "name": "Patrick",
+          "qualifications": ["B.Eng. Aerospace Engineering (in progress)"],
+          "roles": ["Working Student"],
+          "description": "Patrick brings fresh university knowledge and plenty of enthusiasm. He's equally comfortable with wood and steel as with CAD software.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20241206_092638-49f5cc27.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Cabin Construction",
+      "people": [
+        {
+          "name": "Jan",
+          "qualifications": ["Automotive Mechatronics Technician", "Caravan Technology Specialist"],
+          "roles": ["Cabin Construction"],
+          "description": "Jan is our proverbial jack-of-all-trades — can do everything, knows everything, and is excellently networked for everything else. Problem-solving is his middle name, positivity his daily companion.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302858_be.jpg"
+        },
+        {
+          "name": "Harald",
+          "qualifications": ["All-rounder"],
+          "roles": ["Cabin Construction"],
+          "description": "Harald is our calm center in cabin construction. Unfazed by the bustle of the young team, he enriches us with experience, craftsmanship, and a healthy dose of humor.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5313079_be.jpg"
+        },
+        {
+          "name": "Mats",
+          "qualifications": ["Industrial Mechanic"],
+          "roles": ["Cabin Construction"],
+          "description": "Mats is reliably on hand for tricky installation situations or mechanical challenges. With high-level expertise and a spark of improvisation talent, he keeps working until everything fits.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20251022_101926-c6b3df91.jpg"
+        },
+        {
+          "name": "Erik",
+          "qualifications": ["Automotive Mechatronics Technician", "Commercial Vehicle Technology"],
+          "roles": ["Cabin Construction"],
+          "description": "Erik brings commercial vehicle expertise to our young team. As a member of the interface team between cabin and vehicle construction, he ensures smoother integration.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/ChatGPT+Image+3.+M%C3%A4rz+2026-+11_15_28.png"
+        }
+      ]
+    },
+    {
+      "title": "Vehicle Construction",
+      "people": [
+        {
+          "name": "Tobia",
+          "qualifications": ["Master Machinist", "Industrial Mechanic"],
+          "roles": ["Workshop Manager Vehicle Construction"],
+          "description": "Tobia ensures that workflows in vehicle construction are plannable and routine. With tireless dedication, he smooths all bumps on the road to the finished product while driving optimizations with suppliers and subcontractors.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302878_be.jpg"
+        },
+        {
+          "name": "Christian",
+          "qualifications": ["Automotive Mechatronics Technician", "Passenger Vehicle Technology"],
+          "roles": ["Vehicle Construction"],
+          "description": "Christian is our valued mechanic in vehicle construction and part of the interface team between cabin and base vehicle. With universal knowledge, rolled-up sleeves, and patience — no job is too big for him.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/1000064689_be.jpg"
+        },
+        {
+          "name": "Paul",
+          "qualifications": ["Metal Worker", "Metal Design"],
+          "roles": ["Vehicle Construction"],
+          "description": "If you wonder whether our weld seams were machine-made, you're looking at Paul's handiwork. His focused and precise workmanship forms the basis for premium-class rear carriers, roof racks, and cabin frames.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20260227_131819.jpg"
+        },
+        {
+          "name": "Fabian",
+          "qualifications": ["Tank and Apparatus Builder"],
+          "roles": ["Vehicle Construction"],
+          "description": "Our youngest team member brings not only a steady welding hand. Fabian enriches the team with quick comprehension and a pleasantly friendly manner.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20260227_132009.jpg"
+        }
+      ]
+    }
+  ],
+  "recruiting": {
+    "title": "Join the Team!",
+    "body": "We're constantly looking for reinforcements for our young team. If you share our passion for travel or can imagine being part of the world of expedition vehicles — check our current openings.",
+    "openings": [
+      { "title": "Interior Builder / Caravan Technician (m/f/d)", "url": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/files/uploaded/Ausschreibung+Caravantechniker+FAS+Expedition+GmbH+2025.pdf" },
+      { "title": "Metalworker / Commercial Vehicle Technician (m/f/d)", "url": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/files/uploaded/Ausschreibung+Schlosser+FAS+Expedition+GmbH+2025.pdf" }
+    ],
+    "ctaText": "Contact Us",
+    "ctaUrl": "/en/contact/"
+  }
+}

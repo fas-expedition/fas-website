@@ -1,0 +1,151 @@
+{
+  "pageTitle": "Unser Team",
+  "pageDescription": "FAS Expedition – Unser Team aus Ingenieuren, Konstrukteuren und Handwerkern mit Leidenschaft für Expeditionsmobile.",
+  "altSlug": { "de": "team", "en": "team" },
+  "intro": "Kaum ein Mitarbeiter, der nicht vom Camping- und Reisefieber infiziert ist — unser Team lebt und liebt das, was es tut!",
+  "subtitle": "Wir dürfen uns vorstellen:",
+  "sections": [
+    {
+      "title": "Geschäftsführung und Verwaltung",
+      "people": [
+        {
+          "name": "Andreas Böttcher",
+          "qualifications": ["Diplom-Ingenieur (BA) für Produktionstechnik"],
+          "roles": ["Chief Executive Officer (CEO)", "Technischer Geschäftsführer und Leiter für den Bereich Wohnkabinenbau"],
+          "description": "",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302909_be.jpg"
+        },
+        {
+          "name": "Márika Böttcher",
+          "qualifications": ["Diplom-Betriebswirtin (BA) für Logistik"],
+          "roles": ["Kaufmännische Leitung", "Vertrieb und Controlling"],
+          "description": "",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302978_be.jpg"
+        },
+        {
+          "name": "Stefan",
+          "qualifications": [],
+          "roles": ["Chief Commercial Officer (CCO)", "Vertrieb, Marketing und Strategie"],
+          "description": "Stefan bringt unternehmerische und vor allem vertriebstechnische Erfahrung, ergänzt durch eine große Portion Enthusiasmus und Zuverlässigkeit ins Team. Von ihm dürfen unsere Kunden die extra mile im Projektverlauf erwarten.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/Gemini_Generated_Image_lf5632lf5632lf56.png"
+        },
+        {
+          "name": "Monika",
+          "qualifications": ["Kauffrau für Verkehrstechnik"],
+          "roles": ["Verwaltung"],
+          "description": "Unsere liebe Monika greift uns unter die Arme, wo auch immer es nötig ist — und das immer mit einem Lächeln im Gesicht. Ihre tatkräftige Unterstützung bei der Buchhaltung, im Personalwesen und bei den vielen kleinen Dingen des Firmenalltags ermöglichen uns die Konzentration aufs Wesentliche.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/1000064694_be.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Konstruktion",
+      "people": [
+        {
+          "name": "Nils",
+          "qualifications": ["Bachelor of Engineering (FH) für Luft- und Raumfahrttechnik", "Schweißfachingenieur"],
+          "roles": ["Konstrukteur Fahrzeugbau"],
+          "description": "Nils ist unser Mitarbeiter der ersten Stunde. Ruhe und Akribie zeichnen ihn aus und lassen ihn immer wieder neue Wunder der Technik zum Leben erwecken. Mit seinen durchdachten Konstruktionen und den prägnanten Designs trägt er wesentlich zur Wahrnehmung und Wiedererkennung der FAS-Produkte bei.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302938_be.jpg"
+        },
+        {
+          "name": "Christine",
+          "qualifications": ["Diplom-Designerin (FH) für Produktdesign"],
+          "roles": ["Konstrukteurin Wohnkabinenbau"],
+          "description": "Christine ist unser Kreativbrunnen. Ihr Raum- und Farbverständnis wird von unseren Kunden hoch geschätzt. Und als wäre das nicht schon eine riesige Bereicherung, greift Christine gern auch selbst in die Werkzeugkiste und unterstützt die Mannschaft im Kabinenbau bei der Umsetzung ihrer eigenen Interieur-Designs.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302918_be.jpg"
+        },
+        {
+          "name": "Martin",
+          "qualifications": ["Master of Science (M.Sc.) Automotive Engineering"],
+          "roles": ["Konstrukteur"],
+          "description": "Was Martin konstruiert, hat Hand und Fuß. Er nimmt nichts als gegeben und bringt den einen oder anderen Kollegen mit der Frage nach dem Warum schon mal ins Schwitzen. Mit seiner ruhigen Gelassenheit, einem reichen Erfahrungsschatz und genau dem richtigen Sinn für Humor bereichert er das Team in jeder Hinsicht.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/Gemini_Generated_Image_nfv79mnfv79mnfv7.png"
+        },
+        {
+          "name": "Patrick",
+          "qualifications": ["angehender Bachelor of Engineering (FH) für Luft- und Raumfahrttechnik"],
+          "roles": ["Werkstudent"],
+          "description": "Patrick bringt frischen Uni-Wind mit aktuellem Fachwissen und jeder Menge Enthusiasmus in unsere Hallen. Er ist handwerklich top fit und hat seine Hände genauso gern an Holz und Stahl wie am CAD-Programm.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20241206_092638-49f5cc27.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Wohnkabinenbau",
+      "people": [
+        {
+          "name": "Jan",
+          "qualifications": ["Kfz-Mechatroniker", "Fachkraft für Caravantechnik"],
+          "roles": ["Wohnkabinenbau"],
+          "description": "Jan ist unsere sprichwörtliche eierlegende Wollmilchsau — kann alles, weiß alles und ist für alles andere hervorragend vernetzt. Problemlösungskompetenz ist sein zweiter Vorname, Positivität sein Alltagsbegleiter.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302858_be.jpg"
+        },
+        {
+          "name": "Harald",
+          "qualifications": ["Allrounder"],
+          "roles": ["Wohnkabinenbau"],
+          "description": "Harald ist unsere ruhige Mitte im Kabinenbau. Unbeeindruckt vom Gewusel der jungen Wilden und mit einer kräftigen Prise Humor bereichert uns unser Harry mit Erfahrung und handwerklichem Geschick.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5313079_be.jpg"
+        },
+        {
+          "name": "Mats",
+          "qualifications": ["Industriemechaniker"],
+          "roles": ["Wohnkabinenbau"],
+          "description": "Mats ist zuverlässig zur Stelle, wenn es um besonders kniffelige Einbausituationen oder mechanische Fragestellungen geht. Mit fachlichem Können auf hohem Niveau, enormer Werkzeugkasten-Kompetenz und einem Fünkchen Improvisationstalent knobelt er so lang, bis alles passt.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20251022_101926-c6b3df91.jpg"
+        },
+        {
+          "name": "Erik",
+          "qualifications": ["Kraftfahrzeugmechatroniker", "Nutzfahrzeugtechnik"],
+          "roles": ["Wohnkabinenbau"],
+          "description": "Erik bringt Nutzfahrzeugexpertise in unser junges Team. Als Mitglied des Schnittstellen-Teams zwischen Kabinen- und Fahrzeugbau wird er für noch reibungslosere Hochzeiten sorgen.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/ChatGPT+Image+3.+M%C3%A4rz+2026-+11_15_28.png"
+        }
+      ]
+    },
+    {
+      "title": "Fahrzeugbau",
+      "people": [
+        {
+          "name": "Tobia",
+          "qualifications": ["Maschinenschlosser-Meister", "Industriemechaniker Maschinen- und Systemtechnik"],
+          "roles": ["Werkstattleiter Fahrzeugbau"],
+          "description": "Tobia sorgt mit viel Einsatz dafür, dass Arbeitsabläufe im Fahrzeugbau planbar und routiniert werden. Mit unermüdlichem Einsatz glättet er alle Unebenheiten auf dem Weg zum fertigen Endprodukt und schafft es ganz nebenher auch noch, Optimierungen bei Produkten, Lieferanten und Lohnbearbeitern anzustoßen.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/P5302878_be.jpg"
+        },
+        {
+          "name": "Christian",
+          "qualifications": ["Kraftfahrzeugmechatroniker", "Personenkraftwagentechnik"],
+          "roles": ["Fahrzeugbau"],
+          "description": "Christian ist unser geschätzter Monteur im Fahrzeugbau und Teil des Schnittstellenteams zwischen Wohnkabine und Basisfahrzeug. Mit universellem Wissen und Expertise in so ziemlich allem, was fährt, hochgekrempelten Ärmeln, ganz viel Geduld und einem ausgeprägten Sinn für tiefgehende Fahrzeugrecherchen ist ihm keine Baustelle zu groß.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/1000064689_be.jpg"
+        },
+        {
+          "name": "Paul",
+          "qualifications": ["Metallbauer", "Metallgestaltung"],
+          "roles": ["Fahrzeugbau"],
+          "description": "Wer sich fragt, ob unsere Schweißnähte maschinell entstanden sind, der schaut gerade auf eine Schweißnaht aus Pauls Hand. Seine fokussierte und akkurate Arbeitsweise bildet die Basis für Heckträger, Dachträger, Zwischenrahmen und Kabinenrahmen der Extraklasse.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20260227_131819.jpg"
+        },
+        {
+          "name": "Fabian",
+          "qualifications": ["Behälter- und Apparatebauer"],
+          "roles": ["Fahrzeugbau"],
+          "description": "Unser Jüngster im Bunde bringt nicht nur eine ruhige Hand beim Schweißen mit. Fabian bereichert das Team mit seiner schnellen Auffassungsgabe und einer angenehm freundlichen Art. Wir dürfen gespannt sein, welche Talente in den nächsten Jahren bei uns noch zum Vorschein kommen.",
+          "image": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/dms3rep/multi/20260227_132009.jpg"
+        }
+      ]
+    }
+  ],
+  "recruiting": {
+    "title": "Werde Teil des Teams!",
+    "body": "Wir sind ständig auf der Suche nach Verstärkung für unser junges Team. Teilst du unsere Leidenschaft fürs Reisen oder kannst du dir vorstellen, Teil der Welt der Reisemobile zu werden — dann schau einfach, ob bei den derzeitigen offenen Stellen etwas für dich dabei ist.",
+    "openings": [
+      { "title": "Interieurbauer / Caravantechniker (m/w/d)", "url": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/files/uploaded/Ausschreibung+Caravantechniker+FAS+Expedition+GmbH+2025.pdf" },
+      { "title": "Schlosser / Nutzfahrzeugtechniker (m/w/d)", "url": "https://cdn.website-editor.net/s/2f49f7dd8ce549a98ed92880a6a49d55/files/uploaded/Ausschreibung+Schlosser+FAS+Expedition+GmbH+2025.pdf" }
+    ],
+    "ctaText": "Kontakt zu uns",
+    "ctaUrl": "/de/kontakt/"
+  }
+}
