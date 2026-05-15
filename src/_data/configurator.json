@@ -1,0 +1,346 @@
+{
+  "platforms": [
+    {
+      "id": "4x4",
+      "name": { "de": "4x4 Unimog", "en": "4x4 Unimog" },
+      "description": {
+        "de": "Kompakte Unimog-Plattform mit legendärer Geländegängigkeit. Ideal für schmale Pisten und extreme Steigungen.",
+        "en": "Compact Unimog platform with legendary off-road capability. Ideal for narrow trails and extreme gradients."
+      },
+      "image": "/assets/images/vehicles/4x4.png",
+      "specs": {
+        "power": "220 kW (300 PS)",
+        "gvw": "14.500 kg",
+        "payload": "5.500 kg",
+        "axles": "2"
+      }
+    },
+    {
+      "id": "6x6",
+      "name": { "de": "6x6 MAN TGS", "en": "6x6 MAN TGS" },
+      "description": {
+        "de": "Vielseitige MAN-Plattform mit drei Achsen. Optimale Balance zwischen Nutzlast und Geländetauglichkeit.",
+        "en": "Versatile MAN platform with three axles. Optimal balance between payload and off-road capability."
+      },
+      "image": "/assets/images/vehicles/6x6.png",
+      "specs": {
+        "power": "324 kW (440 PS)",
+        "gvw": "26.000 kg",
+        "payload": "10.000 kg",
+        "axles": "3"
+      }
+    },
+    {
+      "id": "8x8",
+      "name": { "de": "8x8 MAN TGS", "en": "8x8 MAN TGS" },
+      "description": {
+        "de": "Schwere MAN-Plattform mit vier Achsen. Maximale Nutzlast für große Wohnkabinen und umfangreiche Ausrüstung.",
+        "en": "Heavy MAN platform with four axles. Maximum payload for large living cabins and extensive equipment."
+      },
+      "image": "/assets/images/vehicles/8x8.png",
+      "specs": {
+        "power": "397 kW (540 PS)",
+        "gvw": "36.000 kg",
+        "payload": "16.000 kg",
+        "axles": "4"
+      }
+    }
+  ],
+  "cabinSizes": [
+    {
+      "id": "compact",
+      "name": { "de": "Kompakt", "en": "Compact" },
+      "description": {
+        "de": "Optimiert für Wendigkeit und schmale Pisten. 2 Schlafplätze, effiziente Raumnutzung.",
+        "en": "Optimized for agility and narrow trails. 2 berths, efficient use of space."
+      },
+      "image": "/assets/images/configurator/cabins/compact.webp",
+      "platformCompatibility": ["4x4", "6x6"]
+    },
+    {
+      "id": "standard",
+      "name": { "de": "Standard", "en": "Standard" },
+      "description": {
+        "de": "Ausgewogenes Raumangebot für komfortables Reisen. 2–4 Schlafplätze, vollwertige Küche und Bad.",
+        "en": "Balanced living space for comfortable travel. 2–4 berths, full kitchen and bathroom."
+      },
+      "image": "/assets/images/configurator/cabins/standard.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"]
+    },
+    {
+      "id": "extended",
+      "name": { "de": "XL Wohnkabine", "en": "XL Living Cabin" },
+      "description": {
+        "de": "Maximaler Wohnraum für Langzeitreisen. 4–6 Schlafplätze, separate Schlaf- und Wohnbereiche.",
+        "en": "Maximum living space for long-term travel. 4–6 berths, separate sleeping and living areas."
+      },
+      "image": "/assets/images/configurator/cabins/xl.webp",
+      "platformCompatibility": ["6x6", "8x8"]
+    }
+  ],
+  "equipmentLines": [
+    {
+      "id": "expedition",
+      "name": { "de": "Expedition", "en": "Expedition" },
+      "description": {
+        "de": "Robuste Grundausstattung für autarke Fernreisen. Bewährte Technik für zuverlässigen Betrieb.",
+        "en": "Robust base equipment for self-sufficient long-distance travel. Proven technology for reliable operation."
+      },
+      "features": {
+        "de": ["Wassertank 200L", "Solaranlage 400W", "Standheizung", "Kompressor-Kühlschrank", "LED-Außenbeleuchtung"],
+        "en": ["200L water tank", "400W solar system", "Parking heater", "Compressor refrigerator", "LED exterior lighting"]
+      },
+      "image": "/assets/images/configurator/equipment/expedition.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 45000
+    },
+    {
+      "id": "luxury",
+      "name": { "de": "Luxury", "en": "Luxury" },
+      "description": {
+        "de": "Gehobene Ausstattung mit Komfort-Extras. Hochwertige Materialien und erweiterte Energieversorgung.",
+        "en": "Elevated equipment with comfort extras. Premium materials and extended power supply."
+      },
+      "features": {
+        "de": ["Wassertank 400L", "Solaranlage 800W", "Klimaanlage", "Lithium-Batteriesystem", "Fußbodenheizung", "Induktionskochfeld"],
+        "en": ["400L water tank", "800W solar system", "Air conditioning", "Lithium battery system", "Underfloor heating", "Induction cooktop"]
+      },
+      "image": "/assets/images/configurator/equipment/luxury.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 85000
+    },
+    {
+      "id": "military",
+      "name": { "de": "Military", "en": "Military" },
+      "description": {
+        "de": "Militärische Spezifikation für extremste Bedingungen. Verstärkte Systeme und taktische Ausstattung.",
+        "en": "Military specification for the most extreme conditions. Reinforced systems and tactical equipment."
+      },
+      "features": {
+        "de": ["Wassertank 300L mit NBC-Filter", "Solaranlage 600W", "Standheizung", "Tarnbeleuchtung", "EMP-geschützte Elektronik", "Ballistischer Schutz"],
+        "en": ["300L water tank with NBC filter", "600W solar system", "Parking heater", "Blackout lighting", "EMP-protected electronics", "Ballistic protection"]
+      },
+      "image": "/assets/images/configurator/equipment/military.webp",
+      "platformCompatibility": ["6x6", "8x8"],
+      "price": 120000
+    }
+  ],
+  "accessories": [
+    {
+      "id": "acc-solar-upgrade",
+      "name": { "de": "Solaranlage XL (1200W)", "en": "Solar System XL (1200W)" },
+      "description": {
+        "de": "Erweiterte Solarkapazität für maximale Autarkie",
+        "en": "Extended solar capacity for maximum self-sufficiency"
+      },
+      "category": "technology",
+      "image": "/assets/images/configurator/accessories/solar-xl.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 8500
+    },
+    {
+      "id": "acc-satellite",
+      "name": { "de": "Satellitenkommunikation", "en": "Satellite Communication" },
+      "description": {
+        "de": "Globale Internetverbindung via Starlink-Terminal",
+        "en": "Global internet connection via Starlink terminal"
+      },
+      "category": "technology",
+      "image": "/assets/images/configurator/accessories/satellite.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 4200
+    },
+    {
+      "id": "acc-winch",
+      "name": { "de": "Hydraulische Seilwinde", "en": "Hydraulic Winch" },
+      "description": {
+        "de": "12t Zugkraft, fernbedienbar, mit Dyneema-Seil",
+        "en": "12t pulling force, remote-controlled, with Dyneema rope"
+      },
+      "category": "exterior",
+      "image": "/assets/images/configurator/accessories/winch.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 6800
+    },
+    {
+      "id": "acc-roof-rack",
+      "name": { "de": "Expeditions-Dachträger", "en": "Expedition Roof Rack" },
+      "description": {
+        "de": "Modularer Aluminium-Dachträger mit Leiter und Befestigungspunkten",
+        "en": "Modular aluminum roof rack with ladder and mounting points"
+      },
+      "category": "exterior",
+      "image": "/assets/images/configurator/accessories/roof-rack.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 3200
+    },
+    {
+      "id": "acc-interior-upgrade",
+      "name": { "de": "Premium-Innenausbau", "en": "Premium Interior Upgrade" },
+      "description": {
+        "de": "Echtholz-Furnier, Lederpolster und Ambientebeleuchtung",
+        "en": "Real wood veneer, leather upholstery, and ambient lighting"
+      },
+      "category": "interior",
+      "image": "/assets/images/configurator/accessories/interior-upgrade.webp",
+      "platformCompatibility": ["6x6", "8x8"],
+      "price": 12000
+    },
+    {
+      "id": "acc-water-purification",
+      "name": { "de": "Wasseraufbereitung", "en": "Water Purification System" },
+      "description": {
+        "de": "Mehrstufiges Filtersystem mit UV-Desinfektion für Trinkwasser aus jeder Quelle",
+        "en": "Multi-stage filter system with UV disinfection for drinking water from any source"
+      },
+      "category": "technology",
+      "image": "/assets/images/configurator/accessories/water-purification.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 3800
+    },
+    {
+      "id": "acc-snorkel",
+      "name": { "de": "Schnorchel", "en": "Snorkel" },
+      "description": {
+        "de": "Erhöhte Luftansaugung für Wasserdurchfahrten bis 1,2m",
+        "en": "Raised air intake for water crossings up to 1.2m"
+      },
+      "category": "exterior",
+      "image": "/assets/images/configurator/accessories/snorkel.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 2400
+    },
+    {
+      "id": "acc-bike-rack",
+      "name": { "de": "Fahrradträger", "en": "Bike Rack" },
+      "description": {
+        "de": "Schwenkbarer Heckträger für bis zu 4 Fahrräder oder 2 E-Bikes",
+        "en": "Swiveling rear carrier for up to 4 bikes or 2 e-bikes"
+      },
+      "category": "exterior",
+      "image": "/assets/images/configurator/accessories/bike-rack.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 1800
+    },
+    {
+      "id": "acc-awning",
+      "name": { "de": "Markise", "en": "Awning" },
+      "description": {
+        "de": "Elektrische Seitenmarkise 3,5m mit LED-Beleuchtung",
+        "en": "Electric side awning 3.5m with LED lighting"
+      },
+      "category": "exterior",
+      "image": "/assets/images/configurator/accessories/awning.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 2800
+    },
+    {
+      "id": "acc-camera-system",
+      "name": { "de": "360°-Kamerasystem", "en": "360° Camera System" },
+      "description": {
+        "de": "Rundum-Kamerasystem mit Vogelperspektive für sicheres Manövrieren",
+        "en": "Surround camera system with bird's-eye view for safe maneuvering"
+      },
+      "category": "safety",
+      "image": "/assets/images/configurator/accessories/camera-system.webp",
+      "platformCompatibility": ["6x6", "8x8"],
+      "price": 4500
+    },
+    {
+      "id": "acc-diff-locks",
+      "name": { "de": "Differentialsperren", "en": "Differential Locks" },
+      "description": {
+        "de": "Vollständige Differentialsperren an allen Achsen für maximale Traktion",
+        "en": "Full differential locks on all axles for maximum traction"
+      },
+      "category": "safety",
+      "image": "/assets/images/configurator/accessories/diff-locks.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 5200
+    },
+    {
+      "id": "acc-air-compressor",
+      "name": { "de": "Druckluftkompressor", "en": "Air Compressor" },
+      "description": {
+        "de": "Bordkompressor für Reifenbefüllung und pneumatisches Werkzeug",
+        "en": "Onboard compressor for tire inflation and pneumatic tools"
+      },
+      "category": "technology",
+      "image": "/assets/images/configurator/accessories/air-compressor.webp",
+      "platformCompatibility": ["4x4", "6x6", "8x8"],
+      "price": 1900
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule-4x4-no-extended",
+      "source": "4x4",
+      "type": "excludes",
+      "target": "extended",
+      "message": {
+        "de": "Die 4x4-Plattform bietet nicht genügend Nutzlast für die XL-Wohnkabine.",
+        "en": "The 4x4 platform does not provide sufficient payload for the XL living cabin."
+      }
+    },
+    {
+      "id": "rule-4x4-no-military",
+      "source": "4x4",
+      "type": "excludes",
+      "target": "military",
+      "message": {
+        "de": "Die Military-Ausstattung ist nur für 6x6- und 8x8-Plattformen verfügbar.",
+        "en": "The Military equipment is only available for 6x6 and 8x8 platforms."
+      }
+    },
+    {
+      "id": "rule-military-no-interior",
+      "source": "military",
+      "type": "excludes",
+      "target": "acc-interior-upgrade",
+      "message": {
+        "de": "Der Premium-Innenausbau ist nicht mit der Military-Ausstattung kombinierbar.",
+        "en": "The Premium Interior Upgrade is not compatible with Military equipment."
+      }
+    },
+    {
+      "id": "rule-military-no-luxury-acc",
+      "source": "military",
+      "type": "excludes",
+      "target": "acc-awning",
+      "message": {
+        "de": "Die Markise ist nicht mit der Military-Ausstattung kombinierbar (taktische Anforderungen).",
+        "en": "The awning is not compatible with Military equipment (tactical requirements)."
+      }
+    },
+    {
+      "id": "rule-solar-requires-luxury",
+      "source": "acc-solar-upgrade",
+      "type": "requires",
+      "target": "luxury",
+      "message": {
+        "de": "Die Solaranlage XL erfordert die Luxury-Ausstattung (Lithium-Batteriesystem benötigt).",
+        "en": "The Solar System XL requires Luxury equipment (Lithium battery system needed)."
+      }
+    },
+    {
+      "id": "rule-compact-no-interior",
+      "source": "compact",
+      "type": "excludes",
+      "target": "acc-interior-upgrade",
+      "message": {
+        "de": "Der Premium-Innenausbau ist für die Kompaktkabine nicht verfügbar (zu wenig Platz).",
+        "en": "The Premium Interior Upgrade is not available for the Compact cabin (insufficient space)."
+      }
+    },
+    {
+      "id": "rule-camera-recommend-8x8",
+      "source": "8x8",
+      "type": "recommend",
+      "target": "acc-camera-system",
+      "message": {
+        "de": "Für die 8x8-Plattform empfehlen wir das 360°-Kamerasystem für sicheres Manövrieren.",
+        "en": "For the 8x8 platform, we recommend the 360° camera system for safe maneuvering."
+      }
+    }
+  ]
+}
