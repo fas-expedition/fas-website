@@ -1,6 +1,6 @@
 // navigation.js - Step flow control for the configurator
 
-const STEPS = ['platform', 'cabinSize', 'equipmentLine', 'accessories', 'summary'];
+export const STEPS = ['platform', 'cabinSize', 'equipmentLine', 'accessories', 'summary'];
 
 /**
  * Create a navigation controller for the multi-step configurator flow.

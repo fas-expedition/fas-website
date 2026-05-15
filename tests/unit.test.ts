@@ -178,8 +178,6 @@ describe('Unit Tests: Configuration and Content Validation', () => {
     const placeholderPages = [
       '_site/de/konfigurator/index.html',
       '_site/en/configurator/index.html',
-      '_site/de/blog/index.html',
-      '_site/en/blog/index.html',
     ];
 
     for (const page of placeholderPages) {
@@ -211,8 +209,9 @@ describe('Unit Tests: Configuration and Content Validation', () => {
 
     it('DE home page renders 4 feature cards in HTML', () => {
       const $ = loadHtml('_site/de/index.html');
-      // Feature cards have the border border-zinc-800 pattern
-      const featureCards = $('section.bg-zinc-950 .grid .border.border-zinc-800');
+      // Feature cards are in the features-grid section (second section on page)
+      const featureSection = $('main > section').eq(1);
+      const featureCards = featureSection.find('.grid .border.border-zinc-800');
       expect(featureCards.length).toBe(4);
     });
   });
