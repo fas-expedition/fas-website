@@ -1,0 +1,74 @@
+---
+pageTitle: "Unser Team"
+pageDescription: "FAS Expedition – Unser Team aus Ingenieuren, Konstrukteuren und Handwerkern mit Leidenschaft für Expeditionsmobile."
+altSlug:
+  de: "team"
+  en: "team"
+---
+
+{% from "macros/buttons.njk" import primaryBtn, secondaryBtn %}
+{% set team = pageContent.team %}
+
+{# Hero #}
+<section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-zinc-950"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">{{ team.pageTitle }}</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300 max-w-3xl mx-auto">{{ team.intro }}</p>
+  </div>
+</section>
+
+{# Team Sections #}
+{% for section in team.sections %}
+<section class="{% if loop.index % 2 == 1 %}bg-zinc-950{% else %}bg-black{% endif %} py-24 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <h2 class="text-2xl font-bold tracking-wider uppercase mb-12">{{ section.title }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for person in section.people %}
+      <div class="border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden group">
+        {# Photo #}
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="{{ person.image }}" alt="{{ person.name }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        {# Info #}
+        <div class="p-6">
+          <h3 class="text-lg font-bold uppercase tracking-wider mb-1">{{ person.name }}</h3>
+          <p class="text-zinc-500 text-xs uppercase tracking-widest mb-3">{{ person.roles[0] }}</p>
+          {% if person.qualifications | length > 0 %}
+          <p class="text-zinc-400 text-xs mb-3">{{ person.qualifications | join(", ") }}</p>
+          {% endif %}
+          {% if person.description %}
+          <p class="text-zinc-400 text-sm leading-relaxed">{{ person.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{# Recruiting Section #}
+<section class="bg-zinc-950 py-24 lg:py-32 border-t border-zinc-900">
+  <div class="max-w-[1000px] mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-6">{{ team.recruiting.title }}</h2>
+    <p class="text-zinc-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">{{ team.recruiting.body }}</p>
+
+    {# Open Positions #}
+    <div class="space-y-4 mb-10">
+      {% for opening in team.recruiting.openings %}
+      <a href="{{ opening.url }}" target="_blank" rel="noopener" class="block border border-zinc-800 hover:border-zinc-600 transition-colors p-6 text-left">
+        <div class="flex items-center justify-between">
+          <span class="text-white font-bold text-sm uppercase tracking-wider">{{ opening.title }}</span>
+          <svg class="w-5 h-5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {{ primaryBtn(team.recruiting.ctaText, team.recruiting.ctaUrl, true) }}
+  </div>
+</section>
