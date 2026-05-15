@@ -216,6 +216,61 @@ collections:
         file: "src/_data/en/pages/brabus.json"
         fields: *brabus_fields
 
+      # Karriere (DE)
+      - name: "karriere_de"
+        label: "Karriere (DE)"
+        file: "src/_data/de/pages/karriere.json"
+        fields: &karriere_fields
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: true }
+          - { label: "Intro", name: "intro", widget: "text", required: true }
+          - label: "Jobs"
+            name: "jobs"
+            widget: "list"
+            fields:
+              - { label: "Job - Title", name: "title", widget: "string", required: true }
+              - { label: "Job - Location", name: "location", widget: "string", required: true }
+              - { label: "Job - Division", name: "division", widget: "string", required: true }
+              - label: "Job - Tasks"
+                name: "tasks"
+                widget: "list"
+                field: { label: "Task", name: "task", widget: "string" }
+              - label: "Job - Profile"
+                name: "profile"
+                widget: "list"
+                field: { label: "Requirement", name: "requirement", widget: "string" }
+              - label: "Job - Benefits"
+                name: "benefits"
+                widget: "list"
+                field: { label: "Benefit", name: "benefit", widget: "string" }
+              - { label: "Job - CTA Text", name: "ctaText", widget: "string", required: true }
+              - { label: "Job - CTA URL", name: "ctaUrl", widget: "string", required: true }
+              - { label: "Job - PDF URL", name: "pdfUrl", widget: "string", required: false }
+          - label: "Application CTA"
+            name: "applicationCta"
+            widget: "object"
+            fields:
+              - { label: "CTA - Title", name: "title", widget: "string", required: true }
+              - { label: "CTA - Description", name: "description", widget: "text", required: true }
+              - { label: "CTA - Contact Name", name: "contactName", widget: "string", required: true }
+              - { label: "CTA - Company", name: "contactCompany", widget: "string", required: true }
+              - { label: "CTA - Address", name: "contactAddress", widget: "text", required: true }
+              - { label: "CTA - Email", name: "contactEmail", widget: "string", required: true }
+              - { label: "CTA - Button Text", name: "ctaText", widget: "string", required: true }
+              - { label: "CTA - Button URL", name: "ctaUrl", widget: "string", required: true }
+
+      # Karriere (EN)
+      - name: "karriere_en"
+        label: "Careers (EN)"
+        file: "src/_data/en/pages/karriere.json"
+        fields: *karriere_fields
+
   # ─── Translations ───────────────────────────────────────────────
   - name: "translations"
     label: "Translations"

@@ -1,0 +1,73 @@
+{
+  "pageTitle": "Careers",
+  "pageDescription": "FAS Expedition – Career opportunities at FAS Expedition. Join our team in Lammersdorf.",
+  "altSlug": { "de": "karriere", "en": "careers" },
+  "hero": {
+    "title": "Careers",
+    "subtitle": "Join the team! We're constantly looking for reinforcements for our young team."
+  },
+  "intro": "FAS Expedition GmbH is a young company in the expedition vehicle market. With our two main divisions \"Vehicle Construction\" and \"Cabin Construction\", we offer our customers an off-road capable world-travel vehicle from a single source.\n\nIf you share our passion for travel or can imagine being part of the world of expedition vehicles — check our current openings below. We look forward to hearing from you!",
+  "jobs": [
+    {
+      "title": "Interior Builder / Caravan Technician (m/f/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Cabin Construction",
+      "tasks": [
+        "Interior construction of premium expedition vehicles",
+        "Installation of CNC-manufactured furniture components",
+        "Routing and connection of electrical, water, heating, and climate systems",
+        "Installation of solar systems, TV, WiFi infrastructure, and appliances",
+        "Fitting additional equipment: exterior lighting, camera/alarm systems, outdoor kitchens"
+      ],
+      "profile": [
+        "Vocational training in caravan/electrical/installation technology, vehicle electronics, or boat building",
+        "Passion for visual and functional perfection with premium materials",
+        "Experience with mobile IT infrastructure and smart device control",
+        "Good communication skills and willingness to represent our products at trade fairs"
+      ],
+      "benefits": [
+        "Flexible working hours and models",
+        "Part-time employment possible",
+        "Direct reporting to the Technical Director"
+      ],
+      "ctaText": "Apply Now",
+      "ctaUrl": "/en/contact/",
+      "pdfUrl": "/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf"
+    },
+    {
+      "title": "Metalworker / Commercial Vehicle Technician (m/f/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Vehicle Construction",
+      "tasks": [
+        "Manufacturing and assembly of attachments: subframes, rear carriers, storage boxes, fuel tanks, and more",
+        "Chassis and driver cabin modifications",
+        "Fitting additional equipment: lighting, camera systems, winches, tire pressure regulation systems"
+      ],
+      "profile": [
+        "Vocational training in metalwork or vehicle construction, preferably commercial vehicles",
+        "Passion for (commercial) vehicles and working with steel",
+        "Steady hand with welding equipment (TIG and MIG/MAG)",
+        "Solid knowledge in vehicle electrics, electronics, hydraulics, and pneumatics",
+        "Good communication skills and team spirit"
+      ],
+      "benefits": [
+        "Flexible working hours and models",
+        "Part-time employment possible",
+        "Reporting to the Vehicle Construction Workshop Manager"
+      ],
+      "ctaText": "Apply Now",
+      "ctaUrl": "/en/contact/",
+      "pdfUrl": "/assets/downloads/stellenausschreibung-schlosser-2025.pdf"
+    }
+  ],
+  "applicationCta": {
+    "title": "Apply Now",
+    "description": "We look forward to your digital application via email with your CV.",
+    "contactName": "Márika Böttcher",
+    "contactCompany": "FAS Expedition GmbH",
+    "contactAddress": "Trafoweg 2-4\n52152 Lammersdorf",
+    "contactEmail": "marika.boettcher@fas-expedition.de",
+    "ctaText": "Contact Form",
+    "ctaUrl": "/en/contact/"
+  }
+}

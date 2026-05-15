@@ -1,0 +1,73 @@
+{
+  "pageTitle": "Karriere",
+  "pageDescription": "FAS Expedition – Karrieremöglichkeiten bei FAS Expedition. Werde Teil unseres Teams in Lammersdorf.",
+  "altSlug": { "de": "karriere", "en": "careers" },
+  "hero": {
+    "title": "Karriere",
+    "subtitle": "Werde Teil des Teams! Wir sind ständig auf der Suche nach Verstärkung für unser junges Team."
+  },
+  "intro": "Die FAS Expedition GmbH ist ein junges Unternehmen auf dem Markt für Expeditionsmobile. Mit unseren zwei Hauptsparten Fahrzeugbau und Wohnkabinenbau bieten wir unserem Kunden ein off-road taugliches Weltreisemobil aus einer Hand.\n\nTeilst du unsere Leidenschaft fürs Reisen oder kannst du dir vorstellen, Teil der Welt der Reisemobile zu werden — dann schau einfach, ob bei den derzeitigen offenen Stellen etwas für dich dabei ist. Wir freuen uns auf deine Kontaktaufnahme!",
+  "jobs": [
+    {
+      "title": "Interieurbauer / Caravantechniker (m/w/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Wohnkabinenbau",
+      "tasks": [
+        "Innenausbau von hochwertigen Reisemobilen",
+        "Einbau von CNC-gefertigten Möbelbauteilen",
+        "Verlegung und Anschluss von Elektro-, Wasser-, Heizungs- und Klimatisierungsanlagen",
+        "Installation von Solaranlagen, TV-Systemen, W/LAN-Infrastruktur und Elektrogeräten",
+        "Anbringen von Zusatzausstattung wie Außenbeleuchtung, Kamera-, Alarm- und Treppensystemen sowie Außenküchen"
+      ],
+      "profile": [
+        "Eine Berufsausbildung im Bereich Caravan-/Elektro-/Installationstechnik, Nutzfahrzeugelektronik oder Bootsbau",
+        "Eine Leidenschaft fürs optisch und funktional Perfekte und einen sorgfältigen Umgang mit verschiedensten hochwertigen Werkstoffen",
+        "Erfahrung mit mobiler IT-Infrastruktur und smarter Gerätesteuerung",
+        "Eine gute Kommunikationsfähigkeit und die Bereitschaft, unser Produkt auch auf Messen vertreten und erklären zu können"
+      ],
+      "benefits": [
+        "Flexible Arbeitszeiten und -modelle",
+        "Teilzeit-Beschäftigung möglich",
+        "Direkte Unterstellung unter den Technischen Geschäftsführer"
+      ],
+      "ctaText": "Jetzt bewerben",
+      "ctaUrl": "/de/kontakt/",
+      "pdfUrl": "/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf"
+    },
+    {
+      "title": "Schlosser / Nutzfahrzeugtechniker (m/w/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Fahrzeugbau",
+      "tasks": [
+        "Herstellung und Montage von Anbauten aller Art an bestehenden und neuen Reisemobilen wie Zwischenrahmen, Heckträger, Staukisten, Tankanlagen und vieles mehr",
+        "Modifikationen an Chassis und Fahrerkabine",
+        "Anbringen von Zusatzausstattung wie Beleuchtung, Kamera-Systeme, Seilwinden oder Reifendruckregelanlagen"
+      ],
+      "profile": [
+        "Eine Berufsausbildung im Bereich Metall- oder Fahrzeugbau, bevorzugt im Nutzfahrzeugsegment",
+        "Eine Leidenschaft für (Nutz-)Fahrzeuge und den Werkstoff Stahl",
+        "Eine ruhige und geübte Hand am Schweißgerät (WIG und MAG)",
+        "Fundierte Kenntnisse in den Bereichen Fahrzeugelektrik, -elektronik, Hydraulik und Pneumatik",
+        "Eine gute Kommunikationsfähigkeit und Teamgeist"
+      ],
+      "benefits": [
+        "Flexible Arbeitszeiten und -modelle",
+        "Teilzeit-Beschäftigung möglich",
+        "Unterstellung unter den Werkstattleiter Fahrzeugbau"
+      ],
+      "ctaText": "Jetzt bewerben",
+      "ctaUrl": "/de/kontakt/",
+      "pdfUrl": "/assets/downloads/stellenausschreibung-schlosser-2025.pdf"
+    }
+  ],
+  "applicationCta": {
+    "title": "Bewirb dich jetzt",
+    "description": "Wir freuen uns auf deine digitale Bewerbung per E-Mail mit Lebenslauf.",
+    "contactName": "Márika Böttcher",
+    "contactCompany": "FAS Expedition GmbH",
+    "contactAddress": "Trafoweg 2-4\n52152 Lammersdorf",
+    "contactEmail": "marika.boettcher@fas-expedition.de",
+    "ctaText": "Zum Kontaktformular",
+    "ctaUrl": "/de/kontakt/"
+  }
+}

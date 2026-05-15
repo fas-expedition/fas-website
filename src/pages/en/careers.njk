@@ -1,11 +1,8 @@
 ---
-pageTitle: "Careers"
-pageDescription: "FAS Expedition – Career opportunities at FAS Expedition. Join our team in Lammersdorf."
-altSlug:
-  de: "karriere"
-  en: "careers"
+layout: layouts/base.njk
 ---
 
+{% set page_data = en.pages.karriere %}
 {% from "macros/buttons.njk" import primaryBtn, secondaryBtn %}
 
 {# Hero #}
@@ -13,135 +10,94 @@ altSlug:
   <div class="absolute inset-0 bg-zinc-950"></div>
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
   <div class="relative z-10 text-center px-6">
-    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">Careers</h1>
-    <p class="text-xl lg:text-2xl text-zinc-300 max-w-3xl mx-auto">Join the team! We're constantly looking for reinforcements for our young team.</p>
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">{{ page_data.hero.title }}</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300 max-w-3xl mx-auto">{{ page_data.hero.subtitle }}</p>
   </div>
 </section>
 
 {# Intro #}
 <section class="bg-zinc-950 py-24">
   <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
-    <p class="text-zinc-300 text-lg leading-relaxed mb-8">FAS Expedition GmbH is a young company in the expedition vehicle market. With our two main divisions "Vehicle Construction" and "Cabin Construction", we offer our customers an off-road capable world-travel vehicle from a single source.</p>
-    <p class="text-zinc-300 text-lg leading-relaxed">If you share our passion for travel or can imagine being part of the world of expedition vehicles — check our current openings below. We look forward to hearing from you!</p>
+    {% for paragraph in page_data.intro.split("\n\n") %}
+      <p class="text-zinc-300 text-lg leading-relaxed {% if not loop.last %}mb-8{% endif %}">{{ paragraph }}</p>
+    {% endfor %}
   </div>
 </section>
 
-{# Job 1: Caravan Technician #}
-<section id="caravan-technician" class="bg-black py-24 lg:py-32 border-t border-zinc-900">
+{# Job Listings #}
+{% for job in page_data.jobs %}
+<section id="{{ job.title | slugify }}" class="{% if loop.index is odd %}bg-black{% else %}bg-zinc-950{% endif %} py-24 lg:py-32 border-t border-zinc-900">
   <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
     <div class="mb-8">
-      <span class="text-xs uppercase tracking-widest text-zinc-500 mb-2 block">Job Opening</span>
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase">Interior Builder / Caravan Technician (m/f/d)</h2>
-      <p class="text-zinc-400 mt-2">Location: Lammersdorf, Eifel · Division: Cabin Construction</p>
+      <span class="text-xs uppercase tracking-widest text-zinc-500 mb-2 block">{{ "Stellenausschreibung" if locale == "de" else "Job Opening" }}</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase">{{ job.title }}</h2>
+      <p class="text-zinc-400 mt-2">{{ "Standort" if locale == "de" else "Location" }}: {{ job.location }} · {{ "Sparte" if locale == "de" else "Division" }}: {{ job.division }}</p>
     </div>
 
     <div class="space-y-8 text-zinc-300 leading-relaxed">
       <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Your Tasks</h3>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">{{ "Deine Aufgaben" if locale == "de" else "Your Tasks" }}</h3>
         <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Interior construction of premium expedition vehicles</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Installation of CNC-manufactured furniture components</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Routing and connection of electrical, water, heating, and climate systems</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Installation of solar systems, TV, WiFi infrastructure, and appliances</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Fitting additional equipment: exterior lighting, camera/alarm systems, outdoor kitchens</span></li>
+          {% for task in job.tasks %}
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>{{ task }}</span>
+          </li>
+          {% endfor %}
         </ul>
       </div>
 
       <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Your Profile</h3>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">{{ "Dein Profil" if locale == "de" else "Your Profile" }}</h3>
         <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Vocational training in caravan/electrical/installation technology, vehicle electronics, or boat building</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Passion for visual and functional perfection with premium materials</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Experience with mobile IT infrastructure and smart device control</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Good communication skills and willingness to represent our products at trade fairs</span></li>
+          {% for item in job.profile %}
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>{{ item }}</span>
+          </li>
+          {% endfor %}
         </ul>
       </div>
 
       <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">We Offer</h3>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">{{ "Wir bieten" if locale == "de" else "We Offer" }}</h3>
         <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Flexible working hours and models</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Part-time employment possible</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Direct reporting to the Technical Director</span></li>
+          {% for item in job.benefits %}
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>{{ item }}</span>
+          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
 
     <div class="mt-10 flex flex-wrap gap-4">
-      {{ primaryBtn("Apply Now", "/en/contact/", true) }}
-      <a href="/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
+      {{ primaryBtn(job.ctaText, job.ctaUrl, true) }}
+      {% if job.pdfUrl %}
+      <a href="{{ job.pdfUrl }}" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
         <span>PDF Download</span>
       </a>
+      {% endif %}
     </div>
   </div>
 </section>
+{% endfor %}
 
-{# Job 2: Metalworker #}
-<section id="metalworker" class="bg-zinc-950 py-24 lg:py-32 border-t border-zinc-900">
-  <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
-    <div class="mb-8">
-      <span class="text-xs uppercase tracking-widest text-zinc-500 mb-2 block">Job Opening</span>
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase">Metalworker / Commercial Vehicle Technician (m/f/d)</h2>
-      <p class="text-zinc-400 mt-2">Location: Lammersdorf, Eifel · Division: Vehicle Construction</p>
-    </div>
-
-    <div class="space-y-8 text-zinc-300 leading-relaxed">
-      <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Your Tasks</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Manufacturing and assembly of attachments: subframes, rear carriers, storage boxes, fuel tanks, and more</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Chassis and driver cabin modifications</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Fitting additional equipment: lighting, camera systems, winches, tire pressure regulation systems</span></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Your Profile</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Vocational training in metalwork or vehicle construction, preferably commercial vehicles</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Passion for (commercial) vehicles and working with steel</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Steady hand with welding equipment (TIG and MIG/MAG)</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Solid knowledge in vehicle electrics, electronics, hydraulics, and pneumatics</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Good communication skills and team spirit</span></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">We Offer</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Flexible working hours and models</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Part-time employment possible</span></li>
-          <li class="flex items-start space-x-3"><span class="text-white mt-1">•</span><span>Reporting to the Vehicle Construction Workshop Manager</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-10 flex flex-wrap gap-4">
-      {{ primaryBtn("Apply Now", "/en/contact/", true) }}
-      <a href="/assets/downloads/stellenausschreibung-schlosser-2025.pdf" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-        <span>PDF Download</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-{# Apply CTA #}
+{# Application CTA #}
 <section class="bg-black py-24 lg:py-32 border-t border-zinc-900">
   <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
-    <h2 class="text-3xl font-bold tracking-wider uppercase mb-6">Apply Now</h2>
-    <p class="text-zinc-300 text-lg leading-relaxed mb-4">We look forward to your digital application via email with your CV.</p>
+    <h2 class="text-3xl font-bold tracking-wider uppercase mb-6">{{ page_data.applicationCta.title }}</h2>
+    <p class="text-zinc-300 text-lg leading-relaxed mb-4">{{ page_data.applicationCta.description }}</p>
     <div class="border border-zinc-800 p-8 mb-10 text-left">
-      <p class="text-xs uppercase tracking-widest text-zinc-500 mb-2">Please contact directly:</p>
-      <p class="text-white font-bold">Márika Böttcher</p>
-      <p class="text-zinc-400 mt-1">FAS Expedition GmbH<br>Trafoweg 2-4<br>52152 Lammersdorf</p>
-      <a href="mailto:marika.boettcher@fas-expedition.de" class="text-white underline hover:text-zinc-300 transition-colors mt-3 inline-block">marika.boettcher@fas-expedition.de</a>
+      <p class="text-xs uppercase tracking-widest text-zinc-500 mb-2">{{ "Kontaktaufnahme bitte direkt an:" if locale == "de" else "Please contact directly:" }}</p>
+      <p class="text-white font-bold">{{ page_data.applicationCta.contactName }}</p>
+      <p class="text-zinc-400 mt-1">{{ page_data.applicationCta.contactCompany }}<br>{{ page_data.applicationCta.contactAddress | replace("\n", "<br>") | safe }}</p>
+      <a href="mailto:{{ page_data.applicationCta.contactEmail }}" class="text-white underline hover:text-zinc-300 transition-colors mt-3 inline-block">{{ page_data.applicationCta.contactEmail }}</a>
     </div>
-    {{ primaryBtn("Contact Form", "/en/contact/", true) }}
+    {{ primaryBtn(page_data.applicationCta.ctaText, page_data.applicationCta.ctaUrl, true) }}
   </div>
 </section>
