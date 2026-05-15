@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>FAS Expedition CMS</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <noscript>
+    <p>This CMS requires JavaScript to function. Please enable JavaScript in your browser.</p>
+  </noscript>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Register preview styles (site's compiled Tailwind CSS)
+    CMS.registerPreviewStyle("/assets/css/main.css");
+
+    // Register preview template for page collections
+    var PagePreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var hero = entry.getIn(["data", "hero"]);
+        var features = entry.getIn(["data", "features"]);
+        return h("div", { style: { background: "#000", color: "#fff", padding: "2rem", fontFamily: "system-ui, sans-serif" } },
+          hero && h("section", { style: { marginBottom: "3rem" } },
+            h("h1", { style: { textTransform: "uppercase", fontSize: "2.5rem", fontWeight: "bold", letterSpacing: "0.05em" } },
+              hero.get("title")
+            ),
+            hero.get("subtitle") && h("p", { style: { color: "#d4d4d8", fontSize: "1.25rem", marginTop: "0.5rem" } },
+              hero.get("subtitle")
+            ),
+            h("p", { style: { color: "#a1a1aa", fontSize: "1.125rem", marginTop: "1rem" } },
+              hero.get("description")
+            )
+          ),
+          features && h("section", {},
+            h("h2", { style: { textTransform: "uppercase", fontSize: "1.5rem", fontWeight: "bold", marginBottom: "1.5rem" } },
+              features.get("title")
+            )
+          )
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate("home_de", PagePreview);
+    CMS.registerPreviewTemplate("home_en", PagePreview);
+    CMS.registerPreviewTemplate("expeditionsmobile_de", PagePreview);
+    CMS.registerPreviewTemplate("expeditionsmobile_en", PagePreview);
+    CMS.registerPreviewTemplate("modular_systems_de", PagePreview);
+    CMS.registerPreviewTemplate("modular_systems_en", PagePreview);
+    CMS.registerPreviewTemplate("brabus_de", PagePreview);
+    CMS.registerPreviewTemplate("brabus_en", PagePreview);
+  </script>
+</body>
+</html>

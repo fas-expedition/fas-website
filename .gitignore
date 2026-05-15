@@ -34,3 +34,5 @@ npm-debug.log*
 # package-lock.json
 
 .kiro
+# Local Netlify folder
+.netlify

@@ -1,0 +1,349 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+media_library:
+  max_file_size: 5242880
+  allowed_extensions: ["jpg", "jpeg", "png", "webp", "gif", "svg"]
+
+collections:
+  # ─── Page Content ───────────────────────────────────────────────
+  - name: "pages"
+    label: "Pages"
+    files:
+      # Home (DE)
+      - name: "home_de"
+        label: "Home (DE)"
+        file: "src/_data/de/pages/home.json"
+        fields:
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Hero - Description", name: "description", widget: "text", required: true }
+              - { label: "Hero - Image", name: "image", widget: "image", required: true }
+              - { label: "Hero - CTA Text", name: "ctaText", widget: "string", required: true }
+              - { label: "Hero - CTA URL", name: "ctaUrl", widget: "string", required: true }
+          - label: "Features"
+            name: "features"
+            widget: "object"
+            fields:
+              - { label: "Features - Title", name: "title", widget: "string", required: true }
+              - { label: "Features - Subtitle", name: "subtitle", widget: "text", required: false }
+              - label: "Features - Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon", name: "icon", widget: "string", required: true }
+                  - { label: "Title", name: "title", widget: "string", required: true }
+                  - { label: "Description", name: "description", widget: "text", required: true }
+          - label: "Vehicles"
+            name: "vehicles"
+            widget: "object"
+            fields:
+              - { label: "Vehicles - Title", name: "title", widget: "string", required: true }
+              - label: "Vehicles - Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "ID", name: "id", widget: "string", required: true }
+                  - { label: "Title", name: "title", widget: "string", required: true }
+                  - { label: "Description", name: "description", widget: "text", required: true }
+                  - { label: "Image", name: "image", widget: "image", required: true }
+                  - { label: "Specs", name: "specs", widget: "string", required: true }
+          - label: "CTA Section"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "CTA - Title", name: "title", widget: "string", required: true }
+              - { label: "CTA - Description", name: "description", widget: "text", required: true }
+              - { label: "CTA - Button Text", name: "ctaText", widget: "string", required: true }
+              - { label: "CTA - Button URL", name: "ctaUrl", widget: "string", required: true }
+
+      # Home (EN)
+      - name: "home_en"
+        label: "Home (EN)"
+        file: "src/_data/en/pages/home.json"
+        fields:
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Hero - Description", name: "description", widget: "text", required: true }
+              - { label: "Hero - Image", name: "image", widget: "image", required: true }
+              - { label: "Hero - CTA Text", name: "ctaText", widget: "string", required: true }
+              - { label: "Hero - CTA URL", name: "ctaUrl", widget: "string", required: true }
+          - label: "Features"
+            name: "features"
+            widget: "object"
+            fields:
+              - { label: "Features - Title", name: "title", widget: "string", required: true }
+              - { label: "Features - Subtitle", name: "subtitle", widget: "text", required: false }
+              - label: "Features - Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon", name: "icon", widget: "string", required: true }
+                  - { label: "Title", name: "title", widget: "string", required: true }
+                  - { label: "Description", name: "description", widget: "text", required: true }
+          - label: "Vehicles"
+            name: "vehicles"
+            widget: "object"
+            fields:
+              - { label: "Vehicles - Title", name: "title", widget: "string", required: true }
+              - label: "Vehicles - Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "ID", name: "id", widget: "string", required: true }
+                  - { label: "Title", name: "title", widget: "string", required: true }
+                  - { label: "Description", name: "description", widget: "text", required: true }
+                  - { label: "Image", name: "image", widget: "image", required: true }
+                  - { label: "Specs", name: "specs", widget: "string", required: true }
+          - label: "CTA Section"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "CTA - Title", name: "title", widget: "string", required: true }
+              - { label: "CTA - Description", name: "description", widget: "text", required: true }
+              - { label: "CTA - Button Text", name: "ctaText", widget: "string", required: true }
+              - { label: "CTA - Button URL", name: "ctaUrl", widget: "string", required: true }
+
+      # Expeditionsmobile (DE)
+      - name: "expeditionsmobile_de"
+        label: "Expeditionsmobile (DE)"
+        file: "src/_data/de/pages/expeditionsmobile.json"
+        fields: &expeditionsmobile_fields
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Hero - Description", name: "description", widget: "text", required: false }
+              - { label: "Hero - Image", name: "image", widget: "image", required: true }
+              - { label: "Hero - CTA Text", name: "ctaText", widget: "string", required: false }
+              - { label: "Hero - CTA URL", name: "ctaUrl", widget: "string", required: false }
+          - label: "Vehicle Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Category - ID", name: "id", widget: "string", required: true }
+              - { label: "Category - Title", name: "title", widget: "string", required: true }
+              - { label: "Category - Description", name: "description", widget: "text", required: true }
+              - { label: "Category - Image", name: "image", widget: "image", required: true }
+              - { label: "Category - Specs", name: "specs", widget: "string", required: false }
+              - { label: "Category - Link", name: "link", widget: "string", required: false }
+
+      # Expeditionsmobile (EN)
+      - name: "expeditionsmobile_en"
+        label: "Expeditionsmobile (EN)"
+        file: "src/_data/en/pages/expeditionsmobile.json"
+        fields: *expeditionsmobile_fields
+
+      # Modular Systems (DE)
+      - name: "modular_systems_de"
+        label: "Modulare Systeme (DE)"
+        file: "src/_data/de/pages/modular-systems.json"
+        fields: &modular_systems_fields
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Hero - Description", name: "description", widget: "text", required: false }
+              - { label: "Hero - Image", name: "image", widget: "image", required: true }
+          - label: "Modules"
+            name: "modules"
+            widget: "list"
+            fields:
+              - { label: "Module - Title", name: "title", widget: "string", required: true }
+              - { label: "Module - Description", name: "description", widget: "text", required: true }
+              - { label: "Module - Image", name: "image", widget: "image", required: false }
+              - label: "Module - Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+
+      # Modular Systems (EN)
+      - name: "modular_systems_en"
+        label: "Modular Systems (EN)"
+        file: "src/_data/en/pages/modular-systems.json"
+        fields: *modular_systems_fields
+
+      # BRABUS (DE)
+      - name: "brabus_de"
+        label: "BRABUS (DE)"
+        file: "src/_data/de/pages/brabus.json"
+        fields: &brabus_fields
+          - { label: "Page - Title", name: "pageTitle", widget: "string", required: true }
+          - { label: "Page - Description", name: "pageDescription", widget: "text", required: true }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero - Title", name: "title", widget: "string", required: true }
+              - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Hero - Description", name: "description", widget: "text", required: true }
+              - { label: "Hero - Image", name: "image", widget: "image", required: true }
+          - label: "Editions"
+            name: "editions"
+            widget: "list"
+            fields:
+              - { label: "Edition - Title", name: "title", widget: "string", required: true }
+              - { label: "Edition - Description", name: "description", widget: "text", required: true }
+              - { label: "Edition - Image", name: "image", widget: "image", required: true }
+              - { label: "Edition - Power", name: "power", widget: "string", required: true }
+              - { label: "Edition - Torque", name: "torque", widget: "string", required: false }
+
+      # BRABUS (EN)
+      - name: "brabus_en"
+        label: "BRABUS (EN)"
+        file: "src/_data/en/pages/brabus.json"
+        fields: *brabus_fields
+
+  # ─── Translations ───────────────────────────────────────────────
+  - name: "translations"
+    label: "Translations"
+    files:
+      - name: "translations_de"
+        label: "Translations (DE)"
+        file: "src/_data/de/translations.json"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Home", name: "nav.home", widget: "string" }
+              - { label: "Expeditionsmobile", name: "nav.expeditionMobile", widget: "string" }
+              - { label: "Modulare Systeme", name: "nav.modularSystems", widget: "string" }
+              - { label: "BRABUS", name: "nav.brabus", widget: "string" }
+              - { label: "Konfigurator", name: "nav.configurator", widget: "string" }
+              - { label: "Blog", name: "nav.blog", widget: "string" }
+              - { label: "Kundenportal", name: "nav.customerPortal", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "hero.title", widget: "string" }
+              - { label: "Subtitle", name: "hero.subtitle", widget: "string" }
+              - { label: "CTA", name: "hero.cta", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Company", name: "footer.company", widget: "string" }
+              - { label: "About", name: "footer.about", widget: "string" }
+              - { label: "Team", name: "footer.team", widget: "string" }
+              - { label: "Careers", name: "footer.careers", widget: "string" }
+              - { label: "Contact", name: "footer.contact", widget: "string" }
+              - { label: "Products", name: "footer.products", widget: "string" }
+              - { label: "4x4", name: "footer.4x4", widget: "string" }
+              - { label: "6x6", name: "footer.6x6", widget: "string" }
+              - { label: "8x8", name: "footer.8x8", widget: "string" }
+              - { label: "Modular Systems", name: "footer.modularSystems", widget: "string" }
+              - { label: "Support", name: "footer.support", widget: "string" }
+              - { label: "Documentation", name: "footer.documentation", widget: "string" }
+              - { label: "Warranty", name: "footer.warranty", widget: "string" }
+              - { label: "Service", name: "footer.service", widget: "string" }
+              - { label: "Rights", name: "footer.rights", widget: "string" }
+              - { label: "Copyright", name: "footer.copyright", widget: "string" }
+              - { label: "Privacy", name: "footer.privacy", widget: "string" }
+              - { label: "Terms", name: "footer.terms", widget: "string" }
+              - { label: "Tagline", name: "footer.tagline", widget: "string" }
+          - label: "UI"
+            name: "ui"
+            widget: "object"
+            fields:
+              - { label: "Explore More", name: "ui.exploreMore", widget: "string" }
+              - { label: "Configurator", name: "ui.configurator", widget: "string" }
+              - { label: "Inquire Now", name: "ui.inquireNow", widget: "string" }
+              - { label: "Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
+              - { label: "Coming Soon", name: "ui.comingSoon", widget: "string" }
+              - { label: "Back to Home", name: "ui.backToHome", widget: "string" }
+
+      - name: "translations_en"
+        label: "Translations (EN)"
+        file: "src/_data/en/translations.json"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Home", name: "nav.home", widget: "string" }
+              - { label: "Expedition Vehicles", name: "nav.expeditionMobile", widget: "string" }
+              - { label: "Modular Systems", name: "nav.modularSystems", widget: "string" }
+              - { label: "BRABUS", name: "nav.brabus", widget: "string" }
+              - { label: "Configurator", name: "nav.configurator", widget: "string" }
+              - { label: "Blog", name: "nav.blog", widget: "string" }
+              - { label: "Customer Portal", name: "nav.customerPortal", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "hero.title", widget: "string" }
+              - { label: "Subtitle", name: "hero.subtitle", widget: "string" }
+              - { label: "CTA", name: "hero.cta", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Company", name: "footer.company", widget: "string" }
+              - { label: "About", name: "footer.about", widget: "string" }
+              - { label: "Team", name: "footer.team", widget: "string" }
+              - { label: "Careers", name: "footer.careers", widget: "string" }
+              - { label: "Contact", name: "footer.contact", widget: "string" }
+              - { label: "Products", name: "footer.products", widget: "string" }
+              - { label: "4x4", name: "footer.4x4", widget: "string" }
+              - { label: "6x6", name: "footer.6x6", widget: "string" }
+              - { label: "8x8", name: "footer.8x8", widget: "string" }
+              - { label: "Modular Systems", name: "footer.modularSystems", widget: "string" }
+              - { label: "Support", name: "footer.support", widget: "string" }
+              - { label: "Documentation", name: "footer.documentation", widget: "string" }
+              - { label: "Warranty", name: "footer.warranty", widget: "string" }
+              - { label: "Service", name: "footer.service", widget: "string" }
+              - { label: "Rights", name: "footer.rights", widget: "string" }
+              - { label: "Copyright", name: "footer.copyright", widget: "string" }
+              - { label: "Privacy", name: "footer.privacy", widget: "string" }
+              - { label: "Terms", name: "footer.terms", widget: "string" }
+              - { label: "Tagline", name: "footer.tagline", widget: "string" }
+          - label: "UI"
+            name: "ui"
+            widget: "object"
+            fields:
+              - { label: "Explore More", name: "ui.exploreMore", widget: "string" }
+              - { label: "Configurator", name: "ui.configurator", widget: "string" }
+              - { label: "Inquire Now", name: "ui.inquireNow", widget: "string" }
+              - { label: "Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
+              - { label: "Coming Soon", name: "ui.comingSoon", widget: "string" }
+              - { label: "Back to Home", name: "ui.backToHome", widget: "string" }
+
+  # ─── Site Settings ──────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site_settings"
+        label: "Site Settings"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Name", name: "name", widget: "string", required: true, pattern: [".{1,100}", "Maximum 100 characters"] }
+          - { label: "Site URL", name: "url", widget: "string", required: true, pattern: ["^https://.*", "URL must start with https://"] }
+          - { label: "Default Locale", name: "defaultLocale", widget: "select", options: ["de", "en"], required: true }
+          - { label: "Locales", name: "locales", widget: "hidden", default: ["de", "en"] }

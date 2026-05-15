@@ -4,11 +4,12 @@ import * as cheerio from 'cheerio';
 
 /**
  * Returns all HTML file paths from _site/ recursively,
- * excluding the root redirect page (_site/index.html).
+ * excluding the root redirect page (_site/index.html) and
+ * the CMS admin panel (_site/admin/).
  */
 export function getAllHtmlFiles(): string[] {
   return globSync('_site/**/*.html').filter(
-    (f) => f !== '_site/index.html'
+    (f) => f !== '_site/index.html' && !f.startsWith('_site/admin/')
   );
 }
 
