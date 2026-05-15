@@ -10,6 +10,7 @@
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/{{ altSlug.de }}">
   <meta property="og:locale" content="{{ 'de_DE' if locale == 'de' else 'en_GB' }}">
   <link rel="stylesheet" href="/assets/css/output.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="bg-black text-white font-sans antialiased">
   {% include "partials/navigation.njk" %}
@@ -20,6 +21,18 @@
 
   {% include "partials/footer.njk" %}
 
+  <script>
+    // Handle Identity Widget redirect after email confirmation
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
   <script>
     (function() {
       var nav = document.querySelector('nav');
