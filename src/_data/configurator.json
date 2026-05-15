@@ -54,7 +54,7 @@
         "de": "Optimiert für Wendigkeit und schmale Pisten. 2 Schlafplätze, effiziente Raumnutzung.",
         "en": "Optimized for agility and narrow trails. 2 berths, efficient use of space."
       },
-      "image": "/assets/images/configurator/cabins/compact.webp",
+      "image": "/assets/images/configurator/cabins/compact.svg",
       "platformCompatibility": ["4x4", "6x6"]
     },
     {
@@ -64,7 +64,7 @@
         "de": "Ausgewogenes Raumangebot für komfortables Reisen. 2–4 Schlafplätze, vollwertige Küche und Bad.",
         "en": "Balanced living space for comfortable travel. 2–4 berths, full kitchen and bathroom."
       },
-      "image": "/assets/images/configurator/cabins/standard.webp",
+      "image": "/assets/images/configurator/cabins/standard.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"]
     },
     {
@@ -74,7 +74,7 @@
         "de": "Maximaler Wohnraum für Langzeitreisen. 4–6 Schlafplätze, separate Schlaf- und Wohnbereiche.",
         "en": "Maximum living space for long-term travel. 4–6 berths, separate sleeping and living areas."
       },
-      "image": "/assets/images/configurator/cabins/xl.webp",
+      "image": "/assets/images/configurator/cabins/xl.svg",
       "platformCompatibility": ["6x6", "8x8"]
     }
   ],
@@ -90,7 +90,7 @@
         "de": ["Wassertank 200L", "Solaranlage 400W", "Standheizung", "Kompressor-Kühlschrank", "LED-Außenbeleuchtung"],
         "en": ["200L water tank", "400W solar system", "Parking heater", "Compressor refrigerator", "LED exterior lighting"]
       },
-      "image": "/assets/images/configurator/equipment/expedition.webp",
+      "image": "/assets/images/configurator/equipment/expedition.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 45000
     },
@@ -105,7 +105,7 @@
         "de": ["Wassertank 400L", "Solaranlage 800W", "Klimaanlage", "Lithium-Batteriesystem", "Fußbodenheizung", "Induktionskochfeld"],
         "en": ["400L water tank", "800W solar system", "Air conditioning", "Lithium battery system", "Underfloor heating", "Induction cooktop"]
       },
-      "image": "/assets/images/configurator/equipment/luxury.webp",
+      "image": "/assets/images/configurator/equipment/luxury.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 85000
     },
@@ -120,7 +120,7 @@
         "de": ["Wassertank 300L mit NBC-Filter", "Solaranlage 600W", "Standheizung", "Tarnbeleuchtung", "EMP-geschützte Elektronik", "Ballistischer Schutz"],
         "en": ["300L water tank with NBC filter", "600W solar system", "Parking heater", "Blackout lighting", "EMP-protected electronics", "Ballistic protection"]
       },
-      "image": "/assets/images/configurator/equipment/military.webp",
+      "image": "/assets/images/configurator/equipment/military.svg",
       "platformCompatibility": ["6x6", "8x8"],
       "price": 120000
     }
@@ -134,7 +134,7 @@
         "en": "Extended solar capacity for maximum self-sufficiency"
       },
       "category": "technology",
-      "image": "/assets/images/configurator/accessories/solar-xl.webp",
+      "image": "/assets/images/configurator/accessories/solar-xl.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 8500
     },
@@ -146,7 +146,7 @@
         "en": "Global internet connection via Starlink terminal"
       },
       "category": "technology",
-      "image": "/assets/images/configurator/accessories/satellite.webp",
+      "image": "/assets/images/configurator/accessories/satellite.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 4200
     },
@@ -158,7 +158,7 @@
         "en": "12t pulling force, remote-controlled, with Dyneema rope"
       },
       "category": "exterior",
-      "image": "/assets/images/configurator/accessories/winch.webp",
+      "image": "/assets/images/configurator/accessories/winch.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 6800
     },
@@ -170,7 +170,7 @@
         "en": "Modular aluminum roof rack with ladder and mounting points"
       },
       "category": "exterior",
-      "image": "/assets/images/configurator/accessories/roof-rack.webp",
+      "image": "/assets/images/configurator/accessories/roof-rack.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 3200
     },
@@ -182,7 +182,7 @@
         "en": "Real wood veneer, leather upholstery, and ambient lighting"
       },
       "category": "interior",
-      "image": "/assets/images/configurator/accessories/interior-upgrade.webp",
+      "image": "/assets/images/configurator/accessories/interior-upgrade.svg",
       "platformCompatibility": ["6x6", "8x8"],
       "price": 12000
     },
@@ -194,7 +194,7 @@
         "en": "Multi-stage filter system with UV disinfection for drinking water from any source"
       },
       "category": "technology",
-      "image": "/assets/images/configurator/accessories/water-purification.webp",
+      "image": "/assets/images/configurator/accessories/water-purification.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 3800
     },
@@ -206,7 +206,7 @@
         "en": "Raised air intake for water crossings up to 1.2m"
       },
       "category": "exterior",
-      "image": "/assets/images/configurator/accessories/snorkel.webp",
+      "image": "/assets/images/configurator/accessories/snorkel.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 2400
     },
@@ -218,7 +218,7 @@
         "en": "Swiveling rear carrier for up to 4 bikes or 2 e-bikes"
       },
       "category": "exterior",
-      "image": "/assets/images/configurator/accessories/bike-rack.webp",
+      "image": "/assets/images/configurator/accessories/bike-rack.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 1800
     },
@@ -230,7 +230,7 @@
         "en": "Electric side awning 3.5m with LED lighting"
       },
       "category": "exterior",
-      "image": "/assets/images/configurator/accessories/awning.webp",
+      "image": "/assets/images/configurator/accessories/awning.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 2800
     },
@@ -242,7 +242,7 @@
         "en": "Surround camera system with bird's-eye view for safe maneuvering"
       },
       "category": "safety",
-      "image": "/assets/images/configurator/accessories/camera-system.webp",
+      "image": "/assets/images/configurator/accessories/camera-system.svg",
       "platformCompatibility": ["6x6", "8x8"],
       "price": 4500
     },
@@ -254,7 +254,7 @@
         "en": "Full differential locks on all axles for maximum traction"
       },
       "category": "safety",
-      "image": "/assets/images/configurator/accessories/diff-locks.webp",
+      "image": "/assets/images/configurator/accessories/diff-locks.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 5200
     },
@@ -266,7 +266,7 @@
         "en": "Onboard compressor for tire inflation and pneumatic tools"
       },
       "category": "technology",
-      "image": "/assets/images/configurator/accessories/air-compressor.webp",
+      "image": "/assets/images/configurator/accessories/air-compressor.svg",
       "platformCompatibility": ["4x4", "6x6", "8x8"],
       "price": 1900
     }
