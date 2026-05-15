@@ -6,18 +6,87 @@ altSlug:
   en: "terms"
 ---
 
-{% from "macros/buttons.njk" import secondaryBtn %}
+<section class="pt-32 pb-24 lg:pb-32">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h1 class="text-4xl lg:text-5xl font-bold tracking-wider uppercase mb-12">Allgemeine Geschäftsbedingungen</h1>
+    <p class="text-zinc-400 text-sm mb-12">FAS Expedition GmbH · Stand: Mai 2025</p>
 
-<section class="min-h-screen flex items-center justify-center px-6">
-  <div class="text-center">
-    <h1 class="text-4xl lg:text-6xl font-bold tracking-wider uppercase text-center">
-      {{ translations["footer.terms"] }}
-    </h1>
-    <p class="mt-6 text-lg text-zinc-300 max-w-md mx-auto">
-      {{ translations["ui.comingSoon"] }}
-    </p>
-    <div class="mt-10">
-      {{ secondaryBtn(translations["ui.backToHome"], "/" + locale + "/") }}
+    <div class="columns-1 lg:columns-2 gap-12 text-zinc-300 text-sm leading-relaxed space-y-10 [column-rule:1px_solid_theme(colors.zinc.800)]">
+
+      {# § 1 Geltungsbereich #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 1 Geltungsbereich</h2>
+        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der FAS Expedition GmbH, Trafoweg 2-4, 52152 Lammersdorf (nachfolgend „Auftragnehmer") und dem Kunden (nachfolgend „Auftraggeber") über die Herstellung, den Umbau und die Lieferung von Expeditionsfahrzeugen, Wohnkabinen sowie damit verbundener Dienstleistungen.</p>
+        <p class="mt-4">Abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu. Diese AGB gelten auch dann, wenn der Auftragnehmer in Kenntnis entgegenstehender oder abweichender Bedingungen des Auftraggebers die Leistung vorbehaltlos ausführt.</p>
+      </div>
+
+      {# § 2 Angebot und Vertragsschluss #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 2 Angebot und Vertragsschluss</h2>
+        <p>Angebote des Auftragnehmers sind freibleibend und unverbindlich, sofern sie nicht ausdrücklich als verbindlich gekennzeichnet sind. Ein Vertrag kommt erst durch schriftliche Auftragsbestätigung des Auftragnehmers oder durch Beginn der Ausführung zustande.</p>
+        <p class="mt-4">Technische Änderungen sowie Änderungen in Form, Farbe und Gewicht bleiben im Rahmen des Zumutbaren vorbehalten. Abbildungen in Prospekten und Katalogen sind nicht maßgeblich, soweit sie nicht ausdrücklich als verbindlich bezeichnet werden.</p>
+      </div>
+
+      {# § 3 Preise und Zahlung #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 3 Preise und Zahlung</h2>
+        <p>Alle Preise verstehen sich in Euro zuzüglich der gesetzlichen Mehrwertsteuer. Bei individuellen Aufbauten und Sonderanfertigungen ist eine Anzahlung in Höhe von 50 % des Auftragswertes bei Vertragsschluss fällig. Die Restzahlung ist bei Fertigstellung und vor Übergabe des Fahrzeugs zu leisten.</p>
+        <p class="mt-4">Bei Zahlungsverzug ist der Auftragnehmer berechtigt, Verzugszinsen in Höhe von 9 Prozentpunkten über dem jeweiligen Basiszinssatz zu berechnen. Die Geltendmachung eines weitergehenden Verzugsschadens bleibt vorbehalten.</p>
+      </div>
+
+      {# § 4 Lieferung und Lieferzeit #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 4 Lieferung und Lieferzeit</h2>
+        <p>Liefertermine und Lieferfristen sind nur verbindlich, wenn sie vom Auftragnehmer ausdrücklich schriftlich als verbindlich bestätigt werden. Die Lieferfrist beginnt mit dem Datum der Auftragsbestätigung, jedoch nicht vor Eingang der vereinbarten Anzahlung.</p>
+        <p class="mt-4">Verzögerungen aufgrund höherer Gewalt, Materialengpässen oder Lieferverzögerungen von Zulieferern berechtigen den Auftragnehmer zu einer angemessenen Verlängerung der Lieferfrist. Der Auftragnehmer wird den Auftraggeber über solche Verzögerungen unverzüglich informieren.</p>
+      </div>
+
+      {# § 5 Abnahme #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 5 Abnahme</h2>
+        <p>Der Auftraggeber ist verpflichtet, das Fahrzeug innerhalb von 14 Tagen nach Zugang der Fertigstellungsmitteilung abzunehmen. Bei der Abnahme wird ein gemeinsames Übergabeprotokoll erstellt.</p>
+        <p class="mt-4">Verweigert der Auftraggeber die Abnahme ohne berechtigten Grund oder nimmt er das Fahrzeug nicht fristgerecht ab, gerät er in Annahmeverzug. Der Auftragnehmer ist in diesem Fall berechtigt, Standgebühren in Höhe von 25,00 € netto pro Tag zu berechnen.</p>
+      </div>
+
+      {# § 6 Eigentumsvorbehalt #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 6 Eigentumsvorbehalt</h2>
+        <p>Das Fahrzeug sowie alle gelieferten Teile und Aufbauten bleiben bis zur vollständigen Bezahlung aller Forderungen aus der Geschäftsbeziehung Eigentum des Auftragnehmers. Der Auftraggeber ist verpflichtet, die Vorbehaltsware pfleglich zu behandeln und gegen Diebstahl, Feuer und Wasser ausreichend zu versichern.</p>
+      </div>
+
+      {# § 7 Gewährleistung #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 7 Gewährleistung</h2>
+        <p>Die Gewährleistungsfrist beträgt 24 Monate ab Übergabe des Fahrzeugs. Mängel sind unverzüglich nach Entdeckung schriftlich anzuzeigen. Der Auftragnehmer hat das Recht zur Nachbesserung. Erst nach zweimaligem Fehlschlagen der Nachbesserung kann der Auftraggeber Minderung oder Rücktritt verlangen.</p>
+        <p class="mt-4">Von der Gewährleistung ausgenommen sind Schäden durch unsachgemäße Behandlung, übermäßige Beanspruchung, natürlichen Verschleiß sowie eigenmächtige Veränderungen durch den Auftraggeber oder Dritte ohne Zustimmung des Auftragnehmers.</p>
+      </div>
+
+      {# § 8 Haftung #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 8 Haftung</h2>
+        <p>Der Auftragnehmer haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden. Bei leichter Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den vorhersehbaren, vertragstypischen Schaden.</p>
+        <p class="mt-4">Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.</p>
+      </div>
+
+      {# § 9 Stornierung und Rücktritt #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 9 Stornierung und Rücktritt</h2>
+        <p>Bei Rücktritt des Auftraggebers nach Auftragsbestätigung ist der Auftragnehmer berechtigt, pauschal 15 % des Auftragswertes als Entschädigung zu verlangen, sofern der Auftraggeber nicht nachweist, dass ein geringerer Schaden entstanden ist. Bereits erbrachte Leistungen und beschaffte Materialien werden gesondert berechnet.</p>
+      </div>
+
+      {# § 10 Datenschutz #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 10 Datenschutz</h2>
+        <p>Der Auftragnehmer verarbeitet personenbezogene Daten des Auftraggebers ausschließlich zur Vertragserfüllung und im Einklang mit der Datenschutz-Grundverordnung (DSGVO). Weitere Informationen entnehmen Sie bitte unserer Datenschutzerklärung.</p>
+      </div>
+
+      {# § 11 Schlussbestimmungen #}
+      <div class="break-inside-avoid">
+        <h2 class="text-xl font-bold tracking-wider uppercase text-white mb-4">§ 11 Schlussbestimmungen</h2>
+        <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gerichtsstand für alle Streitigkeiten aus dem Vertragsverhältnis ist, soweit gesetzlich zulässig, der Sitz des Auftragnehmers.</p>
+        <p class="mt-4">Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gilt eine wirksame Regelung, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.</p>
+      </div>
+
     </div>
   </div>
 </section>
