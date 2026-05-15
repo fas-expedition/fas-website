@@ -1,0 +1,55 @@
+{
+  "pageTitle": "6x6 Expeditionsmobile",
+  "pageDescription": "FAS 6x6 Expeditionsmobile – Leistungsstarke Allrad-Plattform für maximale Nutzlast und Reichweite. Konfigurationen ab €320.000.",
+  "altSlug": {
+    "de": "6x6",
+    "en": "6x6"
+  },
+  "hero": {
+    "title": "6x6 Systeme",
+    "subtitle": "Maximale Nutzlast und Reichweite – die vielseitige Plattform für anspruchsvollste Expeditionen.",
+    "image": "/assets/images/vehicles/6x6-detail.svg"
+  },
+  "overview": {
+    "description": "Die 6x6-Plattform vereint enorme Nutzlastkapazität mit herausragender Geländemobilität. Drei angetriebene Achsen sorgen für überlegene Traktion auch in extremem Terrain. Die verlängerte Rahmenarchitektur bietet Platz für großzügige Wohnkabinen, umfangreiche Versorgungssysteme und schwere Ausrüstung – ideal für autarke Langzeitexpeditionen in entlegene Regionen."
+  },
+  "specs": {
+    "power": { "label": "Leistung", "value": "Bis zu 530 PS" },
+    "gvw": { "label": "Gesamtgewicht", "value": "Bis zu 16.000 kg" },
+    "range": { "label": "Reichweite", "value": "Bis zu 2.500 km" },
+    "cabin": { "label": "Kabine", "value": "4–6 Personen" }
+  },
+  "configurations": [
+    { "name": "Explorer 6x6 Base", "price": "ab €320.000" },
+    { "name": "Explorer 6x6 Comfort", "price": "ab €425.000" },
+    { "name": "Explorer 6x6 Expedition Pro", "price": "ab €548.000" }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Drei-Achs-Antrieb",
+      "description": "Permanenter Allradantrieb auf allen drei Achsen mit sperrbaren Differenzialen für überlegene Traktion in extremem Gelände."
+    },
+    {
+      "icon": "cog",
+      "title": "Großraum-Aufbau",
+      "description": "Verlängerte Rahmenarchitektur für großzügige Wohnkabinen mit vollwertiger Küche, Bad und Schlafbereich."
+    },
+    {
+      "icon": "shield",
+      "title": "Autarkie-Systeme",
+      "description": "Integrierte Solar-, Wasser- und Energieversorgung für wochenlange Unabhängigkeit in entlegenen Gebieten."
+    },
+    {
+      "icon": "gauge",
+      "title": "Nutzlast",
+      "description": "Bis zu 7.000 kg Nutzlast für schwere Ausrüstung, Langzeit-Vorräte und umfangreiche Expeditionsausrüstung."
+    }
+  ],
+  "cta": {
+    "title": "Ihr 6x6 konfigurieren",
+    "description": "Stellen Sie Ihr perfektes 6x6-Expeditionsfahrzeug zusammen – für maximale Autarkie und Reichweite.",
+    "buttonText": "Zum Konfigurator",
+    "buttonUrl": "/de/konfigurator"
+  }
+}
