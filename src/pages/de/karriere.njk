@@ -1,23 +1,216 @@
 ---
 pageTitle: "Karriere"
-pageDescription: "FAS Expedition – Karrieremöglichkeiten bei FAS Expedition."
+pageDescription: "FAS Expedition – Karrieremöglichkeiten bei FAS Expedition. Werde Teil unseres Teams in Lammersdorf."
 altSlug:
   de: "karriere"
   en: "careers"
 ---
 
-{% from "macros/buttons.njk" import secondaryBtn %}
+{% from "macros/buttons.njk" import primaryBtn, secondaryBtn %}
 
-<section class="min-h-screen flex items-center justify-center px-6">
-  <div class="text-center">
-    <h1 class="text-4xl lg:text-6xl font-bold tracking-wider uppercase text-center">
-      {{ translations["footer.careers"] }}
-    </h1>
-    <p class="mt-6 text-lg text-zinc-300 max-w-md mx-auto">
-      {{ translations["ui.comingSoon"] }}
-    </p>
-    <div class="mt-10">
-      {{ secondaryBtn(translations["ui.backToHome"], "/" + locale + "/") }}
+{# Hero #}
+<section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-zinc-950"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6">Karriere</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300 max-w-3xl mx-auto">Werde Teil des Teams! Wir sind ständig auf der Suche nach Verstärkung für unser junges Team.</p>
+  </div>
+</section>
+
+{# Intro #}
+<section class="bg-zinc-950 py-24">
+  <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
+    <p class="text-zinc-300 text-lg leading-relaxed mb-8">Die FAS Expedition GmbH ist ein junges Unternehmen auf dem Markt für Expeditionsmobile. Mit unseren zwei Hauptsparten „Fahrzeugbau" und „Wohnkabinenbau" bieten wir unserem Kunden ein off-road taugliches Weltreisemobil aus einer Hand.</p>
+    <p class="text-zinc-300 text-lg leading-relaxed">Teilst du unsere Leidenschaft fürs Reisen oder kannst du dir vorstellen, Teil der Welt der Reisemobile zu werden — dann schau einfach, ob bei den derzeitigen offenen Stellen etwas für dich dabei ist. Wir freuen uns auf deine Kontaktaufnahme!</p>
+  </div>
+</section>
+
+{# Stellenausschreibung 1: Caravantechniker #}
+<section id="caravantechniker" class="bg-black py-24 lg:py-32 border-t border-zinc-900">
+  <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
+    <div class="mb-8">
+      <span class="text-xs uppercase tracking-widest text-zinc-500 mb-2 block">Stellenausschreibung</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase">Interieurbauer / Caravantechniker (m/w/d)</h2>
+      <p class="text-zinc-400 mt-2">Standort: Lammersdorf, Eifel · Sparte: Wohnkabinenbau</p>
     </div>
+
+    <div class="space-y-8 text-zinc-300 leading-relaxed">
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Deine Aufgaben</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Innenausbau von hochwertigen Reisemobilen</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Einbau von CNC-gefertigten Möbelbauteilen</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Verlegung und Anschluss von Elektro-, Wasser-, Heizungs- und Klimatisierungsanlagen</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Installation von Solaranlagen, TV-Systemen, W/LAN-Infrastruktur und Elektrogeräten</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Anbringen von Zusatzausstattung wie Außenbeleuchtung, Kamera-, Alarm- und Treppensystemen sowie Außenküchen</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Dein Profil</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine Berufsausbildung im Bereich Caravan-/Elektro-/Installationstechnik, Nutzfahrzeugelektronik oder Bootsbau</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine Leidenschaft fürs optisch und funktional Perfekte und einen sorgfältigen Umgang mit verschiedensten hochwertigen Werkstoffen</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Erfahrung mit mobiler IT-Infrastruktur und smarter Gerätesteuerung</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine gute Kommunikationsfähigkeit und die Bereitschaft, unser Produkt auch auf Messen vertreten und erklären zu können</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Wir bieten</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Flexible Arbeitszeiten und -modelle</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Teilzeit-Beschäftigung möglich</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Direkte Unterstellung unter den Technischen Geschäftsführer</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      {{ primaryBtn("Jetzt bewerben", "/de/kontakt/", true) }}
+      <a href="/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <span>PDF Download</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Stellenausschreibung 2: Schlosser #}
+<section id="schlosser" class="bg-zinc-950 py-24 lg:py-32 border-t border-zinc-900">
+  <div class="max-w-[1000px] mx-auto px-6 lg:px-12">
+    <div class="mb-8">
+      <span class="text-xs uppercase tracking-widest text-zinc-500 mb-2 block">Stellenausschreibung</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase">Schlosser / Nutzfahrzeugtechniker (m/w/d)</h2>
+      <p class="text-zinc-400 mt-2">Standort: Lammersdorf, Eifel · Sparte: Fahrzeugbau</p>
+    </div>
+
+    <div class="space-y-8 text-zinc-300 leading-relaxed">
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Deine Aufgaben</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Herstellung und Montage von Anbauten aller Art an bestehenden und neuen Reisemobilen wie Zwischenrahmen, Heckträger, Staukisten, Tankanlagen und vieles mehr</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Modifikationen an Chassis und Fahrerkabine</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Anbringen von Zusatzausstattung wie Beleuchtung, Kamera-Systeme, Seilwinden oder Reifendruckregelanlagen</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Dein Profil</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine Berufsausbildung im Bereich Metall- oder Fahrzeugbau, bevorzugt im Nutzfahrzeugsegment</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine Leidenschaft für (Nutz-)Fahrzeuge und den Werkstoff Stahl</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine ruhige und geübte Hand am Schweißgerät (WIG und MAG)</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Fundierte Kenntnisse in den Bereichen Fahrzeugelektrik, -elektronik, Hydraulik und Pneumatik</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Eine gute Kommunikationsfähigkeit und Teamgeist</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Wir bieten</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Flexible Arbeitszeiten und -modelle</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Teilzeit-Beschäftigung möglich</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-white mt-1">•</span>
+            <span>Unterstellung unter den Werkstattleiter Fahrzeugbau</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      {{ primaryBtn("Jetzt bewerben", "/de/kontakt/", true) }}
+      <a href="/assets/downloads/stellenausschreibung-schlosser-2025.pdf" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <span>PDF Download</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Bewerbung CTA #}
+<section class="bg-black py-24 lg:py-32 border-t border-zinc-900">
+  <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-3xl font-bold tracking-wider uppercase mb-6">Bewirb dich jetzt</h2>
+    <p class="text-zinc-300 text-lg leading-relaxed mb-4">Wir freuen uns auf deine digitale Bewerbung per E-Mail mit Lebenslauf.</p>
+    <div class="border border-zinc-800 p-8 mb-10 text-left">
+      <p class="text-xs uppercase tracking-widest text-zinc-500 mb-2">Kontaktaufnahme bitte direkt an:</p>
+      <p class="text-white font-bold">Márika Böttcher</p>
+      <p class="text-zinc-400 mt-1">FAS Expedition GmbH<br>Trafoweg 2-4<br>52152 Lammersdorf</p>
+      <a href="mailto:marika.boettcher@fas-expedition.de" class="text-white underline hover:text-zinc-300 transition-colors mt-3 inline-block">marika.boettcher@fas-expedition.de</a>
+    </div>
+    {{ primaryBtn("Zum Kontaktformular", "/de/kontakt/", true) }}
   </div>
 </section>
