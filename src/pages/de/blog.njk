@@ -1,23 +1,121 @@
 ---
 pageTitle: "Blog"
-pageDescription: "FAS Expedition Blog - Demnächst verfügbar"
+pageDescription: "FAS Expedition Blog – Neuigkeiten, Expeditionsberichte und technische Einblicke in unsere Fahrzeuge und Projekte."
 altSlug:
   de: "blog"
   en: "blog"
 ---
 
-{% from "macros/buttons.njk" import secondaryBtn %}
+{# Blog Listing Page #}
+{% set posts = collections.publishedBlog %}
+{% set categories = collections.blogCategories %}
 
-<section class="min-h-screen flex items-center justify-center px-6">
-  <div class="text-center">
-    <h1 class="text-4xl lg:text-6xl font-bold tracking-wider uppercase text-center">
-      {{ translations["ui.comingSoon"] }}
-    </h1>
-    <p class="mt-6 text-lg text-zinc-300 max-w-md mx-auto">
-      {{ pageTitle }} — {{ translations["ui.comingSoon"] }}
-    </p>
-    <div class="mt-10">
-      {{ secondaryBtn(translations["ui.backToHome"], "/" + locale + "/") }}
+{# Hero #}
+<section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-4">Blog</h1>
+    <p class="text-xl text-zinc-300">Neuigkeiten, Expeditionsberichte und technische Einblicke</p>
+  </div>
+</section>
+
+{# Category Filter #}
+<section class="py-8 border-b border-zinc-800">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <div class="flex flex-wrap gap-3" id="category-filter">
+      <button class="category-btn active bg-white text-black px-4 py-2 text-xs tracking-widest uppercase font-bold transition-colors" data-category="alle">Alle</button>
+      {% for cat in categories %}
+      <button class="category-btn border border-zinc-700 text-white px-4 py-2 text-xs tracking-widest uppercase font-bold hover:bg-white hover:text-black transition-colors" data-category="{{ cat }}">{{ cat }}</button>
+      {% endfor %}
     </div>
   </div>
 </section>
+
+{# Blog Posts Grid #}
+<section class="py-16 lg:py-24">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    {% if posts | length == 0 %}
+    <div class="text-center py-16">
+      <p class="text-xl text-zinc-400">Noch keine Blog-Artikel verfügbar.</p>
+    </div>
+    {% else %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+      {% for post in posts %}
+      <a href="/{{ post.data.slug }}/" class="blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden" data-category="{{ post.data.category }}">
+        {# Image #}
+        <div class="relative h-56 overflow-hidden">
+          {% if post.data.image %}
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          {% else %}
+          <div class="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+          {% endif %}
+          {% if post.data.category %}
+          <span class="absolute top-4 left-4 bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">{{ post.data.category }}</span>
+          {% endif %}
+        </div>
+        {# Content #}
+        <div class="p-6">
+          <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-2">{{ post.data.publishDate | blogDate }}</span>
+          <h2 class="text-white text-lg font-bold tracking-wider uppercase mb-3 group-hover:text-zinc-300 transition-colors">{{ post.data.title }}</h2>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4">{{ post.data.excerpt | truncate(150, true, "...") }}</p>
+          <span class="text-white text-xs tracking-widest uppercase font-bold inline-flex items-center space-x-2">
+            <span>Weiterlesen</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {# Empty state for category filter #}
+    <div id="empty-category" class="hidden text-center py-16">
+      <p class="text-xl text-zinc-400">Keine Artikel in dieser Kategorie verfügbar.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{# Category Filter Script #}
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.category-btn');
+  var cards = document.querySelectorAll('.blog-card');
+  var emptyState = document.getElementById('empty-category');
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var category = this.getAttribute('data-category');
+
+      // Update active state
+      buttons.forEach(function(b) {
+        b.classList.remove('active', 'bg-white', 'text-black');
+        b.classList.add('border', 'border-zinc-700', 'text-white');
+      });
+      this.classList.add('active', 'bg-white', 'text-black');
+      this.classList.remove('border', 'border-zinc-700', 'text-white');
+
+      // Filter cards
+      var visibleCount = 0;
+      cards.forEach(function(card) {
+        if (category === 'alle' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show/hide empty state
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+    });
+  });
+})();
+</script>
