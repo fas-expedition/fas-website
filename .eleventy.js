@@ -8,6 +8,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css");
   eleventyConfig.addPassthroughCopy("src/assets/downloads");
 
+  // Passthrough copy for JavaScript modules
+  eleventyConfig.addPassthroughCopy("src/assets/js");
+
   // Passthrough copy for CMS admin panel
   eleventyConfig.addPassthroughCopy("src/admin");
 
