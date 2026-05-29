@@ -4,7 +4,7 @@
 
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
   <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center gap-8 h-20">
 
       {# FAS Logo #}
       <a href="/{{ locale }}/" class="flex-shrink-0">
@@ -12,7 +12,7 @@
       </a>
 
       {# Desktop Navigation Links #}
-      <div class="hidden lg:flex items-center space-x-8">
+      <div class="hidden lg:flex items-center gap-8 flex-1">
         <a href="/{{ locale }}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if page.url == '/' + locale + '/' %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.home"] }}
         </a>
@@ -41,7 +41,7 @@
       </div>
 
       {# Right Side: Language Switcher + Login + Mobile Toggle #}
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center gap-4 ml-auto">
 
         {# Language Switcher #}
         <div class="hidden lg:flex items-center border border-zinc-700 divide-x divide-zinc-700">
