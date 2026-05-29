@@ -44,6 +44,7 @@
       name: document.getElementById('inquiry-name').value,
       street: document.getElementById('inquiry-street').value,
       postal: document.getElementById('inquiry-postal').value,
+      city: document.getElementById('inquiry-city').value,
       country: document.getElementById('inquiry-country').value,
       email: document.getElementById('inquiry-email').value,
       phone: document.getElementById('inquiry-phone').value,

@@ -24,6 +24,7 @@ export const handler = async (event) => {
       name: data.name,
       street: data.street,
       postal: data.postal,
+      city: data.city,
       country: data.country,
       email: data.email,
       phone: data.phone,
