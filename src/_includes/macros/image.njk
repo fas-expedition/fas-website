@@ -1,0 +1,42 @@
+{# Responsive Image Macro using eleventy-img #}
+
+{% macro respImage(src, alt, sizes, className) %}
+  {# 
+    Usage:
+    {{ respImage("/assets/images/vehicles/4x4/interior.jpg", "4x4 Interior", "100vw", "w-full h-auto object-cover") }}
+    
+    Or with default sizes:
+    {{ respImage("/assets/images/vehicles/4x4/interior.jpg", "4x4 Interior") }}
+    
+    src: Image source path (required)
+    alt: Alt text (required)
+    sizes: CSS media queries for responsive sizing (default: "100vw")
+    className: Tailwind CSS classes for the img element
+  #}
+  {% set classStr = className or "w-full h-auto object-cover" %}
+  {% set sizesStr = sizes or "100vw" %}
+  
+  {% if src.endsWith(".svg") or src.startsWith("data:") %}
+    {# SVG or data URIs bypass image optimization #}
+    <img src="{{ src }}" alt="{{ alt }}" class="{{ classStr }}" loading="lazy">
+  {% else %}
+    {# Use the respImage shortcode for automatic optimization #}
+    {% respImage src, alt, sizesStr %}
+  {% endif %}
+{% endmacro %}
+
+{% macro pictureElement(src, alt, sizes, className) %}
+  {#
+    Advanced picture element for more control
+    Usage:
+    {{ pictureElement("/assets/images/hero.jpg", "Hero Image", "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 100vw") }}
+  #}
+  {% set classStr = className or "w-full h-auto object-cover" %}
+  {% set sizesStr = sizes or "100vw" %}
+  
+  {% if not src.endsWith(".svg") and not src.startsWith("data:") %}
+    {% respImage src, alt, sizesStr %}
+  {% else %}
+    <img src="{{ src }}" alt="{{ alt }}" class="{{ classStr }}" loading="lazy">
+  {% endif %}
+{% endmacro %}

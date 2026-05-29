@@ -23,6 +23,17 @@ npm test             # Run all tests (vitest --run)
 npm run dev          # Dev server (do NOT run in agents — blocks)
 ```
 
+## Image Optimization
+
+**@11ty/eleventy-img** generates WebP + JPEG at 6 breakpoints (320px–1920px) with automatic `picture` element + `srcset`. 
+
+Use in templates:
+```njk
+{% respImage "/assets/images/photo.jpg", "Alt text", "100vw" %}
+```
+
+See [IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md) for details.
+
 ## Architecture Rules
 
 1. **Templates are Nunjucks** (`.njk`). Do not introduce other template engines.

@@ -1,5 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const Image = require("@11ty/eleventy-img");
+
+// Configure eleventy-img cache
+Image.concurrency = 10;
 
 function validateVehicleData(filename, data) {
   const errors = [];
@@ -92,6 +96,79 @@ module.exports = function(eleventyConfig) {
 
   // Passthrough copy for CMS admin panel
   eleventyConfig.addPassthroughCopy("src/admin");
+
+  // Responsive Image Shortcode using eleventy-img
+  eleventyConfig.addNunjucksAsyncShortcode("respImage", async function(src, alt, sizes = "100vw") {
+    try {
+      // Handle both absolute paths (/assets/...) and relative paths
+      const inputPath = src.startsWith('/assets/') 
+        ? path.join(__dirname, 'src', src) 
+        : src;
+
+      // Skip if file doesn't exist (e.g., coming-soon.svg placeholder)
+      if (!fs.existsSync(inputPath)) {
+        // Return fallback img tag
+        return `<img src="${src}" alt="${alt}" class="w-full h-auto object-cover" loading="lazy">`;
+      }
+
+      const metadata = await Image(inputPath, {
+        widths: [320, 640, 1024, 1280, 1600, 1920],
+        formats: ["webp", "jpeg"],
+        outputDir: "./_site/assets/images/optimized",
+        filenameFormat: function(id, src, width, format, options) {
+          const ext = path.extname(src);
+          const name = path.basename(src, ext);
+          return `${name}-${width}w.${format}`;
+        }
+      });
+
+      const imageAttributes = {
+        alt: alt,
+        sizes: sizes,
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      return Image.generateHTML(metadata, imageAttributes);
+    } catch (error) {
+      console.error(`Error processing image ${src}:`, error);
+      // Fallback to original image
+      return `<img src="${src}" alt="${alt}" class="w-full h-auto object-cover" loading="lazy">`;
+    }
+  });
+
+  // Filter for generating srcset strings for use in custom picture elements
+  eleventyConfig.addFilter("imageSrcset", async function(src, format = "jpeg") {
+    try {
+      const inputPath = src.startsWith('/assets/') 
+        ? path.join(__dirname, 'src', src) 
+        : src;
+
+      if (!fs.existsSync(inputPath)) {
+        return src;
+      }
+
+      const metadata = await Image(inputPath, {
+        widths: [320, 640, 1024, 1280, 1600, 1920],
+        formats: [format],
+        outputDir: "./_site/assets/images/optimized",
+        filenameFormat: function(id, src, width, format, options) {
+          const ext = path.extname(src);
+          const name = path.basename(src, ext);
+          return `${name}-${width}w.${format}`;
+        }
+      });
+
+      const srcset = metadata[format]
+        ?.map(img => `${img.url} ${img.width}w`)
+        .join(", ") || src;
+
+      return srcset;
+    } catch (error) {
+      console.error(`Error generating srcset for ${src}:`, error);
+      return src;
+    }
+  });
 
   // Blog date filter: formats ISO date as "DD. MMMM YYYY" in German
   const MONTHS_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
