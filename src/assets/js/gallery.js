@@ -7,17 +7,42 @@ class VehicleGallery {
   constructor() {
     this.currentGalleryId = null;
     this.currentImageIndex = 0;
+    this.initialized = false;
     this.init();
   }
 
   init() {
-    this.attachGalleryTriggers();
-    this.attachThumbGalleryTriggers();
-    this.attachCloseButtons();
-    this.attachNavigationButtons();
-    this.attachThumbnailButtons();
-    this.attachKeyboardNavigation();
-    this.attachBackdropClose();
+    // Only initialize once
+    if (this.initialized) return;
+    
+    // Wait for all images to load before initializing
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.attachAll());
+    } else {
+      // If DOM is already loaded, use a small timeout to ensure all elements are ready
+      setTimeout(() => this.attachAll(), 0);
+    }
+  }
+
+  attachAll() {
+    if (this.initialized) return;
+    
+    try {
+      this.attachGalleryTriggers();
+      this.attachThumbGalleryTriggers();
+      this.attachCloseButtons();
+      this.attachNavigationButtons();
+      this.attachThumbnailButtons();
+      this.attachKeyboardNavigation();
+      this.attachBackdropClose();
+      
+      this.initialized = true;
+      console.log('Gallery initialized successfully');
+    } catch (error) {
+      console.error('Error initializing gallery:', error);
+      // Try again in 500ms
+      setTimeout(() => this.attachAll(), 500);
+    }
   }
 
   attachGalleryTriggers() {
@@ -172,10 +197,35 @@ class VehicleGallery {
 }
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new VehicleGallery();
-  });
-} else {
-  new VehicleGallery();
+let galleryInstance = null;
+
+function initializeGallery() {
+  if (!galleryInstance || !galleryInstance.initialized) {
+    galleryInstance = new VehicleGallery();
+  }
+  return galleryInstance;
 }
+
+// Initialize on load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeGallery);
+  // Also try on other events
+  document.addEventListener('load', initializeGallery);
+  window.addEventListener('load', initializeGallery);
+} else {
+  initializeGallery();
+}
+
+// Expose to global scope for debugging and re-initialization
+window.VehicleGalleryManager = {
+  instance: null,
+  init() {
+    return initializeGallery();
+  },
+  reinit() {
+    if (galleryInstance) {
+      galleryInstance.initialized = false;
+    }
+    return initializeGallery();
+  }
+};
