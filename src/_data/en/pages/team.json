@@ -92,7 +92,7 @@
           "roles": [
             "Engineer"
           ],
-          "description": "What Martin engineers is solid. He takes nothing for granted and enriches the team with calm composure, rich experience, and exactly the right sense of humor.",
+          "description": "What Martin engineers is solid. He takes nothing for granted and challenges colleagues with his probing why-questions. With calm composure, a wealth of experience, and above all, exactly the right sense of humor, he enriches the team in every respect.",
           "image": "/assets/images/team/martin.png"
         },
         {
@@ -105,6 +105,18 @@
           ],
           "description": "Patrick brings fresh university knowledge and plenty of enthusiasm. He's equally comfortable with wood and steel as with CAD software.",
           "image": "/assets/images/team/patrick.jpg"
+        },
+        {
+          "name": "Jens",
+          "qualifications": [
+            "Mechanical Engineering Technician"
+          ],
+          "roles": [
+            "Engineer",
+            "IT"
+          ],
+          "description": "Jens brings solid engineering expertise combined with strong IT skills and great enthusiasm for finding the best possible solutions. He thinks in solutions, not problems, and inspires others with his sympathetic and engaging approach.",
+          "image": "/assets/images/team/Jens.webp"
         }
       ]
     },
@@ -173,18 +185,6 @@
           ],
           "description": "Tobia ensures that workflows in vehicle construction are plannable and routine. With tireless dedication, he smooths all bumps on the road to the finished product while driving optimizations with suppliers and subcontractors.",
           "image": "/assets/images/team/tobia.jpg"
-        },
-        {
-          "name": "Christian",
-          "qualifications": [
-            "Automotive Mechatronics Technician",
-            "Passenger Vehicle Technology"
-          ],
-          "roles": [
-            "Vehicle Construction"
-          ],
-          "description": "Christian is our valued mechanic in vehicle construction and part of the interface team between cabin and base vehicle. With universal knowledge, rolled-up sleeves, and patience — no job is too big for him.",
-          "image": "/assets/images/team/christian.jpg"
         },
         {
           "name": "Paul",

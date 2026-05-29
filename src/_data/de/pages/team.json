@@ -92,7 +92,7 @@
           "roles": [
             "Konstrukteur"
           ],
-          "description": "Was Martin konstruiert, hat Hand und Fuß. Er nimmt nichts als gegeben und bringt den einen oder anderen Kollegen mit der Frage nach dem Warum schon mal ins Schwitzen. Mit seiner ruhigen Gelassenheit, einem reichen Erfahrungsschatz und genau dem richtigen Sinn für Humor bereichert er das Team in jeder Hinsicht.",
+          "description": "Was Martin konstruiert, hat Hand und Fuß. Er nimmt nichts als gegeben und bringt den einen oder anderen Kollegen mit der Frage nach dem Warum schon mal ins Schwitzen. Mit seiner ruhigen Gelassenheit, einem reichen Erfahrungsschatz und darüber hinaus auch mit genau dem richtigen Sinn für Humor bereichert er das Team in jeder Hinsicht.",
           "image": "/assets/images/team/martin.png"
         },
         {
@@ -105,6 +105,18 @@
           ],
           "description": "Patrick bringt frischen Uni-Wind mit aktuellem Fachwissen und jeder Menge Enthusiasmus in unsere Hallen. Er ist handwerklich top fit und hat seine Hände genauso gern an Holz und Stahl wie am CAD-Programm.",
           "image": "/assets/images/team/patrick.jpg"
+        },
+        {
+          "name": "Jens",
+          "qualifications": [
+            "Maschinenbautechniker"
+          ],
+          "roles": [
+            "Konstrukteur",
+            "IT"
+          ],
+          "description": "Jens bringt fundiertes konstruktionstechnisches Know-how angereichert mit ausgeprägten IT-Kenntnissen und einem großen Enthusiasmus für das Finden des bestmöglichen Ergebnisses mit. Er denkt nicht in Problemen, sondern in Lösungen und trifft dabei mit seiner sympathischen mitreißenden Art auf Begeisterung.",
+          "image": "/assets/images/team/Jens.webp"
         }
       ]
     },
@@ -173,18 +185,6 @@
           ],
           "description": "Tobia sorgt mit viel Einsatz dafür, dass Arbeitsabläufe im Fahrzeugbau planbar und routiniert werden. Mit unermüdlichem Einsatz glättet er alle Unebenheiten auf dem Weg zum fertigen Endprodukt und schafft es ganz nebenher auch noch, Optimierungen bei Produkten, Lieferanten und Lohnbearbeitern anzustoßen.",
           "image": "/assets/images/team/tobia.jpg"
-        },
-        {
-          "name": "Christian",
-          "qualifications": [
-            "Kraftfahrzeugmechatroniker",
-            "Personenkraftwagentechnik"
-          ],
-          "roles": [
-            "Fahrzeugbau"
-          ],
-          "description": "Christian ist unser geschätzter Monteur im Fahrzeugbau und Teil des Schnittstellenteams zwischen Wohnkabine und Basisfahrzeug. Mit universellem Wissen und Expertise in so ziemlich allem, was fährt, hochgekrempelten Ärmeln, ganz viel Geduld und einem ausgeprägten Sinn für tiefgehende Fahrzeugrecherchen ist ihm keine Baustelle zu groß.",
-          "image": "/assets/images/team/christian.jpg"
         },
         {
           "name": "Paul",

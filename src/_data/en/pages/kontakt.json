@@ -1,0 +1,29 @@
+{
+  "pageTitle": "Contact",
+  "pageDescription": "FAS Expedition – Get in touch with us. We'd be happy to advise you on your expedition vehicle project.",
+  "hero": {
+    "title": "Contact",
+    "subtitle": "We look forward to hearing from you"
+  },
+  "intro": {
+    "heading": "Send us a message",
+    "description": "Do you have questions about our products or services? Simply fill out the contact form and we'll get back to you shortly."
+  },
+  "contactInfo": [
+    {
+      "type": "address",
+      "label": "Address",
+      "value": "FAS Expedition GmbH\nTrafoweg 2-4\n52152 Lammersdorf\nGermany"
+    },
+    {
+      "type": "phone",
+      "label": "Phone",
+      "value": "+49 (0) 2473 929 3422"
+    },
+    {
+      "type": "email",
+      "label": "E-Mail",
+      "value": "info@fas-expedition.de"
+    }
+  ]
+}

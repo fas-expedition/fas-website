@@ -1,0 +1,29 @@
+{
+  "pageTitle": "Kontakt",
+  "pageDescription": "FAS Expedition – Nehmen Sie Kontakt mit uns auf. Wir beraten Sie gerne zu Ihrem Expeditionsmobil-Projekt.",
+  "hero": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf Ihre Anfrage"
+  },
+  "intro": {
+    "heading": "Ihre Nachricht an uns",
+    "description": "Haben Sie Fragen zu unseren Produkten oder Dienstleistungen? Füllen Sie einfach das Kontaktformular aus — wir setzen uns zeitnah mit Ihnen in Verbindung."
+  },
+  "contactInfo": [
+    {
+      "type": "address",
+      "label": "Adresse",
+      "value": "FAS Expedition GmbH\nTrafoweg 2-4\n52152 Lammersdorf\nDeutschland"
+    },
+    {
+      "type": "phone",
+      "label": "Telefon",
+      "value": "+49 (0) 2473 929 3422"
+    },
+    {
+      "type": "email",
+      "label": "E-Mail",
+      "value": "info@fas-expedition.de"
+    }
+  ]
+}
