@@ -32,12 +32,11 @@
         />
       </div>
 
-      {# Address - Row 1: Street, Postal, City #}
+      {# Address #}
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {# Street #}
         <div>
           <label for="inquiry-street" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}Straße{% else %}Street{% endif %}
+            {% if locale == "de" %}Straße & Hausnummer{% else %}Street & Number{% endif %}
           </label>
           <input
             type="text"
@@ -45,14 +44,12 @@
             name="street"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}Straße & Nr.{% else %}Street & No.{% endif %}"
+            placeholder="{% if locale == 'de' %}Straße{% else %}Street{% endif %}"
           />
         </div>
-
-        {# Postal Code #}
         <div>
           <label for="inquiry-postal" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}PLZ{% else %}Postal Code{% endif %}
+            {% if locale == "de" %}PLZ & Ort{% else %}Postal & City{% endif %}
           </label>
           <input
             type="text"
@@ -60,40 +57,22 @@
             name="postal"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}12345{% else %}12345{% endif %}"
+            placeholder="{% if locale == 'de' %}12345 Stadt{% else %}12345 City{% endif %}"
           />
         </div>
-
-        {# City #}
         <div>
-          <label for="inquiry-city" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}Ort{% else %}City{% endif %}
+          <label for="inquiry-country" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+            {% if locale == "de" %}Land{% else %}Country{% endif %}
           </label>
           <input
             type="text"
-            id="inquiry-city"
-            name="city"
+            id="inquiry-country"
+            name="country"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}Stadt{% else %}City{% endif %}"
+            placeholder="{% if locale == 'de' %}Deutschland{% else %}Country{% endif %}"
           />
         </div>
-      </div>
-
-      {# Address - Row 2: Country #}
-      <div>
-        <label for="inquiry-country" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-          {% if locale == "de" %}Land{% else %}Country{% endif %}
-        </label>
-        <input
-          type="text"
-          id="inquiry-country"
-          name="country"
-          required
-          class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-          placeholder="{% if locale == 'de' %}Deutschland{% else %}Country{% endif %}"
-        />
-      </div>
       </div>
 
       {# Contact Details #}
@@ -172,7 +151,6 @@
   <input type="text" name="name" />
   <input type="text" name="street" />
   <input type="text" name="postal" />
-  <input type="text" name="city" />
   <input type="text" name="country" />
   <input type="email" name="email" />
   <input type="tel" name="phone" />
