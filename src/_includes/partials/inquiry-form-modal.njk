@@ -33,7 +33,7 @@
       </div>
 
       {# Address #}
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label for="inquiry-street" class="block text-sm font-semibold uppercase tracking-wider mb-2">
             {% if locale == "de" %}Straße & Hausnummer{% else %}Street & Number{% endif %}
@@ -60,7 +60,7 @@
             placeholder="{% if locale == 'de' %}12345 Stadt{% else %}12345 City{% endif %}"
           />
         </div>
-        <div>
+        <div class="md:col-span-2">
           <label for="inquiry-country" class="block text-sm font-semibold uppercase tracking-wider mb-2">
             {% if locale == "de" %}Land{% else %}Country{% endif %}
           </label>
