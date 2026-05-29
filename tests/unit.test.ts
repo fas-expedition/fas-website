@@ -155,22 +155,45 @@ describe('Unit Tests: Configuration and Content Validation', () => {
   });
 
   describe('BRABUS nav link styling', () => {
+    const siteConfig = JSON.parse(readFileSync('src/_data/site.json', 'utf-8'));
+    const isBrabusEnabled = !siteConfig.disabledNavItems || !siteConfig.disabledNavItems.includes('brabus');
+
     it('has serif font styling in DE home page', () => {
-      const $ = loadHtml('_site/de/index.html');
-      const brabusLink = $('nav a').filter(function () {
-        return $(this).text().trim() === 'BRABUS';
-      }).first();
-      const style = brabusLink.attr('style') || '';
-      expect(style).toContain('serif');
+      if (!isBrabusEnabled) {
+        // If BRABUS is disabled, verify it's not in the nav
+        const $ = loadHtml('_site/de/index.html');
+        const brabusLink = $('nav a').filter(function () {
+          return $(this).text().trim() === 'BRABUS';
+        }).first();
+        expect(brabusLink.length).toBe(0);
+      } else {
+        // If BRABUS is enabled, verify it has serif styling
+        const $ = loadHtml('_site/de/index.html');
+        const brabusLink = $('nav a').filter(function () {
+          return $(this).text().trim() === 'BRABUS';
+        }).first();
+        const style = brabusLink.attr('style') || '';
+        expect(style).toContain('serif');
+      }
     });
 
     it('has serif font styling in EN home page', () => {
-      const $ = loadHtml('_site/en/index.html');
-      const brabusLink = $('nav a').filter(function () {
-        return $(this).text().trim() === 'BRABUS';
-      }).first();
-      const style = brabusLink.attr('style') || '';
-      expect(style).toContain('serif');
+      if (!isBrabusEnabled) {
+        // If BRABUS is disabled, verify it's not in the nav
+        const $ = loadHtml('_site/en/index.html');
+        const brabusLink = $('nav a').filter(function () {
+          return $(this).text().trim() === 'BRABUS';
+        }).first();
+        expect(brabusLink.length).toBe(0);
+      } else {
+        // If BRABUS is enabled, verify it has serif styling
+        const $ = loadHtml('_site/en/index.html');
+        const brabusLink = $('nav a').filter(function () {
+          return $(this).text().trim() === 'BRABUS';
+        }).first();
+        const style = brabusLink.attr('style') || '';
+        expect(style).toContain('serif');
+      }
     });
   });
 

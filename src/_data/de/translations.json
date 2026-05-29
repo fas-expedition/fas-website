@@ -1,7 +1,8 @@
 {
   "nav.home": "Home",
+  "nav.about": "Über uns",
   "nav.expeditionMobile": "Expeditionsmobile",
-  "nav.modularSystems": "Modulare Systeme",
+  "nav.modularSystems": "Fahrzeugmodule",
   "nav.brabus": "BRABUS",
   "nav.configurator": "Konfigurator",
   "nav.blog": "Blog",
@@ -33,5 +34,6 @@
   "ui.inquireNow": "Jetzt anfragen",
   "ui.contactSpecialist": "Spezialisten kontaktieren",
   "ui.comingSoon": "Demnächst verfügbar",
-  "ui.backToHome": "Zurück zur Startseite"
+  "ui.backToHome": "Zurück zur Startseite",
+  "page.service.title": "Service & Wartung"
 }

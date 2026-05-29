@@ -1,0 +1,40 @@
+{
+  "pageTitle": "Über uns",
+  "pageDescription": "FAS Expedition – Ihr Spezialist für maßgeschneiderte Expeditionsmobile. Fahrzeugbau, Kabinenbau und Services aus einer Hand.",
+  "altSlug": {
+    "de": "ueber-uns",
+    "en": "about"
+  },
+  "hero": {
+    "title": "Über uns",
+    "subtitle": "Perfektion ist unser \"gut genug\"."
+  },
+  "intro": {
+    "title": "Wer wir sind",
+    "paragraphs": [
+      "FAS Expedition vereint Kompetenzen aus dem Karosserie- und Nutzfahrzeugbau, Ingenieurskunst, technischer Zeichnung, Elektrotechnik und hochwertiges Interieurdesign mit einem erheblichen Zusatz von Innovation.",
+      "Wir bieten unseren Kunden ein Expeditionsmobil aus einer Hand. Der Motor, der unser Team antreibt, sind Off-road-Begeisterung und Reiseleidenschaft.",
+      "Wir haben den Ansporn, unseren Kunden ein Weltreisemobil zu erschaffen, mit dem die Freude am autarken Reisen im Vordergrund steht. Wir bauen mit Erfahrung — unsere Produkte sind erprobt, getestet und durften sich bereits vielfach bewähren."
+    ]
+  },
+  "services": [
+    {
+      "title": "Fahrzeugbau",
+      "description": "Chassis-Modifikationen, Zwischenrahmen, Radstandsverlängerungen und Kabinenkürzungen — alles was Ihr Fahrzeug zum echten Weltreisemobil macht."
+    },
+    {
+      "title": "Kabinenbau",
+      "description": "Innovative Kabinenkonstruktion mit handwerklich erstklassig verarbeitetem Interieur — für alle Off-road Level gewappnet."
+    },
+    {
+      "title": "Services",
+      "description": "Beratung zu Bergemitteln und FAS Produkten — für alle Eigentümer von Expeditionsmobilen."
+    }
+  ],
+  "cta": {
+    "title": "Lernen Sie unser Team kennen",
+    "description": "Kaum ein Mitarbeiter, der nicht vom Camping- und Reisefieber infiziert ist.",
+    "ctaText": "Zum Team",
+    "ctaUrl": "/de/team/"
+  }
+}

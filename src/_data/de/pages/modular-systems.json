@@ -1,24 +1,26 @@
 {
   "pageTitle": "Modulare Systeme",
-  "pageDescription": "FAS Modulare Heckträgersysteme – Flexibles Rastersystem mit über 20 Modulen für individuelle Expeditionsausrüstung.",
+  "pageDescription": "FAS Modulare Heckträgersysteme – Flexibles Rastersystem mit unterschiedlichen Plattformen zur Aufnahme von Ersatzrädern, Fahrrädern, Motorräder und Quads.",
   "altSlug": { "de": "modulare-systeme", "en": "modular-systems" },
   "hero": {
-    "title": "Modulare Heckträgersysteme",
-    "subtitle": "Maximale Flexibilität für jede Mission",
+    "title": "Original FAS-Fahrzeugmodule",
+    "subtitle": "In-House Engineering für maximale Qualität",
     "image": "/assets/images/vehicles/modular-hero.svg"
   },
   "overview": {
-    "title": "Ein System. Unendliche Möglichkeiten.",
-    "description": "Unser patentiertes Rastersystem ermöglicht die schnelle und werkzeuglose Montage von Ausrüstungsmodulen. Jedes Modul rastet sicher ein und kann in Sekunden gewechselt werden – perfekt für wechselnde Anforderungen auf langen Expeditionen.",
+    "title": "Heckträger-XL.  Ein System - Unendliche Möglichkeiten.",
+    "description": "Unser FAS Grundmodul ermöglicht die schnelle Montage von unterschiedlichen Plattformen und Erweiterungen. Jedes Modul kann in kurzer Zeit getauscht werden – perfekt für wechselnde Anforderungen auf unterschiedlichen Reisen.",
     "features": [
-      "Werkzeugloser Modulwechsel in unter 60 Sekunden",
-      "Korrosionsbeständige Aluminium-Konstruktion",
-      "Kompatibel mit allen FAS Fahrzeugplattformen",
+      "verschiedene Plattformgrößen (660/1010/1400mm)",
+      "Aufnahme für bis zu zwei Ersatzräder",
+      "Seilwinde in der Konstruktion integriert",
+      "Komfortabel per Fernsteuerung bedienbar",
+      "Nur in Verbindung mit unserem FAS Unterfahrschutz nach ECE R58.3",
       "TÜV-geprüft und straßenzugelassen",
-      "Erweiterbar durch Zusatzmodule jederzeit nachrüstbar"
+      "Stahl - verzinkt und pulverbeschichtet"
     ],
-    "ctaText": "System konfigurieren",
-    "ctaUrl": "/de/konfigurator"
+    "ctaText": "Jetzt anfragen",
+    "ctaUrl": "#inquiry-form"
   },
   "stats": [
     {
@@ -33,7 +35,7 @@
     },
     {
       "label": "Tragfähigkeit",
-      "value": "Bis zu 850 kg",
+      "value": "Bis zu 875 kg",
       "description": "Maximale Systemlast"
     },
     {
@@ -43,65 +45,59 @@
     }
   ],
   "modules": {
-    "title": "Verfügbare Module",
-    "subtitle": "Wählen Sie die Module für Ihre individuelle Konfiguration",
+    "title": "Verfügbare Erweiterungen",
+    "subtitle": "Immer die passenden Module für alle Ansprüche.",
     "items": [
       {
-        "category": "Basis",
-        "title": "Plattform-Basis",
-        "sizes": ["1200 × 800 mm", "1600 × 800 mm", "2000 × 800 mm"],
-        "loadCapacity": "850 kg",
-        "material": "Aluminium T6061"
+        "title": "Wechselplattformen",
+        "description": "unterschiedliche Plattformgrößen zum Austausch. Verfügbar in 660/1010/1400mm verfügbar. Plattformbreite 2100mm mit Lochraster zur felxiblen Montage von Zubehör.",
+        "image": "/assets/images/modules/Plattformen in verschiedenen Größen.png"
       },
       {
-        "category": "Transport",
-        "title": "Fahrradträger-Modul",
-        "sizes": ["2 Räder", "4 Räder"],
-        "loadCapacity": "60 kg",
-        "material": "Aluminium / Stahl"
+        "title": "Sektionale Klappplattform",
+        "description": "Immer die richtige Plattform für verschiedene Beladungszustände.",
+        "image": "/assets/images/modules/Sektionale Klappplattform.png"
       },
       {
-        "category": "Stauraum",
-        "title": "Staubox",
-        "sizes": ["80 L", "120 L", "160 L"],
-        "loadCapacity": "120 kg",
-        "material": "Aluminium pulverbeschichtet"
+        "title": "Motorrad Erweiterungsmodul",
+        "description": "Ermöglicht den sicheren Transport von Motorrädern auf dem Heckträger. Robuste Konstruktion und einfache Befestigung.",
+        "image": "/assets/images/modules/HT XL Motorraderweiterung.png"
       },
       {
-        "category": "Sicherheit",
-        "title": "Reserveradhalter",
-        "sizes": ["255/70 R17", "285/70 R17", "315/70 R17"],
-        "loadCapacity": "85 kg",
-        "material": "Stahl verzinkt"
-      },
-      {
-        "category": "Erweiterung",
-        "title": "Quad-Erweiterung",
-        "sizes": ["ATV Standard", "ATV Breit"],
-        "loadCapacity": "450 kg",
-        "material": "Stahl / Aluminium"
-      },
-      {
-        "category": "Versorgung",
-        "title": "Kanisterhalter",
-        "sizes": ["2 × 20 L", "4 × 20 L"],
-        "loadCapacity": "100 kg",
-        "material": "Edelstahl"
-      },
-      {
-        "category": "Werkzeug",
-        "title": "Werkzeugbox-Modul",
-        "sizes": ["60 L", "90 L"],
-        "loadCapacity": "80 kg",
-        "material": "Aluminium eloxiert"
-      },
-      {
-        "category": "Bergung",
-        "title": "Sandblech-Halter",
-        "sizes": ["2 Bleche", "4 Bleche"],
-        "loadCapacity": "40 kg",
-        "material": "Aluminium / Edelstahl"
+        "title": "Quad Erweiterungsmodul",
+        "description": "Ermöglicht den sicheren Transport eines Quads auf dem Heckträger. Inklusive Vorbereitung zur unterseitigen Befestigung des Ersatzrades.",
+        "image": "/assets/images/modules/HT XL Quad Erweiterung.png"
       }
     ]
+  },
+  "featuredSection": {
+    "title": "Die FAS-Auszugsplattform",
+    "description": "Die eigene Terrasse immer dabei. Mit der FAS-Auszugsplattform kannst Du entspannt die Aussicht genießen.",
+    "features": [
+      "Vollautomatisches Ein- und Ausfahren",
+      "Sensorgestütze Hinderniserkennung",
+      "Zweiteilig ausfahrbar für maximale Flexibilität",
+      "Rutschfester widerstandsfähiger Belag aus dem Yachtbereich.",
+      "Direkte Integration im originalen FAS Zwischenrahmen",
+      "Unabhängig vom Untergrund draussen sitzen."
+    ],
+    "image": "/assets/images/modules/Auszugplattform Studio.png",
+    "ctaText": "Jetzt anfragen",
+    "ctaUrl": "#inquiry-form"
+  },
+  "additionalSection": {
+    "title": "FAS-Staukastentreppe",
+    "description": "Elektrische Version für den bequemen seitlichen Aufstieg.",
+    "features": [
+      "Platzsparende Kontruktion für enge Umgebungen",
+      "Robuste Konstruktion für maximale Sicherheit",
+      "Rutschfester widerstandsfähiger Belag aus dem Yachtbereich.",
+      "Einfache Bedienung per Fernsteuerung Taster oder remote.",
+      "Integrierte Stufen-Beleuchtung für bessere Sichtbarkeit",
+      "Auch als manuelle Version erhältlich"
+    ],
+    "image": "/assets/images/modules/Staukastentreppe seitlich Studio.png",
+    "ctaText": "Jetzt anfragen",
+    "ctaUrl": "#inquiry-form"
   }
 }

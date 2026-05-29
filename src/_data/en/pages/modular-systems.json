@@ -17,8 +17,8 @@
       "TÜV-certified and road-approved",
       "Expandable with additional modules at any time"
     ],
-    "ctaText": "Configure System",
-    "ctaUrl": "/en/configurator"
+    "ctaText": "Request Now",
+    "ctaUrl": "#inquiry-form"
   },
   "stats": [
     {
@@ -47,61 +47,53 @@
     "subtitle": "Choose the modules for your individual configuration",
     "items": [
       {
-        "category": "Base",
         "title": "Platform Base",
-        "sizes": ["1200 × 800 mm", "1600 × 800 mm", "2000 × 800 mm"],
-        "loadCapacity": "850 kg",
-        "material": "Aluminum T6061"
+        "description": "The foundation of our modular system. The robust aluminum platform provides maximum stability and flexibility for mounting all add-on modules. 200×200 mm grid system for secure locking.",
+        "image": "/assets/images/modules/HT XL freigestellt.png"
       },
       {
-        "category": "Transport",
-        "title": "Bike Rack Module",
-        "sizes": ["2 bikes", "4 bikes"],
-        "loadCapacity": "60 kg",
-        "material": "Aluminum / Steel"
+        "title": "Sectional Folding Platform",
+        "description": "Modular platform system for flexible cargo solutions. Tool-free assembly and dismantling for maximum flexibility on every expedition.",
+        "image": "/assets/images/modules/Sektionale Klappplattform.png"
       },
       {
-        "category": "Storage",
-        "title": "Storage Box",
-        "sizes": ["80 L", "120 L", "160 L"],
-        "loadCapacity": "120 kg",
-        "material": "Powder-coated aluminum"
+        "title": "Motorcycle Extension Module",
+        "description": "Enables safe transport of motorcycles on the rear carrier. Robust construction and easy assembly for maximum flexibility.",
+        "image": "/assets/images/modules/HT XL Motorraderweiterung.png"
       },
       {
-        "category": "Safety",
-        "title": "Spare Wheel Carrier",
-        "sizes": ["255/70 R17", "285/70 R17", "315/70 R17"],
-        "loadCapacity": "85 kg",
-        "material": "Galvanized steel"
-      },
-      {
-        "category": "Extension",
-        "title": "Quad Extension",
-        "sizes": ["ATV Standard", "ATV Wide"],
-        "loadCapacity": "450 kg",
-        "material": "Steel / Aluminum"
-      },
-      {
-        "category": "Supply",
-        "title": "Jerry Can Holder",
-        "sizes": ["2 × 20 L", "4 × 20 L"],
-        "loadCapacity": "100 kg",
-        "material": "Stainless steel"
-      },
-      {
-        "category": "Tools",
-        "title": "Tool Box Module",
-        "sizes": ["60 L", "90 L"],
-        "loadCapacity": "80 kg",
-        "material": "Anodized aluminum"
-      },
-      {
-        "category": "Recovery",
-        "title": "Recovery Board Holder",
-        "sizes": ["2 boards", "4 boards"],
-        "loadCapacity": "40 kg",
-        "material": "Aluminum / Stainless steel"
+        "title": "Quad Extension Module",
+        "description": "Enables safe transport of quads on the rear carrier. Robust construction and easy assembly for maximum flexibility.",
+        "image": "/assets/images/modules/HT XL Quad Erweiterung.png"
       }
     ]
+  },
+  "featuredSection": {
+    "title": "Complete Solution for Maximum Flexibility",
+    "description": "Discover the revolutionary HT-XL grid system – engineered for expedition professionals who demand the highest standards in reliability and modularity. Every module can be mounted and changed tool-free.",
+    "features": [
+      "Tool-free module exchange in under 60 seconds",
+      "Corrosion-resistant aluminum construction",
+      "Compatible with all FAS vehicle platforms",
+      "TÜV-certified and road-approved",
+      "Expandable with additional modules at any time"
+    ],
+    "image": "/assets/images/modules/Auszugplattform Studio.png",
+    "ctaText": "Request Now",
+    "ctaUrl": "#inquiry-form"
+  },
+  "additionalSection": {
+    "title": "Additional Module Area",
+    "description": "Description of the additional module or feature. You can add more information here.",
+    "features": [
+      "Feature 1",
+      "Feature 2",
+      "Feature 3",
+      "Feature 4",
+      "Feature 5"
+    ],
+    "image": "/assets/images/modules/Staukastentreppe seitlich Studio.png",
+    "ctaText": "Request Now",
+    "ctaUrl": "#inquiry-form"
   }
 }

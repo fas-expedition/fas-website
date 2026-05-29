@@ -2,6 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
+local_backend: true
+
+# For production with Netlify Identity:
+# identity:
+#   url: https://fas-expedition.netlify.app/.netlify/identity
+
 publish_mode: editorial_workflow
 
 media_folder: "src/assets/images"
@@ -159,20 +165,60 @@ collections:
             fields:
               - { label: "Hero - Title", name: "title", widget: "string", required: true }
               - { label: "Hero - Subtitle", name: "subtitle", widget: "string", required: false }
-              - { label: "Hero - Description", name: "description", widget: "text", required: false }
               - { label: "Hero - Image", name: "image", widget: "image", required: true }
-              - { label: "Hero - CTA Text", name: "ctaText", widget: "string", required: false }
-              - { label: "Hero - CTA URL", name: "ctaUrl", widget: "string", required: false }
-          - label: "Vehicle Categories"
-            name: "categories"
+          - label: "Vehicle Types"
+            name: "vehicleTypes"
             widget: "list"
             fields:
-              - { label: "Category - ID", name: "id", widget: "string", required: true }
-              - { label: "Category - Title", name: "title", widget: "string", required: true }
-              - { label: "Category - Description", name: "description", widget: "text", required: true }
-              - { label: "Category - Image", name: "image", widget: "image", required: true }
-              - { label: "Category - Specs", name: "specs", widget: "string", required: false }
-              - { label: "Category - Link", name: "link", widget: "string", required: false }
+              - { label: "Vehicle - ID", name: "id", widget: "string", required: true }
+              - { label: "Vehicle - Title", name: "title", widget: "string", required: true }
+              - { label: "Vehicle - Subtitle", name: "subtitle", widget: "string", required: true }
+              - { label: "Vehicle - Image", name: "image", widget: "image", required: true }
+              - label: "Gallery"
+                name: "gallery"
+                widget: "list"
+                fields:
+                  - { label: "Image URL", name: "url", widget: "image", required: true }
+                  - { label: "Alt Text (SEO)", name: "alt", widget: "string", required: true, hint: "Beschreibender Text für bessere SEO und Accessibility" }
+              - label: "Thumbnail Gallery"
+                name: "thumbGallery"
+                widget: "list"
+                fields:
+                  - { label: "Thumbnail URL", name: "url", widget: "image", required: true }
+                  - { label: "Alt Text (SEO)", name: "alt", widget: "string", required: true }
+              - label: "Specs"
+                name: "specs"
+                widget: "object"
+                fields:
+                  - { label: "Power Label", name: "power.label", widget: "string" }
+                  - { label: "Power Value", name: "power.value", widget: "string" }
+                  - { label: "GVW Label", name: "gvw.label", widget: "string" }
+                  - { label: "GVW Value", name: "gvw.value", widget: "string" }
+                  - { label: "Range Label", name: "range.label", widget: "string" }
+                  - { label: "Range Value", name: "range.value", widget: "string" }
+                  - { label: "Cabin Label", name: "cabin.label", widget: "string" }
+                  - { label: "Cabin Value", name: "cabin.value", widget: "string" }
+              - label: "Configuration"
+                name: "configurations"
+                widget: "list"
+                fields:
+                  - { label: "Config - Name", name: "name", widget: "string" }
+                  - { label: "Config - Price", name: "price", widget: "string" }
+              - { label: "Vehicle - CTA Text", name: "ctaText", widget: "string" }
+              - { label: "Vehicle - CTA URL", name: "ctaUrl", widget: "string" }
+          - label: "Core Technologies"
+            name: "coreTechnologies"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon", name: "icon", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
 
       # Expeditionsmobile (EN)
       - name: "expeditionsmobile_en"
@@ -308,8 +354,9 @@ collections:
         file: "src/_data/de/translations.json"
         fields:
           - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - Über uns", name: "nav.about", widget: "string" }
           - { label: "Nav - Expeditionsmobile", name: "nav.expeditionMobile", widget: "string" }
-          - { label: "Nav - Modulare Systeme", name: "nav.modularSystems", widget: "string" }
+          - { label: "Nav - Fahrzeugmodule", name: "nav.modularSystems", widget: "string" }
           - { label: "Nav - BRABUS", name: "nav.brabus", widget: "string" }
           - { label: "Nav - Konfigurator", name: "nav.configurator", widget: "string" }
           - { label: "Nav - Blog", name: "nav.blog", widget: "string" }
@@ -342,14 +389,16 @@ collections:
           - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
           - { label: "UI - Coming Soon", name: "ui.comingSoon", widget: "string" }
           - { label: "UI - Back to Home", name: "ui.backToHome", widget: "string" }
+          - { label: "Page Service - Title", name: "page.service.title", widget: "string" }
 
       - name: "translations_en"
         label: "Translations (EN)"
         file: "src/_data/en/translations.json"
         fields:
           - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - About Us", name: "nav.about", widget: "string" }
           - { label: "Nav - Expedition Vehicles", name: "nav.expeditionMobile", widget: "string" }
-          - { label: "Nav - Modular Systems", name: "nav.modularSystems", widget: "string" }
+          - { label: "Nav - Vehicle Modules", name: "nav.modularSystems", widget: "string" }
           - { label: "Nav - BRABUS", name: "nav.brabus", widget: "string" }
           - { label: "Nav - Configurator", name: "nav.configurator", widget: "string" }
           - { label: "Nav - Blog", name: "nav.blog", widget: "string" }
@@ -382,6 +431,7 @@ collections:
           - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
           - { label: "UI - Coming Soon", name: "ui.comingSoon", widget: "string" }
           - { label: "UI - Back to Home", name: "ui.backToHome", widget: "string" }
+          - { label: "Page Service - Title", name: "page.service.title", widget: "string" }
 
   # ─── Site Settings ──────────────────────────────────────────────
   - name: "settings"

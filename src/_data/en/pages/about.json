@@ -1,0 +1,40 @@
+{
+  "pageTitle": "About Us",
+  "pageDescription": "FAS Expedition – Your specialist for custom expedition vehicles. Vehicle construction, cabin construction and services from a single source.",
+  "altSlug": {
+    "de": "ueber-uns",
+    "en": "about"
+  },
+  "hero": {
+    "title": "About Us",
+    "subtitle": "Your Expedition Vehicle Specialist"
+  },
+  "intro": {
+    "title": "Who We Are",
+    "paragraphs": [
+      "FAS Expedition combines expertise in body and commercial vehicle construction, engineering, technical drawing, electrical systems, and high-quality interior design with a substantial dose of innovation.",
+      "We offer our customers a complete expedition vehicle from a single source. The driving force of our team is off-road enthusiasm and a passion for travel.",
+      "We are driven to create world-class expedition vehicles for our customers, where the joy of autonomous travel takes center stage. We build with experience — our products are proven, tested, and have proven themselves countless times in the field."
+    ]
+  },
+  "services": [
+    {
+      "title": "Vehicle Construction",
+      "description": "Chassis modifications, intermediate frames, wheelbase extensions and cabin shortening — everything that turns your vehicle into a true world travel mobile."
+    },
+    {
+      "title": "Cabin Construction",
+      "description": "Innovative cabin design with masterfully crafted interior — equipped for all off-road levels."
+    },
+    {
+      "title": "Services",
+      "description": "On- and off-road training, advice on recovery equipment, modifications — for all expedition vehicle owners."
+    }
+  ],
+  "cta": {
+    "title": "Meet Our Team",
+    "description": "Hardly an employee who is not infected with camping and travel fever.",
+    "ctaText": "To Team",
+    "ctaUrl": "/en/team/"
+  }
+}

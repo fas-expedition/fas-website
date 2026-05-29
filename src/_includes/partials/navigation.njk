@@ -13,23 +13,30 @@
 
       {# Desktop Navigation Links #}
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="/{{ locale }}/" class="text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+        <a href="/{{ locale }}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if page.url == '/' + locale + '/' %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.home"] }}
         </a>
-        <a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+        <a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if '/expeditionsmobile/' in page.url or '/expedition-vehicles/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.expeditionMobile"] }}
         </a>
-        <a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+        <a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if '/modulare-systeme/' in page.url or '/modular-systems/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.modularSystems"] }}
         </a>
-        <a href="/{{ locale }}/brabus/" class="text-sm tracking-widest uppercase font-bold hover:opacity-80 transition-opacity" style="font-family: 'Georgia', serif; color: rgb(204, 69, 61);">
+        {% if "brabus" not in site.disabledNavItems %}
+        <a href="/{{ locale }}/brabus/" class="text-sm tracking-widest uppercase font-bold transition-opacity {% if '/brabus/' in page.url %}text-green-500{% else %}hover:opacity-80{% endif %}" style="font-family: 'Georgia', serif; {% if '/brabus/' not in page.url %}color: rgb(204, 69, 61){% endif %};">
           {{ translations["nav.brabus"] }}
         </a>
-        <a href="/{{ locale }}/{% if locale == 'de' %}konfigurator{% else %}configurator{% endif %}/" class="text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+        {% endif %}
+        {% if "configurator" not in site.disabledNavItems %}
+        <a href="/{{ locale }}/{% if locale == 'de' %}konfigurator{% else %}configurator{% endif %}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if '/konfigurator/' in page.url or '/configurator/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.configurator"] }}
         </a>
-        <a href="/{{ locale }}/blog/" class="text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+        {% endif %}
+        <a href="/{{ locale }}/blog/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if '/blog/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
           {{ translations["nav.blog"] }}
+        </a>
+        <a href="/{{ locale }}/{% if locale == 'de' %}ueber-uns{% else %}about{% endif %}/" class="text-sm tracking-widest uppercase font-bold transition-colors {% if '/ueber-uns/' in page.url or '/about/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
+          {{ translations["nav.about"] }}
         </a>
       </div>
 
@@ -57,7 +64,7 @@
         </a>
 
         {# Mobile Hamburger Button #}
-        <button id="menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 text-white" aria-label="Toggle menu">
+        <button id="menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 text-white" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
           </svg>
@@ -70,23 +77,30 @@
   <div id="mobile-menu" class="hidden lg:hidden bg-black/98 backdrop-blur-md border-t border-zinc-800">
     <div class="px-6 py-8 space-y-6">
       {# Mobile Nav Links #}
-      <a href="/{{ locale }}/" class="block text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+      <a href="/{{ locale }}/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if page.url == '/' + locale + '/' %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
         {{ translations["nav.home"] }}
       </a>
-      <a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="block text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+      <a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if '/expeditionsmobile/' in page.url or '/expedition-vehicles/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
         {{ translations["nav.expeditionMobile"] }}
       </a>
-      <a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="block text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+      <a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if '/modulare-systeme/' in page.url or '/modular-systems/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
         {{ translations["nav.modularSystems"] }}
       </a>
-      <a href="/{{ locale }}/brabus/" class="block text-sm tracking-widest uppercase font-bold hover:opacity-80 transition-opacity" style="font-family: 'Georgia', serif; color: rgb(204, 69, 61);">
+      {% if "brabus" not in site.disabledNavItems %}
+      <a href="/{{ locale }}/brabus/" class="block text-sm tracking-widest uppercase font-bold transition-opacity {% if '/brabus/' in page.url %}text-green-500{% else %}hover:opacity-80{% endif %}" style="font-family: 'Georgia', serif; {% if '/brabus/' not in page.url %}color: rgb(204, 69, 61){% endif %};">
         {{ translations["nav.brabus"] }}
       </a>
-      <a href="/{{ locale }}/{% if locale == 'de' %}konfigurator{% else %}configurator{% endif %}/" class="block text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+      {% endif %}
+      {% if "configurator" not in site.disabledNavItems %}
+      <a href="/{{ locale }}/{% if locale == 'de' %}konfigurator{% else %}configurator{% endif %}/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if '/konfigurator/' in page.url or '/configurator/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
         {{ translations["nav.configurator"] }}
       </a>
-      <a href="/{{ locale }}/blog/" class="block text-sm tracking-widest uppercase font-bold text-white hover:text-zinc-300 transition-colors">
+      {% endif %}
+      <a href="/{{ locale }}/blog/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if '/blog/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
         {{ translations["nav.blog"] }}
+      </a>
+      <a href="/{{ locale }}/{% if locale == 'de' %}ueber-uns{% else %}about{% endif %}/" class="block text-sm tracking-widest uppercase font-bold transition-colors {% if '/ueber-uns/' in page.url or '/about/' in page.url %}text-green-500{% else %}text-white hover:text-zinc-300{% endif %}">
+        {{ translations["nav.about"] }}
       </a>
 
       {# Mobile Divider #}

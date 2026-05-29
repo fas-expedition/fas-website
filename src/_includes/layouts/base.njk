@@ -5,12 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ pageTitle }} | FAS Expedition</title>
   <meta name="description" content="{{ pageDescription }}">
-  <link rel="alternate" hreflang="de" href="{{ site.url }}/de/{{ altSlug.de }}">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ altSlug.en }}">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/{{ altSlug.de }}">
+  
+  {# Canonical Tag #}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  
+  {# Hreflang for Multi-language #}
+  <link rel="alternate" hreflang="de" href="{{ site.url }}/de/{{ altSlug.de if altSlug else '' }}">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ altSlug.en if altSlug else '' }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/{{ altSlug.de if altSlug else '' }}">
+  
+  {# Open Graph Tags #}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:site_name" content="FAS Expedition">
   <meta property="og:locale" content="{{ 'de_DE' if locale == 'de' else 'en_GB' }}">
+  {% if locale == 'de' %}
+  <meta property="og:locale:alternate" content="en_GB">
+  {% else %}
+  <meta property="og:locale:alternate" content="de_DE">
+  {% endif %}
+  
+  {# Twitter Card Tags #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:site" content="@fasexpedition">
+  
+  {# Mobile Optimization #}
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FAS Expedition">
+  
+  {# Additional SEO #}
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="{{ 'German' if locale == 'de' else 'English' }}">
+  
   <link rel="stylesheet" href="/assets/css/output.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  {# JSON-LD Structured Data #}
+  {% include "partials/schema.njk" %}
 </head>
 <body class="bg-black text-white font-sans antialiased">
   {% include "partials/navigation.njk" %}
@@ -20,6 +57,7 @@
   </main>
 
   {% include "partials/footer.njk" %}
+  {% include "partials/inquiry-form-modal.njk" %}
 
   <script>
     // Handle Identity Widget redirect after email confirmation
@@ -56,9 +94,14 @@
       if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', function() {
           mobileMenu.classList.toggle('hidden');
+          const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', !isExpanded);
         });
       }
     })();
   </script>
+  <script src="/assets/js/inquiry-form.js"></script>
+  <script src="/assets/js/lazy-loading.js"></script>
+  <script src="/assets/js/gallery.js"></script>
 </body>
 </html>

@@ -12,7 +12,42 @@
       "id": "4x4",
       "title": "4x4 Expedition Vehicles",
       "subtitle": "Compact, agile, and trail-ready",
-      "image": "/assets/images/vehicles/4x4-detail.svg",
+      "image": "/assets/images/vehicles/4x4 product picture.png",
+      "gallery": [
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240418_134635.jpg", "alt": "Interior overview 1" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240529_120044.jpg", "alt": "Interior overview 2" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240610_114346.jpg", "alt": "Interior workspace detail" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240819_142400.jpg", "alt": "Interior seating area" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2442.JPG", "alt": "Interior storage and organization" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2457.JPG", "alt": "Interior cooling area" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2471.JPG", "alt": "Interior cabinets and drawers" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2474.JPG", "alt": "Interior detail shot" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/x20240819_142439.jpg", "alt": "Interior panorama 1" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/x20240819_143659.jpg", "alt": "Interior panorama 2" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2381.JPG", "alt": "Interior comfort features" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2405.JPG", "alt": "Interior lighting and design" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2417.JPG", "alt": "Interior materials and finishes" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2420.JPG", "alt": "Interior surface detail" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2424.JPG", "alt": "Interior technology and equipment" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2429.JPG", "alt": "Interior storage detail 1" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2432.JPG", "alt": "Interior storage detail 2" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2441.JPG", "alt": "Interior organizer and shelf" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2443.JPG", "alt": "Interior cabinet detail" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2445.JPG", "alt": "Interior ceiling and lighting" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2448.JPG", "alt": "Interior floor area" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2452.JPG", "alt": "Interior side detail" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2456.JPG", "alt": "Interior material quality" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2463.JPG", "alt": "Interior work surface" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2470.JPG", "alt": "Interior night view" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2472.JPG", "alt": "Interior ambient" }
+      ],
+      "thumbGallery": [
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240418_134635.jpg", "alt": "Interior overview 1" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240529_120044.jpg", "alt": "Interior overview 2" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240610_114346.jpg", "alt": "Interior workspace detail" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/20240819_142400.jpg", "alt": "Interior seating area" },
+        { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2442.JPG", "alt": "Interior storage and organization" }
+      ],
       "specs": {
         "power": { "label": "Power", "value": "Up to 450 HP" },
         "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 5,500 kg" },
@@ -20,9 +55,7 @@
         "cabin": { "label": "Cabin", "value": "2–3 persons" }
       },
       "configurations": [
-        { "name": "Explorer 4x4 Base", "price": "from €189,000" },
-        { "name": "Explorer 4x4 Comfort", "price": "from €245,000" },
-        { "name": "Explorer 4x4 Expedition", "price": "from €298,000" }
+        { "name": "Explorer 4x4 Base", "price": "from €189,000" }
       ],
       "ctaText": "Configure 4x4",
       "ctaUrl": "/en/configurator"
@@ -31,7 +64,33 @@
       "id": "6x6",
       "title": "6x6 Expedition Vehicles",
       "subtitle": "Extended capacity for demanding missions",
-      "image": "/assets/images/vehicles/6x6-detail.svg",
+      "image": "/assets/images/vehicles/6x6 product picture.png",
+      "gallery": [
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_115426.jpg", "alt": "Interior overview 1" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120011.jpg", "alt": "Interior overview 2" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120456.jpg", "alt": "Interior workspace detail" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120701.jpg", "alt": "Interior seating area" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122004.jpg", "alt": "Interior storage and organization" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122710.jpg", "alt": "Interior cooling area" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122837.jpg", "alt": "Interior cabinets and drawers" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123219.jpg", "alt": "Interior sleeping area 1" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123242.jpg", "alt": "Interior sleeping area 2" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123332.jpg", "alt": "Interior comfort features" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123401.jpg", "alt": "Interior lighting and design" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123617.jpg", "alt": "Interior materials and finishes" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123956.jpg", "alt": "Interior surface detail" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_124331.jpg", "alt": "Interior technology and equipment" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_124757.jpg", "alt": "Interior panorama 1" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_125700.jpg", "alt": "Interior panorama 2" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/IMG_5865.JPG", "alt": "Interior detail shot" }
+      ],
+      "thumbGallery": [
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_115426.jpg", "alt": "Interior overview 1" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120011.jpg", "alt": "Interior overview 2" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120456.jpg", "alt": "Interior workspace detail" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120701.jpg", "alt": "Interior seating area" },
+        { "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122004.jpg", "alt": "Interior storage and organization" }
+      ],
       "specs": {
         "power": { "label": "Power", "value": "Up to 530 HP" },
         "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 12,000 kg" },
@@ -39,9 +98,7 @@
         "cabin": { "label": "Cabin", "value": "4–6 persons" }
       },
       "configurations": [
-        { "name": "Pathfinder 6x6 Base", "price": "from €385,000" },
-        { "name": "Pathfinder 6x6 Comfort", "price": "from €465,000" },
-        { "name": "Pathfinder 6x6 Expedition Pro", "price": "from €548,000" }
+        { "name": "Pathfinder 6x6 Base", "price": "from €385,000" }
       ],
       "ctaText": "Configure 6x6",
       "ctaUrl": "/en/configurator"
@@ -50,7 +107,21 @@
       "id": "8x8",
       "title": "8x8 Expedition Vehicles",
       "subtitle": "Maximum capability for extreme expeditions",
-      "image": "/assets/images/vehicles/8x8-detail.svg",
+      "image": "/assets/images/vehicles/Arocs 8x8.png",
+      "gallery": [
+        { "url": "/assets/images/vehicles/Arocs 8x8.png", "alt": "8x8 Side view" },
+        { "url": "/assets/images/vehicles/Arocs 8x8.png", "alt": "8x8 Front view" },
+        { "url": "/assets/images/vehicles/Arocs 8x8.png", "alt": "8x8 Interior" },
+        { "url": "/assets/images/vehicles/Arocs 8x8.png", "alt": "8x8 Detail" },
+        { "url": "/assets/images/vehicles/Arocs 8x8.png", "alt": "8x8 Terrain" }
+      ],
+      "thumbGallery": [
+        { "url": "/assets/images/vehicles/coming-soon.svg", "alt": "8x8 Interior Coming Soon" },
+        { "url": "/assets/images/vehicles/coming-soon.svg", "alt": "8x8 Interior Coming Soon" },
+        { "url": "/assets/images/vehicles/coming-soon.svg", "alt": "8x8 Interior Coming Soon" },
+        { "url": "/assets/images/vehicles/coming-soon.svg", "alt": "8x8 Interior Coming Soon" },
+        { "url": "/assets/images/vehicles/coming-soon.svg", "alt": "8x8 Interior Coming Soon" }
+      ],
       "specs": {
         "power": { "label": "Power", "value": "Up to 625 HP" },
         "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 18,000 kg" },
@@ -58,37 +129,35 @@
         "cabin": { "label": "Cabin", "value": "6–10 persons" }
       },
       "configurations": [
-        { "name": "Titan 8x8 Base", "price": "from €685,000" },
-        { "name": "Titan 8x8 Expedition", "price": "from €845,000" },
-        { "name": "Titan 8x8 Ultimate", "price": "from €1,150,000" }
+        { "name": "Titan 8x8 Base", "price": "from €685,000" }
       ],
       "ctaText": "Configure 8x8",
       "ctaUrl": "/en/configurator"
     }
   ],
   "coreTechnologies": {
-    "title": "Core Technologies",
-    "subtitle": "Engineering excellence at the highest level",
+    "title": "Engineering Excellence",
+    "subtitle": "Modular flexibility for uncompromising performance.",
     "items": [
       {
-        "icon": "drivetrain",
-        "title": "Advanced Drivetrain",
-        "description": "Permanent all-wheel drive with locking differentials and low-range transfer case for maximum traction."
+        "icon": "mountain",
+        "title": "BUILT FOR ON- AND OFF-ROAD",
+        "description": "Built to master every terrain – from Alaska's cold to the highlands of South America."
       },
       {
-        "icon": "hybrid",
-        "title": "Hybrid Power",
-        "description": "Optional hybrid system for extended range and silent operation at camp."
+        "icon": "cog",
+        "title": "TWO CHASSIS",
+        "description": "As a configurable platform with modular components for any journey."
       },
       {
-        "icon": "armor",
-        "title": "Armored Protection",
-        "description": "Optional ballistic protection packages up to VR7 for operations in high-risk regions."
+        "icon": "shield",
+        "title": "LUXURY INTERIOR TO MEASURE",
+        "description": "Premium materials and craftsmanship for maximum comfort on the road."
       },
       {
-        "icon": "service",
-        "title": "Field Serviceable",
-        "description": "Modular construction enables maintenance and repair under field conditions without specialized tools."
+        "icon": "gauge",
+        "title": "VERSATILE ACCESSORIES",
+        "description": "Roof racks, winches or recovery equipment - you decide."
       }
     ]
   }

@@ -5,7 +5,7 @@
   "hero": {
     "title": "8x8 Systeme",
     "subtitle": "Maximale Leistung und Kapazität für extremste Anforderungen",
-    "image": "/assets/images/vehicles/8x8-detail.svg"
+    "image": "/assets/images/vehicles/Arocs 8x8.png"
   },
   "overview": {
     "description": "Unsere 8x8-Plattform ist die ultimative Lösung für Expeditionen unter extremsten Bedingungen. Vier angetriebene Achsen bieten unübertroffene Geländefähigkeit und Tragfähigkeit. Der massive Radstand ermöglicht großzügige Wohn- und Arbeitsbereiche auf Expeditionsniveau. Konzipiert für autarke Langzeitmissionen in den entlegensten Regionen der Erde."
@@ -17,9 +17,7 @@
     "cabin": { "label": "Kabine", "value": "6–10 Personen" }
   },
   "configurations": [
-    { "name": "Titan 8x8 Base", "price": "ab €685.000" },
-    { "name": "Titan 8x8 Comfort", "price": "ab €845.000" },
-    { "name": "Titan 8x8 Expedition Elite", "price": "ab €1.120.000" }
+    { "name": "Titan 8x8 Base", "price": "ab €685.000" }
   ],
   "features": [
     { "icon": "mountain", "title": "Vierachsantrieb", "description": "Permanenter Allradantrieb auf vier Achsen mit einzeln sperrbaren Differenzialen für absolute Geländehoheit." },

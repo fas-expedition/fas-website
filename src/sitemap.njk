@@ -61,10 +61,34 @@ eleventyExcludeFromCollections: true
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/konfigurator/" />
   </url>
   <url>
+    <loc>{{ site.url }}/de/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/ueber-uns/" />
+  </url>
+  <url>
+    <loc>{{ site.url }}/de/team/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/team/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/team/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/team/" />
+  </url>
+  <url>
     <loc>{{ site.url }}/en/configurator/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/konfigurator/" />
     <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/configurator/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/konfigurator/" />
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/ueber-uns/" />
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/team/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/team/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/team/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/team/" />
   </url>
   <url>
     <loc>{{ site.url }}/de/blog/</loc>
@@ -78,4 +102,25 @@ eleventyExcludeFromCollections: true
     <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/blog/" />
   </url>
+
+  {# Blog Posts - German #}
+  {% for post in collections.publishedBlog %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.data.publishDate }}</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {% endfor %}
+
+  {# Blog Posts - English #}
+  {% for post in collections.publishedBlogEn %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.data.publishDate }}</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {% endfor %}
+
 </urlset>

@@ -1,0 +1,34 @@
+{
+  "pageTitle": "8x8 Expedition Vehicles",
+  "pageDescription": "FAS 8x8 Expedition Vehicles – Maximum performance and capacity for the most extreme demands. Configurations from €685,000.",
+  "altSlug": { "de": "8x8", "en": "8x8" },
+  "hero": {
+    "title": "8x8 Systems",
+    "subtitle": "Maximum performance and capacity for the most extreme demands",
+    "image": "/assets/images/vehicles/Arocs 8x8.png"
+  },
+  "overview": {
+    "description": "Our 8x8 platform is the ultimate solution for expeditions under the most extreme conditions. Four driven axles provide unparalleled terrain capability and load capacity. The massive wheelbase enables spacious living and working areas at expedition level. Designed for autonomous long-term missions in the most remote regions on Earth."
+  },
+  "specs": {
+    "power": { "label": "Power", "value": "Up to 680 HP" },
+    "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 36,000 kg" },
+    "range": { "label": "Range", "value": "Up to 2,500 km" },
+    "cabin": { "label": "Cabin", "value": "6–10 persons" }
+  },
+  "configurations": [
+    { "name": "Titan 8x8 Base", "price": "from €685,000" }
+  ],
+  "features": [
+    { "icon": "mountain", "title": "Four-Axle Drive", "description": "Permanent all-wheel drive on four axles with individually locking differentials for absolute terrain authority." },
+    { "icon": "cog", "title": "Modular Spacious Design", "description": "Expandable construction system with multiple living, working, and storage modules for complete autonomy." },
+    { "icon": "shield", "title": "Maximum Protection", "description": "Ballistic protection packages up to VR9 and CBRN protective ventilation for operations under highest security requirements." },
+    { "icon": "gauge", "title": "Extreme Range", "description": "Multiple fuel tank system with up to 1,200 liters capacity for weeks of autonomous operations without infrastructure." }
+  ],
+  "cta": {
+    "title": "Configure Your 8x8",
+    "description": "Build your custom 8x8 expedition vehicle for the most extreme missions.",
+    "buttonText": "To Configurator",
+    "buttonUrl": "/en/configurator"
+  }
+}

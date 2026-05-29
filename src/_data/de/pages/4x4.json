@@ -8,7 +8,7 @@
   "hero": {
     "title": "4x4 Systeme",
     "subtitle": "Kompakt, wendig und geländetauglich – die agile Plattform für anspruchsvolle Expeditionen.",
-    "image": "/assets/images/vehicles/4x4-detail.svg"
+    "image": "/assets/images/vehicles/4x4 product picture.png"
   },
   "overview": {
     "description": "Unsere 4x4-Plattform bietet die perfekte Balance aus Agilität und Geländefähigkeit. Basierend auf bewährten Fahrgestellen mit permanentem Allradantrieb, sperrbaren Differenzialen und Geländeuntersetzung meistern diese Fahrzeuge jedes Terrain. Der modulare Aufbau ermöglicht individuelle Konfigurationen für Expeditionen, Rettungseinsätze oder mobile Arbeitsplätze."
@@ -20,9 +20,7 @@
     "cabin": { "label": "Kabine", "value": "2–3 Personen" }
   },
   "configurations": [
-    { "name": "Explorer 4x4 Base", "price": "ab €189.000" },
-    { "name": "Explorer 4x4 Comfort", "price": "ab €245.000" },
-    { "name": "Explorer 4x4 Expedition", "price": "ab €298.000" }
+    { "name": "Explorer 4x4 Base", "price": "ab €189.000" }
   ],
   "features": [
     {

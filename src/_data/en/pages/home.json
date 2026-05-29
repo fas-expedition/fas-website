@@ -7,8 +7,8 @@
     "subtitle": "Adventure meets Engineering",
     "description": "Complete vehicles and modular systems for the ultimate adventure.",
     "image": "/assets/images/vehicles/arocs-title.png",
-    "ctaText": "Configure Now",
-    "ctaUrl": "/en/configurator"
+    "ctaText": "Inquire Now",
+    "ctaUrl": "#inquiry-form"
   },
   "features": {
     "title": "Engineering Excellence",
@@ -66,6 +66,6 @@
     "title": "Build Your Vision",
     "description": "Configure your perfect expedition vehicle with our advanced modular system.",
     "ctaText": "Launch Configurator",
-    "ctaUrl": "/en/configurator"
+    "ctaUrl": "#inquiry-form"
   }
 }

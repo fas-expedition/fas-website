@@ -8,7 +8,7 @@
   "hero": {
     "title": "6x6 Systeme",
     "subtitle": "Maximale Nutzlast und Reichweite – die vielseitige Plattform für anspruchsvollste Expeditionen.",
-    "image": "/assets/images/vehicles/6x6-detail.svg"
+    "image": "/assets/images/vehicles/6x6 product picture.png"
   },
   "overview": {
     "description": "Die 6x6-Plattform vereint enorme Nutzlastkapazität mit herausragender Geländemobilität. Drei angetriebene Achsen sorgen für überlegene Traktion auch in extremem Terrain. Die verlängerte Rahmenarchitektur bietet Platz für großzügige Wohnkabinen, umfangreiche Versorgungssysteme und schwere Ausrüstung – ideal für autarke Langzeitexpeditionen in entlegene Regionen."
@@ -20,9 +20,7 @@
     "cabin": { "label": "Kabine", "value": "4–6 Personen" }
   },
   "configurations": [
-    { "name": "Explorer 6x6 Base", "price": "ab €320.000" },
-    { "name": "Explorer 6x6 Comfort", "price": "ab €425.000" },
-    { "name": "Explorer 6x6 Expedition Pro", "price": "ab €548.000" }
+    { "name": "Explorer 6x6 Base", "price": "ab €320.000" }
   ],
   "features": [
     {

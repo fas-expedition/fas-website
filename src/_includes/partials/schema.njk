@@ -1,0 +1,79 @@
+{# JSON-LD Structured Data Schemas #}
+
+{# Organization Schema (homepage only) #}
+{% if page.url == '/' or page.url == '/de/' or page.url == '/en/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FAS Expedition",
+  "url": "https://fas-expedition.de",
+  "logo": "https://fas-expedition.de/assets/images/logo/fas-logo-white.png",
+  "description": "FAS Expedition – Spezialist für maßgeschneiderte Expeditionsmobile. Fahrzeugbau, Kabinenbau und Services aus einer Hand.",
+  "sameAs": [
+    "https://www.instagram.com/fas.expedition/",
+    "https://www.facebook.com/fas.expedition/",
+    "https://www.linkedin.com/company/fas-expedition/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Stefan-Klug-Straße 1",
+    "addressLocality": "Schwarzenbruck",
+    "postalCode": "90592",
+    "addressCountry": "DE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+49-911-XXXXX",
+    "email": "info@fas-expedition.de"
+  }
+}
+</script>
+{% endif %}
+
+{# BreadcrumbList Schema (all pages) #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{% if locale == 'de' %}Home{% else %}Home{% endif %}",
+      "item": "https://fas-expedition.de/{{ locale }}/"
+    }
+    {% if page.url != '/' and page.url != '/de/' and page.url != '/en/' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ pageTitle }}",
+      "item": "https://fas-expedition.de{{ page.url }}"
+    }
+    {% endif %}
+  ]
+}
+</script>
+
+{# BlogPosting Schema (blog posts only) #}
+{% if layout == 'blog-post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ excerpt }}",
+  "image": "{% if image %}https://fas-expedition.de{{ image }}{% else %}https://fas-expedition.de/assets/images/logo/fas-logo-white.png{% endif %}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ author }}"
+  },
+  "datePublished": "{{ publishDate }}",
+  "dateModified": "{{ publishDate }}",
+  "articleBody": "{{ content | striptags | truncate(500) }}",
+  "articleSection": "{{ category }}",
+  "keywords": "{{ category }}"
+}
+</script>
+{% endif %}

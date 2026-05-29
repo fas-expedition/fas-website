@@ -1,7 +1,8 @@
 {
   "nav.home": "Home",
+  "nav.about": "About Us",
   "nav.expeditionMobile": "Expedition Vehicles",
-  "nav.modularSystems": "Modular Systems",
+  "nav.modularSystems": "Vehicle Modules",
   "nav.brabus": "BRABUS",
   "nav.configurator": "Configurator",
   "nav.blog": "Blog",
@@ -33,5 +34,6 @@
   "ui.inquireNow": "Inquire Now",
   "ui.contactSpecialist": "Contact Specialist",
   "ui.comingSoon": "Coming Soon",
-  "ui.backToHome": "Back to Home"
+  "ui.backToHome": "Back to Home",
+  "page.service.title": "Technical Support"
 }

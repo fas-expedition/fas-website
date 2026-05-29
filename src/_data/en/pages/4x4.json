@@ -1,0 +1,53 @@
+{
+  "pageTitle": "4x4 Expedition Vehicles",
+  "pageDescription": "FAS 4x4 Expedition Vehicles – Compact off-road vehicles for demanding adventures. Individual configurations from €189,000.",
+  "altSlug": {
+    "de": "4x4",
+    "en": "4x4"
+  },
+  "hero": {
+    "title": "4x4 Systems",
+    "subtitle": "Compact, nimble, and trail-ready – the agile platform for demanding expeditions.",
+    "image": "/assets/images/vehicles/4x4 product picture.png"
+  },
+  "overview": {
+    "description": "Our 4x4 platform offers the perfect balance of agility and off-road capability. Based on proven chassis with permanent all-wheel drive, locking differentials, and low-range transfer case, these vehicles master every terrain. The modular design enables custom configurations for expeditions, rescue missions, or mobile workplaces."
+  },
+  "specs": {
+    "power": { "label": "Power", "value": "Up to 450 HP" },
+    "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 5,500 kg" },
+    "range": { "label": "Range", "value": "Up to 1,200 km" },
+    "cabin": { "label": "Cabin", "value": "2–3 persons" }
+  },
+  "configurations": [
+    { "name": "Explorer 4x4 Base", "price": "from €189,000" }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Off-Road Capability",
+      "description": "Permanent all-wheel drive with locking differentials and low-range transfer case for maximum traction in every terrain."
+    },
+    {
+      "icon": "cog",
+      "title": "Modular Design",
+      "description": "Interchangeable living and work modules for flexible configuration according to mission requirements."
+    },
+    {
+      "icon": "shield",
+      "title": "Protection Packages",
+      "description": "Optional ballistic protection packages up to VR7 for operations in conflict zones and unsafe regions."
+    },
+    {
+      "icon": "gauge",
+      "title": "Performance",
+      "description": "Up to 450 HP for maximum traction and superior driving dynamics even at full load."
+    }
+  ],
+  "cta": {
+    "title": "Configure Your 4x4",
+    "description": "Build your perfect 4x4 expedition vehicle – customized for your specific requirements.",
+    "buttonText": "To Configurator",
+    "buttonUrl": "/en/configurator"
+  }
+}

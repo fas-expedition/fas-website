@@ -1,0 +1,25 @@
+# FAS Expedition Website Robots Configuration
+
+# Default rules for all bots
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_site/
+Disallow: /.env
+Disallow: /config.yml
+
+# Crawl-delay for efficiency (1 second)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fas-expedition.de/sitemap.xml
+
+# Block bad actors
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

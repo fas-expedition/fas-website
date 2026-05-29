@@ -1,0 +1,88 @@
+{# Lightbox Modal for Image Viewing #}
+<div id="lightbox-modal" class="fixed inset-0 bg-black/95 backdrop-blur z-50 hidden items-center justify-center p-4">
+  <div class="relative max-w-4xl w-full h-auto flex flex-col">
+    
+    {# Close Button #}
+    <button class="lightbox-close absolute -top-10 right-0 text-zinc-400 hover:text-white transition-colors" aria-label="Close lightbox">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    {# Image #}
+    <img id="lightbox-image" src="" alt="Enlarged view" class="w-full h-auto object-contain max-h-[80vh]">
+    
+    {# Image Caption #}
+    <p id="lightbox-caption" class="text-center text-zinc-300 mt-4 text-sm"></p>
+  </div>
+</div>
+
+<script>
+(function() {
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeButton = document.querySelector('.lightbox-close');
+
+  if (!lightboxModal) return;
+
+  /**
+   * Open the lightbox
+   */
+  function openLightbox(imageSrc, caption) {
+    lightboxImage.src = imageSrc;
+    lightboxCaption.textContent = caption || '';
+    lightboxModal.classList.remove('hidden');
+    lightboxModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  /**
+   * Close the lightbox
+   */
+  function closeLightbox() {
+    lightboxModal.classList.add('hidden');
+    lightboxModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  /**
+   * Attach click handlers to lightbox-trigger images
+   */
+  function initLightbox() {
+    const images = document.querySelectorAll('[data-lightbox]');
+    images.forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        const caption = img.getAttribute('data-caption') || img.getAttribute('alt') || '';
+        openLightbox(img.src, caption);
+      });
+    });
+  }
+
+  // Event listeners
+  closeButton.addEventListener('click', closeLightbox);
+  
+  // Close on background click
+  lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+      closeLightbox();
+    }
+  });
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLightbox);
+  } else {
+    initLightbox();
+  }
+})();
+</script>

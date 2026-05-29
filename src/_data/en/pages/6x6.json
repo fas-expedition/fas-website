@@ -1,0 +1,53 @@
+{
+  "pageTitle": "6x6 Expedition Vehicles",
+  "pageDescription": "FAS 6x6 Expedition Vehicles – Powerful all-wheel platform for maximum payload and range. Configurations from €320,000.",
+  "altSlug": {
+    "de": "6x6",
+    "en": "6x6"
+  },
+  "hero": {
+    "title": "6x6 Systems",
+    "subtitle": "Maximum payload and range – the versatile platform for the most demanding expeditions.",
+    "image": "/assets/images/vehicles/6x6 product picture.png"
+  },
+  "overview": {
+    "description": "The 6x6 platform combines enormous payload capacity with outstanding off-road mobility. Three driven axles provide superior traction even in extreme terrain. The extended frame architecture offers space for spacious living cabins, comprehensive supply systems, and heavy equipment – ideal for autonomous long-term expeditions into remote regions."
+  },
+  "specs": {
+    "power": { "label": "Power", "value": "Up to 530 HP" },
+    "gvwr": { "label": "Gross Vehicle Weight", "value": "Up to 16,000 kg" },
+    "range": { "label": "Range", "value": "Up to 2,500 km" },
+    "cabin": { "label": "Cabin", "value": "4–6 persons" }
+  },
+  "configurations": [
+    { "name": "Explorer 6x6 Base", "price": "from €320,000" }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Three-Axle Drive",
+      "description": "Permanent all-wheel drive on all three axles with locking differentials for superior traction in extreme terrain."
+    },
+    {
+      "icon": "cog",
+      "title": "Spacious Design",
+      "description": "Extended frame architecture for generous living cabins with full kitchen, bathroom, and sleeping area."
+    },
+    {
+      "icon": "shield",
+      "title": "Autonomy Systems",
+      "description": "Integrated solar, water, and power supply for weeks of independence in remote areas."
+    },
+    {
+      "icon": "gauge",
+      "title": "Payload",
+      "description": "Up to 7,000 kg payload for heavy equipment, long-term provisions, and comprehensive expedition gear."
+    }
+  ],
+  "cta": {
+    "title": "Configure Your 6x6",
+    "description": "Build your perfect 6x6 expedition vehicle – for maximum autonomy and range.",
+    "buttonText": "To Configurator",
+    "buttonUrl": "/en/configurator"
+  }
+}
