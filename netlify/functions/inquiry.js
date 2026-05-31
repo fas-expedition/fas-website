@@ -29,6 +29,7 @@ export const handler = async (event) => {
       phone: data.phone,
       message: data.message,
       locale: data.locale,
+      selectedDetails: data.selectedDetails || '',
       _subject: `Neue Anfrage von ${data.name}`,
       _replyto: data.email
     };

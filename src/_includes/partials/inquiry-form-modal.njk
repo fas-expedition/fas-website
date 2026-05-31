@@ -120,8 +120,190 @@
         ></textarea>
       </div>
 
+      {# Details Expander Button #}
+      <button
+        type="button"
+        id="inquiry-details-toggle"
+        class="w-full flex items-center justify-between border border-zinc-700 px-4 py-3 text-white hover:bg-zinc-900 transition-colors"
+      >
+        <span class="font-semibold uppercase tracking-wider text-sm">
+          {% if locale == "de" %}Anfragedetails hinzufügen{% else %}Add Inquiry Details{% endif %}
+        </span>
+        <svg class="w-5 h-5 transition-transform" id="inquiry-toggle-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </button>
+
+      {# Details Section (Collapsed by default) #}
+      <div id="inquiry-details-content" class="hidden space-y-4 border border-zinc-700 p-4 bg-black">
+        {# Basisfahrzeug #}
+        <div>
+          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Basisfahrzeug{% else %}Base Vehicle{% endif %}</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_radstandsverlaengerung" value="Radstandsverlängerung" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Radstandsverlängerung{% else %}Wheelbase Extension{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_reifendruckregelung" value="Reifendruckregelanlage" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Reifendruckregelanlage{% else %}Tire Pressure Control{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_hebestu" value="Hydraulische Hebestützen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Hydraulische Hebestützen{% else %}Hydraulic Support Legs{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_beleuchtung" value="Arbeitsbeleuchtung/Lightbars" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Arbeitsbeleuchtung/Lightbars{% else %}Work Lights/Lightbars{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_seilwinde" value="Seilwinde" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Seilwinde{% else %}Winch{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_tankanlage" value="Tankanlage" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Tankanlage{% else %}Fuel System{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_treppe" value="Treppe" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Treppe{% else %}Staircase{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_dachtraeger" value="Dachträger" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Dachträger{% else %}Roof Rack{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_staukaesten" value="Staukästen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Staukästen{% else %}Storage Boxes{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_auszugsplattform" value="Auszugsplattform (Balkon)" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Auszugsplattform (Balkon){% else %}Slide-Out Platform (Balcony){% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_aussenküche" value="Außenküche" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Außenküche{% else %}Outdoor Kitchen{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_kamera" value="360° Kamerasystem" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}360° Kamerasystem{% else %}360° Camera System{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_lackierung" value="Lackierung" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Lackierung{% else %}Paintwork{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_basisfahrzeug_hecktraeger" value="Heckträger" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Heckträger{% else %}Rear Carrier{% endif %}</span>
+            </label>
+          </div>
+        </div>
+
+        {# Leerkabine #}
+        <div class="border-t border-zinc-700 pt-4">
+          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Leerkabine{% else %}Bare Cabin{% endif %}</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_leerkabine_zwischenrahmen" value="Zwischenrahmen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Intermediate Frame{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_leerkabine_durchstieg" value="Durchstieg" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Pass-Through{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_leerkabine_fenster" value="Hartglas Fenster" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Hartglas Fenster{% else %}Hardglass Windows{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_leerkabine_stauklappen" value="Stauklappen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Stauklappen{% else %}Storage Doors{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_leerkabine_boeschungswinkel" value="45° Böschungswinkel" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}45° Böschungswinkel am Heck{% else %}45° Slope Angle at Rear{% endif %}</span>
+            </label>
+          </div>
+        </div>
+
+        {# Innenausbau #}
+        <div class="border-t border-zinc-700 pt-4">
+          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Innenausbau{% else %}Interior{% endif %}</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_energiepaket" value="Energie-Paket" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Energie-Paket{% else %}Energy Package{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_wasserpaket" value="Wasser-Paket" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Wasser-Paket{% else %}Water Package{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_klimapaket" value="Klima-Paket" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Klima-Paket{% else %}Climate Package{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_schlafen" value="Schlafen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Schlafen{% else %}Sleeping{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_kochen" value="Kochen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Kochen{% else %}Cooking{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_kühlen" value="Kühlen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Kühlen{% else %}Cooling{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_dusche" value="Dusche/WC" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Dusche/WC{% else %}Shower/WC{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_echtholz" value="Echtholzfronten" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Echtholzfronten Eiche{% else %}Solid Wood Doors Oak{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_smart_tv" value="Smart-TV" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Smart-TV{% else %}Smart TV{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_innenausbau_waschtrockner" value="Waschtrockner" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Waschtrockner{% else %}Washer/Dryer{% endif %}</span>
+            </label>
+          </div>
+        </div>
+
+        {# Zusatzausstattung #}
+        <div class="border-t border-zinc-700 pt-4">
+          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Zusatzausstattung{% else %}Additional Equipment{% endif %}</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_zusatz_garagen" value="Garagenstaufach" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Garagenstaufach{% else %}Garage Storage{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_zusatz_router" value="Router mit Außenantenne" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Router mit Außenantenne{% else %}Router with External Antenna{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_zusatz_starlink" value="Starlink" class="inquiry-detail-checkbox">
+              <span class="text-sm">Starlink</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_zusatz_alarmanlage" value="Alarmanlage" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Alarmanlage{% else %}Alarm System{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_zusatz_safe" value="Einbau-Safe" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Einbau-Safe{% else %}Built-in Safe{% endif %}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
       {# Hidden locale field for Netlify Form #}
       <input type="hidden" name="locale" id="inquiry-locale" value="{{ locale }}" />
+      <input type="hidden" name="selected_details" id="inquiry-selected-details" value="" />
 
       {# Submit Button #}
       <div class="flex gap-4 pt-4">

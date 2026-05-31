@@ -39,6 +39,12 @@
   function handleSubmit(e) {
     e.preventDefault();
 
+    // Collect selected details checkboxes
+    const selectedDetails = [];
+    document.querySelectorAll('.inquiry-detail-checkbox:checked').forEach(checkbox => {
+      selectedDetails.push(checkbox.value);
+    });
+
     // Get form data
     const formData = {
       name: document.getElementById('inquiry-name').value,
@@ -48,7 +54,8 @@
       email: document.getElementById('inquiry-email').value,
       phone: document.getElementById('inquiry-phone').value,
       message: document.getElementById('inquiry-message').value,
-      locale: document.getElementById('inquiry-locale').value
+      locale: document.getElementById('inquiry-locale').value,
+      selectedDetails: selectedDetails.join(', ')
     };
 
     // Show loading state
@@ -117,10 +124,30 @@
     }
   }
 
+  /**
+   * Toggle details expander
+   */
+  function toggleDetailsSection() {
+    const detailsContent = document.getElementById('inquiry-details-content');
+    const toggleIcon = document.getElementById('inquiry-toggle-icon');
+    
+    detailsContent.classList.toggle('hidden');
+    toggleIcon.style.transform = detailsContent.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+  }
+
   // Event listeners for opening the form
   primaryButtons.forEach(btn => {
     btn.addEventListener('click', openForm);
   });
+
+  // Event listener for details toggle
+  const detailsToggle = document.getElementById('inquiry-details-toggle');
+  if (detailsToggle) {
+    detailsToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleDetailsSection();
+    });
+  }
 
   // Event listeners for closing the form
   closeButtons.forEach(btn => {
