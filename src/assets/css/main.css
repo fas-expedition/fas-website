@@ -16,3 +16,8 @@
 .group:hover {
   z-index: 50 !important;
 }
+
+/* Overview and featured section images hover in front of logo */
+.hover-above-logo:hover {
+  z-index: 100 !important;
+}
