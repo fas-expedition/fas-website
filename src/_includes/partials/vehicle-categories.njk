@@ -15,7 +15,12 @@
     {# Vehicle Cards Grid #}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {% for item in vehicles.items %}
-        {{ vehicleCard(item.image, item.title, item.description, item.specs, "/" + locale + "/" + item.id + "/", item.id + " entdecken") }}
+        {% if locale == "de" %}
+          {% set vehicleLink = "/de/expeditionsmobile/" %}
+        {% else %}
+          {% set vehicleLink = "/en/expedition-vehicles/" %}
+        {% endif %}
+        {{ vehicleCard(item.image, item.title, item.description, item.specs, vehicleLink, "entdecken") }}
       {% endfor %}
     </div>
   </div>

@@ -55,6 +55,11 @@
           </a>
         </div>
 
+        {# Phone Number #}
+        <a href="tel:+491517217119" class="hidden lg:flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-zinc-300 transition-colors whitespace-nowrap">
+          {% if locale == "de" %}Vertrieb{% else %}Sales{% endif %} +49 151 7217 11 99
+        </a>
+
         {# LOGIN Button #}
         <a href="/admin/" class="hidden lg:inline-flex items-center space-x-2 border border-zinc-700 hover:bg-white hover:text-black px-6 py-2.5 text-sm tracking-widest uppercase font-bold transition-all">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

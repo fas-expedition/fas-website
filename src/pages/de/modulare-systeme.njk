@@ -60,10 +60,10 @@ eleventyComputed:
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       {% for module in page.modules.items %}
-      <div class="group overflow-hidden">
+      <div class="group overflow-hidden relative">
         {# Module Image #}
         <div class="relative h-auto mb-6 overflow-hidden bg-zinc-900 flex items-center justify-center">
-          <img src="{{ module.image }}" alt="{{ module.title }}" data-lightbox data-caption="{{ module.title }}" class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="{{ module.image }}" alt="{{ module.title }}" data-lightbox data-caption="{{ module.title }}" class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300 relative" loading="lazy">
         </div>
         {# Module Content #}
         <div>

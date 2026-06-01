@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Gallery images hover in front of logo */
+[data-thumb-gallery]:hover {
+  z-index: 100 !important;
+}
+
+/* Module lightbox images hover in front of logo */
+[data-lightbox]:hover {
+  z-index: 100 !important;
+}
+
+/* Vehicle cards hover in front of logo */
+.group:hover {
+  z-index: 50 !important;
+}

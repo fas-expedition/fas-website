@@ -50,6 +50,11 @@
   {% include "partials/schema.njk" %}
 </head>
 <body class="bg-black text-white font-sans antialiased">
+  {# Logo Background #}
+  <div class="fixed top-0 right-0 h-screen pointer-events-none z-0 opacity-25" style="width: 1000px;">
+    <img src="/assets/downloads/Logos/halber Wolfskopf-1.svg" alt="" class="h-full w-auto ml-auto" style="position: relative; right: 0; top: 0; transform: scaleX(-1);">
+  </div>
+
   {% include "partials/navigation.njk" %}
 
   <main>
@@ -58,6 +63,13 @@
 
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
+
+  {# Floating Contact Button #}
+  <a href="{% if locale == 'de' %}/de/kontakt/{% else %}/en/contact/{% endif %}" 
+     class="fixed bottom-8 right-8 z-40 px-6 py-3 font-bold text-black text-sm uppercase tracking-widest transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+     style="background-color: #1DD646;">
+    {% if locale == "de" %}Kontakt zu FAS{% else %}Contact FAS{% endif %}
+  </a>
 
   <script>
     // Handle Identity Widget redirect after email confirmation

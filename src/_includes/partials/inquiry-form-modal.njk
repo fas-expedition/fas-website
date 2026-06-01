@@ -1,9 +1,9 @@
 {# Inquiry Form Modal #}
-<div id="inquiry-form" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg max-w-2xl w-full my-8">
+<div id="inquiry-form" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+  <div class="bg-zinc-900 border border-zinc-800 rounded-lg max-w-2xl w-full my-8 flex flex-col max-h-[90vh]">
     
     {# Header #}
-    <div class="flex items-center justify-between border-b border-zinc-800 p-6">
+    <div class="flex items-center justify-between border-b border-zinc-800 p-6 flex-shrink-0">
       <h2 class="text-2xl font-bold tracking-wider uppercase">
         {% if locale == "de" %}Anfrage stellen{% else %}Inquiry Form{% endif %}
       </h2>
@@ -15,7 +15,7 @@
     </div>
 
     {# Form Content #}
-    <form id="inquiry-form-element" class="p-6 space-y-6">
+    <form id="inquiry-form-element" class="p-6 space-y-6 overflow-y-auto flex-1">
       
       {# Name #}
       <div>
@@ -138,7 +138,21 @@
       <div id="inquiry-details-content" class="hidden space-y-4 border border-zinc-700 p-4 bg-black">
         {# Basisfahrzeug #}
         <div>
-          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Basisfahrzeug{% else %}Base Vehicle{% endif %}</h4>
+          <div class="flex justify-between items-end mb-4">
+            <h4 class="font-semibold uppercase tracking-wider text-sm">{% if locale == "de" %}Basisfahrzeug{% else %}Base Vehicle{% endif %}</h4>
+            <div class="flex-1 ml-4 max-w-xs">
+              <select name="base_vehicle_model" id="base_vehicle_model" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                <option value="">{% if locale == "de" %}Fahrzeug-Modell{% else %}Vehicle Model{% endif %}</option>
+                <option value="Mercedes Benz Arocs">Mercedes Benz Arocs</option>
+                <option value="MAN TGS">MAN TGS</option>
+                <option value="anderes Fahrgestell">{% if locale == "de" %}anderes Fahrgestell{% else %}Other Chassis{% endif %}</option>
+              </select>
+            </div>
+          </div>
+          <div id="custom_vehicle_field" class="mb-4 hidden">
+            <label class="block text-sm mb-1">{% if locale == "de" %}Bitte angeben{% else %}Please specify{% endif %}</label>
+            <textarea name="base_vehicle_custom" id="base_vehicle_custom" placeholder="{% if locale == "de" %}Fahrzeugmodell{% else %}Vehicle model{% endif %}" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm resize-none" rows="2"></textarea>
+          </div>
           <div class="space-y-2">
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_basisfahrzeug_radstandsverlaengerung" value="Radstandsverlängerung" class="inquiry-detail-checkbox">
@@ -199,10 +213,222 @@
           </div>
         </div>
 
+        {# Gewünschte Schnittstellen #}
+        <div class="border-t border-zinc-700 pt-4">
+          <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Gewünschte Schnittstellen zwischen Fahrzeug und Wohnkabine{% else %}Desired Interfaces Between Vehicle and Cabin{% endif %}</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_schnittstellen_zwischenrahmen" value="Zwischenrahmen" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Intermediate Frame{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_schnittstellen_durchstieg" value="Durchstieg" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Pass-Through{% endif %}</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="details_schnittstellen_durchstieg_fenster" value="Durchstieg mit Fenster" class="inquiry-detail-checkbox">
+              <span class="text-sm">{% if locale == "de" %}Durchstieg mit Fenster{% else %}Pass-Through with Window{% endif %}</span>
+            </label>
+          </div>
+        </div>
+
         {# Leerkabine #}
         <div class="border-t border-zinc-700 pt-4">
           <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Leerkabine{% else %}Bare Cabin{% endif %}</h4>
-          <div class="space-y-2">
+          
+          {# Dimensions and Paintwork Fields #}
+          <div class="space-y-3 mb-4 pb-4 border-b border-zinc-700">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label for="bare_cabin_length" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                  {% if locale == "de" %}Länge (außen){% else %}Length (outside){% endif %}
+                </label>
+                <input
+                  type="text"
+                  id="bare_cabin_length"
+                  name="bare_cabin_length"
+                  placeholder="m"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="bare_cabin_width" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                  {% if locale == "de" %}Breite (außen){% else %}Width (outside){% endif %}
+                </label>
+                <input
+                  type="text"
+                  id="bare_cabin_width"
+                  name="bare_cabin_width"
+                  placeholder="m"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="bare_cabin_height" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                  {% if locale == "de" %}Höhe (außen){% else %}Height (outside){% endif %}
+                </label>
+                <input
+                  type="text"
+                  id="bare_cabin_height"
+                  name="bare_cabin_height"
+                  placeholder="m"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="bare_cabin_paintwork" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                  {% if locale == "de" %}Lackierung{% else %}Paintwork{% endif %}
+                </label>
+                <select
+                  id="bare_cabin_paintwork"
+                  name="bare_cabin_paintwork"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors"
+                >
+                  <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                  <option value="Uni-Lack">{% if locale == "de" %}Uni-Lack{% else %}Uni Paint{% endif %}</option>
+                  <option value="Metallic- oder Matt-Lack">{% if locale == "de" %}Metallic- oder Matt-Lack{% else %}Metallic or Matte Paint{% endif %}</option>
+                </select>
+              </div>
+              <div>
+                <label for="bare_cabin_color_code" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                  {% if locale == "de" %}Farbbezeichnung/-code{% else %}Color Name/Code{% endif %}
+                </label>
+                <input
+                  type="text"
+                  id="bare_cabin_color_code"
+                  name="bare_cabin_color_code"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
+                  placeholder="{% if locale == 'de' %}z.B. DB 447{% else %}e.g. DB 447{% endif %}"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            {# Treppe #}
+            <div>
+              <label for="bare_cabin_treppe" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                {% if locale == "de" %}Treppe{% else %}Staircase{% endif %}
+              </label>
+              <select
+                id="bare_cabin_treppe"
+                name="bare_cabin_treppe"
+                class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors"
+              >
+                <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                <option value="Staukastentreppe Frontalaufstieg manuell">{% if locale == "de" %}Staukastentreppe Frontalaufstieg manuell{% else %}Storage Box Staircase - Front Ascent Manual{% endif %}</option>
+                <option value="Staukastentreppe seitlicher Aufstieg manuell">{% if locale == "de" %}Staukastentreppe seitlicher Aufstieg manuell{% else %}Storage Box Staircase - Lateral Ascent Manual{% endif %}</option>
+                <option value="Staukastentreppe seitlicher Aufstieg elektrisch">{% if locale == "de" %}Staukastentreppe seitlicher Aufstieg elektrisch{% else %}Storage Box Staircase - Lateral Ascent Electric{% endif %}</option>
+                <option value="Auszugsleiter im Containerrahmen(nur Unimog)">{% if locale == "de" %}Auszugsleiter im Containerrahmen (nur Unimog){% else %}Retractable Ladder in Container Frame (Unimog only){% endif %}</option>
+              </select>
+            </div>
+
+            {# Tür #}
+            <div>
+              <label for="bare_cabin_tuer" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                {% if locale == "de" %}Tür{% else %}Door{% endif %}
+              </label>
+              <select
+                id="bare_cabin_tuer"
+                name="bare_cabin_tuer"
+                class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors"
+              >
+                <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                <option value="3-Punkt verriegelte Tür ohne Fenster">{% if locale == "de" %}3-Punkt verriegelte Tür ohne Fenster{% else %}3-point locking door without window{% endif %}</option>
+                <option value="3-Punkt verriegelte Tür mit Fenster">{% if locale == "de" %}3-Punkt verriegelte Tür mit Fenster{% else %}3-point locking door with window{% endif %}</option>
+              </select>
+            </div>
+
+            {# Seitenfenster #}
+            <fieldset class="border border-zinc-700 p-3">
+              <legend class="text-sm font-semibold uppercase tracking-wider">{% if locale == "de" %}Seitenfenster{% else %}Side Windows{% endif %}</legend>
+              <div class="space-y-2 mt-3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label for="side_window_klein" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                      {% if locale == "de" %}Hartglas klein (Stk.){% else %}Hardglass Small (Qty){% endif %}
+                    </label>
+                    <input type="text" id="side_window_klein" name="side_window_klein" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label for="side_window_gross" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                      {% if locale == "de" %}Hartglas groß (Stk.){% else %}Hardglass Large (Qty){% endif %}
+                    </label>
+                    <input type="text" id="side_window_gross" name="side_window_gross" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label for="side_window_panorama" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                      {% if locale == "de" %}Hartglas Panorama (Stk.){% else %}Hardglass Panorama (Qty){% endif %}
+                    </label>
+                    <input type="text" id="side_window_panorama" name="side_window_panorama" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors" />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            {# Dachfenster #}
+            <fieldset class="border border-zinc-700 p-3">
+              <legend class="text-sm font-semibold uppercase tracking-wider">{% if locale == "de" %}Dachfenster{% else %}Roof Windows{% endif %}</legend>
+              <div class="space-y-2 mt-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="roof_window_klein" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                      {% if locale == "de" %}Hartglas klein (Stk.){% else %}Hardglass Small (Qty){% endif %}
+                    </label>
+                    <input type="text" id="roof_window_klein" name="roof_window_klein" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label for="roof_window_gross" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                      {% if locale == "de" %}Hartglas groß (Stk.){% else %}Hardglass Large (Qty){% endif %}
+                    </label>
+                    <input type="text" id="roof_window_gross" name="roof_window_gross" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors" />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            {# Stauklappen #}
+            <div class="border border-zinc-700 p-3">
+              <h5 class="text-sm font-semibold uppercase tracking-wider mb-2">{% if locale == "de" %}Stauklappen{% else %}Storage Doors{% endif %}</h5>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="details_stauklappen_seitlich" value="Stauklappen seitlich" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Seitlich{% else %}Lateral{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="details_stauklappen_hinten" value="Stauklappen nach hinten" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Nach hinten{% else %}Rear{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="details_stauklappen_boxen" value="Boxen-Auszugsystem in Heckgarage" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Boxen-Auszugsystem in Heckgarage{% else %}Box Slide-Out System in Rear Garage{% endif %}</span>
+                </label>
+              </div>
+            </div>
+
+            {# Besondere Utensilien #}
+            <div class="border border-zinc-700 p-3">
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" id="bare_cabin_special_items_check" name="details_special_items" value="Besondere Utensilien" class="inquiry-detail-checkbox">
+                <span class="text-sm font-semibold uppercase tracking-wider">{% if locale == "de" %}Besondere Utensilien, Fahrzeuge, Sportgeräte{% else %}Special Equipment, Vehicles, Sports Equipment{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label for="bare_cabin_special_items" class="block text-sm font-semibold uppercase tracking-wider">
+                  {% if locale == "de" %}Abmessungen angeben{% else %}Specify Dimensions{% endif %}
+                </label>
+                <textarea
+                  id="bare_cabin_special_items"
+                  name="bare_cabin_special_items"
+                  rows="3"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors resize-none"
+                  placeholder="{% if locale == 'de' %}Klicken oder tippen Sie hier, um Text einzugeben...{% else %}Click or type here to enter text...{% endif %}"
+                ></textarea>
+              </div>
+            </div>
+
+            {# Remaining checkboxes #}
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_leerkabine_zwischenrahmen" value="Zwischenrahmen" class="inquiry-detail-checkbox">
               <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Intermediate Frame{% endif %}</span>
@@ -211,18 +437,6 @@
               <input type="checkbox" name="details_leerkabine_durchstieg" value="Durchstieg" class="inquiry-detail-checkbox">
               <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Pass-Through{% endif %}</span>
             </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_leerkabine_fenster" value="Hartglas Fenster" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Hartglas Fenster{% else %}Hardglass Windows{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_leerkabine_stauklappen" value="Stauklappen" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Stauklappen{% else %}Storage Doors{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_leerkabine_boeschungswinkel" value="45° Böschungswinkel" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}45° Böschungswinkel am Heck{% else %}45° Slope Angle at Rear{% endif %}</span>
-            </label>
           </div>
         </div>
 
@@ -230,46 +444,261 @@
         <div class="border-t border-zinc-700 pt-4">
           <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Innenausbau{% else %}Interior{% endif %}</h4>
           <div class="space-y-2">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_energiepaket" value="Energie-Paket" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Energie-Paket{% else %}Energy Package{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_wasserpaket" value="Wasser-Paket" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Wasser-Paket{% else %}Water Package{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_klimapaket" value="Klima-Paket" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Klima-Paket{% else %}Climate Package{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_schlafen" value="Schlafen" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Schlafen{% else %}Sleeping{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_kochen" value="Kochen" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Kochen{% else %}Cooking{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_kühlen" value="Kühlen" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Kühlen{% else %}Cooling{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_dusche" value="Dusche/WC" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Dusche/WC{% else %}Shower/WC{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_echtholz" value="Echtholzfronten" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Echtholzfronten Eiche{% else %}Solid Wood Doors Oak{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_smart_tv" value="Smart-TV" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Smart-TV{% else %}Smart TV{% endif %}</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_innenausbau_waschtrockner" value="Waschtrockner" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Waschtrockner{% else %}Washer/Dryer{% endif %}</span>
-            </label>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_energiepaket" value="Energie-Paket" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Energie-Paket{% else %}Energy Package{% endif %}</span>
+              </label>
+              <div class="pl-6">
+                <select
+                  id="energy_battery_capacity"
+                  name="energy_battery_capacity"
+                  class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm"
+                >
+                  <option value="">{% if locale == "de" %}Batteriekapazität wählen{% else %}Select battery capacity{% endif %}</option>
+                  <option value="400Ah">400Ah</option>
+                  <option value="800Ah">800Ah</option>
+                  <option value="1000Ah">1000Ah</option>
+                  <option value="1200Ah">1200Ah</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_wasserpaket" value="Wasser-Paket" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Wasser-Paket{% else %}Water Package{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <div>
+                  <label for="water_tank_capacity" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                    {% if locale == "de" %}Tankkapazität{% else %}Tank Capacity{% endif %}
+                  </label>
+                  <select
+                    id="water_tank_capacity"
+                    name="water_tank_capacity"
+                    class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm"
+                  >
+                    <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                    <option value="Frischwasser 300L / Grauwasser 150L">{% if locale == "de" %}Frischwasser 300L / Grauwasser 150L{% else %}Fresh Water 300L / Gray Water 150L{% endif %}</option>
+                    <option value="Frischwasser 450L / Grauwasser 300L">{% if locale == "de" %}Frischwasser 450L / Grauwasser 300L{% else %}Fresh Water 450L / Gray Water 300L{% endif %}</option>
+                    <option value="Frischwasser 650L / Grauwasser 400L">{% if locale == "de" %}Frischwasser 650L / Grauwasser 400L{% else %}Fresh Water 650L / Gray Water 400L{% endif %}</option>
+                  </select>
+                </div>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="water_separate_drinking_system" value="Separate Trinkwasseranlage" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Separate Trinkwasseranlage{% else %}Separate Drinking Water System{% endif %}</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_klimapaket" value="Klima-Paket" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Klima-Paket{% else %}Climate Package{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <div>
+                  <label for="climate_heating_model" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                    {% if locale == "de" %}Heizmodell{% else %}Heating Model{% endif %}
+                  </label>
+                  <select
+                    id="climate_heating_model"
+                    name="climate_heating_model"
+                    class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm"
+                  >
+                    <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                    <option value="Warmluftheizung">{% if locale == "de" %}Warmluftheizung{% else %}Warm Air Heating{% endif %}</option>
+                    <option value="Wassergeführte Heizung">{% if locale == "de" %}Wassergeführte Heizung{% else %}Water-based Heating{% endif %}</option>
+                  </select>
+                </div>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="climate_floor_heating" value="Fußbodenheizung" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Fußbodenheizung{% else %}Floor Heating{% endif %}</span>
+                </label>
+                <div>
+                  <label for="climate_air_conditioning" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+                    {% if locale == "de" %}Klimaanlage{% else %}Air Conditioning{% endif %}
+                  </label>
+                  <select
+                    id="climate_air_conditioning"
+                    name="climate_air_conditioning"
+                    class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm"
+                  >
+                    <option value="">{% if locale == "de" %}Wählen Sie ein Element aus{% else %}Select an element{% endif %}</option>
+                    <option value="230V-Anlage zum Betrieb im Stand">{% if locale == "de" %}230V-Anlage zum Betrieb im Stand{% else %}230V System for Stationary Operation{% endif %}</option>
+                    <option value="24V-System zum Betrieb während der Fahrt">{% if locale == "de" %}24V-System zum Betrieb während der Fahrt{% else %}24V System for Mobile Operation{% endif %}</option>
+                    <option value="Beide Systeme zur Redundanz">{% if locale == "de" %}Beide Systeme zur Redundanz{% else %}Both Systems for Redundancy{% endif %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_schlafen" value="Schlafen" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Schlafen{% else %}Sleeping{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="sleeping_double_bed" value="Doppelbett" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Doppelbett{% else %}Double Bed{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="sleeping_longitudinal_bed" value="Längsbett" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Längsbett{% else %}Longitudinal Bed{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="sleeping_bunk_beds" value="Etagenbett(en)" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Etagenbett(en){% else %}Bunk Bed(s){% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="sleeping_lifting_bed" value="Hubbett" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Hubbett{% else %}Lifting Bed{% endif %}</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_kochen" value="Kochen" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Kochen{% else %}Cooking{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="cooking_combo_oven_microwave" value="Kombigerät Ofen/Mikrowelle" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Kombigerät Ofen/Mikrowelle{% else %}Combination Oven/Microwave{% endif %}</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_kühlen" value="Kühlen" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Kühlen{% else %}Cooling{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <div>
+                  <label class="block text-sm mb-1">{% if locale == "de" %}Kühltyp{% else %}Cooling Type{% endif %}</label>
+                  <select name="cooling_type" id="cooling_type" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                    <option value="">{% if locale == "de" %}Wählen...{% else %}Select...{% endif %}</option>
+                    <option value="Kühlschrank">{% if locale == "de" %}Kühlschrank{% else %}Fridge{% endif %}</option>
+                    <option value="Kühlschublade">{% if locale == "de" %}Kühlschublade{% else %}Cooling Drawer{% endif %}</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">{% if locale == "de" %}Gefrier-Option{% else %}Freezer Option{% endif %}</label>
+                  <select name="cooling_freezer_option" id="cooling_freezer_option" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                    <option value="">{% if locale == "de" %}Wählen...{% else %}Select...{% endif %}</option>
+                    <option value="ohne Gefrier-Option">{% if locale == "de" %}ohne Gefrier-Option{% else %}no Freezer{% endif %}</option>
+                    <option value="Gefrierfach im Kühlschrank">{% if locale == "de" %}Gefrierfach im Kühlschrank{% else %}Freezer Compartment in Fridge{% endif %}</option>
+                    <option value="Gefrierschrank">{% if locale == "de" %}Gefrierschrank{% else %}Freezer{% endif %}</option>
+                    <option value="Gefrierschublade">{% if locale == "de" %}Gefrierschublade{% else %}Freezer Drawer{% endif %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_elektrogeräte" value="Elektrogeräte" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Elektrogeräte{% else %}Electrical Appliances{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_coffee_machine" value="Kaffemaschine" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Kaffemaschine{% else %}Coffee Machine{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_washer_dryer" value="Waschtrockner" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Waschtrockner{% else %}Washer Dryer{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_radio_sound" value="Radio/Soundsystem" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Radio/Soundsystem{% else %}Radio/Sound System{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_dishwasher" value="Geschirrspülmaschine" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Geschirrspülmaschine{% else %}Dishwasher{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_built_in_vacuum" value="Einbau-Staubsauger" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Einbau-Staubsauger{% else %}Built-in Vacuum{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="appliance_smart_tv" value="Smart-TV" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Smart-TV{% else %}Smart TV{% endif %}</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_dusche" value="Dusche/WC" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Dusche/WC{% else %}Shower/WC{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <div>
+                  <label class="block text-sm mb-1">{% if locale == "de" %}Nasszelle Typ{% else %}Wet Room Type{% endif %}</label>
+                  <select name="shower_wc_type" id="shower_wc_type" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                    <option value="">{% if locale == "de" %}Wählen...{% else %}Select...{% endif %}</option>
+                    <option value="1 kombinierte Nasszelle">{% if locale == "de" %}1 kombinierte Nasszelle{% else %}1 combined wet room{% endif %}</option>
+                    <option value="2 getrennte Räume für Dusche und WC">{% if locale == "de" %}2 getrennte Räume für Dusche und WC{% else %}2 separate rooms for shower and WC{% endif %}</option>
+                    <option value="Raumbad mit Schiebetür">{% if locale == "de" %}Raumbad mit Schiebetür{% else %}Room bath with sliding door{% endif %}</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">{% if locale == "de" %}Toiletten Typ{% else %}Toilet Type{% endif %}</label>
+                  <select name="shower_wc_toilet_type" id="shower_wc_toilet_type" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                    <option value="">{% if locale == "de" %}Wählen...{% else %}Select...{% endif %}</option>
+                    <option value="Zerhacker Toilette mit Wasserspülung">{% if locale == "de" %}Zerhacker Toilette mit Wasserspülung{% else %}Macerator Toilet with Water Flush{% endif %}</option>
+                    <option value="Trocken Trenntoilette">{% if locale == "de" %}Trocken Trenntoilette{% else %}Dry Separation Toilet{% endif %}</option>
+                    <option value="Kompost Trenntoilette elektrisch">{% if locale == "de" %}Kompost Trenntoilette elektrisch{% else %}Compost Separation Toilet Electric{% endif %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_badausstattung" value="Ausstattung Bad" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Ausstattung Bad{% else %}Bathroom Fixtures{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="bathroom_cabinet" value="Badschrank" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Badschrank{% else %}Bathroom Cabinet{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="bathroom_sink" value="Handwaschbecken" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Handwaschbecken{% else %}Hand Sink{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="bathroom_towel_dryer" value="Handtuchtrockner" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Handtuchtrockner{% else %}Towel Dryer{% endif %}</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_innenausbau_upgrades" value="Upgrades" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Upgrades{% else %}Upgrades{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="details_innenausbau_echtholz" value="Echtholzfronten" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Echtholzfronten Eiche{% else %}Solid Wood Doors Oak{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="upgrade_fenix_surface" value="FENIX-Oberfläche" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}hochkratzfeste FENIX-Oberfläche{% else %}Scratch-resistant FENIX surface{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="upgrade_leather_upholstery" value="Lederbezüge" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Lederbezüge statt Stoff{% else %}Leather upholstery instead of fabric{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="upgrade_alcantara_upholstery" value="Alcantarabezüge" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Alcantarabezüge statt Stoff{% else %}Alcantara upholstery instead of fabric{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="upgrade_dishes_set" value="Geschirr/Töpfe/Gläser" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Geschirr/Töpfe/Gläser{% else %}Dishes/Pots/Glasses{% endif %}</span>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -277,10 +706,22 @@
         <div class="border-t border-zinc-700 pt-4">
           <h4 class="font-semibold uppercase tracking-wider text-sm mb-2">{% if locale == "de" %}Zusatzausstattung{% else %}Additional Equipment{% endif %}</h4>
           <div class="space-y-2">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" name="details_zusatz_garagen" value="Garagenstaufach" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Garagenstaufach{% else %}Garage Storage{% endif %}</span>
-            </label>
+            <div>
+              <label class="flex items-center gap-2 cursor-pointer mb-2">
+                <input type="checkbox" name="details_zusatz_garagen" value="Garagenstaufach" class="inquiry-detail-checkbox">
+                <span class="text-sm">{% if locale == "de" %}Garagenstaufach{% else %}Garage Storage{% endif %}</span>
+              </label>
+              <div class="pl-6 space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="garagen_airrail" value="Airrail-Schienen" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Airrail-Schienen{% else %}Airrail Rails{% endif %}</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="garagen_boxen_auszug" value="Boxen-Auszugsystem" class="inquiry-detail-checkbox">
+                  <span class="text-sm">{% if locale == "de" %}Boxen-Auszugsystem{% else %}Box Slide-Out System{% endif %}</span>
+                </label>
+              </div>
+            </div>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_zusatz_router" value="Router mit Außenantenne" class="inquiry-detail-checkbox">
               <span class="text-sm">{% if locale == "de" %}Router mit Außenantenne{% else %}Router with External Antenna{% endif %}</span>
@@ -299,11 +740,46 @@
             </label>
           </div>
         </div>
+
+        {# Special Wishes #}
+        <div class="border-t border-zinc-700 pt-4">
+          <label for="inquiry-special-wishes" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+            {% if locale == "de" %}Spezielle Kundenwünsche{% else %}Special Customer Requests{% endif %}
+          </label>
+          <textarea
+            id="inquiry-special-wishes"
+            name="special_wishes"
+            rows="3"
+            class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors resize-none"
+            placeholder="{% if locale == 'de' %}Teilen Sie uns Ihre Sonderwünsche mit...{% else %}Tell us your special requests...{% endif %}"
+          ></textarea>
+        </div>
       </div>
 
       {# Hidden locale field for Netlify Form #}
       <input type="hidden" name="locale" id="inquiry-locale" value="{{ locale }}" />
       <input type="hidden" name="selected_details" id="inquiry-selected-details" value="" />
+
+      {# Document Upload #}
+      <div class="pt-4">
+        <label for="inquiry-documents" class="block text-sm font-semibold uppercase tracking-wider mb-2">
+          {% if locale == "de" %}Dokumente hochladen{% else %}Upload Documents{% endif %}
+        </label>
+        <input 
+          type="file" 
+          id="inquiry-documents" 
+          name="documents" 
+          multiple 
+          class="hidden"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx"
+        />
+        <div 
+          id="inquiry-documents-display" 
+          class="w-full bg-black border border-zinc-700 px-4 py-3 text-zinc-400 hover:border-white cursor-pointer transition-colors"
+        >
+          {% if locale == "de" %}Klicken zum Hochladen{% else %}Click to Upload{% endif %}
+        </div>
+      </div>
 
       {# Submit Button #}
       <div class="flex gap-4 pt-4">

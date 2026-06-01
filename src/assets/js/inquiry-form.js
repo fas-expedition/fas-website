@@ -21,6 +21,7 @@
     }
     inquiryFormModal.classList.remove('hidden');
     inquiryFormModal.classList.add('flex');
+    inquiryFormElement.scrollTop = 0;
     document.body.style.overflow = 'hidden';
   }
 
@@ -55,7 +56,27 @@
       phone: document.getElementById('inquiry-phone').value,
       message: document.getElementById('inquiry-message').value,
       locale: document.getElementById('inquiry-locale').value,
-      selectedDetails: selectedDetails.join(', ')
+      selectedDetails: selectedDetails.join(', '),
+      base_vehicle_model: document.getElementById('base_vehicle_model')?.value || '',
+      base_vehicle_custom: document.getElementById('base_vehicle_custom')?.value || '',
+      specialWishes: document.getElementById('inquiry-special-wishes')?.value || '',
+      bare_cabin_length: document.getElementById('bare_cabin_length')?.value || '',
+      bare_cabin_width: document.getElementById('bare_cabin_width')?.value || '',
+      bare_cabin_height: document.getElementById('bare_cabin_height')?.value || '',
+      bare_cabin_paintwork: document.getElementById('bare_cabin_paintwork')?.value || '',
+      bare_cabin_color_code: document.getElementById('bare_cabin_color_code')?.value || '',
+      bare_cabin_treppe: document.getElementById('bare_cabin_treppe')?.value || '',
+      bare_cabin_tuer: document.getElementById('bare_cabin_tuer')?.value || '',
+      side_window_klein: document.getElementById('side_window_klein')?.value || '',
+      side_window_gross: document.getElementById('side_window_gross')?.value || '',
+      side_window_panorama: document.getElementById('side_window_panorama')?.value || '',
+      roof_window_klein: document.getElementById('roof_window_klein')?.value || '',
+      roof_window_gross: document.getElementById('roof_window_gross')?.value || '',
+      bare_cabin_special_items: document.getElementById('bare_cabin_special_items')?.value || '',
+      energy_battery_capacity: document.getElementById('energy_battery_capacity')?.value || '',
+      water_tank_capacity: document.getElementById('water_tank_capacity')?.value || '',
+      climate_heating_model: document.getElementById('climate_heating_model')?.value || '',
+      climate_air_conditioning: document.getElementById('climate_air_conditioning')?.value || ''
     };
 
     // Show loading state
@@ -133,6 +154,9 @@
     
     detailsContent.classList.toggle('hidden');
     toggleIcon.style.transform = detailsContent.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    
+    // Scroll to top when expanding details
+    inquiryFormElement.scrollTop = 0;
   }
 
   // Event listeners for opening the form
@@ -162,4 +186,40 @@
 
   // Form submission
   inquiryFormElement.addEventListener('submit', handleSubmit);
-})();
+
+  // Base vehicle model selection - show/hide custom vehicle field
+  const baseVehicleSelect = document.getElementById('base_vehicle_model');
+  const customVehicleField = document.getElementById('custom_vehicle_field');
+  if (baseVehicleSelect && customVehicleField) {
+    baseVehicleSelect.addEventListener('change', (e) => {
+      if (e.target.value === 'anderes Fahrgestell') {
+        customVehicleField.classList.remove('hidden');
+      } else {
+        customVehicleField.classList.add('hidden');
+      }
+    });
+  }
+  // File input handler - show/hide filenames
+  const fileInput = document.getElementById('inquiry-documents');
+  const fileDisplay = document.getElementById('inquiry-documents-display');
+  if (fileInput && fileDisplay) {
+    // Click display to open file picker
+    fileDisplay.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    // Handle file selection
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        const fileNames = Array.from(fileInput.files).map(f => f.name).join(', ');
+        fileDisplay.textContent = fileNames;
+        fileDisplay.classList.remove('text-zinc-400');
+        fileDisplay.classList.add('text-white');
+      } else {
+        const locale = document.getElementById('inquiry-locale').value;
+        fileDisplay.textContent = locale === 'de' ? 'Klicken zum Hochladen' : 'Click to Upload';
+        fileDisplay.classList.remove('text-white');
+        fileDisplay.classList.add('text-zinc-400');
+      }
+    });
+  }})();
