@@ -16,8 +16,13 @@ export const handler = async (event) => {
     // Parse form data
     const data = JSON.parse(event.body);
 
-    // Formspree endpoint (configure in environment variables or use directly)
-    const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+    // Formspree endpoint (configure in Netlify environment variables)
+    // Set FORMSPREE_ID environment variable in Netlify dashboard
+    const formspreeEndpoint = `https://formspree.io/${process.env.FORMSPREE_ID}`;
+
+    if (!process.env.FORMSPREE_ID) {
+      throw new Error('FORMSPREE_ID environment variable not configured. Please set it in Netlify dashboard under Site Settings > Build & Deploy > Environment.');
+    }
 
     // Prepare email data
     const emailData = {
