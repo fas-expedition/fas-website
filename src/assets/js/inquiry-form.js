@@ -85,32 +85,35 @@
     submitButton.textContent = document.documentElement.lang === 'de' ? 'Wird gesendet...' : 'Sending...';
     submitButton.disabled = true;
 
-    // Submit to Netlify Function
-    fetch('/.netlify/functions/inquiry', {
+    // Submit directly to Formspree
+    fetch('https://formspree.io/f/xvzyjnwy', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        // Show success message
-        submitButton.textContent = document.documentElement.lang === 'de' ? 'Erfolgreich gesendet!' : 'Successfully sent!';
-        submitButton.classList.add('opacity-50', 'cursor-not-allowed');
-        
-        // Reset form after 2 seconds and close
-        setTimeout(() => {
-          inquiryFormElement.reset();
-          submitButton.textContent = originalText;
-          submitButton.disabled = false;
-          submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
-          closeForm();
-        }, 2000);
-      } else {
-        throw new Error(data.error || 'Submission failed');
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Formspree error: ${response.status}`);
       }
+      return response.json();
+    })
+    .then(data => {
+      // Formspree success response
+      // Show success message
+      submitButton.textContent = document.documentElement.lang === 'de' ? 'Erfolgreich gesendet!' : 'Successfully sent!';
+      submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+      
+      // Reset form after 2 seconds and close
+      setTimeout(() => {
+        inquiryFormElement.reset();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        closeForm();
+      }, 2000);
     })
     .catch((error) => {
       // Show error but still close
