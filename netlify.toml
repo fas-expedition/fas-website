@@ -9,6 +9,19 @@
   status = 301
   force = true
 
+# Handle form success redirects
+[[redirects]]
+  from = "/de/kontakt/"
+  to = "/de/kontakt/"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/en/contact/"
+  to = "/en/contact/"
+  status = 200
+  force = false
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
