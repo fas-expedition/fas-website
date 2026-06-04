@@ -9,6 +9,13 @@
   status = 301
   force = true
 
+# Redirect domain apex to www
+[[redirects]]
+  from = "https://fas-expedition.de/*"
+  to = "https://www.fas-expedition.de/:splat"
+  status = 301
+  force = true
+
 # Handle form success redirects
 [[redirects]]
   from = "/de/kontakt/"
