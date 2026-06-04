@@ -98,7 +98,7 @@
         "cabin": { "label": "Kabine", "value": "2–4 Personen" }
       },
       "configurations": [
-        { "name": "Pathfinder 6x6 Base", "price": "ab €849.000" }
+        { "name": "Pathfinder 6x6 Base", "price": "ab 979.000€" }
       ],
       "ctaText": "6x6 konfigurieren",
       "ctaUrl": "/de/konfigurator"
