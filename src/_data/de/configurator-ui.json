@@ -1,6 +1,6 @@
 {
   "heading.title": "Konfigurator",
-  "heading.subtitle": "Schritt für Schritt zu Ihrem Expeditionsmobil",
+  "heading.subtitle": "Schritt für Schritt zu deinem Expeditionsmobil",
 
   "step.platform": "Plattform",
   "step.cabinSize": "Kabinengröße",
@@ -8,11 +8,11 @@
   "step.accessories": "Zubehör",
   "step.summary": "Zusammenfassung",
 
-  "step.platform.description": "Wählen Sie Ihre Basisplattform",
-  "step.cabinSize.description": "Wählen Sie Ihre Kabinengröße",
-  "step.equipmentLine.description": "Wählen Sie Ihre Ausstattungslinie",
-  "step.accessories.description": "Wählen Sie optionales Zubehör",
-  "step.summary.description": "Überprüfen Sie Ihre Konfiguration und senden Sie Ihre Anfrage",
+  "step.platform.description": "Wähle deine Basisplattform",
+  "step.cabinSize.description": "Wähle deine Kabinengröße",
+  "step.equipmentLine.description": "Wähle deine Ausstattungslinie",
+  "step.accessories.description": "Wähle optionales Zubehör",
+  "step.summary.description": "Überprüfe deine Konfiguration und sende deine Anfrage",
 
   "btn.next": "Weiter",
   "btn.back": "Zurück",
@@ -21,7 +21,7 @@
   "btn.newConfig": "Neue Konfiguration",
   "btn.reset": "Zurücksetzen",
 
-  "sidebar.title": "Ihre Auswahl",
+  "sidebar.title": "Deine Auswahl",
   "sidebar.empty": "Noch keine Auswahl getroffen",
   "sidebar.platform": "Plattform",
   "sidebar.cabinSize": "Kabinengröße",
@@ -29,7 +29,7 @@
   "sidebar.accessories": "Zubehör",
 
   "form.title": "Kontaktdaten",
-  "form.subtitle": "Hinterlassen Sie Ihre Kontaktdaten für eine persönliche Beratung.",
+  "form.subtitle": "Hinterlasse deine Kontaktdaten für eine persönliche Beratung.",
   "form.name": "Vollständiger Name",
   "form.name.placeholder": "Max Mustermann",
   "form.email": "E-Mail-Adresse",
@@ -43,18 +43,18 @@
   "form.privacy": "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
   "form.required": "Pflichtfeld",
 
-  "form.error.nameRequired": "Bitte geben Sie Ihren Namen ein.",
-  "form.error.emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+  "form.error.nameRequired": "Bitte gib deinen Namen ein.",
+  "form.error.emailRequired": "Bitte gib deine E-Mail-Adresse ein.",
   "form.error.emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-  "form.error.privacyRequired": "Bitte stimmen Sie der Datenschutzerklärung zu.",
+  "form.error.privacyRequired": "Bitte stimme der Datenschutzerklärung zu.",
   "form.error.submitFailed": "Übermittlung fehlgeschlagen. Bitte versuchen Sie es erneut.",
   "form.error.networkError": "Netzwerkfehler. Bitte prüfen Sie Ihre Internetverbindung.",
 
   "confirm.title": "Anfrage erfolgreich gesendet",
-  "confirm.message": "Vielen Dank für Ihre Anfrage. Unser Vertriebsteam wird sich innerhalb von 2 Werktagen bei Ihnen melden.",
-  "confirm.reference": "Ihre Referenznummer",
+  "confirm.message": "Vielen Dank für deine Anfrage. Unser Vertriebsteam wird sich innerhalb von 2 Werktagen bei dir melden.",
+  "confirm.reference": "Deine Referenznummer",
   "confirm.nextSteps": "Nächste Schritte",
-  "confirm.nextStepsText": "Ein Berater wird Ihre Konfiguration prüfen und Sie kontaktieren, um Details zu besprechen.",
+  "confirm.nextStepsText": "Ein Berater wird deine Konfiguration prüfen und dich kontaktieren, um Details zu besprechen.",
   "confirm.backHome": "Zurück zur Startseite",
 
   "rule.requires": "Erfordert",
@@ -93,6 +93,6 @@
   "misc.notSelected": "Nicht ausgewählt",
   "misc.stepOf": "Schritt {current} von {total}",
 
-  "noscript.message": "Der Konfigurator benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihrem Browser.",
+  "noscript.message": "Der Konfigurator benötigt JavaScript. Bitte aktiviere JavaScript in deinem Browser.",
   "noscript.fallback": "Alternativ können Sie uns direkt kontaktieren unter info@fas-expedition.de"
 }

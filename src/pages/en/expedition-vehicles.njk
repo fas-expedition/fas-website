@@ -147,37 +147,36 @@ altSlug:
       </svg>
     </button>
 
-    {# Main Image Display #}
-    <div class="flex-1 flex items-center justify-center mb-6">
-      <img id="gallery-image-{{ vehicle.id }}" src="" alt="" class="max-w-full max-h-[70vh] object-contain">
-    </div>
-
-    {# Image Counter and Navigation #}
-    <div class="flex items-center justify-between">
-      <button class="gallery-prev text-white hover:text-zinc-300 transition-colors" data-gallery-id="{{ vehicle.id }}" aria-label="Previous image">
-        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    {# Main Image Display with Navigation Arrows #}
+    <div class="flex-1 flex items-center justify-center mb-6 gap-6">
+      {# Previous Arrow #}
+      <button class="gallery-prev text-white hover:text-zinc-300 transition-colors flex-shrink-0" data-gallery-id="{{ vehicle.id }}" aria-label="Previous image">
+        <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
 
-      {# Thumbnail Grid #}
-      <div class="flex-1 flex gap-2 justify-center overflow-x-auto px-4" id="gallery-thumbnails-{{ vehicle.id }}">
-        {% for image in vehicle.gallery %}
-        <button 
-          class="gallery-thumbnail w-16 h-16 flex-shrink-0 border-2 border-transparent hover:border-white transition-colors rounded"
-          data-gallery-id="{{ vehicle.id }}"
-          data-index="{{ loop.index0 }}"
-          aria-label="Image {{ loop.index }} of {{ vehicle.gallery | length }}">
-          <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover rounded">
-        </button>
-        {% endfor %}
-      </div>
+      <img id="gallery-image-{{ vehicle.id }}" src="" alt="" class="max-w-full max-h-[70vh] object-contain flex-1">
 
-      <button class="gallery-next text-white hover:text-zinc-300 transition-colors" data-gallery-id="{{ vehicle.id }}" aria-label="Next image">
-        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      {# Next Arrow #}
+      <button class="gallery-next text-white hover:text-zinc-300 transition-colors flex-shrink-0" data-gallery-id="{{ vehicle.id }}" aria-label="Next image">
+        <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
       </button>
+    </div>
+
+    {# Thumbnail Grid #}
+    <div class="flex gap-2 justify-center overflow-x-auto px-4 mb-4" id="gallery-thumbnails-{{ vehicle.id }}">
+      {% for image in vehicle.gallery %}
+      <button 
+        class="gallery-thumbnail w-16 h-16 flex-shrink-0 border-2 border-transparent hover:border-white transition-colors rounded"
+        data-gallery-id="{{ vehicle.id }}"
+        data-index="{{ loop.index0 }}"
+        aria-label="Image {{ loop.index }} of {{ vehicle.gallery | length }}">
+        <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover rounded">
+      </button>
+      {% endfor %}
     </div>
 
     {# Image Counter #}

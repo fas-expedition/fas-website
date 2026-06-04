@@ -26,8 +26,8 @@
     { "icon": "gauge", "title": "Extreme Reichweite", "description": "Mehrfachtankanlage mit bis zu 1.200 Litern Kapazität für wochenlange autonome Einsätze ohne Infrastruktur." }
   ],
   "cta": {
-    "title": "Ihr 8x8 konfigurieren",
-    "description": "Stellen Sie Ihr individuelles 8x8-Expeditionsfahrzeug für extremste Missionen zusammen.",
+    "title": "Dein 8x8 konfigurieren",
+    "description": "Stelle dein individuelles 8x8-Expeditionsfahrzeug für extremste Missionen zusammen.",
     "buttonText": "Zum Konfigurator",
     "buttonUrl": "/de/konfigurator"
   }

@@ -37,7 +37,7 @@
     ]
   },
   "vehicles": {
-    "title": "Wählen Sie Ihre Plattform",
+    "title": "Wählen Deine Plattform",
     "items": [
       {
         "id": "4x4",
@@ -63,8 +63,8 @@
     ]
   },
   "cta": {
-    "title": "Ihre Reise beginnt hier",
-    "description": "Konfigurieren Sie gemeinsam mit uns Ihr individuelles Traumfahrzeug.",
+    "title": "Deine Reise beginnt hier",
+    "description": "Konfiguriere gemeinsam mit uns dein individuelles Traumfahrzeug.",
     "ctaText": "unverbindlich anfragen",
     "ctaUrl": "#inquiry-form"
   }
