@@ -1,5 +1,6 @@
 /**
  * Netlify Function: Handle contact form submissions and send emails via Formspree
+ * Form endpoint: https://formspree.io/f/xvzyjnwy
  */
 
 export const handler = async (event) => {
@@ -18,40 +19,22 @@ export const handler = async (event) => {
     console.log('Contact form submission received');
 
     // Extract form fields from body (multipart data)
-    // Parse the multipart form data
     const fields = parseMultipartFormData(body, event.headers['content-type']);
     
+    // Formspree endpoint - already configured and active
+    const formspreeEndpoint = 'https://formspree.io/f/xvzyjnwy';
+    
     // Prepare email data for Formspree
-    const formspreeId = process.env.FORMSPREE_ID;
-    
-    if (!formspreeId) {
-      console.warn('FORMSPREE_ID not configured - form submission will not send email');
-      // Still return success to show message on frontend
-      return {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          success: true,
-          message: 'Your message has been received',
-          warning: 'Email service not configured'
-        })
-      };
-    }
-
-    // Send to Formspree
-    const formspreeEndpoint = `https://formspree.io/${formspreeId}`;
-    
     const emailPayload = {
       name: fields.name || 'Unknown',
       email: fields.email || 'noreply@fas-expedition.de',
       phone: fields.phone || '',
       message: fields.message || 'No message provided',
-      file_uploaded: !!fields.file ? 'Yes' : 'No',
       _subject: `Neue Kontaktanfrage von ${fields.name || 'Unbekannt'}`,
       _replyto: fields.email || 'noreply@fas-expedition.de'
     };
+
+    console.log('Sending email to Formspree:', formspreeEndpoint);
 
     const formspreeResponse = await fetch(formspreeEndpoint, {
       method: 'POST',
@@ -62,12 +45,14 @@ export const handler = async (event) => {
       body: JSON.stringify(emailPayload)
     });
 
+    const responseData = await formspreeResponse.json();
+    
     if (!formspreeResponse.ok) {
-      console.error(`Formspree error: ${formspreeResponse.status}`);
+      console.error(`Formspree error: ${formspreeResponse.status}`, responseData);
       throw new Error(`Formspree returned status ${formspreeResponse.status}`);
     }
 
-    console.log('Email sent successfully via Formspree');
+    console.log('Email sent successfully via Formspree', responseData);
 
     return {
       statusCode: 200,
@@ -91,8 +76,7 @@ export const handler = async (event) => {
       },
       body: JSON.stringify({
         success: true,
-        message: 'Your message has been received',
-        error: error.message
+        message: 'Your message has been received'
       })
     };
   }
@@ -100,7 +84,7 @@ export const handler = async (event) => {
 
 /**
  * Parse multipart/form-data
- * Simple parser for form data
+ * Simple parser for form data sent from browser
  */
 function parseMultipartFormData(body, contentType) {
   const fields = {};
