@@ -55,7 +55,7 @@
         "cabin": { "label": "Kabine", "value": "2–3 Personen" }
       },
       "configurations": [
-        { "name": "Explorer 4x4 Base", "price": "ab €749.000" }
+        { "name": "Explorer 4x4 Base", "price": "ab 679.000€" }
       ],
       "ctaText": "4x4 konfigurieren",
       "ctaUrl": "/de/konfigurator"
