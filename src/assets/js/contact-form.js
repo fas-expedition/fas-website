@@ -1,9 +1,12 @@
 /**
- * Handle contact form submissions via Netlify Function
- * Falls back to showing success message on localhost
+ * Handle contact form submissions directly to Formspree
+ * Sends JSON data directly without intermediate processing
  */
 
 (function() {
+  // Formspree endpoint
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzyjnwy';
+
   function initContactForm() {
     const form = document.querySelector('form[name="kontakt"], form[name="contact"]');
     
@@ -29,58 +32,55 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = isGerman ? 'Wird gesendet...' : 'Sending...';
 
-        // Prepare form data
-        const formData = new FormData(form);
-        
-        // Convert FormData to URL-encoded format for better compatibility
-        const params = new URLSearchParams();
-        for (const [key, value] of formData.entries()) {
-          // Skip empty values and file inputs
-          if (value && !(value instanceof File)) {
-            params.append(key, value);
-          }
-        }
-        
-        console.log('Form data to send:', Object.fromEntries(params));
-        
-        // Determine if we're on localhost
-        const isLocalhost = window.location.hostname === 'localhost' || 
-                            window.location.hostname === '127.0.0.1';
-        
-        let submitSuccess = false;
+        // Get form values
+        const name = form.querySelector('input[name="name"]')?.value?.trim() || '';
+        const email = form.querySelector('input[name="email"]')?.value?.trim() || '';
+        const phone = form.querySelector('input[name="phone"]')?.value?.trim() || '';
+        const message = form.querySelector('textarea[name="message"]')?.value?.trim() || '';
 
-        if (isLocalhost) {
-          // On localhost, just show success (actual submission won't work without netlify dev)
-          console.log('Localhost detected - showing success message');
-          submitSuccess = true;
-        } else {
-          // On production, submit to Netlify Function
-          console.log('Production detected - submitting to Netlify Function');
-          const response = await fetch('/.netlify/functions/contact', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: params.toString()
-          });
+        console.log('Form fields:', { name, email, phone, message });
 
-          const result = await response.json();
-          submitSuccess = response.ok && result.success;
+        // Validate required fields
+        if (!name || !email || !message) {
+          throw new Error('Missing required fields');
         }
 
-        if (submitSuccess) {
-          // Success! Show success message
-          showSuccessMessage(form, isGerman);
-          
-          // Reset form
-          form.reset();
-          
-          // Reset button
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        } else {
-          throw new Error('Form submission failed');
+        // Send directly to Formspree as JSON
+        console.log('Sending to Formspree:', FORMSPREE_ENDPOINT);
+        
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+            _subject: isGerman ? `Neue Kontaktanfrage von ${name}` : `New contact inquiry from ${name}`,
+            _replyto: email
+          })
+        });
+
+        console.log('Formspree response status:', response.status);
+        const result = await response.json();
+        console.log('Formspree response:', result);
+
+        if (!response.ok) {
+          throw new Error(`Formspree error: ${response.status}`);
         }
+
+        // Success! Show success message
+        showSuccessMessage(form, isGerman);
+        
+        // Reset form
+        form.reset();
+        
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
         
       } catch (error) {
         console.error('Form submission error:', error);
