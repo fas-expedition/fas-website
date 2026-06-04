@@ -32,6 +32,17 @@
         // Prepare form data
         const formData = new FormData(form);
         
+        // Convert FormData to URL-encoded format for better compatibility
+        const params = new URLSearchParams();
+        for (const [key, value] of formData.entries()) {
+          // Skip empty values and file inputs
+          if (value && !(value instanceof File)) {
+            params.append(key, value);
+          }
+        }
+        
+        console.log('Form data to send:', Object.fromEntries(params));
+        
         // Determine if we're on localhost
         const isLocalhost = window.location.hostname === 'localhost' || 
                             window.location.hostname === '127.0.0.1';
@@ -47,7 +58,10 @@
           console.log('Production detected - submitting to Netlify Function');
           const response = await fetch('/.netlify/functions/contact', {
             method: 'POST',
-            body: formData
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: params.toString()
           });
 
           const result = await response.json();
