@@ -129,7 +129,7 @@
         "cabin": { "label": "Kabine", "value": "2–6 Personen" }
       },
       "configurations": [
-        { "name": "Titan 8x8 Base", "price": "ab €949.000" }
+        { "name": "Titan 8x8 Base", "price": "ab 1.149.000€" }
       ],
       "ctaText": "8x8 konfigurieren",
       "ctaUrl": "/de/konfigurator"

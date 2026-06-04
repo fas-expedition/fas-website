@@ -40,20 +40,8 @@
         </a>
       </div>
 
-      {# Right Side: Language Switcher + Login + Mobile Toggle #}
+      {# Right Side: Login + Language Switcher + Mobile Toggle #}
       <div class="flex items-center gap-4 ml-auto">
-
-        {# Language Switcher #}
-        <div class="hidden lg:flex items-center border border-zinc-700 divide-x divide-zinc-700">
-          <a href="{% if locale == 'de' %}/de/{{ altSlug.de if altSlug else '' }}{% else %}{{ altLink }}{% endif %}"
-             class="px-3 py-1.5 text-xs font-bold uppercase transition-colors {% if locale == 'de' %}bg-white text-black{% else %}text-zinc-400 hover:text-white{% endif %}">
-            DE
-          </a>
-          <a href="{% if locale == 'en' %}/en/{{ altSlug.en if altSlug else '' }}{% else %}{{ altLink }}{% endif %}"
-             class="px-3 py-1.5 text-xs font-bold uppercase transition-colors {% if locale == 'en' %}bg-white text-black{% else %}text-zinc-400 hover:text-white{% endif %}">
-            EN
-          </a>
-        </div>
 
         {# Phone Number #}
         <a href="tel:+491517217119" class="hidden lg:flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-zinc-300 transition-colors whitespace-nowrap">
@@ -67,6 +55,18 @@
           </svg>
           <span>{{ translations["nav.customerPortal"] }}</span>
         </a>
+
+        {# Language Switcher #}
+        <div class="hidden lg:flex items-center border border-zinc-700 divide-x divide-zinc-700">
+          <a href="{% if locale == 'de' %}/de/{{ altSlug.de if altSlug else '' }}{% else %}{{ altLink }}{% endif %}"
+             class="px-3 py-0 text-xs font-bold uppercase transition-colors {% if locale == 'de' %}bg-white text-black{% else %}text-zinc-400 hover:text-white{% endif %}">
+            DE
+          </a>
+          <a href="{% if locale == 'en' %}/en/{{ altSlug.en if altSlug else '' }}{% else %}{{ altLink }}{% endif %}"
+             class="px-3 py-0 text-xs font-bold uppercase transition-colors {% if locale == 'en' %}bg-white text-black{% else %}text-zinc-400 hover:text-white{% endif %}">
+            EN
+          </a>
+        </div>
 
         {# Mobile Hamburger Button #}
         <button id="menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 text-white" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
