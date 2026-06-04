@@ -22,11 +22,11 @@ altSlug:
 
 {# Vehicle Type Sections #}
 {% for vehicle in page.vehicleTypes %}
-<section id="vehicle-{{ vehicle.id }}" class="{% if loop.index % 2 == 1 %}bg-black{% else %}bg-zinc-950{% endif %} py-3 lg:py-5">
+<section id="vehicle-{{ vehicle.id }}" class="relative {% if loop.index % 2 == 1 %}bg-black{% else %}bg-zinc-950{% endif %} py-3 lg:py-5">
   <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       {# Vehicle Image #}
-      <div class="border border-zinc-800">
+      <div class="relative z-10 border border-zinc-800">
         <button 
           type="button"
           data-gallery-trigger="{{ vehicle.id }}" 
