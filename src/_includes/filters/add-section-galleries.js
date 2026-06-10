@@ -1,6 +1,6 @@
 /**
- * Add galleries to blog post content after matching headlines
- * Matches headline text and inserts gallery HTML after it
+ * Add galleries to blog post content after matching headlines and their first paragraph
+ * Matches headline text, finds the next paragraph, then inserts gallery HTML after it
  */
 module.exports = function(content, sectionGalleries) {
   if (!sectionGalleries || !Array.isArray(sectionGalleries) || sectionGalleries.length === 0) {
@@ -16,16 +16,17 @@ module.exports = function(content, sectionGalleries) {
     }
 
     // Find h2 or h3 with the section title (exact match, case-insensitive)
-    // Using word boundary and exact text match
+    // Then find the next </p> tag after that headline
     const escapedTitle = section.sectionTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    // Pattern: match h2 or h3 where the content between tags is exactly the section title (allowing whitespace)
+    
+    // Pattern: match h2/h3, then capture everything until the next closing </p> tag
     const headingPattern = new RegExp(
-      `<(h[2-3])>\\s*${escapedTitle}\\s*</\\1>`,
+      `(<(h[2-3])>\\s*${escapedTitle}\\s*</\\2>(?:[^<]|<(?!/p>))*</p>)`,
       'i'
     );
 
     // Build gallery HTML
-    const galleryHtml = `<$1>${section.sectionTitle}</$1>
+    const galleryHtml = `$1
     <div class="gallery-section mt-8 mb-12 py-8 border-t border-b border-zinc-800">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         ${section.images.map(img => `
