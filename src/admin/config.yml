@@ -4,9 +4,9 @@ backend:
 
 local_backend: true
 
-# For production with Netlify Identity:
-# identity:
-#   url: https://fas-expedition.netlify.app/.netlify/identity
+# Production: Netlify Identity (no OAuth needed)
+identity:
+  url: https://fas-expedition.netlify.app/.netlify/identity
 
 publish_mode: editorial_workflow
 
