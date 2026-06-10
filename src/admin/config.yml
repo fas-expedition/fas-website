@@ -45,15 +45,21 @@ collections:
         widget: "list"
         required: false
         i18n: true
+        collapsed: true
         fields:
           - { label: "Sektion-Titel (Headline)", name: "sectionTitle", widget: "string", required: true, hint: "z.B. 'Wohnkabine' - exakt wie in der Headline" }
           - label: "Bilder"
             name: "images"
             widget: "list"
             required: false
-            fields:
-              - { label: "Bild", name: "src", widget: "image", required: true }
-              - { label: "Alt-Text", name: "alt", widget: "string", required: true }
+            collapsed: true
+            field:
+              label: "Bild"
+              name: "image"
+              widget: "object"
+              fields:
+                - { label: "Bild", name: "src", widget: "image", required: true, allow_multiple: false }
+                - { label: "Alt-Text", name: "alt", widget: "string", required: true, hint: "Beschreibung für Barrierefreiheit" }
       - { label: "Inhalt", name: "body", widget: "markdown", required: true, i18n: true }
 
   # ─── Page Content ───────────────────────────────────────────────
