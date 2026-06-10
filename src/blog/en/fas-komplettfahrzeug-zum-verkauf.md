@@ -8,6 +8,21 @@ author: "FAS Expedition"
 category: "News"
 image: "/assets/images/blog/komplettfahrzeug-verkauf.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Your Chance for an Expedition Vehicle Without Delivery Time"
+    images: []
+  - sectionTitle: "Base Vehicle Data"
+    images: []
+  - sectionTitle: "Manufactured by FAS Expedition"
+    images: []
+  - sectionTitle: "Living Cabin Data"
+    images: []
+  - sectionTitle: "Energy Package"
+    images: []
+  - sectionTitle: "Water Package"
+    images: []
+  - sectionTitle: "Climate Package"
+    images: []
 audioUrl: ""
 ---
 

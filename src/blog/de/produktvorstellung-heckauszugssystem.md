@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Technologie"
 image: "/assets/images/blog/heckauszugssystem.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Das durchdachte Auszugsystem für das Garagenstaufach"
+    images: []
 audioUrl: ""
 ---
 

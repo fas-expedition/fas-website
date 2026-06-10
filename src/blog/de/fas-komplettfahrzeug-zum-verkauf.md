@@ -8,6 +8,21 @@ author: "FAS Expedition"
 category: "Neuigkeiten"
 image: "/assets/images/blog/komplettfahrzeug-verkauf.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Ihre Chance zum Reisemobil ohne Lieferzeit"
+    images: []
+  - sectionTitle: "Daten des Basisfahrzeuges"
+    images: []
+  - sectionTitle: "Durch FAS Expedition wurden angefertigt"
+    images: []
+  - sectionTitle: "Daten der Wohnkabine"
+    images: []
+  - sectionTitle: "Energie-Paket"
+    images: []
+  - sectionTitle: "Wasser-Paket"
+    images: []
+  - sectionTitle: "Klima-Paket"
+    images: []
 audioUrl: ""
 ---
 

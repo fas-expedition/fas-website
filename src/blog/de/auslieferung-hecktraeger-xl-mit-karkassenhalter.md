@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/hecktraeger-karkassenhalter.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Heckträger XL für MAN 18.430"
+    images: []
 audioUrl: ""
 ---
 

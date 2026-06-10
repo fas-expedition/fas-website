@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Technology"
 image: "/assets/images/blog/heckauszugssystem.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "The Well-Designed Pull-Out System for the Garage Storage Compartment"
+    images: []
 audioUrl: ""
 ---
 

@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Neuigkeiten"
 image: "/assets/images/blog/abenteuer-allrad-messe-2025.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Auch in 2025 wieder auf Stand T02"
+    images: []
 audioUrl: ""
 ---
 

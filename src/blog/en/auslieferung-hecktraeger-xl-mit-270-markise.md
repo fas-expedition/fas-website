@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/hecktraeger-270-markise.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Rear Carrier XL for Mercedes Arocs 6x6"
+    images: []
 audioUrl: ""
 ---
 

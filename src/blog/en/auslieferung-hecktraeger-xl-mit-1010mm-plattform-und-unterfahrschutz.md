@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/hecktraeger-1010mm-plattform.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Rear Carrier XL on Mercedes Benz Arocs 2036"
+    images: []
 audioUrl: ""
 ---
 

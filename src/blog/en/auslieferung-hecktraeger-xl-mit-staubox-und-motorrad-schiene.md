@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/hecktraeger-staubox-motorrad.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "FAS Rear Carrier XL for Another Kerkamm Vehicle"
+    images: []
 audioUrl: ""
 ---
 

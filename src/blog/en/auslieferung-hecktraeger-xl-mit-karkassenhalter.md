@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/hecktraeger-karkassenhalter.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Rear Carrier XL for MAN 18.430"
+    images: []
 audioUrl: ""
 ---
 

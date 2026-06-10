@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/hecktraeger-1010mm-plattform.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Heckträger XL an Mercedes Benz Arocs 2036"
+    images: []
 audioUrl: ""
 ---
 

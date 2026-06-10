@@ -8,6 +8,31 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/arocs-4x4-wohnkabine.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Delivery of a 5.9m Living Cabin with Electric Storage Box Staircase on Mercedes Arocs 2042 4x4"
+    images: []
+  - sectionTitle: "Living Cabin"
+    images: []
+  - sectionTitle: "Interior"
+    images: []
+  - sectionTitle: "Seating Area"
+    images: []
+  - sectionTitle: "Kitchen and Hallway"
+    images: []
+  - sectionTitle: "Bathroom/WC"
+    images: []
+  - sectionTitle: "Sleeping Area"
+    images: []
+  - sectionTitle: "Exterior"
+    images: []
+  - sectionTitle: "Base Vehicle Preparations"
+    images: []
+  - sectionTitle: "Exterior Staircase, Outdoor Kitchen and Storage Boxes"
+    images: []
+  - sectionTitle: "Rear Carrier"
+    images: []
+  - sectionTitle: "Roof Rack"
+    images: []
 audioUrl: ""
 ---
 

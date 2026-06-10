@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/hecktraeger-staubox-motorrad.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "FAS Heckträger XL für ein weiteres Kerkamm-Fahrzeug"
+    images: []
 audioUrl: ""
 ---
 

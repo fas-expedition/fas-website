@@ -8,6 +8,31 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/arocs-4x4-wohnkabine.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Auslieferung einer 5,9m-Wohnkabine mit elektrischer Staukastentreppe auf Mercedes Arocs 2042 4x4"
+    images: []
+  - sectionTitle: "Wohnkabine"
+    images: []
+  - sectionTitle: "Interieur"
+    images: []
+  - sectionTitle: "Sitzgruppe"
+    images: []
+  - sectionTitle: "Küche und Flur"
+    images: []
+  - sectionTitle: "Bad/WC"
+    images: []
+  - sectionTitle: "Schlafbereich"
+    images: []
+  - sectionTitle: "Exterieur"
+    images: []
+  - sectionTitle: "Vorbereitungen am Basisfahrzeug"
+    images: []
+  - sectionTitle: "Außentreppe, Außenküche und Staukästen"
+    images: []
+  - sectionTitle: "Heckträger"
+    images: []
+  - sectionTitle: "Dachträger"
+    images: []
 audioUrl: ""
 ---
 

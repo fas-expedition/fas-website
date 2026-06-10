@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/hecktraeger-2-motorraeder.png"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Heckträger für Mercedes Benz Arocs 3353 6x6"
+    images: []
 audioUrl: ""
 ---
 

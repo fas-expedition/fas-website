@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Auslieferung"
 image: "/assets/images/blog/hecktraeger-270-markise.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "Heckträger XL für Mercedes Arocs 6x6"
+    images: []
 audioUrl: ""
 ---
 

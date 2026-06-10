@@ -8,6 +8,9 @@ author: "FAS Expedition"
 category: "Delivery"
 image: "/assets/images/blog/aussenkueche.jpg"
 headerImage: ""
+sectionGalleries:
+  - sectionTitle: "FAS Outdoor Kitchen for Action Mobil Global X"
+    images: []
 audioUrl: ""
 ---
 
