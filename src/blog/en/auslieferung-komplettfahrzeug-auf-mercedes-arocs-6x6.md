@@ -9,6 +9,19 @@ category: "Delivery"
 image: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
 headerImage: ""
 audioUrl: ""
+sectionGalleries:
+  - sectionTitle: "Living Cabin"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Mercedes Arocs 6x6 with FAS Living Cabin 7.3m"
+  - sectionTitle: "Interior"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Modern interior with cream-colored leather surfaces and oak elements"
+  - sectionTitle: "Seating Area"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Spacious round seating area upholstered in cream-colored leather"
 ---
 
 ## Delivery of a 7.3m Living Cabin with Electric Storage Box Staircase and Electric Extension Platform on Mercedes Arocs 3351 6x6

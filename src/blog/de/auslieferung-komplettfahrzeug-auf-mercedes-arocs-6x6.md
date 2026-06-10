@@ -9,6 +9,19 @@ category: "Auslieferung"
 image: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
 headerImage: ""
 audioUrl: ""
+sectionGalleries:
+  - sectionTitle: "Wohnkabine"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Mercedes Arocs 6x6 mit FAS Wohnkabine 7,3m"
+  - sectionTitle: "Interieur"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Modernes Interieur mit cremefarbenen Lederoberflächen und Eiche-Elementen"
+  - sectionTitle: "Sitzgruppe"
+    images:
+      - src: "/assets/images/blog/arocs-6x6-wohnkabine.jpg"
+        alt: "Großzügige Rundsitzgruppe aus cremefarbenem Rindsleder"
 ---
 
 ## Auslieferung einer 7,3m-Wohnkabine mit elektrischer Staukastentreppe und elektrischer Auszugsplattform auf Mercedes Arocs 3351 6x6

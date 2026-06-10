@@ -181,6 +181,10 @@ module.exports = function(eleventyConfig) {
     return `${day}. ${month} ${year}`;
   });
 
+  // Add section galleries to blog post content
+  const addSectionGalleries = require('./src/_includes/filters/add-section-galleries.js');
+  eleventyConfig.addFilter("addSectionGalleries", addSectionGalleries);
+
   // Markdown: open external links in new tab
   const markdownIt = require('markdown-it');
   const md = markdownIt({ html: true, linkify: true });

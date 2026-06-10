@@ -1,0 +1,24 @@
+{# Gallery macro for blog post sections #}
+{% macro sectionGallery(images) %}
+  {% if images and images.length > 0 %}
+    <div class="gallery-section mt-8 mb-12 py-8 border-t border-b border-zinc-800">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        {% for image in images %}
+          <figure class="overflow-hidden rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors">
+            <button 
+              class="gallery-thumb-trigger relative block w-full aspect-square hover:opacity-70 transition-opacity cursor-pointer"
+              data-gallery-image="{{ image.src }}"
+              data-gallery-alt="{{ image.alt }}"
+              aria-label="Bild vergrößern">
+              <img 
+                src="{{ image.src }}" 
+                alt="{{ image.alt }}" 
+                class="w-full h-full object-cover"
+                loading="lazy">
+            </button>
+          </figure>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}

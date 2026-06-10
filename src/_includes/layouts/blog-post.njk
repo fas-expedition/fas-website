@@ -51,7 +51,7 @@
     {# Article Content #}
     <article class="py-16 lg:py-24">
       <div class="max-w-3xl mx-auto px-6 lg:px-12 prose prose-invert prose-lg prose-headings:tracking-wider prose-headings:uppercase prose-headings:font-bold prose-a:text-white prose-a:underline hover:prose-a:text-zinc-300 prose-img:rounded prose-img:border prose-img:border-zinc-800">
-        {{ content | safe }}
+        {{ content | addSectionGalleries(sectionGalleries) | safe }}
       </div>
     </article>
 
@@ -101,6 +101,7 @@
 
   {% include "partials/footer.njk" %}
 
+  <script src="/assets/js/blog-gallery.js"></script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", function(user) {

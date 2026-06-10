@@ -40,6 +40,20 @@ collections:
       - { label: "Titelbild", name: "image", widget: "image", required: false, i18n: duplicate }
       - { label: "Header-Bild", name: "headerImage", widget: "image", required: false, i18n: duplicate }
       - { label: "Audio URL", name: "audioUrl", widget: "string", required: false, i18n: duplicate }
+      - label: "Galerien nach Sektionen"
+        name: "sectionGalleries"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - { label: "Sektion-Titel (Headline)", name: "sectionTitle", widget: "string", required: true, hint: "z.B. 'Wohnkabine' - exakt wie in der Headline" }
+          - label: "Bilder"
+            name: "images"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Bild", name: "src", widget: "image", required: true }
+              - { label: "Alt-Text", name: "alt", widget: "string", required: true }
       - { label: "Inhalt", name: "body", widget: "markdown", required: true, i18n: true }
 
   # ─── Page Content ───────────────────────────────────────────────
