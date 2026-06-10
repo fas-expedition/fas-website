@@ -72,10 +72,18 @@ sectionGalleries:
         alt: "Hubstützenanlage - Detail"
   - sectionTitle: "Aussentreppe, Auszugsplattform und Staukästen"
     images:
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/02730cbb-d931-48c0-82a7-e5d37c424dbd.JPG"
+        alt: "Aussentreppe, Auszugsplattform und Staukästen - Außenansicht"
       - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/20251106_130120 (1).jpg"
-        alt: "Aussentreppe, Auszugsplattform und Staukästen - Übersicht"
+        alt: "Aussentreppe, Auszugsplattform und Staukästen - Treppe Detail"
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/7666ceb2-9aec-4c7d-861d-b699fc87ea96.JPG"
+        alt: "Aussentreppe, Auszugsplattform und Staukästen - Plattform"
   - sectionTitle: "Heckträger"
-    images: []
+    images:
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113004.jpg"
+        alt: "Heckträger - Montageansicht"
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113402 (1).jpg"
+        alt: "Heckträger - Detail"
 ---
 
 ## Auslieferung einer 7,3m-Wohnkabine mit elektrischer Staukastentreppe und elektrischer Auszugsplattform auf Mercedes Arocs 3351 6x6

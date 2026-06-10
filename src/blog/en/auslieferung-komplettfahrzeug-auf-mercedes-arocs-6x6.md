@@ -72,10 +72,18 @@ sectionGalleries:
         alt: "Levelling Jack System - Detail"
   - sectionTitle: "Exterior Staircase, Extension Platform and Storage Boxes"
     images:
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/02730cbb-d931-48c0-82a7-e5d37c424dbd.JPG"
+        alt: "Exterior Staircase, Extension Platform and Storage Boxes - Exterior view"
       - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/20251106_130120 (1).jpg"
-        alt: "Exterior Staircase, Extension Platform and Storage Boxes - Overview"
+        alt: "Exterior Staircase, Extension Platform and Storage Boxes - Staircase detail"
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Aussentreppe, Auszugsplattform und Staukästen/7666ceb2-9aec-4c7d-861d-b699fc87ea96.JPG"
+        alt: "Exterior Staircase, Extension Platform and Storage Boxes - Platform"
   - sectionTitle: "Rear Carrier"
-    images: []
+    images:
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113004.jpg"
+        alt: "Rear Carrier - Installation view"
+      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113402 (1).jpg"
+        alt: "Rear Carrier - Detail"
 ---
 
 ## Delivery of a 7.3m Living Cabin with Electric Storage Box Staircase and Electric Extension Platform on Mercedes Arocs 3351 6x6
