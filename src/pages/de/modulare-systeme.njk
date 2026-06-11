@@ -60,10 +60,10 @@ eleventyComputed:
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       {% for module in page.modules.items %}
-      <div class="group overflow-hidden relative">
+      <div class="group overflow-hidden relative flex flex-col">
         {# Module Image #}
-        <div class="relative aspect-video mb-6 overflow-hidden bg-zinc-900 flex items-center justify-center">
-          <img src="{{ module.image }}" alt="{{ module.title }}" data-lightbox data-caption="{{ module.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        <div class="relative overflow-hidden bg-black mb-6 aspect-video">
+          <img src="{{ module.image }}" alt="{{ module.title }}" data-lightbox data-caption="{{ module.title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
         </div>
         {# Module Content #}
         <div>
@@ -107,8 +107,8 @@ eleventyComputed:
       </div>
 
       {# Right Column: Image #}
-      <div>
-        <img src="{{ page.featuredSection.image }}" alt="{{ page.featuredSection.title }}" class="w-full h-auto relative hover-above-logo" loading="lazy" width="600" height="600">
+      <div class="overflow-hidden">
+        <img src="{{ page.featuredSection.image }}" alt="{{ page.featuredSection.title }}" class="w-full h-full object-contain relative hover-above-logo" loading="lazy" width="600" height="600">
       </div>
     </div>
   </div>
