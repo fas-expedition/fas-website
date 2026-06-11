@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Image = require("@11ty/eleventy-img");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 // Configure eleventy-img cache
 Image.concurrency = 10;
@@ -82,6 +83,16 @@ function validateVehicleData(filename, data) {
 }
 
 module.exports = function(eleventyConfig) {
+  // Image Transform Plugin: Automatically optimize all <img> and <picture> tags
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg"],
+    widths: [320, 640, 1024, 1280, 1600, 1920],
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
+
   // Template formats
   eleventyConfig.setTemplateFormats(["njk", "md"]);
 
