@@ -62,9 +62,9 @@ eleventyComputed:
       {% for module in page.modules.items %}
       <div class="group overflow-hidden relative flex flex-col">
         {# Module Image #}
-        <div class="relative overflow-hidden bg-black mb-6 aspect-video flex items-center justify-center">
-          <img src="{{ module.image }}" alt="{{ module.title }}" data-lightbox data-caption="{{ module.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-        </div>
+        <a href="{{ module.image }}" data-lightbox data-caption="{{ module.title }}" class="relative aspect-video mb-6 overflow-hidden bg-black flex items-center justify-center block">
+          <img src="{{ module.image }}" alt="{{ module.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        </a>
         {# Module Content #}
         <div>
           <h3 class="text-2xl font-bold uppercase tracking-wider mb-3">{{ module.title }}</h3>

@@ -62,6 +62,7 @@
     <div class="border-t border-zinc-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-zinc-400 text-sm">{{ translations["footer.copyright"] }}</p>
       <div class="flex space-x-6">
+        <a href="/{{ locale }}/{% if locale == 'de' %}kontakt{% else %}contact{% endif %}/#impressum" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.imprint"] }}</a>
         <a href="/{{ locale }}/{% if locale == 'de' %}datenschutz{% else %}privacy{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
         <a href="/{{ locale }}/{% if locale == 'de' %}agb{% else %}terms{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}</a>
       </div>

@@ -50,13 +50,15 @@
    * Attach click handlers to lightbox-trigger images
    */
   function initLightbox() {
-    const images = document.querySelectorAll('[data-lightbox]');
-    images.forEach(img => {
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', (e) => {
+    const lightboxElements = document.querySelectorAll('[data-lightbox]');
+    lightboxElements.forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', (e) => {
         e.preventDefault();
-        const caption = img.getAttribute('data-caption') || img.getAttribute('alt') || '';
-        openLightbox(img.src, caption);
+        const caption = el.getAttribute('data-caption') || el.getAttribute('alt') || '';
+        // For <a> tags, use href; for <img> tags, use data-href or src
+        const imageSrc = el.tagName === 'A' ? el.href : (el.getAttribute('data-href') || el.src);
+        openLightbox(imageSrc, caption);
       });
     });
   }
