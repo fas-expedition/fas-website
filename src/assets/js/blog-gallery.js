@@ -24,8 +24,10 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
       </svg>
     </button>
-    <div class="max-w-4xl max-h-screen flex flex-col items-center">
-      <img id="gallery-image" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded">
+    <div class="max-w-4xl max-h-screen flex flex-col items-center justify-center">
+      <div style="aspect-ratio: 16/9; max-height: 80vh; width: 100%; display: flex; align-items: center; justify-center;">
+        <img id="gallery-image" src="" alt="" class="w-full h-full object-cover rounded">
+      </div>
       <p id="gallery-caption" class="text-white text-center mt-4 text-sm max-w-2xl"></p>
     </div>
     <button 

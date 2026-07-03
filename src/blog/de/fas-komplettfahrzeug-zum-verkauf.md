@@ -5,7 +5,7 @@ publishDate: "2025-03-05"
 status: "published"
 excerpt: "Wir verkaufen im Auftrag des Eigentümers: MB Actros 1836L 4x2 StreamSpace L-Fahrerhaus, Bodenvariante mit FAS Expedition Wohnkabine 6m mit sehr hochwertigem Interieur."
 author: "FAS Expedition"
-category: "Neuigkeiten"
+category: "Zu Verkaufen"
 image: "/assets/images/blog/komplettfahrzeug-verkauf.jpg"
 headerImage: ""
 sectionGalleries:

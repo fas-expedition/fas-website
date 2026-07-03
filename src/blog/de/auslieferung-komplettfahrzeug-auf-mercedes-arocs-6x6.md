@@ -82,8 +82,6 @@ sectionGalleries:
     images:
       - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113004.jpg"
         alt: "Heckträger - Montageansicht"
-      - src: "/assets/images/blog/Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Heckträger/20251106_113402 (1).jpg"
-        alt: "Heckträger - Detail"
 ---
 
 ## Auslieferung einer 7,3m-Wohnkabine mit elektrischer Staukastentreppe und elektrischer Auszugsplattform auf Mercedes Arocs 3351 6x6

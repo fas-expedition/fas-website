@@ -5,7 +5,7 @@ publishDate: "2025-03-05"
 status: "published"
 excerpt: "We are selling on behalf of the owner: MB Actros 1836L 4x2 StreamSpace L-cab, floor variant with FAS Expedition 6m living cabin with very high-quality interior."
 author: "FAS Expedition"
-category: "News"
+category: "For Sale"
 image: "/assets/images/blog/komplettfahrzeug-verkauf.jpg"
 headerImage: ""
 sectionGalleries:

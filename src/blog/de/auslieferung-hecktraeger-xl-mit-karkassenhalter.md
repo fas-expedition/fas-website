@@ -10,7 +10,19 @@ image: "/assets/images/blog/hecktraeger-karkassenhalter.jpg"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "Heckträger XL für MAN 18.430"
-    images: []
+    images:
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_090846409.jpg"
+        alt: "Heckträger XL für MAN 18.430 - Seitenansicht"
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_090854108_1.jpg"
+        alt: "Heckträger XL - Plattform mit Winde"
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_091044343.jpg"
+        alt: "Karkassenhalter für Reifen ohne Felge"
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_091056509.jpg"
+        alt: "Heckträger XL - Gesamtansicht vom MAN 18.430"
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_091105887.jpg"
+        alt: "Winde und Kabelfernbedienung"
+      - src: "/assets/images/blog/hecktraeger-xl-karkassenhalter/PXL_20240926_091329567.jpg"
+        alt: "Unterfahrschutz ECE58R03 zertifiziert"
 audioUrl: ""
 ---
 

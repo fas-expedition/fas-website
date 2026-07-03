@@ -1,7 +1,6 @@
 {# Lightbox Modal for Image Viewing #}
-<div id="lightbox-modal" class="fixed inset-0 bg-black/95 backdrop-blur z-50 hidden items-center justify-center p-4">
-  <div class="relative max-w-4xl w-full h-auto flex flex-col">
-    
+<div id="lightbox-modal" class="fixed inset-0 bg-black/95 backdrop-blur z-50 hidden flex items-center justify-center p-4">
+  <div class="relative max-w-4xl w-full h-auto flex flex-col" style="max-height: 90vh;">
     {# Close Button #}
     <button class="lightbox-close absolute -top-10 right-0 text-zinc-400 hover:text-white transition-colors" aria-label="Close lightbox">
       <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -10,7 +9,9 @@
     </button>
 
     {# Image #}
-    <img id="lightbox-image" src="" alt="Enlarged view" class="w-full h-auto object-contain max-h-[80vh]">
+<div class="flex items-center justify-center flex-1" style="aspect-ratio: 16/9; max-height: 80vh; min-height: 0;">
+    <img id="lightbox-image" src="" alt="Enlarged view" class="w-full h-full object-cover rounded">
+  </div>
     
     {# Image Caption #}
     <p id="lightbox-caption" class="text-center text-zinc-300 mt-4 text-sm"></p>

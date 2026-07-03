@@ -28,23 +28,26 @@ module.exports = function(content, sectionGalleries) {
     // Build gallery HTML
     const galleryHtml = `$1
     <div class="gallery-section mt-8 mb-12 py-8 border-t border-b border-zinc-800">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" style="grid-auto-rows: 1fr;">
         ${section.images.map(img => `
-        <figure class="overflow-hidden rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors">
+        <div class="overflow-hidden rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors" style="aspect-ratio: 1 / 1;">
           <button 
-            class="gallery-thumb-trigger relative block w-full aspect-square hover:opacity-70 transition-opacity cursor-pointer"
+            class="gallery-thumb-trigger w-full h-full hover:opacity-70 transition-opacity cursor-pointer bg-zinc-900"
             data-gallery-image="${img.src}"
             data-gallery-alt="${img.alt}"
-            aria-label="Bild vergrößern">
-            <img 
-              src="${img.src}" 
-              alt="${img.alt}" 
-              class="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw">
+            aria-label="Bild vergrößern"
+            style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <picture style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img 
+                src="${img.src}" 
+                alt="${img.alt}" 
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+            </picture>
           </button>
-        </figure>
+        </div>
         `).join('')}
       </div>
     </div>`;
