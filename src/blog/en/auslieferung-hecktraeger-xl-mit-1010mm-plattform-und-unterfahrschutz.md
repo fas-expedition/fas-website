@@ -10,7 +10,19 @@ image: "/assets/images/blog/hecktraeger-1010mm-plattform.jpg"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "Rear Carrier XL on Mercedes Benz Arocs 2036"
-    images: []
+    images:
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100118685.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 1"
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100331769.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 2"
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100408941.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 3"
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100418626.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 4"
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100435474.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 5"
+      - src: "/assets/images/blog/Auslieferung Heckträger XL mit 1010mm Plattform und Unterfahrschutz/PXL_20250528_100459648.MP.jpg"
+        alt: "Rear Carrier XL Platform - Detail View 6"
 audioUrl: ""
 ---
 

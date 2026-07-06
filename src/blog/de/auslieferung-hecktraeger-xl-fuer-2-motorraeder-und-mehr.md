@@ -10,7 +10,17 @@ image: "/assets/images/blog/hecktraeger-2-motorraeder.png"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "Heckträger für Mercedes Benz Arocs 3353 6x6"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-06-05 Auslieferung Heckträger XL für 2 Motorräder und mehr/20230817_161746290_iOS.jpg"
+        alt: "Heckträger XL Motorrad - Detailaufnahme 2"
+      - src: "/assets/images/blog/2025-06-05 Auslieferung Heckträger XL für 2 Motorräder und mehr/20230817_161840241_iOS.jpg"
+        alt: "Heckträger XL Motorrad - Detailaufnahme 3"
+      - src: "/assets/images/blog/2025-06-05 Auslieferung Heckträger XL für 2 Motorräder und mehr/20230817_161959045_iOS.jpg"
+        alt: "Heckträger XL Motorrad - Detailaufnahme 5"
+      - src: "/assets/images/blog/2025-06-05 Auslieferung Heckträger XL für 2 Motorräder und mehr/20230817_162057124_iOS.jpg"
+        alt: "Heckträger XL Motorrad - Detailaufnahme 6"
+      - src: "/assets/images/blog/2025-06-05 Auslieferung Heckträger XL für 2 Motorräder und mehr/20230817_162646744_iOS.jpg"
+        alt: "Heckträger XL Motorrad - Detailaufnahme 8"
 audioUrl: ""
 ---
 
