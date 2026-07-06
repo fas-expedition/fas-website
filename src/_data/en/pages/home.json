@@ -13,6 +13,10 @@
   "features": {
     "title": "Engineering Excellence",
     "subtitle": "Precision engineering, modular flexibility, and uncompromising performance.",
+    "description": {
+      "title": "Perfection in Engineering. Freedom in Design. Quality for Decades.",
+      "body": "FAS Expedition develops and builds individual expedition vehicles for people who accept no compromises. Every vehicle is crafted as a bespoke creation – precisely engineered, masterfully built, and consistently designed for decades of durability. For journeys that begin where standard solutions end."
+    },
     "items": [
       {
         "icon": "mountain",

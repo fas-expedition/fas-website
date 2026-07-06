@@ -13,6 +13,10 @@
   "features": {
     "title": "Engineering Excellence",
     "subtitle": "Modulare Flexibilität für kompromisslose Leistung.",
+    "description": {
+      "title": "Perfektion in Konstruktion. Freiheit im Ausbau. Qualität für Jahrzehnte.",
+      "body": "FAS Expedition entwickelt und baut individuelle Expeditionsmobile für Menschen, die keine Kompromisse eingehen. Jedes Fahrzeug entsteht als maßgeschneiderte Einzelanfertigung – präzise konstruiert, hochwertig gefertigt und konsequent auf Langlebigkeit ausgelegt. Für Reisen, die dort beginnen, wo Standardlösungen enden."
+    },
     "items": [
       {
         "icon": "mountain",

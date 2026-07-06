@@ -10,9 +10,16 @@
       <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-4">
         {{ features.title }}
       </h2>
-      <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
-        {{ features.subtitle }}
-      </p>
+      
+      {# Description Content #}
+      <div class="mt-0 max-w-2xl mx-auto">
+        <h3 class="text-white text-xl font-bold tracking-wider uppercase mb-6">
+          {{ features.description.title }}
+        </h3>
+        <p class="text-zinc-300 text-base leading-relaxed mb-4">
+          {{ features.description.body }}
+        </p>
+      </div>
     </div>
 
     {# Feature Cards Grid #}
