@@ -12,17 +12,49 @@ sectionGalleries:
   - sectionTitle: "Delivery of a 5.9m Living Cabin with Electric Storage Box Staircase on Mercedes Arocs 2042 4x4"
     images: []
   - sectionTitle: "Living Cabin"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114952b.jpg"
+        alt: "Living Cabin - Exterior View"
   - sectionTitle: "Interior"
     images: []
   - sectionTitle: "Seating Area"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114128.jpg"
+        alt: "Seating Area - Overview 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114436.jpg"
+        alt: "Seating Area - Overview 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114555.jpg"
+        alt: "Seating Area - Detail 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_115606.jpg"
+        alt: "Seating Area - Detail 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_115819.jpg"
+        alt: "Seating Area - Table Function"
   - sectionTitle: "Kitchen and Hallway"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111414.jpg"
+        alt: "Kitchen - Overview 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111813.jpg"
+        alt: "Kitchen - Worktop 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_112800.jpg"
+        alt: "Kitchen - Worktop 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_113041.jpg"
+        alt: "Kitchen - Detail"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_113136.jpg"
+        alt: "Hallway - View"
   - sectionTitle: "Bathroom/WC"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_102652.jpg"
+        alt: "Bathroom/WC - Overview 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_110509.jpg"
+        alt: "Bathroom/WC - Overview 2"
   - sectionTitle: "Sleeping Area"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_110313.jpg"
+        alt: "Sleeping Area - Overview 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111142.jpg"
+        alt: "Sleeping Area - Overview 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111052.jpg"
+        alt: "Sleeping Area - Detail"
   - sectionTitle: "Exterior"
     images: []
   - sectionTitle: "Base Vehicle Preparations"
@@ -30,9 +62,13 @@ sectionGalleries:
   - sectionTitle: "Exterior Staircase, Outdoor Kitchen and Storage Boxes"
     images: []
   - sectionTitle: "Rear Carrier"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/PXL_20250312_093223588.MP.jpg"
+        alt: "Rear Carrier - Overview"
   - sectionTitle: "Roof Rack"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/DJI_0487.JPG"
+        alt: "Roof Rack - Drone View"
 audioUrl: ""
 ---
 

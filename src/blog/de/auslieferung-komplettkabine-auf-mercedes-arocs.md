@@ -12,17 +12,49 @@ sectionGalleries:
   - sectionTitle: "Auslieferung einer 5,9m-Wohnkabine mit elektrischer Staukastentreppe auf Mercedes Arocs 2042 4x4"
     images: []
   - sectionTitle: "Wohnkabine"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114952b.jpg"
+        alt: "Wohnkabine - Außenansicht"
   - sectionTitle: "Interieur"
     images: []
   - sectionTitle: "Sitzgruppe"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114128.jpg"
+        alt: "Sitzgruppe - Übersicht 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114436.jpg"
+        alt: "Sitzgruppe - Übersicht 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_114555.jpg"
+        alt: "Sitzgruppe - Detailaufnahme 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_115606.jpg"
+        alt: "Sitzgruppe - Detailaufnahme 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_115819.jpg"
+        alt: "Sitzgruppe - Tischfunk"
   - sectionTitle: "Küche und Flur"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111414.jpg"
+        alt: "Küche - Übersicht 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111813.jpg"
+        alt: "Küche - Arbeitsplatte 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_112800.jpg"
+        alt: "Küche - Arbeitsplatte 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_113041.jpg"
+        alt: "Küche - Detailaufnahme"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_113136.jpg"
+        alt: "Flur - Ansicht"
   - sectionTitle: "Bad/WC"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_102652.jpg"
+        alt: "Bad/WC - Übersicht 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_110509.jpg"
+        alt: "Bad/WC - Übersicht 2"
   - sectionTitle: "Schlafbereich"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_110313.jpg"
+        alt: "Schlafbereich - Übersicht 1"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111142.jpg"
+        alt: "Schlafbereich - Übersicht 2"
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/20250312_111052.jpg"
+        alt: "Schlafbereich - Detailaufnahme"
   - sectionTitle: "Exterieur"
     images: []
   - sectionTitle: "Vorbereitungen am Basisfahrzeug"
@@ -30,9 +62,13 @@ sectionGalleries:
   - sectionTitle: "Außentreppe, Außenküche und Staukästen"
     images: []
   - sectionTitle: "Heckträger"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/PXL_20250312_093223588.MP.jpg"
+        alt: "Heckträger - Übersicht"
   - sectionTitle: "Dachträger"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-05-05 Auslieferung Mercedes Arocs 4x4 mit 5,9m Wohnkabine/DJI_0487.JPG"
+        alt: "Dachträger - Drohnenaufnahme"
 audioUrl: ""
 ---
 

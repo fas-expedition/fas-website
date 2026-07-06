@@ -11,7 +11,13 @@ headerImage: ""
 audioUrl: ""
 sectionGalleries:
   - sectionTitle: "Wohnkabine"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-12-17 Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Außen/DJI_0632.JPG"
+        alt: "Wohnkabine - Außenansicht 1"
+      - src: "/assets/images/blog/2025-12-17 Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Außen/DJI_0544b.jpg"
+        alt: "Wohnkabine - Außenansicht 3"
+      - src: "/assets/images/blog/2025-12-17 Auslieferung Komplettfahrzeug auf Mercedes Arocs 6x6 mit 7,3m Wohnkabine/Außen/PXL_20251106_103542061.RAW-01.COVER.jpg"
+        alt: "Wohnkabine - Detailaufnahme 3"
   - sectionTitle: "Interieur"
     images: []
   - sectionTitle: "Sitzgruppe"

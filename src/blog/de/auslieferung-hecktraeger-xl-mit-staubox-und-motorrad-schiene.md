@@ -10,7 +10,21 @@ image: "/assets/images/blog/hecktraeger-staubox-motorrad.jpg"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "FAS Heckträger XL für ein weiteres Kerkamm-Fahrzeug"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_083103672.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 1"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_083110454.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 2"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_083116419.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 3"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_130634326.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 4"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_130659598.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 5"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_130707669.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 6"
+      - src: "/assets/images/blog/2025-11-24 Auslieferung Heckträger XL mit Staubox und Motorrad-Schiene/PXL_20251117_130716291.RAW-01.COVER.jpg"
+        alt: "Heckträger XL Staubox - Detailaufnahme 7"
 audioUrl: ""
 ---
 

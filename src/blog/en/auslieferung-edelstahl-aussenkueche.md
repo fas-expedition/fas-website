@@ -10,7 +10,15 @@ image: "/assets/images/blog/aussenkueche.jpg"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "FAS Outdoor Kitchen for Action Mobil Global X"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_153852.jpg"
+        alt: "Stainless Steel Outdoor Kitchen - Detail View 1"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_153859.jpg"
+        alt: "Stainless Steel Outdoor Kitchen - Detail View 2"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_154028.jpg"
+        alt: "Stainless Steel Outdoor Kitchen - Detail View 3"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_154105.jpg"
+        alt: "Stainless Steel Outdoor Kitchen - Detail View 4"
 audioUrl: ""
 ---
 

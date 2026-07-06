@@ -10,7 +10,15 @@ image: "/assets/images/blog/aussenkueche.jpg"
 headerImage: ""
 sectionGalleries:
   - sectionTitle: "FAS Außenküche für Action Mobil Global X"
-    images: []
+    images:
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_153852.jpg"
+        alt: "Edelstahl-Außenküche - Detailaufnahme 1"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_153859.jpg"
+        alt: "Edelstahl-Außenküche - Detailaufnahme 2"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_154028.jpg"
+        alt: "Edelstahl-Außenküche - Detailaufnahme 3"
+      - src: "/assets/images/blog/2025-06-07 Auslieferung Edelstahl-Außenküche/20250603_154105.jpg"
+        alt: "Edelstahl-Außenküche - Detailaufnahme 4"
 audioUrl: ""
 ---
 
