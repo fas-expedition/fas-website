@@ -230,16 +230,32 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("blogCategories", function(collectionApi) {
     const posts = collectionApi.getFilteredByTag("blog_de")
       .filter(post => post.data.status === "published");
-    const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
-    return categories.sort();
+    const categories = new Set();
+    posts.forEach(p => {
+      // Support both old single category and new multiple categories
+      if (p.data.categories && Array.isArray(p.data.categories)) {
+        p.data.categories.forEach(cat => categories.add(cat));
+      } else if (p.data.category) {
+        categories.add(p.data.category);
+      }
+    });
+    return Array.from(categories).sort();
   });
 
   // Blog categories: distinct categories from published posts (English)
   eleventyConfig.addCollection("blogCategoriesEn", function(collectionApi) {
     const posts = collectionApi.getFilteredByTag("blog_en")
       .filter(post => post.data.status === "published");
-    const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
-    return categories.sort();
+    const categories = new Set();
+    posts.forEach(p => {
+      // Support both old single category and new multiple categories
+      if (p.data.categories && Array.isArray(p.data.categories)) {
+        p.data.categories.forEach(cat => categories.add(cat));
+      } else if (p.data.category) {
+        categories.add(p.data.category);
+      }
+    });
+    return Array.from(categories).sort();
   });
 
   // Build-time validation of vehicle detail page data

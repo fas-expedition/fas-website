@@ -805,7 +805,8 @@
 </div>
 
 {# Hidden Netlify Form for backend processing #}
-<form name="inquiry" method="POST" netlify hidden>
+<form name="inquiry" method="POST" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="bot-field" />
   <input type="text" name="name" />
   <input type="text" name="street" />
   <input type="text" name="postal" />
@@ -814,4 +815,8 @@
   <input type="tel" name="phone" />
   <textarea name="message"></textarea>
   <input type="text" name="locale" />
+  <input type="text" name="selectedDetails" />
+  <textarea name="specialWishes"></textarea>
+  <input type="text" name="base_vehicle_model" />
+  <input type="text" name="base_vehicle_custom" />
 </form>

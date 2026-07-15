@@ -5,7 +5,9 @@ publishDate: "2025-05-10"
 status: "published"
 excerpt: "Kompakte 5,5m Wohnkabine mit hoher Autarkie, 800Ah Lithium-System, 1,44kW Solarleistung, 550L Frischwasser und hochwertigem Interieur aus Corian, FENIX, Echtholz Eiche und schwarzem Echtleder."
 author: "FAS Expedition"
-category: "Zu Verkaufen"
+categories:
+  - "Auslieferung"
+  - "Zu Verkaufen"
 image: "/assets/images/blog/Auslieferung einer 5,5-Meter-Wohnkabine mit hochwertigem Individualausbau/xIMG_2393.JPG"
 headerImage: ""
 sectionGalleries:

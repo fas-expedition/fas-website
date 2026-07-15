@@ -5,7 +5,9 @@ publishDate: "2025-05-10"
 status: "published"
 excerpt: "Compact 5.5m living cabin with high autonomy, 800Ah lithium system, 1.44kW solar power, 550L fresh water and premium interior featuring Corian, FENIX, solid oak wood and black genuine leather."
 author: "FAS Expedition"
-category: "For Sale"
+categories:
+  - "Delivery"
+  - "For Sale"
 image: "/assets/images/blog/Auslieferung einer 5,5-Meter-Wohnkabine mit hochwertigem Individualausbau/xIMG_2393.JPG"
 headerImage: ""
 sectionGalleries:

@@ -2,6 +2,7 @@
  * Inquiry Form Modal Handler
  * Manages opening, closing, and submission of the inquiry form modal
  * Submits data to Netlify Forms for email notification
+ * Integrates Google Tag Manager event tracking
  */
 (function() {
   const inquiryFormModal = document.getElementById('inquiry-form');
@@ -23,6 +24,11 @@
     inquiryFormModal.classList.add('flex');
     inquiryFormElement.scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    
+    // Track form open event with GTM
+    if (typeof gtmTracking !== 'undefined') {
+      gtmTracking.form.open('inquiry');
+    }
   }
 
   /**
@@ -32,10 +38,15 @@
     inquiryFormModal.classList.add('hidden');
     inquiryFormModal.classList.remove('flex');
     document.body.style.overflow = '';
+    
+    // Track form close event with GTM
+    if (typeof gtmTracking !== 'undefined') {
+      gtmTracking.form.close('inquiry', false);
+    }
   }
 
   /**
-   * Handle form submission - send to Netlify Function
+   * Handle form submission - send to Netlify Forms
    */
   function handleSubmit(e) {
     e.preventDefault();
@@ -46,38 +57,22 @@
       selectedDetails.push(checkbox.value);
     });
 
-    // Get form data
-    const formData = {
-      name: document.getElementById('inquiry-name').value,
-      street: document.getElementById('inquiry-street').value,
-      postal: document.getElementById('inquiry-postal').value,
-      country: document.getElementById('inquiry-country').value,
-      email: document.getElementById('inquiry-email').value,
-      phone: document.getElementById('inquiry-phone').value,
-      message: document.getElementById('inquiry-message').value,
-      locale: document.getElementById('inquiry-locale').value,
-      selectedDetails: selectedDetails.join(', '),
-      base_vehicle_model: document.getElementById('base_vehicle_model')?.value || '',
-      base_vehicle_custom: document.getElementById('base_vehicle_custom')?.value || '',
-      specialWishes: document.getElementById('inquiry-special-wishes')?.value || '',
-      bare_cabin_length: document.getElementById('bare_cabin_length')?.value || '',
-      bare_cabin_width: document.getElementById('bare_cabin_width')?.value || '',
-      bare_cabin_height: document.getElementById('bare_cabin_height')?.value || '',
-      bare_cabin_paintwork: document.getElementById('bare_cabin_paintwork')?.value || '',
-      bare_cabin_color_code: document.getElementById('bare_cabin_color_code')?.value || '',
-      bare_cabin_treppe: document.getElementById('bare_cabin_treppe')?.value || '',
-      bare_cabin_tuer: document.getElementById('bare_cabin_tuer')?.value || '',
-      side_window_klein: document.getElementById('side_window_klein')?.value || '',
-      side_window_gross: document.getElementById('side_window_gross')?.value || '',
-      side_window_panorama: document.getElementById('side_window_panorama')?.value || '',
-      roof_window_klein: document.getElementById('roof_window_klein')?.value || '',
-      roof_window_gross: document.getElementById('roof_window_gross')?.value || '',
-      bare_cabin_special_items: document.getElementById('bare_cabin_special_items')?.value || '',
-      energy_battery_capacity: document.getElementById('energy_battery_capacity')?.value || '',
-      water_tank_capacity: document.getElementById('water_tank_capacity')?.value || '',
-      climate_heating_model: document.getElementById('climate_heating_model')?.value || '',
-      climate_air_conditioning: document.getElementById('climate_air_conditioning')?.value || ''
-    };
+    // Get the hidden Netlify form
+    const netlifyForm = document.querySelector('form[name="inquiry"]');
+    
+    // Populate hidden form with data from visible form
+    netlifyForm.name.value = document.getElementById('inquiry-name').value;
+    netlifyForm.street.value = document.getElementById('inquiry-street').value;
+    netlifyForm.postal.value = document.getElementById('inquiry-postal').value;
+    netlifyForm.country.value = document.getElementById('inquiry-country').value;
+    netlifyForm.email.value = document.getElementById('inquiry-email').value;
+    netlifyForm.phone.value = document.getElementById('inquiry-phone').value;
+    netlifyForm.message.value = document.getElementById('inquiry-message').value;
+    netlifyForm.locale.value = document.getElementById('inquiry-locale').value;
+    netlifyForm.selectedDetails.value = selectedDetails.join(', ');
+    netlifyForm.specialWishes.value = document.getElementById('inquiry-special-wishes')?.value || '';
+    netlifyForm.base_vehicle_model.value = document.getElementById('base_vehicle_model')?.value || '';
+    netlifyForm.base_vehicle_custom.value = document.getElementById('base_vehicle_custom')?.value || '';
 
     // Show loading state
     const submitButton = inquiryFormElement.querySelector('button[type="submit"]');
@@ -85,49 +80,25 @@
     submitButton.textContent = document.documentElement.lang === 'de' ? 'Wird gesendet...' : 'Sending...';
     submitButton.disabled = true;
 
-    // Submit directly to Formspree
-    fetch('https://formspree.io/f/xvzyjnwy', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Formspree error: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Formspree success response
-      // Show success message
-      submitButton.textContent = document.documentElement.lang === 'de' ? 'Erfolgreich gesendet!' : 'Successfully sent!';
-      submitButton.classList.add('opacity-50', 'cursor-not-allowed');
-      
-      // Reset form after 2 seconds and close
-      setTimeout(() => {
-        inquiryFormElement.reset();
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-        submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
-        closeForm();
-      }, 2000);
-    })
-    .catch((error) => {
-      // Show error but still close
-      console.error('Form submission error:', error);
-      submitButton.textContent = document.documentElement.lang === 'de' ? 'Fehler beim Senden' : 'Error sending';
-      submitButton.classList.add('bg-red-600');
-      
-      setTimeout(() => {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-        submitButton.classList.remove('bg-red-600');
-        closeForm();
-      }, 2000);
-    });
+    // Track form submission with GTM BEFORE submitting
+    if (typeof gtmTracking !== 'undefined') {
+      gtmTracking.form.submit('inquiry', {
+        name: netlifyForm.name.value,
+        email: netlifyForm.email.value,
+        base_vehicle_model: netlifyForm.base_vehicle_model.value,
+        message_length: netlifyForm.message.value.length
+      });
+      gtmTracking.conversion.inquirySubmitted({
+        email: netlifyForm.email.value,
+        vehicle_model: netlifyForm.base_vehicle_model.value,
+        message_length: netlifyForm.message.value.length
+      });
+    }
+
+    // Submit to Netlify Forms
+    setTimeout(() => {
+      netlifyForm.submit();
+    }, 100);
   }
 
   /**

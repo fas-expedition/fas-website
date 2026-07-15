@@ -41,7 +41,7 @@ altSlug:
     {% else %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
       {% for post in posts %}
-      <a href="/en/{{ post.data.slug }}/" class="blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden" data-category="{{ post.data.category }}">
+      <a href="/en/{{ post.data.slug }}/" class="blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden" data-categories="{{ (post.data.categories or [post.data.category]) | dump }}">
         {# Image #}
         <div class="relative h-56 overflow-hidden">
           {% if post.data.image %}
@@ -49,7 +49,9 @@ altSlug:
           {% else %}
           <div class="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
           {% endif %}
-          {% if post.data.category %}
+          {% if post.data.categories and post.data.categories.length %}
+          <span class="absolute top-4 left-4 bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">{{ post.data.categories[0] }}</span>
+          {% elif post.data.category %}
           <span class="absolute top-4 left-4 bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">{{ post.data.category }}</span>
           {% endif %}
         </div>
@@ -97,7 +99,22 @@ altSlug:
 
       var visibleCount = 0;
       cards.forEach(function(card) {
-        if (category === 'alle' || card.getAttribute('data-category') === category) {
+        var cardCategories = [];
+        var categoriesAttr = card.getAttribute('data-categories');
+        if (categoriesAttr) {
+          try {
+            cardCategories = JSON.parse(categoriesAttr);
+          } catch (e) {
+            cardCategories = [categoriesAttr];
+          }
+        } else {
+          // Fallback to single category attribute
+          var singleCat = card.getAttribute('data-category');
+          if (singleCat) cardCategories = [singleCat];
+        }
+
+        // Show card if category matches one of its categories
+        if (category === 'alle' || cardCategories.includes(category)) {
           card.classList.remove('hidden');
           visibleCount++;
         } else {

@@ -52,3 +52,16 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Netlify Forms Configuration
+[[forms]]
+  name = "inquiry"
+  honeypot = "bot-field"
+  
+  # Email notifications - set INQUIRY_EMAIL in Netlify environment variables
+  # Example: INQUIRY_EMAIL=inquiry@fas-expedition.de
+  
+  # Optional: Slack notification
+  # [[forms.notification]]
+  #   type = "slack"
+  #   details = "On submission"
