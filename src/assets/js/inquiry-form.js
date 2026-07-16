@@ -46,7 +46,8 @@
   }
 
   /**
-   * Handle form submission - send to Netlify Forms
+   * Handle form submission - send to Netlify Forms via AJAX
+   * Per Netlify requirements: POST with URL-encoded body, no redirects
    */
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,22 +58,22 @@
       selectedDetails.push(checkbox.value);
     });
 
-    // Get the hidden Netlify form
-    const netlifyForm = document.querySelector('form[name="inquiry"]');
-    
-    // Populate hidden form with data from visible form
-    netlifyForm.name.value = document.getElementById('inquiry-name').value;
-    netlifyForm.street.value = document.getElementById('inquiry-street').value;
-    netlifyForm.postal.value = document.getElementById('inquiry-postal').value;
-    netlifyForm.country.value = document.getElementById('inquiry-country').value;
-    netlifyForm.email.value = document.getElementById('inquiry-email').value;
-    netlifyForm.phone.value = document.getElementById('inquiry-phone').value;
-    netlifyForm.message.value = document.getElementById('inquiry-message').value;
-    netlifyForm.locale.value = document.getElementById('inquiry-locale').value;
-    netlifyForm.selectedDetails.value = selectedDetails.join(', ');
-    netlifyForm.specialWishes.value = document.getElementById('inquiry-special-wishes')?.value || '';
-    netlifyForm.base_vehicle_model.value = document.getElementById('base_vehicle_model')?.value || '';
-    netlifyForm.base_vehicle_custom.value = document.getElementById('base_vehicle_custom')?.value || '';
+    // Get form data
+    const formData = {
+      'form-name': 'inquiry',  // Required: tells Netlify which form this is
+      'name': document.getElementById('inquiry-name').value,
+      'street': document.getElementById('inquiry-street').value,
+      'postal': document.getElementById('inquiry-postal').value,
+      'country': document.getElementById('inquiry-country').value,
+      'email': document.getElementById('inquiry-email').value,
+      'phone': document.getElementById('inquiry-phone').value,
+      'message': document.getElementById('inquiry-message').value,
+      'locale': document.getElementById('inquiry-locale').value,
+      'selectedDetails': selectedDetails.join(', '),
+      'specialWishes': document.getElementById('inquiry-special-wishes')?.value || '',
+      'base_vehicle_model': document.getElementById('base_vehicle_model')?.value || '',
+      'base_vehicle_custom': document.getElementById('base_vehicle_custom')?.value || ''
+    };
 
     // Show loading state
     const submitButton = inquiryFormElement.querySelector('button[type="submit"]');
@@ -83,22 +84,48 @@
     // Track form submission with GTM BEFORE submitting
     if (typeof gtmTracking !== 'undefined') {
       gtmTracking.form.submit('inquiry', {
-        name: netlifyForm.name.value,
-        email: netlifyForm.email.value,
-        base_vehicle_model: netlifyForm.base_vehicle_model.value,
-        message_length: netlifyForm.message.value.length
+        name: formData.name,
+        email: formData.email,
+        base_vehicle_model: formData.base_vehicle_model,
+        message_length: formData.message.length
       });
       gtmTracking.conversion.inquirySubmitted({
-        email: netlifyForm.email.value,
-        vehicle_model: netlifyForm.base_vehicle_model.value,
-        message_length: netlifyForm.message.value.length
+        email: formData.email,
+        vehicle_model: formData.base_vehicle_model,
+        message_length: formData.message.length
       });
     }
 
-    // Submit to Netlify Forms
-    setTimeout(() => {
-      netlifyForm.submit();
-    }, 100);
+    // Submit to Netlify Forms via AJAX with URL-encoded body (per Netlify specification)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        // Success: close form and show confirmation
+        setTimeout(() => {
+          if (typeof gtmTracking !== 'undefined') {
+            gtmTracking.form.success('inquiry');
+          }
+          closeForm();
+          inquiryFormElement.reset();
+        }, 500);
+      })
+      .catch(error => {
+        // Error: restore button and show error
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        console.error('Form submission error:', error);
+        
+        if (typeof gtmTracking !== 'undefined') {
+          gtmTracking.form.error('inquiry', error.message);
+        }
+        
+        alert(document.documentElement.lang === 'de' 
+          ? 'Fehler beim Senden. Bitte versuchen Sie es später erneut.'
+          : 'Error sending form. Please try again later.');
+      });
   }
 
   /**

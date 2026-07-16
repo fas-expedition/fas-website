@@ -16,6 +16,8 @@
 
     {# Form Content #}
     <form id="inquiry-form-element" class="p-6 space-y-6 overflow-y-auto flex-1">
+      {# Hidden form-name for Netlify Forms detection #}
+      <input type="hidden" name="form-name" value="inquiry" />
       
       {# Name #}
       <div>
@@ -804,9 +806,12 @@
   </div>
 </div>
 
-{# Hidden Netlify Form for backend processing #}
+{# Hidden Netlify Form for backend processing (blueprint for form detection) #}
 <form name="inquiry" method="POST" netlify netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="bot-field" />
+  {# Honeypot field hidden with CSS positioning (not display:none per Netlify requirement) #}
+  <p style="position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0;">
+    <input type="hidden" name="bot-field" />
+  </p>
   <input type="text" name="name" />
   <input type="text" name="street" />
   <input type="text" name="postal" />

@@ -64,6 +64,13 @@ const gtmTracking = (() => {
         form_type: formType,
         error_message: errorMessage
       });
+    },
+
+    success: (formType = 'inquiry') => {
+      trackEvent('form_success', {
+        form_type: formType,
+        success_time: new Date().toISOString()
+      });
     }
   };
 
