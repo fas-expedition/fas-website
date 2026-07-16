@@ -96,36 +96,26 @@
       });
     }
 
-    // Submit to Netlify Forms via AJAX with URL-encoded body (per Netlify specification)
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(() => {
-        // Success: close form and show confirmation
-        setTimeout(() => {
-          if (typeof gtmTracking !== 'undefined') {
-            gtmTracking.form.success('inquiry');
-          }
-          closeForm();
-          inquiryFormElement.reset();
-        }, 500);
-      })
-      .catch(error => {
-        // Error: restore button and show error
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-        console.error('Form submission error:', error);
-        
-        if (typeof gtmTracking !== 'undefined') {
-          gtmTracking.form.error('inquiry', error.message);
-        }
-        
-        alert(document.documentElement.lang === 'de' 
-          ? 'Fehler beim Senden. Bitte versuchen Sie es später erneut.'
-          : 'Error sending form. Please try again later.');
-      });
+    // Submit to Netlify Forms via hidden form element
+    const netlifyForm = document.querySelector('form[name="inquiry"]');
+    
+    // Populate the hidden Netlify form with submission data
+    netlifyForm.querySelector('input[name="name"]').value = formData.name;
+    netlifyForm.querySelector('input[name="street"]').value = formData.street;
+    netlifyForm.querySelector('input[name="postal"]').value = formData.postal;
+    netlifyForm.querySelector('input[name="country"]').value = formData.country;
+    netlifyForm.querySelector('input[name="email"]').value = formData.email;
+    netlifyForm.querySelector('input[name="phone"]').value = formData.phone;
+    netlifyForm.querySelector('textarea[name="message"]').value = formData.message;
+    netlifyForm.querySelector('input[name="locale"]').value = formData.locale;
+    netlifyForm.querySelector('input[name="selectedDetails"]').value = formData.selectedDetails;
+    netlifyForm.querySelector('textarea[name="specialWishes"]').value = formData.specialWishes;
+    netlifyForm.querySelector('input[name="base_vehicle_model"]').value = formData.base_vehicle_model;
+    netlifyForm.querySelector('input[name="base_vehicle_custom"]').value = formData.base_vehicle_custom;
+    
+    // Submit the hidden form directly to Netlify (this bypasses AJAX and ensures Netlify receives it)
+    // Netlify will handle the submission and email notification
+    netlifyForm.submit();
   }
 
   /**
