@@ -2,6 +2,7 @@
   base = "."
   command = "npm run build"
   publish = "_site"
+  functions = "netlify/functions"
 
 [context.deploy-preview]
   ignore = "true"
@@ -58,10 +59,14 @@
   name = "inquiry"
   honeypot = "bot-field"
   
-  # Email notifications - set INQUIRY_EMAIL in Netlify environment variables
-  # Example: INQUIRY_EMAIL=inquiry@fas-expedition.de
+  [[forms.notification]]
+    type = "email"
+    to = "stefan.klug@fas-expedition.de"
+
+[[forms]]
+  name = "contact"
+  honeypot = "bot-field"
   
-  # Optional: Slack notification
-  # [[forms.notification]]
-  #   type = "slack"
-  #   details = "On submission"
+  [[forms.notification]]
+    type = "email"
+    to = "stefan.klug@fas-expedition.de"
