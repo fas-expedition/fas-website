@@ -85,8 +85,8 @@ exports.handler = async (event) => {
       ];
     }
 
-    await sgMail.send(msg);
-    console.log('Inquiry email sent to', INQUIRY_EMAIL, 'from', data.email);
+    const [notifResult] = await sgMail.send(msg);
+    console.log(`[handle-inquiry] Notification email accepted by SendGrid: status=${notifResult?.statusCode}, to=${INQUIRY_EMAIL}, from=${FROM_EMAIL}, customer=${data.email}`);
 
     // ── Customer confirmation email ────────────────────────────────────────
     const confirmMsg = {
@@ -97,7 +97,13 @@ exports.handler = async (event) => {
         : 'Your inquiry at FAS Expedition – Confirmation',
       html: buildConfirmationEmail(data, isDE),
     };
-    await sgMail.send(confirmMsg);
+    try {
+      await sgMail.send(confirmMsg);
+      console.log(`[handle-inquiry] Confirmation email sent to customer: ${data.email}`);
+    } catch (confirmErr) {
+      // Log but don't fail – customer confirmation is non-critical
+      console.warn('[handle-inquiry] Customer confirmation failed (non-fatal):', confirmErr.message);
+    }
 
     // ── SevDesk integration (optional) ────────────────────────────────────
     if (process.env.SEVDESK_API_TOKEN) {
