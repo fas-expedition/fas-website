@@ -163,7 +163,7 @@
   /**
    * Show inline error message and re-enable submit button.
    */
-  function showError(submitButton, originalText, locale) {
+  function showError(submitButton, originalText, locale, detail) {
     const isDE = locale === 'de';
     submitButton.textContent = originalText;
     submitButton.disabled = false;
@@ -175,9 +175,10 @@
       errorMsg.className = 'text-red-400 text-sm text-center';
       submitButton.parentElement.parentElement.insertBefore(errorMsg, submitButton.parentElement.nextSibling);
     }
-    errorMsg.textContent = isDE
+    const base = isDE
       ? 'Fehler beim Senden. Bitte versuche es erneut oder schreibe uns direkt an info@fas-expedition.de.'
       : 'Error sending inquiry. Please try again or contact us directly at info@fas-expedition.de.';
+    errorMsg.textContent = detail ? base + ' (' + detail + ')' : base;
   }
 
   /**
@@ -235,6 +236,7 @@
 
     // ── POST to Netlify Function ──
     let functionSuccess = false;
+    let functionError = null;
     try {
       const response = await fetch('/.netlify/functions/handle-inquiry', {
         method: 'POST',
@@ -245,9 +247,11 @@
         functionSuccess = true;
       } else {
         const err = await response.json().catch(function() { return {}; });
+        functionError = err.detail || err.error || ('HTTP ' + response.status);
         console.error('Function error:', response.status, err);
       }
     } catch (fetchErr) {
+      functionError = fetchErr.message;
       console.error('Function fetch failed:', fetchErr);
     }
 
@@ -281,7 +285,7 @@
     if (functionSuccess) {
       showSuccess(locale);
     } else {
-      showError(submitButton, originalText, locale);
+      showError(submitButton, originalText, locale, functionError);
     }
   }
 

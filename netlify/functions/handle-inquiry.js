@@ -8,8 +8,11 @@
  * Also contains a SevDesk stub (activated by setting SEVDESK_API_TOKEN).
  *
  * Required environment variables (Netlify dashboard → Site settings → Env):
- *   SENDGRID_API_KEY   – SendGrid API key
- *   INQUIRY_EMAIL      – recipient address (default: stefan.klug@fas-expedition.de)
+ *   SENDGRID_API_KEY      – SendGrid API key (mark as Secret)
+ *   INQUIRY_EMAIL         – recipient address (default: stefan.klug@fas-expedition.de)
+ *   INQUIRY_FROM_EMAIL    – verified sender address in SendGrid
+ *                           MUST match a verified Single Sender or domain in SendGrid!
+ *                           (default: stefan.klug@fas-expedition.de)
  *
  * Optional:
  *   SEVDESK_API_TOKEN  – activates SevDesk contact + offer creation
@@ -18,7 +21,9 @@
 const sgMail = require('@sendgrid/mail');
 
 const INQUIRY_EMAIL = process.env.INQUIRY_EMAIL || 'stefan.klug@fas-expedition.de';
-const FROM_EMAIL = 'noreply@fas-expedition.de';
+// FROM_EMAIL must be a verified sender in your SendGrid account.
+// → SendGrid dashboard → Settings → Sender Authentication → Single Sender Verification
+const FROM_EMAIL = process.env.INQUIRY_FROM_EMAIL || 'stefan.klug@fas-expedition.de';
 
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
@@ -106,8 +111,10 @@ exports.handler = async (event) => {
 
     return cors(200, JSON.stringify({ success: true }));
   } catch (err) {
-    console.error('SendGrid error:', err.response?.body || err.message);
-    return cors(500, JSON.stringify({ error: 'Failed to send email' }));
+    const sgErrors = err.response?.body?.errors;
+    const detail = sgErrors ? JSON.stringify(sgErrors) : err.message;
+    console.error('SendGrid error:', detail);
+    return cors(500, JSON.stringify({ error: 'Failed to send email', detail }));
   }
 };
 
