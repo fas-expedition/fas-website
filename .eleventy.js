@@ -5,6 +5,9 @@ const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 // Configure eleventy-img cache
 Image.concurrency = 10;
+const isFastBuild = process.env.FAST_BUILD === "1";
+const imageWidths = isFastBuild ? [640, 1280] : [320, 640, 1024, 1280, 1600, 1920];
+const transformFormats = isFastBuild ? ["webp", "jpeg"] : ["avif", "webp", "jpeg"];
 
 function validateVehicleData(filename, data) {
   const errors = [];
@@ -85,8 +88,8 @@ function validateVehicleData(filename, data) {
 module.exports = function(eleventyConfig) {
   // Image Transform Plugin: Automatically optimize all <img> and <picture> tags
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp", "jpeg"],
-    widths: [320, 640, 1024, 1280, 1600, 1920],
+    formats: transformFormats,
+    widths: imageWidths,
     defaultAttributes: {
       loading: "lazy",
       decoding: "async",
@@ -123,7 +126,7 @@ module.exports = function(eleventyConfig) {
       }
 
       const metadata = await Image(inputPath, {
-        widths: [320, 640, 1024, 1280, 1600, 1920],
+        widths: imageWidths,
         formats: ["webp", "jpeg"],
         outputDir: "./_site/assets/images/optimized",
         filenameFormat: function(id, src, width, format, options) {
@@ -160,7 +163,7 @@ module.exports = function(eleventyConfig) {
       }
 
       const metadata = await Image(inputPath, {
-        widths: [320, 640, 1024, 1280, 1600, 1920],
+        widths: imageWidths,
         formats: [format],
         outputDir: "./_site/assets/images/optimized",
         filenameFormat: function(id, src, width, format, options) {

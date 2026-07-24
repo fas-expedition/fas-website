@@ -11,7 +11,11 @@ module.exports = function(content, sectionGalleries) {
 
   // Process each gallery
   sectionGalleries.forEach(section => {
-    if (!section.sectionTitle || !section.images || section.images.length === 0) {
+    const validImages = Array.isArray(section.images)
+      ? section.images.filter((img) => img && typeof img.src === 'string' && img.src.trim())
+      : [];
+
+    if (!section.sectionTitle || validImages.length === 0) {
       return;
     }
 
@@ -29,7 +33,7 @@ module.exports = function(content, sectionGalleries) {
     const galleryHtml = `$1
     <div class="gallery-section mt-8 mb-12 py-8 border-t border-b border-zinc-800">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" style="grid-auto-rows: 1fr;">
-        ${section.images.map(img => `
+        ${validImages.map(img => `
         <div class="overflow-hidden rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors" style="aspect-ratio: 1 / 1;">
           <button 
             class="gallery-thumb-trigger w-full h-full hover:opacity-70 transition-opacity cursor-pointer bg-zinc-900"
@@ -44,6 +48,7 @@ module.exports = function(content, sectionGalleries) {
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                onerror="this.closest('.overflow-hidden')?.remove()"
                 style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
             </picture>
           </button>

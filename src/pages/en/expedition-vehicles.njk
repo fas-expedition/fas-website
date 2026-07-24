@@ -73,6 +73,7 @@ altSlug:
         {% if vehicle.thumbGallery %}
         <div class="grid grid-cols-5 gap-3 mb-10">
           {% for image in vehicle.thumbGallery %}
+          {% if loop.index0 < 5 %}
           <button 
             type="button"
             data-thumb-gallery="{{ vehicle.id }}" 
@@ -81,6 +82,7 @@ altSlug:
             aria-label="Open image">
             <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover">
           </button>
+          {% endif %}
           {% endfor %}
         </div>
         {% endif %}
