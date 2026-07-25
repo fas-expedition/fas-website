@@ -49,13 +49,13 @@
         { "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2442.JPG", "alt": "Interior storage and organization" }
       ],
       "specs": {
-        "power": { "label": "Power", "value": "Up to 450 HP" },
-        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 5,500 kg" },
-        "range": { "label": "Range", "value": "Up to 1,200 km" },
+        "power": { "label": "Power", "value": "Up to 530 HP" },
+        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 16,500 kg" },
+        "range": { "label": "Range", "value": "Up to 3,000 km" },
         "cabin": { "label": "Cabin", "value": "2–3 persons" }
       },
       "configurations": [
-        { "name": "Explorer 4x4 Base", "price": "from €189,000" }
+        { "name": "Explorer 4x4 Base", "price": "from €679,000" }
       ],
       "ctaText": "Configure 4x4",
       "ctaUrl": "/en/configurator"
@@ -92,12 +92,12 @@
       ],
       "specs": {
         "power": { "label": "Power", "value": "Up to 530 HP" },
-        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 12,000 kg" },
-        "range": { "label": "Range", "value": "Up to 1,800 km" },
-        "cabin": { "label": "Cabin", "value": "4–6 persons" }
+        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 26,000 kg" },
+        "range": { "label": "Range", "value": "Up to 2,500 km" },
+        "cabin": { "label": "Cabin", "value": "2–4 persons" }
       },
       "configurations": [
-        { "name": "Pathfinder 6x6 Base", "price": "from €385,000" }
+        { "name": "Pathfinder 6x6 Base", "price": "from €979,000" }
       ],
       "ctaText": "Configure 6x6",
       "ctaUrl": "/en/configurator"
@@ -158,13 +158,13 @@
         { "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8903_web.jpg", "alt": "8x8 Exterior 10" }
       ],
       "specs": {
-        "power": { "label": "Power", "value": "Up to 625 HP" },
-        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 18,000 kg" },
-        "range": { "label": "Range", "value": "Up to 2,500 km" },
-        "cabin": { "label": "Cabin", "value": "6–10 persons" }
+        "power": { "label": "Power", "value": "Up to 530 HP" },
+        "gvw": { "label": "Gross Vehicle Weight", "value": "Up to 32,000 kg" },
+        "range": { "label": "Range", "value": "Up to 2,000 km" },
+        "cabin": { "label": "Cabin", "value": "2–6 persons" }
       },
       "configurations": [
-        { "name": "Titan 8x8 Base", "price": "from €685,000" }
+        { "name": "Titan 8x8 Base", "price": "from €1,149,000" }
       ],
       "ctaText": "Configure 8x8",
       "ctaUrl": "/en/configurator"
