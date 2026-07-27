@@ -6,12 +6,47 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>FAS Expedition CMS</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    (function () {
+      const ALLOWED_ROLES = ['admin', 'cms-editor'];
+
+      function getRoles(user) {
+        const roles = user && user.app_metadata && user.app_metadata.roles;
+        return Array.isArray(roles) ? roles : [];
+      }
+
+      function hasCmsAccess(user) {
+        const roles = getRoles(user);
+        return roles.some((role) => ALLOWED_ROLES.includes(role));
+      }
+
+      function denyAccess() {
+        window.alert('Kein Zugriff auf das CMS. Bitte wende dich an einen Administrator.');
+        window.netlifyIdentity.logout();
+      }
+
+      if (!window.netlifyIdentity) return;
+
+      window.netlifyIdentity.on('init', function (user) {
+        if (user && !hasCmsAccess(user)) {
+          denyAccess();
+        }
+      });
+
+      window.netlifyIdentity.on('login', function (user) {
+        if (!hasCmsAccess(user)) {
+          denyAccess();
+        }
+      });
+    })();
+  </script>
 </head>
 <body>
   <noscript>
     <p>This CMS requires JavaScript to function. Please enable JavaScript in your browser.</p>
   </noscript>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="/admin/user-management.js"></script>
   <script>
     // Register preview styles (site's compiled Tailwind CSS)
     CMS.registerPreviewStyle("/assets/css/main.css");
