@@ -1,4 +1,5 @@
 const ADMIN_ROLE = 'admin';
+const ADMIN_EMAIL = 'stefan.klug@fas-expedition.de';
 const ALLOWED_ROLES = new Set(['cms-editor', 'admin']);
 
 exports.handler = async (event) => {
@@ -55,7 +56,7 @@ exports.handler = async (event) => {
   }
 
   const requester = await requesterResponse.json();
-  if (!hasRole(requester, ADMIN_ROLE)) {
+  if (!isAdminRequester(requester)) {
     return response(403, { error: 'Only admins can create users' });
   }
 
@@ -108,6 +109,19 @@ function getIdentityBaseUrl(event) {
 function hasRole(user, role) {
   const roles = user?.app_metadata?.roles;
   return Array.isArray(roles) && roles.includes(role);
+}
+
+function isAdminRequester(user) {
+  if (hasRole(user, ADMIN_ROLE)) {
+    return true;
+  }
+
+  const email = user?.email;
+  if (typeof email !== 'string') {
+    return false;
+  }
+
+  return email.trim().toLowerCase() === ADMIN_EMAIL;
 }
 
 function isValidEmail(email) {

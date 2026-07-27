@@ -1,5 +1,6 @@
 (function () {
   const ADMIN_ROLE = 'admin';
+  const ADMIN_EMAIL = 'stefan.klug@fas-expedition.de';
   const DEFAULT_ROLE = 'cms-editor';
   const FUNCTION_URL = '/.netlify/functions/admin-create-cms-user';
 
@@ -9,10 +10,26 @@
   }
 
   function isAdmin(user) {
-    return getCurrentUserRoles(user).includes(ADMIN_ROLE);
+    const email = user?.email;
+    const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
+    return getCurrentUserRoles(user).includes(ADMIN_ROLE) || normalizedEmail === ADMIN_EMAIL;
   }
 
-  function createManagementUi() {
+  function getUserEmail(user) {
+    const email = user?.email;
+    return typeof email === 'string' && email.trim() ? email.trim() : 'unbekannt';
+  }
+
+  function createManagementUi(user) {
+    const existing = document.getElementById('fas-admin-user-management');
+    if (existing) {
+      const emailEl = existing.querySelector('#fas-admin-current-user-email');
+      if (emailEl) {
+        emailEl.textContent = getUserEmail(user);
+      }
+      return;
+    }
+
     const container = document.createElement('section');
     container.id = 'fas-admin-user-management';
     container.style.cssText = [
@@ -32,6 +49,9 @@
 
     container.innerHTML = `
       <h2 style="margin:0 0 10px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;">Admin · Nutzer anlegen</h2>
+      <p style="margin:0 0 8px;color:#d4d4d8;font-size:12px;">
+        Eingeloggt als: <strong id="fas-admin-current-user-email">${getUserEmail(user)}</strong>
+      </p>
       <p style="margin:0 0 14px;color:#a1a1aa;font-size:12px;line-height:1.4;">
         Neuer CMS Nutzer mit Rolle erstellen (z. B. für Bild-Beschreibungstexte).
       </p>
@@ -128,13 +148,19 @@
   }
 
   function init() {
-    if (!window.netlifyIdentity || document.getElementById('fas-admin-user-management')) {
+    if (!window.netlifyIdentity) {
       return;
     }
 
     window.netlifyIdentity.on('init', (user) => {
       if (user && isAdmin(user)) {
-        createManagementUi();
+        createManagementUi(user);
+      }
+    });
+
+    window.netlifyIdentity.on('login', (user) => {
+      if (user && isAdmin(user)) {
+        createManagementUi(user);
       }
     });
   }

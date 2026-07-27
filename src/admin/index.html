@@ -9,15 +9,21 @@
   <script>
     (function () {
       const ALLOWED_ROLES = ['admin', 'cms-editor'];
+      const ADMIN_EMAIL = 'stefan.klug@fas-expedition.de';
 
       function getRoles(user) {
         const roles = user && user.app_metadata && user.app_metadata.roles;
         return Array.isArray(roles) ? roles : [];
       }
 
+      function getEmail(user) {
+        const email = user && user.email;
+        return typeof email === 'string' ? email.trim().toLowerCase() : '';
+      }
+
       function hasCmsAccess(user) {
         const roles = getRoles(user);
-        return roles.some((role) => ALLOWED_ROLES.includes(role));
+        return roles.some((role) => ALLOWED_ROLES.includes(role)) || getEmail(user) === ADMIN_EMAIL;
       }
 
       function denyAccess() {
