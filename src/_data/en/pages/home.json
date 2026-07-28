@@ -36,7 +36,7 @@
       {
         "icon": "gauge",
         "title": "Security",
-        "description": "Engineered for maximum performance, efficiency, and reliability."
+        "description": "Roof rack, slide-out platform, leveling jacks, winch or recovery gear - you decide!"
       }
     ]
   },
@@ -48,21 +48,21 @@
         "title": "4x4 Systems",
         "description": "Perfect balance of agility and capability",
         "image": "/assets/images/vehicles/4x4.png",
-        "specs": "Up to 5,500kg GVW"
+        "specs": "Up to 16,500 kg GVW"
       },
       {
         "id": "6x6",
         "title": "6x6 Systems",
         "description": "Extended range and payload capacity",
         "image": "/assets/images/vehicles/6x6.png",
-        "specs": "Up to 12,000kg GVW"
+        "specs": "Up to 26,000 kg GVW"
       },
       {
         "id": "8x8",
         "title": "8x8 Systems",
         "description": "Maximum capability for extreme expeditions",
         "image": "/assets/images/vehicles/8x8.png",
-        "specs": "Up to 18,000kg GVW"
+        "specs": "Up to 32,000 kg GVW"
       }
     ]
   },

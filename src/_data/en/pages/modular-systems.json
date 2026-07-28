@@ -17,7 +17,7 @@
       "TÜV-certified and road-approved",
       "Expandable with additional modules at any time"
     ],
-    "ctaText": "Request Now",
+    "ctaText": "Inquire Now",
     "ctaUrl": "#inquiry-form"
   },
   "stats": [
@@ -59,7 +59,7 @@
       {
         "title": "Motorcycle Extension Module",
         "description": "Enables safe transport of motorcycles on the rear carrier. Robust construction and easy assembly for maximum flexibility.",
-        "image": "/assets/images/modules/HT XL Motorraderweiterung.png"
+        "image": "/assets/images/modules/Motorradschiene neu ohne Halter.png"
       },
       {
         "title": "Quad Extension Module",
@@ -69,31 +69,33 @@
     ]
   },
   "featuredSection": {
-    "title": "Complete Solution for Maximum Flexibility",
-    "description": "Discover the revolutionary HT-XL grid system – engineered for expedition professionals who demand the highest standards in reliability and modularity. Every module can be mounted and changed tool-free.",
+    "title": "FAS Slide-Out Platform",
+    "description": "Your own terrace wherever you go. With the FAS slide-out platform, you can relax and enjoy the view.",
     "features": [
-      "Tool-free module exchange in under 60 seconds",
-      "Corrosion-resistant aluminum construction",
-      "Compatible with all FAS vehicle platforms",
-      "TÜV-certified and road-approved",
-      "Expandable with additional modules at any time"
+      "Fully automatic extension and retraction",
+      "Sensor-based obstacle detection",
+      "Two-part extendable for maximum flexibility",
+      "Non-slip, durable yacht-grade surface",
+      "Direct integration into the original FAS intermediate frame",
+      "Sit outside regardless of the surface underneath"
     ],
     "image": "/assets/images/modules/Auszugplattform Studio.png",
-    "ctaText": "Request Now",
+    "ctaText": "Inquire Now",
     "ctaUrl": "#inquiry-form"
   },
   "additionalSection": {
-    "title": "Additional Module Area",
-    "description": "Description of the additional module or feature. You can add more information here.",
+    "title": "FAS Storage Box Staircase",
+    "description": "Electric version for comfortable lateral access.",
     "features": [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5"
+      "Space-saving design for tight environments",
+      "Robust construction for maximum safety",
+      "Non-slip, durable yacht-grade surface",
+      "Easy operation via remote control button or remote",
+      "Integrated step lighting for better visibility",
+      "Also available as a manual version"
     ],
     "image": "/assets/images/modules/Staukastentreppe seitlich Studio.png",
-    "ctaText": "Request Now",
+    "ctaText": "Inquire Now",
     "ctaUrl": "#inquiry-form"
   }
 }

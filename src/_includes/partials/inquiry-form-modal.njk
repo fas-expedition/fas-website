@@ -221,15 +221,15 @@
           <div class="space-y-2">
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_schnittstellen_zwischenrahmen" value="Zwischenrahmen" data-sevdesk-id="" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Intermediate Frame{% endif %}</span>
+              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Sub Frame{% endif %}</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_schnittstellen_durchstieg" value="Durchstieg" data-sevdesk-id="" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Pass-Through{% endif %}</span>
+              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Crawl-Through{% endif %}</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_schnittstellen_durchstieg_fenster" value="Durchstieg mit Fenster" data-sevdesk-id="" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Durchstieg mit Fenster{% else %}Pass-Through with Window{% endif %}</span>
+              <span class="text-sm">{% if locale == "de" %}Durchstieg mit Fenster{% else %}Crawl-Through with Window{% endif %}</span>
             </label>
           </div>
         </div>
@@ -407,11 +407,11 @@
             {# Remaining checkboxes #}
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_leerkabine_zwischenrahmen" value="Zwischenrahmen" data-sevdesk-id="" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Intermediate Frame{% endif %}</span>
+              <span class="text-sm">{% if locale == "de" %}Zwischenrahmen{% else %}Sub Frame{% endif %}</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" name="details_leerkabine_durchstieg" value="Durchstieg" data-sevdesk-id="" class="inquiry-detail-checkbox">
-              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Pass-Through{% endif %}</span>
+              <span class="text-sm">{% if locale == "de" %}Durchstieg{% else %}Crawl-Through{% endif %}</span>
             </label>
           </div>
         </div>
@@ -541,6 +541,15 @@
                   <input type="checkbox" name="cooking_combo_oven_microwave" value="Kombigerät Ofen/Mikrowelle" data-sevdesk-id="" class="inquiry-detail-checkbox">
                   <span class="text-sm">{% if locale == "de" %}Kombigerät Ofen/Mikrowelle{% else %}Combination Oven/Microwave{% endif %}</span>
                 </label>
+                <div class="pl-6">
+                  <label class="block text-sm mb-1">{% if locale == "de" %}Anzahl Platten{% else %}Number of Burners{% endif %}</label>
+                  <select name="cooking_combo_platten" class="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-white focus:outline-none transition-colors text-sm">
+                    <option value="">{% if locale == "de" %}Wählen...{% else %}Select...{% endif %}</option>
+                    <option value="2 Platten">{% if locale == "de" %}2-Platten{% else %}2-Burner{% endif %}</option>
+                    <option value="3 Platten">{% if locale == "de" %}3-Platten{% else %}3-Burner{% endif %}</option>
+                    <option value="4 Platten">{% if locale == "de" %}4-Platten{% else %}4-Burner{% endif %}</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div>
@@ -739,7 +748,7 @@
       {# Document Upload #}
       <div class="pt-4">
         <label for="inquiry-documents" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-          {% if locale == "de" %}Dokumente hochladen{% else %}Upload Documents{% endif %}
+          {% if locale == "de" %}DOKUMENTE HOCHLADEN (z.B. Grundrisse / Raumplanung etc.){% else %}Upload Documents{% endif %}
         </label>
         <input 
           type="file" 

@@ -9,7 +9,7 @@
   "intro": "FAS Expedition GmbH is a young company in the expedition vehicle market. With our two main divisions \"Vehicle Construction\" and \"Cabin Construction\", we offer our customers an off-road capable world-travel vehicle from a single source.\n\nIf you share our passion for travel or can imagine being part of the world of expedition vehicles — check our current openings below. We look forward to hearing from you!",
   "jobs": [
     {
-      "title": "Interior Builder / Caravan Technician (m/f/d)",
+      "title": "Caravan / Motorhome Technician (m/f/d)",
       "location": "Lammersdorf, Eifel",
       "division": "Cabin Construction",
       "tasks": [
@@ -17,37 +17,38 @@
         "Installation of CNC-manufactured furniture components",
         "Routing and connection of electrical, water, heating, and climate systems",
         "Installation of solar systems, TV, WiFi infrastructure, and appliances",
-        "Fitting additional equipment: exterior lighting, camera/alarm systems, outdoor kitchens"
+        "Fitting additional equipment such as exterior lighting, camera systems, alarm systems, step systems, and outdoor kitchens"
       ],
       "profile": [
-        "Vocational training in caravan/electrical/installation technology, vehicle electronics, or boat building",
         "Passion for visual and functional perfection with premium materials",
-        "Experience with mobile IT infrastructure and smart device control",
-        "Good communication skills and willingness to represent our products at trade fairs"
+        "Experience with the technical infrastructure of motorhomes",
+        "Vocational training in caravan, electrical, installation technology, commercial vehicle electronics, or boat building",
+        "Good communication skills"
       ],
       "benefits": [
         "Flexible working hours and models",
         "Part-time employment possible",
-        "Direct reporting to the Technical Director"
+        "Reporting to the Cabin Construction Team Lead"
       ],
       "ctaText": "Apply Now",
       "ctaUrl": "/en/contact/",
-      "pdfUrl": "/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf"
+      "pdfUrl": "/assets/downloads/Ausschreibung%20Caravantechniker%20FAS%20Expedition%20GmbH%202026.pdf"
     },
     {
-      "title": "Metalworker / Commercial Vehicle Technician (m/f/d)",
+      "title": "Commercial Vehicle Technician / Mechatronics Technician (m/f/d)",
       "location": "Lammersdorf, Eifel",
       "division": "Vehicle Construction",
       "tasks": [
-        "Manufacturing and assembly of attachments: subframes, rear carriers, storage boxes, fuel tanks, and more",
-        "Chassis and driver cabin modifications",
-        "Fitting additional equipment: lighting, camera systems, winches, tire pressure regulation systems"
+        "Installation, wiring, and commissioning of on-board electrical systems (24V)",
+        "Electrical preparation and installation of add-on components such as lighting, camera systems, winches, and tire pressure control systems",
+        "Setup and programming of control and monitoring systems such as CAN bus, ECUs, and cabin interfaces",
+        "Support with mechanical disassembly and assembly work on items such as subframes, rear carriers, storage boxes, tank systems, roof racks, and more"
       ],
       "profile": [
-        "Vocational training in metalwork or vehicle construction, preferably commercial vehicles",
-        "Passion for (commercial) vehicles and working with steel",
-        "Steady hand with welding equipment (TIG and MIG/MAG)",
-        "Solid knowledge in vehicle electrics, electronics, hydraulics, and pneumatics",
+        "Passion for commercial vehicles and clean cable routing",
+        "Solid knowledge of vehicle electrics and electronics",
+        "Experience working with wiring diagrams and diagnostic systems as well as manufacturer-specific vehicle information systems and web portals for sourcing original spare parts",
+        "Vocational training in body or vehicle construction, preferably in the commercial vehicle segment with a focus on electrics/electronics",
         "Good communication skills and team spirit"
       ],
       "benefits": [
@@ -57,7 +58,7 @@
       ],
       "ctaText": "Apply Now",
       "ctaUrl": "/en/contact/",
-      "pdfUrl": "/assets/downloads/stellenausschreibung-schlosser-2025.pdf"
+      "pdfUrl": "/assets/downloads/Ausschreibung%20Nutzfahrzeug%20Mechatroniker%20FAS%20Expedition%20GmbH.pdf"
     }
   ],
   "applicationCta": {

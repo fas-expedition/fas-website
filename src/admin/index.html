@@ -26,23 +26,36 @@
         return roles.some((role) => ALLOWED_ROLES.includes(role)) || getEmail(user) === ADMIN_EMAIL;
       }
 
+      function hasLoadedIdentityData(user) {
+        if (!user) return false;
+        if (getEmail(user)) return true;
+        return getRoles(user).length > 0;
+      }
+
       function denyAccess() {
         window.alert('Kein Zugriff auf das CMS. Bitte wende dich an einen Administrator.');
         window.netlifyIdentity.logout();
       }
 
-      if (!window.netlifyIdentity) return;
-
-      window.netlifyIdentity.on('init', function (user) {
-        if (user && !hasCmsAccess(user)) {
-          denyAccess();
+      function enforceAccess(user) {
+        if (!hasLoadedIdentityData(user)) {
+          return;
         }
-      });
-
-      window.netlifyIdentity.on('login', function (user) {
         if (!hasCmsAccess(user)) {
           denyAccess();
         }
+      }
+
+      if (!window.netlifyIdentity) return;
+
+      window.netlifyIdentity.on('init', function (user) {
+        enforceAccess(user);
+      });
+
+      window.netlifyIdentity.on('login', function () {
+        window.setTimeout(function () {
+          enforceAccess(window.netlifyIdentity.currentUser());
+        }, 500);
       });
     })();
   </script>
