@@ -11,6 +11,7 @@
  *  5. Show success/error state in the modal (no page navigation)
  */
 (function() {
+  const MIN_SUBMIT_DELAY_SECONDS = 5;
   const inquiryFormModal = document.getElementById('inquiry-form');
   const inquiryFormElement = document.getElementById('inquiry-form-element');
   const closeButtons = document.querySelectorAll('.inquiry-form-close');
@@ -30,6 +31,10 @@
     inquiryFormModal.classList.add('flex');
     inquiryFormElement.scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    const openedAtField = document.getElementById('inquiry-opened-at');
+    if (openedAtField) {
+      openedAtField.value = String(Date.now());
+    }
 
     if (typeof gtmTracking !== 'undefined') {
       gtmTracking.form.open('inquiry');
@@ -80,6 +85,7 @@
       phone: val('inquiry-phone'),
       message: val('inquiry-message'),
       locale,
+      form_opened_at: val('inquiry-opened-at'),
 
       // Vehicle
       base_vehicle_model: val('base_vehicle_model'),
@@ -178,7 +184,11 @@
     const base = isDE
       ? 'Fehler beim Senden. Bitte versuche es erneut oder schreibe uns direkt an info@fas-expedition.de.'
       : 'Error sending inquiry. Please try again or contact us directly at info@fas-expedition.de.';
-    errorMsg.textContent = detail ? base + ' (' + detail + ')' : base;
+    const timingText = isDE
+      ? `Bitte warte mindestens ${MIN_SUBMIT_DELAY_SECONDS} Sekunden vor dem Absenden.`
+      : `Please wait at least ${MIN_SUBMIT_DELAY_SECONDS} seconds before submitting.`;
+    const isTimingError = typeof detail === 'string' && detail.toLowerCase().includes('submitted too quickly');
+    errorMsg.textContent = isTimingError ? timingText : (detail ? base + ' (' + detail + ')' : base);
   }
 
   /**
@@ -213,11 +223,17 @@
         email: formData.email,
         base_vehicle_model: formData.base_vehicle_model,
         message_length: formData.message.length,
+        submit_delay_seconds: formData.form_opened_at
+          ? Math.floor((Date.now() - Number(formData.form_opened_at)) / 1000)
+          : null,
       });
       gtmTracking.conversion.inquirySubmitted({
         email: formData.email,
         vehicle_model: formData.base_vehicle_model,
         message_length: formData.message.length,
+        submit_delay_seconds: formData.form_opened_at
+          ? Math.floor((Date.now() - Number(formData.form_opened_at)) / 1000)
+          : null,
       });
     }
 
@@ -267,6 +283,7 @@
         phone: formData.phone,
         message: formData.message,
         locale: formData.locale,
+        form_opened_at: formData.form_opened_at,
         selectedDetails: formData.selected_details,
         specialWishes: formData.special_wishes,
         base_vehicle_model: formData.base_vehicle_model,

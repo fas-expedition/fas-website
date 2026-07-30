@@ -52,6 +52,12 @@ describe('handle-inquiry.js – static source guards', () => {
     expect(src).toContain("'message'");
   });
 
+  it('validates submission timing via form_opened_at field', () => {
+    expect(src).toContain('form_opened_at');
+    expect(src).toContain('validateSubmissionTiming');
+    expect(src).toContain('Submitted too quickly');
+  });
+
   it('exports a handler function', () => {
     expect(src).toContain('exports.handler');
   });
@@ -68,6 +74,7 @@ describe('handle-inquiry.js – runtime behaviour', () => {
     phone: '+49 123 456',
     message: 'Ich interessiere mich für ein Expeditionsfahrzeug.',
     locale: 'de',
+    form_opened_at: String(Date.now() - 6000),
   };
 
   function postEvent(body: object) {
@@ -104,6 +111,23 @@ describe('handle-inquiry.js – runtime behaviour', () => {
     expect(res.statusCode).toBe(400);
     const body = JSON.parse(res.body);
     expect(body.error).toMatch(/missing fields/i);
+  });
+
+  it('returns 400 when form_opened_at is missing', async () => {
+    const payloadWithoutTiming = { ...validPayload };
+    delete payloadWithoutTiming.form_opened_at;
+    const res = await handler(postEvent(payloadWithoutTiming));
+    expect(res.statusCode).toBe(400);
+    const body = JSON.parse(res.body);
+    expect(body.error).toMatch(/spam protection/i);
+  });
+
+  it('returns 400 when form is submitted too quickly', async () => {
+    const tooFastPayload = { ...validPayload, form_opened_at: String(Date.now() - 1000) };
+    const res = await handler(postEvent(tooFastPayload));
+    expect(res.statusCode).toBe(400);
+    const body = JSON.parse(res.body);
+    expect(body.detail).toMatch(/submitted too quickly/i);
   });
 
   it('returns 500 when SENDGRID_API_KEY is not set', async () => {

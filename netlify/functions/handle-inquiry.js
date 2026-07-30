@@ -19,6 +19,7 @@
  */
 
 const sgMail = require('@sendgrid/mail');
+const MIN_SUBMIT_DELAY_MS = 5000;
 
 const INQUIRY_EMAIL = process.env.INQUIRY_EMAIL || 'stefan.klug@fas-expedition.de';
 // FROM_EMAIL must be a verified sender in your SendGrid account.
@@ -44,6 +45,11 @@ exports.handler = async (event) => {
   const missing = ['name', 'email', 'phone', 'message'].filter((f) => !data[f]);
   if (missing.length) {
     return cors(400, JSON.stringify({ error: `Missing fields: ${missing.join(', ')}` }));
+  }
+
+  const timingValidationError = validateSubmissionTiming(data.form_opened_at);
+  if (timingValidationError) {
+    return cors(400, JSON.stringify({ error: 'Spam protection validation failed', detail: timingValidationError }));
   }
 
   if (!process.env.SENDGRID_API_KEY) {
@@ -389,3 +395,15 @@ function cors(statusCode, body) {
   };
 }
 
+function validateSubmissionTiming(openedAtRaw) {
+  if (!openedAtRaw) return 'Missing form_opened_at timestamp';
+
+  const openedAt = Number(openedAtRaw);
+  if (!Number.isFinite(openedAt)) return 'Invalid form_opened_at timestamp';
+
+  const elapsedMs = Date.now() - openedAt;
+  if (elapsedMs < 0) return 'Invalid form_opened_at timestamp';
+  if (elapsedMs < MIN_SUBMIT_DELAY_MS) return `Submitted too quickly (${elapsedMs}ms)`;
+
+  return null;
+}
