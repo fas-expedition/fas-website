@@ -161,8 +161,12 @@ class VehicleGallery {
 
     // Get image data from the thumbnail
     const thumbnail = thumbnails[this.currentImageIndex];
-    const imageUrl = thumbnail.querySelector('img').src;
-    const imageAlt = thumbnail.querySelector('img').alt;
+    const img = thumbnail.querySelector('img');
+    const imageAlt = img.alt;
+
+    // Pick the largest available image from srcset so the modal shows full resolution.
+    // img.src only returns the currently-displayed (small) thumbnail URL.
+    const imageUrl = getLargestSrcsetUrl(img) || img.src;
 
     // Update main image
     const mainImage = document.getElementById(`gallery-image-${galleryId}`);
@@ -204,6 +208,25 @@ function initializeGallery() {
     galleryInstance = new VehicleGallery();
   }
   return galleryInstance;
+}
+
+/**
+ * Parse an img element's srcset and return the URL of the largest (widest) entry.
+ * Falls back to null if srcset is absent or unparseable.
+ */
+function getLargestSrcsetUrl(img) {
+  const srcset = img.getAttribute('srcset');
+  if (!srcset) return null;
+
+  const entries = srcset.split(',')
+    .map(s => s.trim().split(/\s+/))
+    .filter(parts => parts.length >= 2)
+    .map(parts => ({ url: parts[0], width: parseInt(parts[1]) || 0 }));
+
+  if (entries.length === 0) return null;
+
+  entries.sort((a, b) => b.width - a.width);
+  return entries[0].url;
 }
 
 // Initialize on load
