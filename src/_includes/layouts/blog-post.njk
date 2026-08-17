@@ -99,6 +99,15 @@
     {% endif %}
   </main>
 
+  {% if locale == 'de' or locale == 'en' %}
+  <div class="pointer-events-none fixed bottom-5 right-5 z-50 block" aria-hidden="true">
+    <img
+      src="/assets/downloads/Logos/halfpage-banner-de.jpg"
+      alt=""
+      class="w-[110px] sm:w-[140px] lg:w-[180px] xl:w-[220px] h-auto rounded-md border border-white/10 shadow-2xl shadow-black/50"
+    >
+  </div>
+  {% endif %}
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
   {% include "partials/contact-trigger-popup.njk" %}
