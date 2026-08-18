@@ -62,7 +62,7 @@ eleventyComputed:
       {% for module in page.modules.items %}
       <div class="group overflow-hidden relative flex flex-col">
         {# Module Image #}
-        <a href="{{ module.image }}" data-lightbox data-caption="{{ module.title }}" class="relative aspect-video mb-6 overflow-hidden bg-black flex items-center justify-center block">
+        <a href="{{ module.image }}" data-lightbox data-caption="{{ module.title }}" class="relative aspect-video mb-6 overflow-hidden bg-black flex items-center justify-center block [&_picture]:w-full [&_picture]:h-full [&_picture]:block">
           <img src="{{ module.image }}" alt="{{ module.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
         </a>
         {# Module Content #}
@@ -106,9 +106,19 @@ eleventyComputed:
         {{ primaryBtn(page.featuredSection.ctaText, page.featuredSection.ctaUrl, true) }}
       </div>
 
-      {# Right Column: Image #}
+      {# Right Column: Image with YouTube Video CTA #}
       <div class="overflow-hidden">
-        <img src="{{ page.featuredSection.image }}" alt="{{ page.featuredSection.title }}" class="w-full h-full object-contain relative hover-above-logo" loading="lazy" width="600" height="600">
+        <div id="fas-video-container" class="relative cursor-pointer group" onclick="fasPlayVideo(this, '3Qhivn8fNwY')">
+          <img src="{{ page.featuredSection.image }}" alt="{{ page.featuredSection.title }}" class="w-full h-full object-contain relative hover-above-logo" loading="lazy" width="600" height="337">
+          {# Play button overlay #}
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center group-hover:bg-white/30 transition-colors duration-200">
+              <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -142,3 +152,14 @@ eleventyComputed:
     </div>
   </div>
 </section>
+
+<script>
+function fasPlayVideo(container, videoId) {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+  iframe.allow = 'autoplay; encrypted-media; fullscreen';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:0;display:block;';
+  container.replaceWith(iframe);
+}
+</script>

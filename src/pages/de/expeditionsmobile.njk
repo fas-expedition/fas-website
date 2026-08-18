@@ -73,6 +73,7 @@ altSlug:
         {% if vehicle.thumbGallery %}
         <div class="grid grid-cols-5 gap-3 mb-10">
           {% for image in vehicle.thumbGallery %}
+          {% if loop.index0 < 5 %}
           <button 
             type="button"
             data-thumb-gallery="{{ vehicle.id }}" 
@@ -81,6 +82,7 @@ altSlug:
             aria-label="Bild öffnen">
             <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover">
           </button>
+          {% endif %}
           {% endfor %}
         </div>
         {% endif %}
@@ -101,7 +103,7 @@ altSlug:
     <div class="text-center">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-6">Finde das perfekte Expeditionsmobil</h2>
       <p class="text-lg text-zinc-300 mb-10 max-w-2xl mx-auto">Kontaktiere unser Team und entdecke, welche Konfiguration zu deinen Anforderungen passt.</p>
-      {{ primaryBtn("Jetzt Anfrage stellen", "#inquiry-form", true) }}
+      {{ primaryBtn("Jetzt anfragen", "#inquiry-form", true) }}
     </div>
   </div>
 </section>

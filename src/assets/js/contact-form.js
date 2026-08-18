@@ -1,145 +1,115 @@
 /**
- * Handle contact form submissions directly to Formspree
- * Sends JSON data directly without intermediate processing
+ * Contact form handler
+ * POSTs to /.netlify/functions/handle-contact (SendGrid).
+ * Includes a 5-second timing gate to block obvious bot submissions.
  */
 
-(function() {
-  // Formspree endpoint
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzyjnwy';
+(function () {
+  const MIN_SUBMIT_DELAY_MS = 5000;
 
   function initContactForm() {
     const form = document.querySelector('form[name="kontakt"], form[name="contact"]');
-    
-    if (!form) {
-      console.log('Contact form not found');
-      return;
-    }
+    if (!form) return;
 
-    console.log('Initializing contact form...');
+    // Record when the page loaded so we can measure time-to-submit
+    const openedAt = String(Date.now());
 
-    // Get the form name to determine language
-    const isGerman = form.getAttribute('name') === 'kontakt';
-    
-    form.addEventListener('submit', async (e) => {
+    const isDE = form.getAttribute('name') === 'kontakt';
+
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      console.log('Form submitted');
 
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      
-      try {
-        // Add loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = isGerman ? 'Wird gesendet...' : 'Sending...';
+      const originalHTML = submitBtn.innerHTML;
 
-        // Get form values
-        const name = form.querySelector('input[name="name"]')?.value?.trim() || '';
-        const email = form.querySelector('input[name="email"]')?.value?.trim() || '';
-        const phone = form.querySelector('input[name="phone"]')?.value?.trim() || '';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = isDE ? 'Wird gesendet\u2026' : 'Sending\u2026';
+
+      removeMessages(form);
+
+      try {
+        const name    = form.querySelector('input[name="name"]')?.value?.trim()       || '';
+        const email   = form.querySelector('input[name="email"]')?.value?.trim()      || '';
+        const phone   = form.querySelector('input[name="phone"]')?.value?.trim()      || '';
         const message = form.querySelector('textarea[name="message"]')?.value?.trim() || '';
 
-        console.log('Form fields:', { name, email, phone, message });
-
-        // Validate required fields
         if (!name || !email || !message) {
-          throw new Error('Missing required fields');
+          throw new Error('missing-fields');
         }
 
-        // Send directly to Formspree as JSON
-        console.log('Sending to Formspree:', FORMSPREE_ENDPOINT);
-        
-        const response = await fetch(FORMSPREE_ENDPOINT, {
+        const elapsedMs = Date.now() - Number(openedAt);
+        if (elapsedMs < MIN_SUBMIT_DELAY_MS) {
+          throw new Error('too-fast');
+        }
+
+        const response = await fetch('/.netlify/functions/handle-contact', {
           method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            name: name,
-            email: email,
-            phone: phone,
-            message: message,
-            _subject: isGerman ? `Neue Kontaktanfrage von ${name}` : `New contact inquiry from ${name}`,
-            _replyto: email
-          })
+            name,
+            email,
+            phone,
+            message,
+            locale: isDE ? 'de' : 'en',
+            form_opened_at: openedAt,
+          }),
         });
 
-        console.log('Formspree response status:', response.status);
-        const result = await response.json();
-        console.log('Formspree response:', result);
-
         if (!response.ok) {
-          throw new Error(`Formspree error: ${response.status}`);
+          const err = await response.json().catch(function () { return {}; });
+          throw new Error(err.detail || err.error || 'server-error');
         }
 
-        // Success! Show success message
-        showSuccessMessage(form, isGerman);
-        
-        // Reset form
+        showSuccess(form, isDE);
         form.reset();
-        
-        // Reset button
+      } catch (err) {
+        showError(form, isDE, err.message);
+      } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        
-      } catch (error) {
-        console.error('Form submission error:', error);
-        
-        // Show error message
-        showErrorMessage(form, isGerman);
-        
-        // Reset button
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
+        submitBtn.innerHTML = originalHTML;
       }
     });
   }
 
-  function showSuccessMessage(form, isGerman) {
-    // Remove any existing success/error messages
-    const existingMessages = form.parentElement.querySelectorAll('[data-message-type]');
-    existingMessages.forEach(msg => msg.remove());
-    
-    // Create success message
-    const successDiv = document.createElement('div');
-    successDiv.setAttribute('data-message-type', 'success');
-    successDiv.className = 'bg-green-950 border border-green-800 rounded-lg p-6 mb-8';
-    successDiv.innerHTML = isGerman 
-      ? '<p class="text-green-300 font-semibold">✓ Vielen Dank für Ihre Anfrage!</p><p class="text-green-200 text-sm mt-2">Wir haben Ihre Nachricht erhalten und setzen uns so bald wie möglich mit Ihnen in Verbindung.</p>'
-      : '<p class="text-green-300 font-semibold">✓ Thank you for your inquiry!</p><p class="text-green-200 text-sm mt-2">We have received your message and will get back to you as soon as possible.</p>';
-    
-    // Insert before form
-    form.parentElement.insertBefore(successDiv, form);
-    
-    // Scroll to message
-    setTimeout(() => {
-      successDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+  function removeMessages(form) {
+    form.parentElement.querySelectorAll('[data-message-type]').forEach(function (el) {
+      el.remove();
+    });
   }
 
-  function showErrorMessage(form, isGerman) {
-    // Remove any existing success/error messages
-    const existingMessages = form.parentElement.querySelectorAll('[data-message-type]');
-    existingMessages.forEach(msg => msg.remove());
-    
-    // Create error message
-    const errorDiv = document.createElement('div');
-    errorDiv.setAttribute('data-message-type', 'error');
-    errorDiv.className = 'bg-red-950 border border-red-800 rounded-lg p-6 mb-8';
-    errorDiv.innerHTML = isGerman 
-      ? '<p class="text-red-300 font-semibold">✕ Fehler bei der Übermittlung</p><p class="text-red-200 text-sm mt-2">Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.</p>'
-      : '<p class="text-red-300 font-semibold">✕ Submission Error</p><p class="text-red-200 text-sm mt-2">There was an issue sending your message. Please try again later or contact us directly.</p>';
-    
-    // Insert before form
-    form.parentElement.insertBefore(errorDiv, form);
-    
-    // Scroll to message
-    setTimeout(() => {
-      errorDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+  function showSuccess(form, isDE) {
+    removeMessages(form);
+    var div = document.createElement('div');
+    div.setAttribute('data-message-type', 'success');
+    div.className = 'bg-green-950 border border-green-800 rounded-lg p-6 mb-8';
+    div.innerHTML = isDE
+      ? '<p class="text-green-300 font-semibold">\u2713 Vielen Dank f\u00fcr Ihre Anfrage!</p><p class="text-green-200 text-sm mt-2">Wir haben Ihre Nachricht erhalten und setzen uns so bald wie m\u00f6glich mit Ihnen in Verbindung.</p>'
+      : '<p class="text-green-300 font-semibold">\u2713 Thank you for your inquiry!</p><p class="text-green-200 text-sm mt-2">We have received your message and will get back to you as soon as possible.</p>';
+    form.parentElement.insertBefore(div, form);
+    setTimeout(function () { div.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
   }
 
-  // Initialize when DOM is ready
+  function showError(form, isDE, errorCode) {
+    removeMessages(form);
+    var div = document.createElement('div');
+    div.setAttribute('data-message-type', 'error');
+    div.className = 'bg-red-950 border border-red-800 rounded-lg p-6 mb-8';
+
+    var msg;
+    if (errorCode === 'too-fast') {
+      msg = isDE
+        ? '<p class="text-red-300 font-semibold">\u2715 Zu schnell</p><p class="text-red-200 text-sm mt-2">Bitte warte mindestens 5 Sekunden, bevor Du das Formular absendest.</p>'
+        : '<p class="text-red-300 font-semibold">\u2715 Too fast</p><p class="text-red-200 text-sm mt-2">Please wait at least 5 seconds before submitting the form.</p>';
+    } else {
+      msg = isDE
+        ? '<p class="text-red-300 font-semibold">\u2715 Fehler bei der \u00dcbermittlung</p><p class="text-red-200 text-sm mt-2">Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es sp\u00e4ter erneut oder kontaktieren Sie uns direkt unter <a href="mailto:info@fas-expedition.de" class="underline">info@fas-expedition.de</a>.</p>'
+        : '<p class="text-red-300 font-semibold">\u2715 Submission Error</p><p class="text-red-200 text-sm mt-2">There was a problem sending your message. Please try again later or contact us directly at <a href="mailto:info@fas-expedition.de" class="underline">info@fas-expedition.de</a>.</p>';
+    }
+    div.innerHTML = msg;
+    form.parentElement.insertBefore(div, form);
+    setTimeout(function () { div.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initContactForm);
   } else {

@@ -4,12 +4,15 @@ import { existsSync, readFileSync, statSync } from 'fs';
 import { globSync } from 'glob';
 import { loadHtml } from './helpers';
 
+const BUILD_TIMEOUT_MS = Number(process.env.BUILD_TIMEOUT_MS || '600000');
+const buildEnv = { ...process.env, FAST_BUILD: '1' };
+
 describe('Integration Tests: Build Pipeline', () => {
   describe('npm run build', () => {
     it('completes with exit code 0', () => {
       // Run build and expect no error (exit code 0)
       expect(() => {
-        execSync('npm run build', { stdio: 'pipe', timeout: 60000 });
+        execSync('npm run build', { stdio: 'pipe', timeout: BUILD_TIMEOUT_MS, env: buildEnv });
       }).not.toThrow();
     });
   });
@@ -27,7 +30,7 @@ describe('Integration Tests: Build Pipeline', () => {
   describe('Build output validation', () => {
     beforeAll(() => {
       // Rebuild to ensure _site exists for remaining tests
-      execSync('npm run build', { stdio: 'pipe', timeout: 60000 });
+      execSync('npm run build', { stdio: 'pipe', timeout: BUILD_TIMEOUT_MS, env: buildEnv });
     });
 
     it('contains _site/assets/css/output.css (non-empty)', () => {

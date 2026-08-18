@@ -17,10 +17,12 @@
       {% for item in vehicles.items %}
         {% if locale == "de" %}
           {% set vehicleLink = "/de/expeditionsmobile/" %}
+          {% set discoverText = "entdecken" %}
         {% else %}
           {% set vehicleLink = "/en/expedition-vehicles/" %}
+          {% set discoverText = "discover" %}
         {% endif %}
-        {{ vehicleCard(item.image, item.title, item.description, item.specs, vehicleLink, "entdecken") }}
+        {{ vehicleCard(item.image, item.title, item.description, item.specs, vehicleLink, discoverText) }}
       {% endfor %}
     </div>
   </div>

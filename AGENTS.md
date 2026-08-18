@@ -103,6 +103,29 @@ Commit message format: `<type>(<scope>): <description>`
 
 Breaking changes: Add `!` after type (e.g., `feat!: remove old blog`) or add `BREAKING CHANGE:` in commit body → triggers major bump.
 
+## DE/EN Data Consistency Rule
+
+**Every time the German expedition vehicle data (`src/_data/de/pages/expeditionsmobile.json`) is changed, the English counterpart (`src/_data/en/pages/expeditionsmobile.json`) MUST be updated in the same commit.**
+
+Fields that must always be identical (only language/format adapted):
+
+| Field | DE format example | EN format example |
+|-------|------------------|-------------------|
+| `specs.power.value` | `Bis zu 530 PS` | `Up to 530 HP` |
+| `specs.gvw.value` | `Bis zu 26.000 kg` | `Up to 26,000 kg` |
+| `specs.range.value` | `Bis zu 2.500 km` | `Up to 2,500 km` |
+| `specs.cabin.value` | `2–4 Personen` | `2–4 persons` |
+| `configurations[].price` | `ab 979.000€` | `from €979,000` |
+
+**Verification checklist** (run after any change to DE expeditionsmobile.json):
+
+1. Compare `specs.power.value` for 4x4, 6x6, 8x8 — same number, PS→HP
+2. Compare `specs.gvw.value` — same kg value, dot→comma thousand separator
+3. Compare `specs.range.value` — same km value
+4. Compare `specs.cabin.value` — same person range, "Personen"→"persons"
+5. Compare `configurations[0].price` — same number, `ab X.€`→`from €X,`
+6. Compare `gallery` and `thumbGallery` arrays — must be identical (image paths are locale-agnostic)
+
 ## Do NOT
 
 - Add new npm dependencies without strong justification

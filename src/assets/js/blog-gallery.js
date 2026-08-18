@@ -28,7 +28,6 @@
       <div style="aspect-ratio: 16/9; max-height: 80vh; width: 100%; display: flex; align-items: center; justify-center;">
         <img id="gallery-image" src="" alt="" class="w-full h-full object-cover rounded">
       </div>
-      <p id="gallery-caption" class="text-white text-center mt-4 text-sm max-w-2xl"></p>
     </div>
     <button 
       id="gallery-next" 
@@ -45,7 +44,6 @@
   const prevBtn = document.getElementById('gallery-prev');
   const nextBtn = document.getElementById('gallery-next');
   const modalImage = document.getElementById('gallery-image');
-  const modalCaption = document.getElementById('gallery-caption');
 
   let currentGallery = [];
   let currentIndex = 0;
@@ -87,7 +85,6 @@
     const img = currentGallery[index];
     modalImage.src = img.src;
     modalImage.alt = img.alt;
-    modalCaption.textContent = img.alt;
     
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index === currentGallery.length - 1;

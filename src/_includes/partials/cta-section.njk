@@ -11,6 +11,10 @@
     <p class="text-zinc-400 text-lg max-w-2xl mx-auto mb-10">
       {{ cta.description }}
     </p>
+    {% if "configurator" not in site.disabledNavItems %}
     {{ primaryBtn(cta.ctaText, cta.ctaUrl, true) }}
+    {% else %}
+    {{ primaryBtn(pageContent.home.hero.ctaText, pageContent.home.hero.ctaUrl, true) }}
+    {% endif %}
   </div>
 </section>

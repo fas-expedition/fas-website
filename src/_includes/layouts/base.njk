@@ -66,6 +66,14 @@
     {{ content | safe }}
   </main>
 
+  {% if locale == 'de' or locale == 'en' %}
+  <div class="pointer-events-none fixed bottom-5 right-5 z-50 block" aria-hidden="true">
+    <div
+      class="w-[110px] sm:w-[140px] lg:w-[180px] xl:w-[220px] aspect-[1/2] rounded-md border border-white/10 shadow-2xl shadow-black/50 bg-cover bg-center"
+      style="background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg');"
+    ></div>
+  </div>
+  {% endif %}
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
 
@@ -110,6 +118,7 @@
       }
     })();
   </script>
+  <script src="/assets/js/inquiry-pdf.js"></script>
   <script src="/assets/js/inquiry-form.js"></script>
   <script src="/assets/js/lazy-loading.js"></script>
   <script src="/assets/js/gallery.js"></script>
