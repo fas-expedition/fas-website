@@ -70,6 +70,11 @@
   <style>
     #mobile-banner-popup {
       display: none;
+      z-index: 2147483647;
+    }
+
+    #desktop-floating-banner {
+      z-index: 2147483647;
     }
 
     @media (max-width: 767px) {
@@ -82,8 +87,8 @@
       }
     }
   </style>
-  <div id="mobile-banner-popup" class="fixed inset-0 z-[60] items-center justify-center bg-black/60 p-4" aria-label="Banner popup">
-    <div class="relative w-full" style="max-width: min(360px, calc(100vw - 2rem));">
+  <div id="mobile-banner-popup" class="fixed inset-0 items-center justify-center bg-black/60 p-4" style="z-index: 2147483647;" aria-label="Banner popup">
+    <div class="relative w-full" style="max-width: min(360px, calc(100vw - 2rem)); z-index: 2147483647;">
       <button
         id="mobile-banner-close"
         type="button"
@@ -101,10 +106,10 @@
     </div>
   </div>
 
-  <div id="desktop-floating-banner" class="pointer-events-none fixed bottom-5 right-5 z-50" aria-hidden="true">
+  <div id="desktop-floating-banner" class="pointer-events-none fixed bottom-5 right-5" style="z-index: 2147483647;" aria-hidden="true">
     <div
       class="pointer-events-auto w-[110px] sm:w-[140px] lg:w-[180px] xl:w-[220px] rounded-md border border-white/10 shadow-2xl shadow-black/50 bg-cover bg-center"
-      style="aspect-ratio: 1/2; background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg');"
+      style="aspect-ratio: 1/2; background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg'); z-index: 2147483647;"
     ></div>
   </div>
   {% endif %}
