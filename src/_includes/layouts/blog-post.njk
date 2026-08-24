@@ -100,24 +100,41 @@
   </main>
 
   {% if locale == 'de' or locale == 'en' %}
-  <div id="mobile-banner-popup" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 md:hidden" aria-label="Banner popup">
-    <div class="relative w-full max-w-[360px]">
+  <style>
+    #mobile-banner-popup {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      #desktop-floating-banner {
+        display: none;
+      }
+
+      #mobile-banner-popup {
+        display: flex;
+      }
+    }
+  </style>
+  <div id="mobile-banner-popup" class="fixed inset-0 z-[60] items-center justify-center bg-black/60 p-4" aria-label="Banner popup">
+    <div class="relative w-full" style="max-width: min(360px, calc(100vw - 2rem));">
       <button
         id="mobile-banner-close"
         type="button"
         class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/80 text-xl font-bold text-white shadow-lg transition hover:bg-white hover:text-black"
-        aria-label="Banner schließen"
+        aria-label="{% if locale == 'de' %}Banner schließen{% else %}Close banner{% endif %}"
       >
         ×
       </button>
-      <div
-        class="block aspect-[1/2] w-full rounded-md border border-white/10 shadow-2xl shadow-black/50 bg-cover bg-center"
-        style="background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg');"
-      ></div>
+      <img
+        src="/assets/downloads/Logos/halfpage-banner-de.jpg"
+        alt=""
+        class="block w-full rounded-md border border-white/10 shadow-2xl shadow-black/50"
+        style="height: auto; max-height: calc(100dvh - 3rem); object-fit: contain;"
+      >
     </div>
   </div>
 
-  <div class="pointer-events-none fixed bottom-5 right-5 z-50 hidden md:block" aria-hidden="true">
+  <div id="desktop-floating-banner" class="pointer-events-none fixed bottom-5 right-5 z-50" aria-hidden="true">
     <div
       class="pointer-events-auto w-[110px] sm:w-[140px] lg:w-[180px] xl:w-[220px] rounded-md border border-white/10 shadow-2xl shadow-black/50 bg-cover bg-center"
       style="aspect-ratio: 1/2; background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg');"
@@ -135,7 +152,7 @@
 
       if (mobileBannerPopup && mobileBannerClose) {
         mobileBannerClose.addEventListener('click', function() {
-          mobileBannerPopup.classList.add('hidden');
+          mobileBannerPopup.style.display = 'none';
         });
       }
     })();
