@@ -1,0 +1,11 @@
+<script>
+  (function() {
+    try {
+      if (window.sessionStorage.getItem('fasMobileBannerDismissed') === 'true') {
+        document.documentElement.classList.add('mobile-banner-dismissed');
+      }
+    } catch (error) {
+      console.warn('Mobile banner session state is unavailable.', error);
+    }
+  })();
+</script>

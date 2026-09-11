@@ -17,6 +17,7 @@
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ slug }}">
   <link rel="stylesheet" href="/assets/css/output.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {% include "partials/mobile-banner-session-state.njk" %}
 </head>
 <body class="bg-black text-white font-sans antialiased">
   {% include "partials/navigation.njk" %}
@@ -100,68 +101,11 @@
   </main>
 
   {% if locale == 'de' or locale == 'en' %}
-  <style>
-    #mobile-banner-popup {
-      display: none;
-      z-index: 2147483647;
-    }
-
-    #desktop-floating-banner {
-      z-index: 2147483647;
-    }
-
-    @media (max-width: 767px) {
-      #desktop-floating-banner {
-        display: none;
-      }
-
-      #mobile-banner-popup {
-        display: flex;
-      }
-    }
-  </style>
-  <div id="mobile-banner-popup" class="fixed inset-0 items-center justify-center bg-black/60 p-4" style="z-index: 2147483647;" aria-label="Banner popup">
-    <div class="relative w-full" style="max-width: min(360px, calc(100vw - 2rem)); z-index: 2147483647;">
-      <button
-        id="mobile-banner-close"
-        type="button"
-        class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/80 text-xl font-bold text-white shadow-lg transition hover:bg-white hover:text-black"
-        aria-label="{% if locale == 'de' %}Banner schließen{% else %}Close banner{% endif %}"
-      >
-        ×
-      </button>
-      <img
-        src="/assets/downloads/Logos/halfpage-banner-de.jpg"
-        alt=""
-        class="block w-full rounded-md border border-white/10 shadow-2xl shadow-black/50"
-        style="height: auto; max-height: calc(100dvh - 3rem); object-fit: contain;"
-      >
-    </div>
-  </div>
-
-  <div id="desktop-floating-banner" class="pointer-events-none fixed bottom-5 right-5" style="z-index: 2147483647;" aria-hidden="true">
-    <div
-      class="pointer-events-auto w-[110px] sm:w-[140px] lg:w-[180px] xl:w-[220px] rounded-md border border-white/10 shadow-2xl shadow-black/50 bg-cover bg-center"
-      style="aspect-ratio: 1/2; background-image: url('/assets/downloads/Logos/halfpage-banner-de.jpg'); z-index: 2147483647;"
-    ></div>
-  </div>
+  {% include "partials/mobile-banner.njk" %}
   {% endif %}
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
   {% include "partials/contact-trigger-popup.njk" %}
-
-  <script>
-    (function() {
-      var mobileBannerPopup = document.getElementById('mobile-banner-popup');
-      var mobileBannerClose = document.getElementById('mobile-banner-close');
-
-      if (mobileBannerPopup && mobileBannerClose) {
-        mobileBannerClose.addEventListener('click', function() {
-          mobileBannerPopup.style.display = 'none';
-        });
-      }
-    })();
-  </script>
   <script src="/assets/js/blog-gallery.js"></script>
   <script src="/assets/js/inquiry-form.js"></script>
   <script src="/assets/js/contact-trigger-popup.js"></script>
