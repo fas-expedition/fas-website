@@ -79,3 +79,39 @@ describe('netlify.toml – forms declaration', () => {
     expect(src).toMatch(/name = "inquiry"[\s\S]{0,80}honeypot = "bot-field"/);
   });
 });
+
+describe('layouts – cache-busting for immutable static assets', () => {
+  // netlify.toml serves /assets/* with `Cache-Control: ... immutable` for a
+  // full year. Without a cache-busting query string, browsers that already
+  // cached an older inquiry-form.js would never fetch a fixed version after
+  // a deploy, silently reproducing already-fixed bugs (e.g. the form
+  // submitting to the redirected "/" root). Every script/stylesheet tag
+  // referencing a local /assets/js or /assets/css file must therefore be
+  // versioned via buildMeta.version.
+  const templatesWithLocalAssets = [
+    'src/_includes/layouts/base.njk',
+    'src/_includes/layouts/blog-post.njk',
+    'src/_includes/partials/mobile-banner.njk',
+    'src/pages/de/konfigurator.njk',
+    'src/pages/en/configurator.njk',
+  ];
+
+  it('appends buildMeta.version to every local /assets/js or /assets/css reference', () => {
+    for (const template of templatesWithLocalAssets) {
+      const src = readFileSync(template, 'utf-8');
+      const tags = src.match(/(?:src|href)="\/assets\/(?:js|css)\/[^"]*"/g) || [];
+      expect(tags.length, `expected ${template} to reference local assets`).toBeGreaterThan(0);
+      for (const tag of tags) {
+        expect(tag, `${template}: ${tag} is missing the buildMeta.version cache-buster`).toContain(
+          '?v={{ buildMeta.version }}'
+        );
+      }
+    }
+  });
+
+  it('computes buildMeta.version from the current git commit (with a fallback)', () => {
+    const src = readFileSync('src/_data/buildMeta.js', 'utf-8');
+    expect(src).toContain('git rev-parse --short HEAD');
+    expect(src).toContain('module.exports');
+  });
+});

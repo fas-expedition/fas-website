@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="de" href="{{ site.url }}/{{ slug }}">
   <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ slug }}">
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ slug }}">
-  <link rel="stylesheet" href="/assets/css/output.css">
+  <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% include "partials/mobile-banner-session-state.njk" %}
 </head>
@@ -106,9 +106,9 @@
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
   {% include "partials/contact-trigger-popup.njk" %}
-  <script src="/assets/js/blog-gallery.js"></script>
-  <script src="/assets/js/inquiry-form.js"></script>
-  <script src="/assets/js/contact-trigger-popup.js"></script>
+  <script src="/assets/js/blog-gallery.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/inquiry-form.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/contact-trigger-popup.js?v={{ buildMeta.version }}"></script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", function(user) {

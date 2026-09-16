@@ -48,7 +48,7 @@
   <meta name="robots" content="index, follow">
   <meta name="language" content="{{ 'German' if locale == 'de' else 'English' }}">
   
-  <link rel="stylesheet" href="/assets/css/output.css">
+  <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set showGlobalBanner = (locale == 'de' or locale == 'en') and page.url != '/de/' and page.url != '/en/' %}
   {% if showGlobalBanner %}
@@ -117,10 +117,10 @@
       }
     })();
   </script>
-  <script src="/assets/js/inquiry-pdf.js"></script>
-  <script src="/assets/js/inquiry-form.js"></script>
-  <script src="/assets/js/lazy-loading.js"></script>
-  <script src="/assets/js/gallery.js"></script>
-  <script src="/assets/js/contact-form.js"></script>
+  <script src="/assets/js/inquiry-pdf.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/inquiry-form.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/lazy-loading.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/gallery.js?v={{ buildMeta.version }}"></script>
+  <script src="/assets/js/contact-form.js?v={{ buildMeta.version }}"></script>
 </body>
 </html>

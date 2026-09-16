@@ -124,11 +124,11 @@ describe('mobile-banner-popup.js', () => {
 
     expect(deHome('#mobile-banner-popup').length).toBe(0);
     expect(deHome('#desktop-floating-banner').length).toBe(0);
-    expect(deHome('script[type="module"][src="/assets/js/mobile-banner-popup.js"]').length).toBe(0);
+    expect(deHome('script[type="module"][src^="/assets/js/mobile-banner-popup.js"]').length).toBe(0);
 
     expect(enHome('#mobile-banner-popup').length).toBe(0);
     expect(enHome('#desktop-floating-banner').length).toBe(0);
-    expect(enHome('script[type="module"][src="/assets/js/mobile-banner-popup.js"]').length).toBe(0);
+    expect(enHome('script[type="module"][src^="/assets/js/mobile-banner-popup.js"]').length).toBe(0);
   });
 
   it('renders the shared mobile banner controller on non-home pages and blog layouts', () => {
@@ -138,11 +138,11 @@ describe('mobile-banner-popup.js', () => {
     expect(pageLayout('head script').text()).toContain(MOBILE_BANNER_DISMISSED_KEY);
     expect(pageLayout('#mobile-banner-popup').length).toBe(1);
     expect(pageLayout('#desktop-floating-banner').length).toBe(1);
-    expect(pageLayout('script[type="module"][src="/assets/js/mobile-banner-popup.js"]').length).toBe(1);
+    expect(pageLayout('script[type="module"][src^="/assets/js/mobile-banner-popup.js"]').length).toBe(1);
     expect(blogFiles.length).toBeGreaterThan(0);
 
     const blogLayout = loadHtml(blogFiles[0]);
     expect(blogLayout('head script').text()).toContain(MOBILE_BANNER_DISMISSED_KEY);
-    expect(blogLayout('script[type="module"][src="/assets/js/mobile-banner-popup.js"]').length).toBe(1);
+    expect(blogLayout('script[type="module"][src^="/assets/js/mobile-banner-popup.js"]').length).toBe(1);
   });
 });
