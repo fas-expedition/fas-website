@@ -296,10 +296,16 @@
     }
 
     // ── POST to Netlify Forms ──
+    // Submit to the current page path rather than "/": netlify.toml redirects
+    // "/" to "/de/" with a 301, which breaks the AJAX POST (fetch turns the
+    // redirected request into a GET, and Netlify Forms then rejects it).
+    // Every page already contains this form (it's rendered in base.njk), so
+    // the current path is always a valid Netlify Forms submission target.
+    const submitUrl = window.location.pathname || '/';
     let success = false;
     let errorDetail = null;
     try {
-      const response = await fetch('/', {
+      const response = await fetch(submitUrl, {
         method: 'POST',
         body: netlifyFormData,
       });

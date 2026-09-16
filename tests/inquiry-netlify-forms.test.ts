@@ -54,8 +54,12 @@ describe('inquiry-form.js – Netlify Forms submission', () => {
     expect(src).toContain('new FormData(inquiryFormElement)');
   });
 
-  it('POSTs the submission to "/"', () => {
-    expect(src).toMatch(/fetch\(\s*['"]\/['"]/);
+  it('POSTs the submission to the current page path, not the redirected "/" root', () => {
+    // netlify.toml 301-redirects "/" to "/de/", which breaks a raw fetch('/')
+    // POST. The form must submit to window.location.pathname instead.
+    expect(src).not.toMatch(/fetch\(\s*['"]\/['"]/);
+    expect(src).toContain('window.location.pathname');
+    expect(src).toMatch(/fetch\(\s*submitUrl/);
   });
 
   it('attaches the generated PDF under the pdf_attachment field', () => {
