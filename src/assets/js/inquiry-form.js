@@ -2,12 +2,13 @@
  * Inquiry Form Modal Handler
  * Manages opening, closing, and submission of the inquiry form modal.
  *
- * Submission flow (hybrid):
- *  1. Collect all form fields into a structured data object
+ * Submission flow (Netlify Forms):
+ *  1. Collect all form fields into a structured data object (for PDF generation)
  *  2. Generate a PDF via window.generateInquiryPDF (inquiry-pdf.js)
- *  3. POST JSON (form data + PDF base64) to /.netlify/functions/handle-inquiry
- *     → Function sends email with PDF attachment via SendGrid
- *  4. Also POST URL-encoded backup to Netlify Forms (silent, best-effort)
+ *  3. Build a FormData from the real <form> (captures every text/select/checkbox field)
+ *     and attach the generated PDF as a file under "pdf_attachment"
+ *  4. POST the FormData to "/" → Netlify Forms stores the submission (incl. PDF file)
+ *     and triggers whatever notifications are configured in the Netlify dashboard
  *  5. Show success/error state in the modal (no page navigation)
  */
 (function() {
@@ -187,16 +188,28 @@
     const timingText = isDE
       ? `Bitte warte mindestens ${MIN_SUBMIT_DELAY_SECONDS} Sekunden vor dem Absenden.`
       : `Please wait at least ${MIN_SUBMIT_DELAY_SECONDS} seconds before submitting.`;
-    const isTimingError = typeof detail === 'string' && detail.toLowerCase().includes('submitted too quickly');
-    errorMsg.textContent = isTimingError ? timingText : (detail ? base + ' (' + detail + ')' : base);
+    const isTimingError = detail === 'too-fast';
+    errorMsg.textContent = isTimingError ? timingText : (detail && detail !== 'submit-failed' ? base + ' (' + detail + ')' : base);
+  }
+
+  /**
+   * Convert a base64 string (no data-URI prefix) into a Blob.
+   */
+  function base64ToBlob(base64, mimeType) {
+    const byteChars = atob(base64);
+    const byteNumbers = new Array(byteChars.length);
+    for (let i = 0; i < byteChars.length; i++) {
+      byteNumbers[i] = byteChars.charCodeAt(i);
+    }
+    return new Blob([new Uint8Array(byteNumbers)], { type: mimeType });
   }
 
   /**
    * Main submit handler:
-   * 1. Generate PDF
-   * 2. POST to Netlify Function (email + PDF attachment)
-   * 3. Backup POST to Netlify Forms (silent)
-   * 4. Show success or error
+   * 1. Generate PDF from the collected form data
+   * 2. Build a FormData snapshot of the real form (captures every field + checked checkboxes)
+   * 3. Attach the generated PDF as a file under "pdf_attachment"
+   * 4. POST to Netlify Forms ("/") and show success or error
    */
   async function handleSubmit(e) {
     e.preventDefault();
@@ -206,33 +219,41 @@
     const locale = document.getElementById('inquiry-locale')?.value || 'de';
     const isDE = locale === 'de';
 
-    // Show loading state
-    submitButton.textContent = isDE ? 'Wird gesendet…' : 'Sending…';
-    submitButton.disabled = true;
-
     // Remove previous error if any
     const prevErr = document.getElementById('inquiry-error-msg');
     if (prevErr) prevErr.remove();
 
-    const formData = collectFormData();
+    // ── Client-side spam timing guard (mirrors previous server-side check) ──
+    const openedAtField = document.getElementById('inquiry-opened-at');
+    const openedAt = openedAtField ? Number(openedAtField.value) : NaN;
+    if (Number.isFinite(openedAt) && Date.now() - openedAt < MIN_SUBMIT_DELAY_SECONDS * 1000) {
+      showError(submitButton, originalText, locale, 'too-fast');
+      return;
+    }
+
+    // Show loading state
+    submitButton.textContent = isDE ? 'Wird gesendet…' : 'Sending…';
+    submitButton.disabled = true;
+
+    const collectedData = collectFormData();
 
     // ── GTM tracking ──
     if (typeof gtmTracking !== 'undefined') {
       gtmTracking.form.submit('inquiry', {
-        name: formData.name,
-        email: formData.email,
-        base_vehicle_model: formData.base_vehicle_model,
-        message_length: formData.message.length,
-        submit_delay_seconds: formData.form_opened_at
-          ? Math.floor((Date.now() - Number(formData.form_opened_at)) / 1000)
+        name: collectedData.name,
+        email: collectedData.email,
+        base_vehicle_model: collectedData.base_vehicle_model,
+        message_length: collectedData.message.length,
+        submit_delay_seconds: collectedData.form_opened_at
+          ? Math.floor((Date.now() - Number(collectedData.form_opened_at)) / 1000)
           : null,
       });
       gtmTracking.conversion.inquirySubmitted({
-        email: formData.email,
-        vehicle_model: formData.base_vehicle_model,
-        message_length: formData.message.length,
-        submit_delay_seconds: formData.form_opened_at
-          ? Math.floor((Date.now() - Number(formData.form_opened_at)) / 1000)
+        email: collectedData.email,
+        vehicle_model: collectedData.base_vehicle_model,
+        message_length: collectedData.message.length,
+        submit_delay_seconds: collectedData.form_opened_at
+          ? Math.floor((Date.now() - Number(collectedData.form_opened_at)) / 1000)
           : null,
       });
     }
@@ -242,7 +263,7 @@
     let pdfFilename = null;
     try {
       if (typeof window.generateInquiryPDF === 'function') {
-        const pdf = await window.generateInquiryPDF(formData, locale);
+        const pdf = await window.generateInquiryPDF(collectedData, locale);
         pdfBase64 = pdf.base64;
         pdfFilename = pdf.filename;
       }
@@ -250,59 +271,53 @@
       console.warn('PDF generation failed (continuing without attachment):', pdfErr);
     }
 
-    // ── POST to Netlify Function ──
-    let functionSuccess = false;
-    let functionError = null;
-    try {
-      const response = await fetch('/.netlify/functions/handle-inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.assign({}, formData, { pdfBase64, pdfFilename })),
-      });
-      if (response.ok) {
-        functionSuccess = true;
-      } else {
-        const err = await response.json().catch(function() { return {}; });
-        functionError = err.detail || err.error || ('HTTP ' + response.status);
-        console.error('Function error:', response.status, err);
-      }
-    } catch (fetchErr) {
-      functionError = fetchErr.message;
-      console.error('Function fetch failed:', fetchErr);
+    // ── Populate the flattened "selected_details" summary field before snapshotting ──
+    const selectedDetailsField = document.getElementById('inquiry-selected-details');
+    if (selectedDetailsField) {
+      selectedDetailsField.value = collectedData.selected_details;
     }
 
-    // ── Netlify Forms backup (best-effort, silent) ──
+    // ── Build FormData from the real form (captures all text/select/checkbox fields) ──
+    const netlifyFormData = new FormData(inquiryFormElement);
+
+    // Netlify Forms supports only one file per field; keep at most the first
+    // user-selected document to avoid submission errors from the "documents" field.
+    const documentFiles = netlifyFormData.getAll('documents').filter(function(f) { return f && f.size > 0; });
+    netlifyFormData.delete('documents');
+    if (documentFiles.length > 0) {
+      netlifyFormData.set('documents', documentFiles[0]);
+    }
+
+    // Attach the generated PDF (overrides the empty placeholder file input)
+    if (pdfBase64 && pdfFilename) {
+      netlifyFormData.set('pdf_attachment', base64ToBlob(pdfBase64, 'application/pdf'), pdfFilename);
+    } else {
+      netlifyFormData.delete('pdf_attachment');
+    }
+
+    // ── POST to Netlify Forms ──
+    let success = false;
+    let errorDetail = null;
     try {
-      const netlifyPayload = new URLSearchParams({
-        'form-name': 'inquiry',
-        name: formData.name,
-        street: formData.street,
-        postal: formData.postal,
-        country: formData.country,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-        locale: formData.locale,
-        form_opened_at: formData.form_opened_at,
-        selectedDetails: formData.selected_details,
-        specialWishes: formData.special_wishes,
-        base_vehicle_model: formData.base_vehicle_model,
-        base_vehicle_custom: formData.base_vehicle_custom,
-      });
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: netlifyPayload.toString(),
+        body: netlifyFormData,
       });
-    } catch (_) {
-      // Netlify Forms backup is best-effort; ignore errors
+      success = response.ok;
+      if (!response.ok) {
+        errorDetail = 'HTTP ' + response.status;
+        console.error('Netlify Forms submission error:', response.status);
+      }
+    } catch (fetchErr) {
+      errorDetail = 'submit-failed';
+      console.error('Netlify Forms fetch failed:', fetchErr);
     }
 
     // ── Show result ──
-    if (functionSuccess) {
+    if (success) {
       showSuccess(locale);
     } else {
-      showError(submitButton, originalText, locale, functionError);
+      showError(submitButton, originalText, locale, errorDetail);
     }
   }
 

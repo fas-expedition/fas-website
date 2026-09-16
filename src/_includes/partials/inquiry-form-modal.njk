@@ -15,10 +15,23 @@
     </div>
 
     {# Form Content #}
-    <form id="inquiry-form-element" class="p-6 space-y-6 overflow-y-auto flex-1">
+    <form
+      id="inquiry-form-element"
+      name="inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      enctype="multipart/form-data"
+      class="p-6 space-y-6 overflow-y-auto flex-1"
+    >
       {# Hidden form-name for Netlify Forms detection #}
       <input type="hidden" name="form-name" value="inquiry" />
-      
+
+      {# Honeypot field for Netlify spam protection (hidden via CSS clipping, not display:none) #}
+      <p style="position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0;">
+        <label>Nicht ausfüllen: <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
       {# Name #}
       <div>
         <label for="inquiry-name" class="block text-sm font-semibold uppercase tracking-wider mb-2">
@@ -746,6 +759,10 @@
       <input type="hidden" name="selected_details" id="inquiry-selected-details" value="" />
       <input type="hidden" name="form_opened_at" id="inquiry-opened-at" value="" />
 
+      {# Hidden file field so Netlify detects a file-upload capable form at build time.
+         Populated at submit time with the generated PDF via JS (FormData.set). #}
+      <input type="file" name="pdf_attachment" id="inquiry-pdf-attachment" class="hidden" aria-hidden="true" tabindex="-1" />
+
       {# Document Upload #}
       <div class="pt-4">
         <label for="inquiry-documents" class="block text-sm font-semibold uppercase tracking-wider mb-2">
@@ -790,23 +807,7 @@
   </div>
 </div>
 
-{# Hidden Netlify Form for backend processing (blueprint for form detection) #}
-<form name="inquiry" method="POST" netlify netlify-honeypot="bot-field" hidden>
-  {# Honeypot field hidden with CSS positioning (not display:none per Netlify requirement) #}
-  <p style="position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0;">
-    <input type="hidden" name="bot-field" />
-  </p>
-  <input type="text" name="name" />
-  <input type="text" name="street" />
-  <input type="text" name="postal" />
-  <input type="text" name="country" />
-  <input type="email" name="email" />
-  <input type="tel" name="phone" />
-  <textarea name="message"></textarea>
-  <input type="text" name="locale" />
-  <input type="text" name="selectedDetails" />
-  <input type="text" name="form_opened_at" />
-  <textarea name="specialWishes"></textarea>
-  <input type="text" name="base_vehicle_model" />
-  <input type="text" name="base_vehicle_custom" />
-</form>
+{# Note: the visible form above (name="inquiry", data-netlify="true") is static HTML rendered
+   at build time, so Netlify's form detection picks it up directly — no hidden duplicate form
+   is needed here. All fields (including every checkbox, select, and the PDF attachment file
+   input) are detected straight from the real form. #}

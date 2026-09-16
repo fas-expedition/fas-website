@@ -1,6 +1,12 @@
 # E-Mail Notifications Setup Guide
 
-## SendGrid Integration für Inquiry Form
+> ⚠️ **Hinweis:** Das **Anfrageformular** (Inquiry Form / Modal auf allen Seiten) läuft seit der
+> Umstellung auf Netlify Forms **nicht mehr** über SendGrid – siehe
+> [NETLIFY_FORMS_SETUP.md](./NETLIFY_FORMS_SETUP.md). Diese Anleitung betrifft nur noch das
+> **Kontaktformular** (`/kontakt`, `/en/contact`), das weiterhin `netlify/functions/handle-contact.js`
+> mit SendGrid nutzt.
+
+## SendGrid Integration für Kontaktformular
 
 Die Netlify Function ist jetzt mit SendGrid konfiguriert. Hier sind die notwendigen Schritte:
 

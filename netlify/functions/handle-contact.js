@@ -4,7 +4,10 @@
  * Receives contact form submissions (name, email, phone, message, locale)
  * and sends an email notification via SendGrid.
  *
- * Shares the same environment variables as handle-inquiry:
+ * Note: the separate inquiry form (Anfrageformular) is submitted directly to
+ * Netlify Forms and no longer uses SendGrid – see NETLIFY_FORMS_SETUP.md.
+ *
+ * Required environment variables:
  *   SENDGRID_API_KEY     – SendGrid API key
  *   INQUIRY_EMAIL        – recipient address (default: stefan.klug@fas-expedition.de)
  *   INQUIRY_FROM_EMAIL   – verified sender address in SendGrid
