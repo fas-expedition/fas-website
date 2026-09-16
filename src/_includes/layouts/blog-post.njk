@@ -17,7 +17,6 @@
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ slug }}">
   <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {% include "partials/mobile-banner-session-state.njk" %}
 </head>
 <body class="bg-black text-white font-sans antialiased">
   {% include "partials/navigation.njk" %}
@@ -100,9 +99,6 @@
     {% endif %}
   </main>
 
-  {% if locale == 'de' or locale == 'en' %}
-  {% include "partials/mobile-banner.njk" %}
-  {% endif %}
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
   {% include "partials/contact-trigger-popup.njk" %}

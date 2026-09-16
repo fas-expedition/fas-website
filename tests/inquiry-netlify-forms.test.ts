@@ -91,7 +91,6 @@ describe('layouts – cache-busting for immutable static assets', () => {
   const templatesWithLocalAssets = [
     'src/_includes/layouts/base.njk',
     'src/_includes/layouts/blog-post.njk',
-    'src/_includes/partials/mobile-banner.njk',
     'src/pages/de/konfigurator.njk',
     'src/pages/en/configurator.njk',
   ];

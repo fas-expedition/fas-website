@@ -50,11 +50,7 @@
   
   <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {% set showGlobalBanner = (locale == 'de' or locale == 'en') and page.url != '/de/' and page.url != '/en/' %}
-  {% if showGlobalBanner %}
-  {% include "partials/mobile-banner-session-state.njk" %}
-  {% endif %}
-  
+
   {# JSON-LD Structured Data #}
   {% include "partials/schema.njk" %}
 </head>
@@ -70,9 +66,6 @@
     {{ content | safe }}
   </main>
 
-  {% if showGlobalBanner %}
-  {% include "partials/mobile-banner.njk" %}
-  {% endif %}
   {% include "partials/footer.njk" %}
   {% include "partials/inquiry-form-modal.njk" %}
 
