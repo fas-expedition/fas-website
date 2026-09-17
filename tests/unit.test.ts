@@ -55,6 +55,17 @@ describe('Unit Tests: Configuration and Content Validation', () => {
     });
   });
 
+  describe('Global background logo', () => {
+    const baseLayout = readFileSync('src/_includes/layouts/base.njk', 'utf-8');
+
+    it('references an existing wolf head asset', () => {
+      const logoPath = 'assets/downloads/Logos/halber Wolfskopf-1.svg';
+
+      expect(baseLayout).toContain(`/${logoPath}`);
+      expect(existsSync(`src/${logoPath}`)).toBe(true);
+    });
+  });
+
   describe('Navigation translations', () => {
     const navKeys = [
       'nav.home',
