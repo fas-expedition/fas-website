@@ -14,7 +14,7 @@
         {
           "name": "Andreas Böttcher",
           "qualifications": [
-            "Diploma Engineer (BA) in Production Technology"
+            "Diploma Engineer (BA), Production Technology"
           ],
           "roles": [
             "Chief Executive Officer (CEO)",
@@ -26,7 +26,7 @@
         {
           "name": "Márika Böttcher",
           "qualifications": [
-            "Diploma in Business Administration (BA) for Logistics"
+            "Diploma in Business Administration (BA), Transport & Logistics"
           ],
           "roles": [
             "Commercial Director",
@@ -48,7 +48,7 @@
         {
           "name": "Monika",
           "qualifications": [
-            "Qualified Transport Clerk"
+            "Transport Services Clerk"
           ],
           "roles": [
             "Administration"
@@ -76,7 +76,7 @@
         {
           "name": "Christine",
           "qualifications": [
-            "Diploma Designer (FH) in Product Design"
+            "Graduate Designer (FH), specializing in Product Design"
           ],
           "roles": [
             "Cabin Construction Designer"
@@ -87,7 +87,7 @@
         {
           "name": "Martin",
           "qualifications": [
-            "M.Sc. Automotive Engineering"
+            "M.Sc. Automotive Engineer"
           ],
           "roles": [
             "Engineer"
@@ -98,7 +98,7 @@
         {
           "name": "Patrick",
           "qualifications": [
-            "B.Eng. Aerospace Engineering (in progress)"
+            "Working Student, Aerospace Engineering"
           ],
           "roles": [
             "Working Student"
@@ -109,7 +109,7 @@
         {
           "name": "Jens",
           "qualifications": [
-            "Mechanical Engineering Technician"
+            "Industrial Mechanic, Production Technology"
           ],
           "roles": [
             "Engineer",
@@ -126,8 +126,8 @@
         {
           "name": "Jan",
           "qualifications": [
-            "Automotive Mechatronics Technician",
-            "Caravan Technology Specialist"
+            "Caravan Technology Specialist",
+            "Qualified Electrical Worker"
           ],
           "roles": [
             "Cabin Construction"
@@ -138,7 +138,8 @@
         {
           "name": "Harald",
           "qualifications": [
-            "All-rounder"
+            "Journeyman Chimney Sweep",
+            "Campervan Conversion"
           ],
           "roles": [
             "Cabin Construction"
@@ -149,7 +150,7 @@
         {
           "name": "Mats",
           "qualifications": [
-            "Industrial Mechanic"
+            "Industrial Mechanic, Precision Instrument Engineering"
           ],
           "roles": [
             "Cabin Construction"
@@ -160,8 +161,7 @@
         {
           "name": "Erik",
           "qualifications": [
-            "Automotive Mechatronics Technician",
-            "Commercial Vehicle Technology"
+            "Commercial Vehicle Mechatronics Technician"
           ],
           "roles": [
             "Cabin Construction"
@@ -177,8 +177,8 @@
         {
           "name": "Tobia",
           "qualifications": [
-            "Master Machinist",
-            "Industrial Mechanic"
+            "Industrial Mechanic, Machine and Systems Engineering",
+            "Master Craftsman Machinist"
           ],
           "roles": [
             "Workshop Manager Vehicle Construction"
@@ -189,8 +189,7 @@
         {
           "name": "Paul",
           "qualifications": [
-            "Metal Worker",
-            "Metal Design"
+            "Metalworker specializing in Metal Design"
           ],
           "roles": [
             "Vehicle Construction"

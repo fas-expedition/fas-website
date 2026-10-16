@@ -125,6 +125,9 @@ altSlug:
               {% if person.roles and person.roles.length > 0 %}
                 <p class="text-zinc-500 text-xs mt-1 leading-tight">{{ person.roles[0] }}</p>
               {% endif %}
+              {% if person.qualifications and person.qualifications.length > 0 %}
+                <p class="text-zinc-400 text-xs mt-1 leading-relaxed">{{ person.qualifications | join(", ") }}</p>
+              {% endif %}
               {% if person.description %}
                 <div class="team-card-desc overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out">
                   <p class="text-zinc-400 text-xs leading-relaxed mt-3 pt-3 border-t border-zinc-700">{{ person.description }}</p>

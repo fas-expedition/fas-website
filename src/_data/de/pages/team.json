@@ -14,7 +14,7 @@
         {
           "name": "Andreas Böttcher",
           "qualifications": [
-            "Diplom-Ingenieur (BA) für Produktionstechnik"
+            "Diplom Ingenieur (BA) Produktionstechnik"
           ],
           "roles": [
             "Chief Executive Officer (CEO)",
@@ -26,7 +26,7 @@
         {
           "name": "Márika Böttcher",
           "qualifications": [
-            "Diplom-Betriebswirtin (BA) für Logistik"
+            "Diplom-Betriebswirtin (BA) Business Administration of Transport & Logistics"
           ],
           "roles": [
             "Kaufmännische Leitung",
@@ -48,7 +48,7 @@
         {
           "name": "Monika",
           "qualifications": [
-            "Kauffrau für Verkehrstechnik"
+            "Kauffrau für Verkehrsservice"
           ],
           "roles": [
             "Verwaltung"
@@ -64,7 +64,7 @@
         {
           "name": "Nils",
           "qualifications": [
-            "Bachelor of Engineering (FH) für Luft- und Raumfahrttechnik",
+            "B.Eng. Luft- und Raumfahrttechnik",
             "Schweißfachingenieur"
           ],
           "roles": [
@@ -76,7 +76,7 @@
         {
           "name": "Christine",
           "qualifications": [
-            "Diplom-Designerin (FH) für Produktdesign"
+            "Diplomierte Designerin (FH) in der Fachrichtung Produktdesign"
           ],
           "roles": [
             "Konstrukteurin Wohnkabinenbau"
@@ -87,7 +87,7 @@
         {
           "name": "Martin",
           "qualifications": [
-            "Master of Science (M.Sc.) Automotive Engineering"
+            "M.Sc. Automotive Engineer"
           ],
           "roles": [
             "Konstrukteur"
@@ -98,7 +98,7 @@
         {
           "name": "Patrick",
           "qualifications": [
-            "angehender Bachelor of Engineering (FH) für Luft- und Raumfahrttechnik"
+            "Werkstudent Luft- und Raumfahrttechnik"
           ],
           "roles": [
             "Werkstudent"
@@ -109,7 +109,7 @@
         {
           "name": "Jens",
           "qualifications": [
-            "Maschinenbautechniker"
+            "Industriemechaniker Produktionstechnik"
           ],
           "roles": [
             "Konstrukteur",
@@ -126,8 +126,8 @@
         {
           "name": "Jan",
           "qualifications": [
-            "Kfz-Mechatroniker",
-            "Fachkraft für Caravantechnik"
+            "Fachkraft Caravantechnik",
+            "Elektrofachkraft"
           ],
           "roles": [
             "Wohnkabinenbau"
@@ -138,7 +138,8 @@
         {
           "name": "Harald",
           "qualifications": [
-            "Allrounder"
+            "Schornsteinfegergeselle",
+            "Ausbau von Kastenwagen-Wohnmobilen"
           ],
           "roles": [
             "Wohnkabinenbau"
@@ -149,7 +150,7 @@
         {
           "name": "Mats",
           "qualifications": [
-            "Industriemechaniker"
+            "Industriemechaniker im Bereich Feingerätebau"
           ],
           "roles": [
             "Wohnkabinenbau"
@@ -160,8 +161,7 @@
         {
           "name": "Erik",
           "qualifications": [
-            "Kraftfahrzeugmechatroniker",
-            "Nutzfahrzeugtechnik"
+            "Nutzfahrzeugmechatroniker"
           ],
           "roles": [
             "Wohnkabinenbau"
@@ -177,8 +177,8 @@
         {
           "name": "Tobia",
           "qualifications": [
-            "Maschinenschlosser-Meister",
-            "Industriemechaniker Maschinen- und Systemtechnik"
+            "Industriemechaniker Maschinen- und Systemtechnik",
+            "Meisterbrief Maschinenschlosser"
           ],
           "roles": [
             "Werkstattleiter Fahrzeugbau"
@@ -189,8 +189,7 @@
         {
           "name": "Paul",
           "qualifications": [
-            "Metallbauer",
-            "Metallgestaltung"
+            "Metallbauer Fachrichtung Metallgestaltung"
           ],
           "roles": [
             "Fahrzeugbau"
