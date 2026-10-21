@@ -1,0 +1,28 @@
+{% set latestPost = collections.publishedBlog[0] if locale == "de" else collections.publishedBlogEn[0] %}
+
+{% if latestPost %}
+<section class="py-16 lg:py-24 bg-zinc-950 border-t border-zinc-800">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-wider uppercase mb-8">
+      {{ "Neuester Blogbeitrag" if locale == "de" else "Latest Blog Post" }}
+    </h2>
+    <a href="{% if locale == 'en' %}/en{% endif %}/{{ latestPost.data.slug }}/" class="group grid md:grid-cols-2 border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden">
+      <div class="relative min-h-64 md:min-h-80 overflow-hidden">
+        {% if latestPost.data.image %}
+        <img src="{{ latestPost.data.image }}" alt="{{ latestPost.data.title }}" class="absolute inset-0 w-full h-full object-contain">
+        {% else %}
+        <div class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900"></div>
+        {% endif %}
+      </div>
+      <div class="p-6 lg:p-10 flex flex-col justify-center">
+        <span class="text-zinc-500 text-xs tracking-widest uppercase mb-3">{{ latestPost.data.publishDate | blogDate }}</span>
+        <h3 class="text-white text-xl lg:text-3xl font-bold tracking-wider uppercase mb-4 group-hover:text-zinc-300 transition-colors">{{ latestPost.data.title }}</h3>
+        <p class="text-zinc-400 text-sm lg:text-base leading-relaxed">{{ latestPost.data.excerpt | truncate(240, true, "...") }}</p>
+        <span class="text-white text-xs tracking-widest uppercase font-bold mt-6">
+          {{ "Weiterlesen" if locale == "de" else "Read More" }} →
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+{% endif %}

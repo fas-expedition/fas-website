@@ -243,10 +243,27 @@ describe('Unit Tests: Configuration and Content Validation', () => {
 
     it('DE home page renders 4 feature cards in HTML', () => {
       const $ = loadHtml('_site/de/index.html');
-      // Feature cards are in the features-grid section (second section on page)
-      const featureSection = $('main > section').eq(1);
+      const data = JSON.parse(readFileSync('src/_data/de/pages/home.json', 'utf-8'));
+      const featureSection = $('main > section').filter((_, section) =>
+        $(section).find('h2').first().text().trim() === data.features.title
+      ).first();
       const featureCards = featureSection.find('.grid .border.border-zinc-800');
       expect(featureCards.length).toBe(4);
+    });
+  });
+
+  describe('Latest blog post on home page', () => {
+    it('DE home page shows the latest published post with an image and text preview', () => {
+      const $ = loadHtml('_site/de/index.html');
+      const section = $('main > section').filter((_, element) =>
+        $(element).find('h2').first().text().trim() === 'Neuester Blogbeitrag'
+      ).first();
+      const preview = section.find('a').first();
+
+      expect(preview.attr('href')).toBe('/fas-expedition-rhoen-camp-das-beste-aus-zwei-welten/');
+      expect(preview.find('img').length).toBe(1);
+      expect(preview.text()).toContain('FAS Expedition × RHÖN CAMP – Das Beste aus zwei Welten');
+      expect(preview.text()).toContain('FAS Expedition und RHÖN CAMP bündeln Fahrzeug- und Interieurkonzeption');
     });
   });
 
