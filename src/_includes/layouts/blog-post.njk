@@ -10,11 +10,7 @@
   {% endif %}
   <meta property="og:title" content="{{ title | truncate(60, true, '...') }}">
   <meta property="og:description" content="{{ excerpt | truncate(160, true, '...') if excerpt else content | striptags | truncate(160, true, '...') }}">
-  <meta property="og:locale" content="{{ 'de_DE' if locale == 'de' else 'en_GB' }}">
-  <link rel="canonical" href="{{ site.url }}{% if locale == 'en' %}/en{% endif %}/{{ slug }}/">
-  <link rel="alternate" hreflang="de" href="{{ site.url }}/{{ slug }}">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ slug }}">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ slug }}">
+  {% include "partials/language-metadata.njk" %}
   <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -35,13 +31,13 @@
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
           </svg>
-          <span>{{ "Zurück zum Blog" if locale == "de" else "Back to Blog" }}</span>
+          <span>{{ blogUi[locale].back }}</span>
         </a>
         <div class="flex items-center space-x-4 mb-4">
-          {% if category %}
-          <span class="bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">{{ category }}</span>
+          {% if category or categories.length %}
+          <span class="bg-white/10 backdrop-blur-sm text-white text-xs tracking-widest uppercase px-3 py-1 font-bold">{{ categories[0] if categories.length else category }}</span>
           {% endif %}
-          <span class="text-zinc-400 text-sm">{{ publishDate | blogDate }}</span>
+          <span class="text-zinc-400 text-sm">{{ publishDate | blogDate(locale) }}</span>
           {% if author %}
           <span class="text-zinc-400 text-sm">· {{ author }}</span>
           {% endif %}
@@ -53,7 +49,7 @@
     {# Article Content #}
     <article class="py-16 lg:py-24">
       <div class="max-w-3xl mx-auto px-6 lg:px-12 prose prose-invert prose-lg prose-headings:tracking-wider prose-headings:uppercase prose-headings:font-bold prose-a:text-white prose-a:underline hover:prose-a:text-zinc-300 prose-img:rounded prose-img:border prose-img:border-zinc-800">
-        {{ content | addSectionGalleries(sectionGalleries) | safe }}
+        {{ content | addSectionGalleries(sectionGalleries, locale) | safe }}
       </div>
     </article>
 
@@ -137,6 +133,7 @@
       if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', function() {
           mobileMenu.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
         });
       }
     })();

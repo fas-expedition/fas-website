@@ -26,7 +26,8 @@
     const pageH = doc.internal.pageSize.getHeight();
     const margin = 18;
     const contentW = pageW - margin * 2;
-    const isDE = locale === 'de';
+    const tr = (de, en, es, fr) => ({ de, en, es, fr }[locale] || en);
+    const localeTag = { de: 'de-DE', en: 'en-GB', es: 'es-ES', fr: 'fr-FR' }[locale] || 'en-GB';
 
     let y = 0;
 
@@ -100,7 +101,9 @@
     const cb = (prefix) =>
       (formData.checkboxes || [])
         .filter((c) => c.name.startsWith(prefix))
-        .map((c) => c.value);
+        .map((c) => c.label || c.value);
+    const displayValue = (field) =>
+      (formData.localized_values && formData.localized_values[field]) || formData[field];
 
     // ─── HEADER ──────────────────────────────────────────────────────────────
     doc.setFillColor(0, 0, 0);
@@ -112,7 +115,7 @@
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8.5);
     doc.text(
-      isDE ? 'Kundenanfrage – Intern / Vertraulich' : 'Customer Inquiry – Internal / Confidential',
+      tr('Kundenanfrage – Intern / Vertraulich', 'Customer Inquiry – Internal / Confidential', 'Solicitud del cliente – Interno / Confidencial', 'Demande client – Interne / Confidentiel'),
       pageW / 2,
       24,
       { align: 'center' }
@@ -125,33 +128,33 @@
     doc.setFontSize(7.5);
     doc.setTextColor(110, 110, 110);
     const now = new Date();
-    const dateStr = now.toLocaleDateString(isDE ? 'de-DE' : 'en-GB', {
+    const dateStr = now.toLocaleDateString(localeTag, {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     });
-    const timeStr = now.toLocaleTimeString(isDE ? 'de-DE' : 'en-GB', {
+    const timeStr = now.toLocaleTimeString(localeTag, {
       hour: '2-digit',
       minute: '2-digit',
     });
     const ref = `REF-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
-    doc.text(`${isDE ? 'Datum' : 'Date'}: ${dateStr}, ${timeStr}`, margin, y);
-    doc.text(`${isDE ? 'Ref' : 'Ref'}: ${ref}`, pageW - margin, y, { align: 'right' });
+    doc.text(`${tr('Datum', 'Date', 'Fecha', 'Date')}: ${dateStr}, ${timeStr}`, margin, y);
+    doc.text(`${tr('Referenz', 'Reference', 'Referencia', 'Référence')}: ${ref}`, pageW - margin, y, { align: 'right' });
     y += 10;
 
     // ─── KUNDENDATEN ─────────────────────────────────────────────────────────
-    sectionHeader(isDE ? 'Kundendaten' : 'Customer Information');
-    row(isDE ? 'Name' : 'Name', formData.name);
-    row(isDE ? 'Straße' : 'Street', formData.street);
-    row(isDE ? 'PLZ / Ort' : 'Postal / City', formData.postal);
-    row(isDE ? 'Land' : 'Country', formData.country);
+    sectionHeader(tr('Kundendaten', 'Customer Information', 'Datos del cliente', 'Coordonnées du client'));
+    row('Name', formData.name);
+    row(tr('Straße', 'Street', 'Calle', 'Rue'), formData.street);
+    row(tr('PLZ / Ort', 'Postal / City', 'Código postal / Ciudad', 'Code postal / Ville'), formData.postal);
+    row(tr('Land', 'Country', 'País', 'Pays'), formData.country);
     row('E-Mail', formData.email);
-    row(isDE ? 'Telefon' : 'Phone', formData.phone);
+    row(tr('Telefon', 'Phone', 'Teléfono', 'Téléphone'), formData.phone);
     spacer(4);
 
     // ─── NACHRICHT ───────────────────────────────────────────────────────────
     if (formData.message) {
-      sectionHeader(isDE ? 'Nachricht des Kunden' : 'Customer Message');
+      sectionHeader(tr('Nachricht des Kunden', 'Customer Message', 'Mensaje del cliente', 'Message du client'));
       doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(0, 0, 0);
@@ -172,21 +175,19 @@
       formData.energy_battery_capacity;
 
     if (hasVehicleData) {
-      sectionHeader(isDE ? 'Fahrzeugkonfiguration' : 'Vehicle Configuration');
+      sectionHeader(tr('Fahrzeugkonfiguration', 'Vehicle Configuration', 'Configuración del vehículo', 'Configuration du véhicule'));
 
       // ── Basisfahrzeug ──
       const basisCB = cb('details_basisfahrzeug');
       if (formData.base_vehicle_model || formData.base_vehicle_custom || basisCB.length) {
-        subHeader(isDE ? 'Basisfahrzeug' : 'Base Vehicle');
+        subHeader(tr('Basisfahrzeug', 'Base Vehicle', 'Vehículo base', 'Véhicule de base'));
         const modelVal =
           formData.base_vehicle_model === 'anderes Fahrgestell'
-            ? isDE
-              ? 'Anderes Fahrgestell'
-              : 'Other Chassis'
-            : formData.base_vehicle_model;
-        row(isDE ? 'Modell' : 'Model', modelVal);
+            ? tr('Anderes Fahrgestell', 'Other Chassis', 'Otro chasis', 'Autre châssis')
+            : displayValue('base_vehicle_model');
+        row(tr('Modell', 'Model', 'Modelo', 'Modèle'), modelVal);
         if (formData.base_vehicle_custom)
-          row(isDE ? 'Angabe' : 'Specification', formData.base_vehicle_custom);
+          row(tr('Angabe', 'Specification', 'Especificación', 'Précision'), formData.base_vehicle_custom);
         basisCB.forEach((v) => bullet(v));
         spacer(4);
       }
@@ -203,39 +204,39 @@
       const leerkabineCB = cb('details_leerkabine');
 
       if (leerkabineHasValues || stauklappenCB.length || leerkabineCB.length) {
-        subHeader(isDE ? 'Leerkabine' : 'Bare Cabin');
+        subHeader(tr('Leerkabine', 'Bare Cabin', 'Cabina sin equipar', 'Cellule nue'));
         const dims = [
           formData.bare_cabin_length,
           formData.bare_cabin_width,
           formData.bare_cabin_height,
         ].filter(Boolean);
         if (dims.length)
-          row(isDE ? 'Maße (L × B × H)' : 'Dimensions (L × W × H)', dims.join(' × ') + ' m');
-        row(isDE ? 'Lackierung' : 'Paintwork', formData.bare_cabin_paintwork);
-        row(isDE ? 'Farbbezeichnung/-code' : 'Color Name/Code', formData.bare_cabin_color_code);
-        row(isDE ? 'Treppe' : 'Staircase', formData.bare_cabin_treppe);
-        row(isDE ? 'Tür' : 'Door', formData.bare_cabin_tuer);
+          row(tr('Maße (L × B × H)', 'Dimensions (L × W × H)', 'Dimensiones (L × A × A)', 'Dimensions (L × l × h)'), dims.join(' × ') + ' m');
+        row(tr('Lackierung', 'Paintwork', 'Pintura', 'Peinture'), displayValue('bare_cabin_paintwork'));
+        row(tr('Farbbezeichnung/-code', 'Color Name/Code', 'Nombre/código del color', 'Nom/code couleur'), formData.bare_cabin_color_code);
+        row(tr('Treppe', 'Staircase', 'Escalera', 'Escalier'), displayValue('bare_cabin_treppe'));
+        row(tr('Tür', 'Door', 'Puerta', 'Porte'), displayValue('bare_cabin_tuer'));
         if (formData.side_window_klein)
-          row(isDE ? 'Seitenfenster klein (Stk.)' : 'Side windows small (qty)', formData.side_window_klein);
+          row(tr('Seitenfenster klein (Stk.)', 'Side windows small (qty)', 'Ventanas laterales pequeñas (unid.)', 'Petites fenêtres latérales (qté)'), formData.side_window_klein);
         if (formData.side_window_gross)
-          row(isDE ? 'Seitenfenster groß (Stk.)' : 'Side windows large (qty)', formData.side_window_gross);
+          row(tr('Seitenfenster groß (Stk.)', 'Side windows large (qty)', 'Ventanas laterales grandes (unid.)', 'Grandes fenêtres latérales (qté)'), formData.side_window_gross);
         if (formData.side_window_panorama)
-          row(isDE ? 'Seitenfenster Panorama (Stk.)' : 'Panorama side windows (qty)', formData.side_window_panorama);
+          row(tr('Seitenfenster Panorama (Stk.)', 'Panorama side windows (qty)', 'Ventanas panorámicas laterales (unid.)', 'Fenêtres latérales panoramiques (qté)'), formData.side_window_panorama);
         if (formData.roof_window_klein)
-          row(isDE ? 'Dachfenster klein (Stk.)' : 'Roof windows small (qty)', formData.roof_window_klein);
+          row(tr('Dachfenster klein (Stk.)', 'Roof windows small (qty)', 'Ventanas de techo pequeñas (unid.)', 'Petites fenêtres de toit (qté)'), formData.roof_window_klein);
         if (formData.roof_window_gross)
-          row(isDE ? 'Dachfenster groß (Stk.)' : 'Roof windows large (qty)', formData.roof_window_gross);
+          row(tr('Dachfenster groß (Stk.)', 'Roof windows large (qty)', 'Ventanas de techo grandes (unid.)', 'Grandes fenêtres de toit (qté)'), formData.roof_window_gross);
         stauklappenCB.forEach((v) => bullet(v));
         leerkabineCB.forEach((v) => bullet(v));
         if (formData.bare_cabin_special_items)
-          row(isDE ? 'Besondere Utensilien / Maße' : 'Special Equipment / Dimensions', formData.bare_cabin_special_items);
+          row(tr('Besondere Utensilien / Maße', 'Special Equipment / Dimensions', 'Equipamiento especial / dimensiones', 'Équipements spéciaux / dimensions'), formData.bare_cabin_special_items);
         spacer(4);
       }
 
       // ── Schnittstellen ──
       const schnittCB = cb('details_schnittstellen');
       if (schnittCB.length) {
-        subHeader(isDE ? 'Schnittstellen Fahrzeug / Wohnkabine' : 'Vehicle / Cabin Interfaces');
+        subHeader(tr('Schnittstellen Fahrzeug / Wohnkabine', 'Vehicle / Cabin Interfaces', 'Conexiones entre vehículo y cabina', 'Interfaces véhicule / cellule'));
         schnittCB.forEach((v) => bullet(v));
         spacer(4);
       }
@@ -259,20 +260,20 @@
       ];
 
       if (innenFields || innenCB.length) {
-        subHeader(isDE ? 'Innenausbau' : 'Interior');
+        subHeader(tr('Innenausbau', 'Interior', 'Interior', 'Aménagement intérieur'));
         // Energy
-        row(isDE ? 'Batteriekapazität' : 'Battery Capacity', formData.energy_battery_capacity);
+        row(tr('Batteriekapazität', 'Battery Capacity', 'Capacidad de la batería', 'Capacité de la batterie'), formData.energy_battery_capacity);
         // Water
-        row(isDE ? 'Wasserkapazität' : 'Water Capacity', formData.water_tank_capacity);
+        row(tr('Wasserkapazität', 'Water Capacity', 'Capacidad de agua', 'Capacité en eau'), formData.water_tank_capacity);
         // Climate
-        row(isDE ? 'Heizmodell' : 'Heating Model', formData.climate_heating_model);
-        row(isDE ? 'Klimaanlage' : 'Air Conditioning', formData.climate_air_conditioning);
+        row(tr('Heizmodell', 'Heating Model', 'Modelo de calefacción', 'Modèle de chauffage'), displayValue('climate_heating_model'));
+        row(tr('Klimaanlage', 'Air Conditioning', 'Aire acondicionado', 'Climatisation'), displayValue('climate_air_conditioning'));
         // Cooling
-        row(isDE ? 'Kühltyp' : 'Cooling Type', formData.cooling_type);
-        row(isDE ? 'Gefrier-Option' : 'Freezer Option', formData.cooling_freezer_option);
+        row(tr('Kühltyp', 'Cooling Type', 'Tipo de refrigeración', 'Type de réfrigération'), displayValue('cooling_type'));
+        row(tr('Gefrier-Option', 'Freezer Option', 'Opción de congelador', 'Option congélateur'), displayValue('cooling_freezer_option'));
         // Shower/WC
-        row(isDE ? 'Nasszelle Typ' : 'Wet Room Type', formData.shower_wc_type);
-        row(isDE ? 'Toiletten Typ' : 'Toilet Type', formData.shower_wc_toilet_type);
+        row(tr('Nasszelle Typ', 'Wet Room Type', 'Tipo de baño', 'Type de salle d’eau'), displayValue('shower_wc_type'));
+        row(tr('Toiletten Typ', 'Toilet Type', 'Tipo de inodoro', 'Type de toilettes'), displayValue('shower_wc_toilet_type'));
         // Checkboxes
         innenCB.forEach((v) => bullet(v));
         spacer(4);
@@ -281,7 +282,7 @@
       // ── Zusatzausstattung ──
       const zusatzCB = [...cb('details_zusatz'), ...cb('garagen_')];
       if (zusatzCB.length) {
-        subHeader(isDE ? 'Zusatzausstattung' : 'Additional Equipment');
+        subHeader(tr('Zusatzausstattung', 'Additional Equipment', 'Equipamiento adicional', 'Équipements supplémentaires'));
         zusatzCB.forEach((v) => bullet(v));
         spacer(4);
       }
@@ -289,7 +290,7 @@
 
     // ─── SPEZIELLE WÜNSCHE ───────────────────────────────────────────────────
     if (formData.special_wishes) {
-      sectionHeader(isDE ? 'Spezielle Kundenwünsche' : 'Special Customer Requests');
+      sectionHeader(tr('Spezielle Kundenwünsche', 'Special Customer Requests', 'Peticiones especiales', 'Demandes particulières'));
       doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(0, 0, 0);
@@ -308,9 +309,12 @@
       doc.setFontSize(6.5);
       doc.setTextColor(160, 160, 160);
       doc.text(
-        isDE
-          ? 'Vertraulich – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de'
-          : 'Confidential – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de',
+        tr(
+          'Vertraulich – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de',
+          'Confidential – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de',
+          'Confidencial – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de',
+          'Confidentiel – FAS Expedition GmbH – Trafoweg 2-4, 52152 Lammersdorf – info@fas-expedition.de'
+        ),
         pageW / 2,
         pageH - 6,
         { align: 'center' }
@@ -319,9 +323,8 @@
     }
 
     // ─── Export ──────────────────────────────────────────────────────────────
-    const filename = isDE
-      ? `FAS-Expedition-Anfrage-${now.toISOString().slice(0, 10)}.pdf`
-      : `FAS-Expedition-Inquiry-${now.toISOString().slice(0, 10)}.pdf`;
+    const inquiryLabel = { de: 'Anfrage', en: 'Inquiry', es: 'Solicitud', fr: 'Demande' }[locale] || 'Inquiry';
+    const filename = `FAS-Expedition-${inquiryLabel}-${now.toISOString().slice(0, 10)}.pdf`;
 
     const dataUri = doc.output('datauristring');
     const base64 = dataUri.split(',')[1];

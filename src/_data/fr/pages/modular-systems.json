@@ -1,0 +1,108 @@
+{
+  "pageTitle": "Systèmes modulaires",
+  "pageDescription": "Systèmes porte-charges arrière modulaires FAS : des plateformes et modules interchangeables pour équiper votre véhicule selon chaque expédition.",
+  "altSlug": {
+    "de": "modulare-systeme",
+    "en": "modular-systems",
+    "es": "modular-systems",
+    "fr": "modular-systems"
+  },
+  "hero": {
+    "title": "Modules d’origine FAS pour véhicules",
+    "subtitle": "Une ingénierie interne pour une qualité maximale",
+    "image": "/assets/images/vehicles/modular-hero.svg"
+  },
+  "overview": {
+    "title": "Porte-charges XL. Un système, des possibilités infinies.",
+    "description": "Le module de base FAS permet de monter rapidement différentes plateformes et extensions. Chaque module se remplace en peu de temps, idéal pour s’adapter aux besoins de chaque voyage.",
+    "features": [
+      "Différentes dimensions de plateformes (660/1010/1400 mm)",
+      "Support pour deux roues de secours maximum",
+      "Treuil intégré à la structure",
+      "Commande à distance pratique",
+      "Compatible uniquement avec notre protection anti-encastrement FAS selon ECE R58.3",
+      "Homologué TÜV et autorisé sur route",
+      "Acier galvanisé et thermolaqué"
+    ],
+    "ctaText": "Demander des informations",
+    "ctaUrl": "#inquiry-form"
+  },
+  "stats": [
+    {
+      "label": "Modulares Raster",
+      "value": "200 × 200 mm",
+      "description": "Standardisiertes Rastmaß"
+    },
+    {
+      "label": "Sicherheitsverriegelung",
+      "value": "4-Punkt",
+      "description": "Patentiertes Verschlusssystem"
+    },
+    {
+      "label": "Tragfähigkeit",
+      "value": "Bis zu 875 kg",
+      "description": "Maximale Systemlast"
+    },
+    {
+      "label": "Module",
+      "value": "20+",
+      "description": "Verfügbare Ausstattungsmodule"
+    }
+  ],
+  "modules": {
+    "title": "Extensions disponibles",
+    "subtitle": "Des modules adaptés à chaque besoin.",
+    "items": [
+      {
+        "title": "Plateformes interchangeables",
+        "description": "Différentes dimensions de plateformes interchangeables : 660/1010/1400 mm. Largeur de 2100 mm avec grille perforée pour installer des accessoires en toute flexibilité.",
+        "image": "/assets/images/modules/Plattformen in verschiedenen Größen.png"
+      },
+      {
+        "title": "Plateforme pliante sectionnelle",
+        "description": "La solution la plus flexible, sans changer de plateforme.",
+        "image": "/assets/images/modules/Sektionale Klappplattform.png"
+      },
+      {
+        "title": "Extension pour moto",
+        "description": "Permet de transporter des motos en toute sécurité sur le porte-charges arrière. Construction robuste et fixation simple.",
+        "image": "/assets/images/modules/Motorradschiene neu ohne Halter.png"
+      },
+      {
+        "title": "Extension pour quad",
+        "description": "Permet de transporter un quad en toute sécurité sur le porte-charges arrière. Préparation incluse pour fixer la roue de secours sous la plateforme.",
+        "image": "/assets/images/modules/HT XL Quad Erweiterung.png"
+      }
+    ]
+  },
+  "featuredSection": {
+    "title": "Plateforme coulissante FAS",
+    "description": "Emportez votre terrasse partout avec vous. La plateforme coulissante FAS vous permet de vous détendre et de profiter de la vue.",
+    "features": [
+      "Déploiement et rétraction entièrement automatiques",
+      "Détection des obstacles par capteurs",
+      "Déploiement en deux parties pour une flexibilité maximale",
+      "Surface antidérapante et résistante de qualité nautique",
+      "Intégration directe au faux-châssis intermédiaire FAS d’origine",
+      "Profitez de l’extérieur quel que soit le terrain."
+    ],
+    "image": "/assets/images/modules/Auszugplattform Studio.png",
+    "ctaText": "Demander des informations",
+    "ctaUrl": "#inquiry-form"
+  },
+  "additionalSection": {
+    "title": "Escalier-coffre FAS",
+    "description": "Version électrique pour un accès latéral confortable.",
+    "features": [
+      "Conception compacte pour les espaces restreints",
+      "Construction robuste pour une sécurité maximale",
+      "Surface antidérapante et résistante de qualité nautique",
+      "Commande facile par bouton ou télécommande",
+      "Éclairage intégré aux marches pour une meilleure visibilité",
+      "Également disponible en version manuelle"
+    ],
+    "image": "/assets/images/modules/Staukastentreppe seitlich Studio.png",
+    "ctaText": "Demander des informations",
+    "ctaUrl": "#inquiry-form"
+  }
+}

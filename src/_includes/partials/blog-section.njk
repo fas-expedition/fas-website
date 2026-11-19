@@ -1,5 +1,5 @@
 {# Homepage Blog Section #}
-{% set posts = collections.publishedBlog %}
+{% set labels = blogUi[locale] %}
 
 {% if posts | length > 0 %}
 <section class="py-24 lg:py-32 bg-zinc-950">
@@ -7,13 +7,13 @@
     {# Section Heading #}
     <div class="text-center mb-16">
       <h2 class="text-3xl lg:text-5xl font-bold tracking-wider uppercase mb-4">Blog</h2>
-      <p class="text-xl text-zinc-300">Aktuelle Neuigkeiten und Expeditionsberichte</p>
+      <p class="text-xl text-zinc-300">{{ labels.homeSubtitle or labels.subtitle }}</p>
     </div>
 
     {# Blog Cards Grid #}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="homepage-blog-grid">
       {% for post in posts %}
-      <a href="/{{ post.data.slug }}/" class="homepage-blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden {% if loop.index > 3 %}hidden{% endif %}">
+      <a href="{{ post.url }}" class="homepage-blog-card group block border border-zinc-800 hover:border-zinc-600 transition-colors overflow-hidden {% if loop.index > 3 %}hidden{% endif %}">
         {# Image #}
         <div class="relative h-48 overflow-hidden">
           {% if post.data.image %}
@@ -27,7 +27,7 @@
         </div>
         {# Content #}
         <div class="p-6">
-          <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-2">{{ post.data.publishDate | blogDate }}</span>
+          <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-2">{{ post.data.publishDate | blogDate(locale) }}</span>
           <h3 class="text-white text-sm font-bold tracking-widest uppercase mb-2 group-hover:text-zinc-300 transition-colors">{{ post.data.title }}</h3>
           <p class="text-zinc-400 text-sm leading-relaxed">{{ post.data.excerpt | truncate(150, true, "...") }}</p>
         </div>
@@ -39,7 +39,7 @@
     {% if posts | length > 3 %}
     <div class="text-center mt-12" id="load-more-container">
       <button id="load-more-btn" class="inline-flex items-center space-x-3 border border-zinc-700 hover:bg-white hover:text-black px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all">
-        <span>Weitere Beiträge</span>
+        <span>{{ labels.morePosts }}</span>
       </button>
     </div>
     {% endif %}

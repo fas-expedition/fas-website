@@ -60,7 +60,44 @@ describe('Integration Tests: Build Pipeline', () => {
       const content = readFileSync(sitemapPath, 'utf-8');
       expect(content).toContain('hreflang="de"');
       expect(content).toContain('hreflang="en"');
+      expect(content).toContain('hreflang="es"');
+      expect(content).toContain('hreflang="fr"');
       expect(content).toContain('hreflang="x-default"');
+    });
+
+    it('serves the equivalent page in all four languages from either menu', () => {
+      const equivalents = {
+        de: '/de/modulare-systeme/',
+        en: '/en/modular-systems/',
+        es: '/es/modular-systems/',
+        fr: '/fr/modular-systems/',
+      };
+      for (const [locale, url] of Object.entries(equivalents)) {
+        const $ = loadHtml(`_site${url}index.html`);
+        expect($('html').attr('lang')).toBe(locale);
+        for (const [language, target] of Object.entries(equivalents)) {
+          expect($(`nav a[hreflang="${language}"][href="${target}"]`)).toHaveLength(2);
+          expect($(`head link[hreflang="${language}"]`).attr('href')).toBe(`https://fas-expedition.de${target}`);
+        }
+      }
+    });
+
+    it('renders every existing blog article and keeps article-level language links', () => {
+      const germanFiles = globSync('src/blog/de/*.md');
+      expect(germanFiles.length).toBeGreaterThan(0);
+      for (const locale of ['es', 'fr']) {
+        const $listing = loadHtml(`_site/${locale}/blog/index.html`);
+        for (const file of germanFiles) {
+          const slug = readFileSync(file, 'utf-8').match(/^slug: "([^"]+)"$/m)?.[1];
+          expect(slug, file).toBeDefined();
+          const url = `/${locale}/${slug}/`;
+          const $article = loadHtml(`_site${url}index.html`);
+          expect($article('html').attr('lang')).toBe(locale);
+          expect($article('article').text().trim().length).toBeGreaterThan(0);
+          expect($article('nav a[hreflang="de"]').first().attr('href')).toBe(`/${slug}/`);
+          expect($listing(`.blog-card[href="${url}"]`)).toHaveLength(1);
+        }
+      }
     });
 
     it('JSON data is accessible in rendered templates (text appears in HTML)', () => {

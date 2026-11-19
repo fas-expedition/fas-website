@@ -1,0 +1,44 @@
+{
+  "pageTitle": "Contacto",
+  "pageDescription": "FAS Expedition: ponte en contacto con nosotros. Estaremos encantados de asesorarte sobre tu proyecto de vehículo de expedición.",
+  "hero": { "title": "Contacto", "subtitle": "Esperamos tu consulta" },
+  "form": {
+    "title": "Tu mensaje",
+    "intro": "¿Tienes preguntas sobre nuestros productos o servicios? Rellena el formulario de contacto y te responderemos lo antes posible.",
+    "honeypot": "No rellenar:",
+    "name": "Nombre *",
+    "namePlaceholder": "Nombre y apellidos",
+    "email": "Correo electrónico *",
+    "emailPlaceholder": "tu@correo.com",
+    "phone": "Teléfono",
+    "file": "Adjuntar archivos",
+    "message": "Tu mensaje *",
+    "messagePlaceholder": "Describe tu consulta…",
+    "submit": "Enviar mensaje"
+  },
+  "details": {
+    "title": "Datos de contacto",
+    "phoneLabel": "Teléfono",
+    "phone": "+49 (0) 2473 929 3422",
+    "emailLabel": "Correo electrónico",
+    "email": "info@fas-expedition.de",
+    "addressLabel": "Dirección",
+    "company": "FAS Expedition GmbH",
+    "address": ["Trafoweg 2-4", "52152 Lammersdorf", "Alemania"],
+    "visitLabel": "Visítanos",
+    "visitText": "¿Te gustaría visitarnos? ¡Por supuesto! Reserva una cita."
+  },
+  "legal": {
+    "title": "Aviso legal",
+    "responsible": "Responsable del contenido",
+    "representative": "Representada por el director gerente:",
+    "managingDirector": "Ingeniero titulado Andreas Böttcher",
+    "contact": "Contacto",
+    "register": "Registro mercantil",
+    "registerValue": "Amtsgericht Aachen, HRB 24436",
+    "disclaimer": "Exención de responsabilidad",
+    "disclaimerText": "Los contenidos de este sitio web se han creado con el máximo cuidado y según nuestro leal saber y entender. No obstante, el titular de este sitio web no asume responsabilidad alguna por la actualidad, integridad o exactitud de las páginas y los contenidos ofrecidos.",
+    "vat": "N.º de identificación fiscal (IVA)",
+    "vatValue": "DE340249521"
+  }
+}

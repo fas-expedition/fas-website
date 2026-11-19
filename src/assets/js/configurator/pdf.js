@@ -5,7 +5,7 @@
  * Dynamically imports jsPDF only when called.
  * @param {Object} state - Current configurator state
  * @param {Object} productData - The product data object
- * @param {string} locale - Current locale ('de' or 'en')
+ * @param {string} locale - Current locale
  * @param {Object} uiStrings - Locale-specific UI strings
  */
 export async function generatePDF(state, productData, locale, uiStrings) {
@@ -32,10 +32,10 @@ export async function generatePDF(state, productData, locale, uiStrings) {
   // Date formatted by locale
   doc.setTextColor(100, 100, 100);
   doc.setFontSize(9);
-  const dateStr = new Date().toLocaleDateString(
-    locale === 'de' ? 'de-DE' : 'en-GB',
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
+  const localeTag = { de: 'de-DE', en: 'en-GB', es: 'es-ES', fr: 'fr-FR' }[locale] || 'en-GB';
+  const dateStr = new Date().toLocaleDateString(localeTag, {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
   doc.text(`${uiStrings['pdf.date']}: ${dateStr}`, 20, y);
   y += 15;
 
@@ -50,7 +50,7 @@ export async function generatePDF(state, productData, locale, uiStrings) {
   function getOptionName(collection, id) {
     const item = collection.find(opt => opt.id === id);
     if (!item) return id;
-    return item.name[locale] || item.name.de || id;
+    return item.name[locale] || item.name.en || item.name.de || id;
   }
 
   const selections = state.selections || state;
@@ -131,8 +131,12 @@ export async function generatePDF(state, productData, locale, uiStrings) {
   });
 
   // Save with locale-appropriate filename
-  const filename = locale === 'de'
-    ? `FAS-Expedition-Konfiguration-${Date.now()}.pdf`
-    : `FAS-Expedition-Configuration-${Date.now()}.pdf`;
+  const localizedFilename = {
+    de: 'Konfiguration',
+    en: 'Configuration',
+    es: 'Configuracion',
+    fr: 'Configuration',
+  }[locale] || 'Configuration';
+  const filename = `FAS-Expedition-${localizedFilename}-${Date.now()}.pdf`;
   doc.save(filename);
 }

@@ -1,0 +1,33 @@
+{
+  "pageTitle": "À propos",
+  "pageDescription": "FAS Expedition, spécialiste des véhicules d’expédition sur mesure, de la construction automobile et des cellules habitables.",
+  "hero": { "title": "À propos", "subtitle": "Spécialistes des véhicules d’expédition" },
+  "intro": {
+    "title": "Qui sommes-nous ? FAS Expedition",
+    "tagline": "L’aventure commence là où les solutions standard s’arrêtent.",
+    "body": "Un véhicule d’expédition est bien plus qu’un véhicule. C’est le fondement de l’aventure et de l’autonomie, ainsi que l’assurance de pouvoir atteindre en toute sécurité les endroits les plus reculés de la planète. C’est pourquoi FAS Expedition conçoit et construit des véhicules d’expédition haut de gamme, sans compromis, pour les conditions les plus extrêmes. Nous réunissons expertise en ingénierie, savoir-faire artisanal de qualité et passion du voyage dans un concept complet qui va bien au-delà de la construction automobile classique."
+  },
+  "sections": [
+    { "title": "Notre vision", "paragraphs": ["Nous ouvrons la voie à une liberté sans limites, loin des sentiers battus. Nos véhicules d’expédition haut de gamme sont le point de départ d’aventures inoubliables, quels que soient le terrain, le climat ou la distance. Notre équipe associe son goût du camping, de la technologie et des voyages au long cours à des années d’expérience dans la construction automobile. Cette passion se retrouve dans chaque détail de nos véhicules."] },
+    { "title": "Notre mission", "paragraphs": ["Nous concevons et construisons des véhicules d’expédition personnalisés selon les plus hauts standards de qualité. Nous allions excellence technique, passion du voyage et fonctionnalité sans compromis. Chaque véhicule est entièrement conçu et étudié sur le plan technique avant le début de la production : la qualité ne doit rien au hasard, elle est le fruit d’une planification rigoureuse."] },
+    { "title": "Bien plus que la construction automobile", "paragraphs": ["Nous ne nous contentons pas de construire des véhicules d’expédition : nous développons des systèmes complets et cohérents. Mobilier, alimentation électrique, gestion de l’eau, chauffage, climatisation et technologie du véhicule sont coordonnés dès le départ. Nous accordons également une importance particulière à une documentation très complète. Elle apporte de la transparence, facilite l’entretien et les réparations et aide nos clients à comprendre et à utiliser leur véhicule de manière optimale partout dans le monde."] },
+    { "title": "La qualité dans les moindres détails", "paragraphs": ["Pour nous, le haut de gamme ne se résume pas à des matériaux de qualité. Il se remarque dans la précision du mobilier, le choix attentif des surfaces et une finition conçue pour durer. Les détails invisibles comptent tout autant : installations électriques bien pensées, batteries performantes, traitement moderne de l’eau, chauffage et climatisation intelligents, infrastructure technique fiable partout dans le monde. Nos clients nous confient leurs aventures ; nous répondons à cette confiance par le plus grand soin et un engagement sans compromis en faveur de la qualité."] },
+    { "title": "Nos valeurs", "intro": "Notre culture d’entreprise repose sur des convictions qui guident notre travail au quotidien.", "values": [
+      { "title": "Liberté et aventure", "text": "Nous partageons la passion de découvrir de nouveaux horizons." },
+      { "title": "Qualité et précision", "text": "Chaque détail est étudié avec soin et conçu pour durer." },
+      { "title": "Innovation et initiative", "text": "Notre jeune équipe fait émerger des idées et prend ses responsabilités." },
+      { "title": "Ouverture et confiance", "text": "Une hiérarchie horizontale, une communication sincère et le respect mutuel favorisent l’émergence de bonnes solutions." },
+      { "title": "Flexibilité et autonomie", "text": "Le travail autonome et les modes de travail flexibles vont de soi chez nous." }
+    ] },
+    { "title": "Les personnes font la différence", "paragraphs": ["Derrière chaque véhicule d’expédition, il y a une équipe qui travaille avec passion. Nous sommes convaincus que les meilleurs résultats naissent du plaisir à bien faire son travail. C’est pourquoi nous proposons un environnement moderne, des avantages personnalisés et une culture d’entreprise où l’engagement est reconnu et valorisé.", "Nos collaborateurs développent continuellement leurs compétences et contribuent activement à nos produits. Ce mélange d’expertise, de créativité et d’enthousiasme rend chaque véhicule FAS unique."] },
+    { "title": "Pourquoi un loup orne notre logo", "paragraphs": ["Beaucoup de clients nous demandent ce que signifie notre logo.", "Le loup symbolise depuis toujours les grands espaces, l’endurance, la résilience et l’indépendance : des qualités qui caractérisent également nos véhicules d’expédition. Ils permettent de voyager en autonomie sur de longues distances, avec une grande portée et de réelles capacités tout-terrain, pour atteindre en toute sécurité les régions les plus reculées du monde.", "Le loup a aussi une signification très personnelle pour nous : notre entreprise se trouve au bord des Hautes Fagnes (Hohes Venn), une réserve naturelle transfrontalière et une zone réputée de protection du loup, à la frontière entre l’Allemagne et la Belgique. Notre attachement à ce paysage unique et à son animal emblématique a naturellement inspiré notre logo.", "Le loup symbolise donc à la fois l’aventure et notre région."] },
+    { "title": "Pensé pour celles et ceux qui voient plus loin", "paragraphs": ["Grâce à une excellence technique de premier ordre, un savoir-faire artisanal précis et une véritable passion, nous concevons des véhicules d’expédition fiables partout dans le monde, qui permettent à leurs propriétaires de vivre l’essentiel du voyage :"], "highlight": "Une liberté sans limites." }
+  ],
+  "teamHeading": "Rencontrez notre équipe",
+  "teamIntro": "Presque tous les membres de notre équipe ont attrapé le virus du camping et du voyage.",
+  "services": [
+    { "title": "Construction automobile", "text": "Modifications de châssis, faux-châssis, allongements d’empattement, systèmes de réservoirs et béquilles de nivellement : tout ce qu’il faut pour faire de votre véhicule un véritable compagnon de voyage autour du monde." },
+    { "title": "Construction de cellules", "text": "Des cellules innovantes aux intérieurs façonnés avec soin, conçues pour tous les niveaux de conduite tout-terrain." },
+    { "title": "Service", "text": "Contrôle et entretien du véhicule, conseil sur les équipements de désensablement et demandes de modification : pour tous les propriétaires de véhicules d’expédition." }
+  ]
+}

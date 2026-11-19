@@ -1,0 +1,15 @@
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% for language in site.locales %}
+  {% if alternateUrls[language] %}
+    <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}{{ alternateUrls[language] }}">
+  {% endif %}
+{% endfor %}
+{% if alternateUrls[site.defaultLocale] %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ alternateUrls[site.defaultLocale] }}">
+{% endif %}
+<meta property="og:locale" content="{{ site.regionalLocales[locale] | replace('-', '_') }}">
+{% for language in site.locales %}
+  {% if language != locale and alternateUrls[language] %}
+    <meta property="og:locale:alternate" content="{{ site.regionalLocales[language] | replace('-', '_') }}">
+  {% endif %}
+{% endfor %}

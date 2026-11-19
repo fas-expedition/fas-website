@@ -1,0 +1,543 @@
+{
+  "pageTitle": "Vehículos de expedición",
+  "pageDescription": "Descubra la gama de vehículos de expedición FAS 4x4, 6x6 y 8x8, con configuraciones personalizadas para cada aventura.",
+  "altSlug": {
+    "de": "expeditionsmobile",
+    "en": "expedition-vehicles",
+    "es": "expedition-vehicles",
+    "fr": "expedition-vehicles"
+  },
+  "hero": {
+    "title": "Vehículos de expedición",
+    "subtitle": "Tres plataformas. Posibilidades sin límites.",
+    "image": "/assets/images/vehicles/fleet-hero.svg"
+  },
+  "vehicleTypes": [
+    {
+      "id": "4x4",
+      "title": "Vehículos de expedición 4x4",
+      "subtitle": "El equilibrio perfecto entre agilidad y capacidad todoterreno",
+      "image": "/assets/images/vehicles/4x4 product picture.png",
+      "gallery": [
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240418_134635.jpg",
+          "alt": "interior vista general 1"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240529_120044.jpg",
+          "alt": "interior vista general 2"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240610_114346.jpg",
+          "alt": "interior detalle de la zona de trabajo"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240819_142400.jpg",
+          "alt": "interior zona de asientos"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2442.JPG",
+          "alt": "interior almacenamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2457.JPG",
+          "alt": "interior zona de refrigeración"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2471.JPG",
+          "alt": "interior armarios y cajones"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2474.JPG",
+          "alt": "interior detalle"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/x20240819_142439.jpg",
+          "alt": "interior vista panorámica 1"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/x20240819_143659.jpg",
+          "alt": "interior vista panorámica 2"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2381.JPG",
+          "alt": "interior equipamiento de confort"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2405.JPG",
+          "alt": "interior iluminación y diseño"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2417.JPG",
+          "alt": "interior materiales y acabados"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2420.JPG",
+          "alt": "interior detalle de superficies"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2424.JPG",
+          "alt": "interior tecnología y equipamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2429.JPG",
+          "alt": "interior Stauraum Detail 1"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2432.JPG",
+          "alt": "interior Stauraum Detail 2"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2441.JPG",
+          "alt": "interior organización y almacenamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2443.JPG",
+          "alt": "interior detalle de armarios"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2445.JPG",
+          "alt": "interior techo e iluminación"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2448.JPG",
+          "alt": "interior zona del suelo"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2452.JPG",
+          "alt": "interior detalle lateral"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2456.JPG",
+          "alt": "interior calidad de los materiales"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2463.JPG",
+          "alt": "interior superficie de trabajo"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2470.JPG",
+          "alt": "interior vista nocturna"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/xIMG_2472.JPG",
+          "alt": "interior ambiente"
+        }
+      ],
+      "thumbGallery": [
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240418_134635.jpg",
+          "alt": "interior vista general 1"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240529_120044.jpg",
+          "alt": "interior vista general 2"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240610_114346.jpg",
+          "alt": "interior detalle de la zona de trabajo"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/20240819_142400.jpg",
+          "alt": "interior zona de asientos"
+        },
+        {
+          "url": "/assets/images/vehicles/4x4 Bilder innen/IMG_2442.JPG",
+          "alt": "interior almacenamiento"
+        }
+      ],
+      "specs": {
+        "power": {
+          "label": "Potencia",
+          "value": "Hasta 530 CV"
+        },
+        "gvw": {
+          "label": "Peso bruto del vehículo",
+          "value": "Hasta 16.500 kg"
+        },
+        "range": {
+          "label": "Autonomía",
+          "value": "Hasta 3.000 km"
+        },
+        "cabin": {
+          "label": "Cabina",
+          "value": "2–3 personas"
+        }
+      },
+      "configurations": [
+        {
+          "name": "Explorer 4x4 Base",
+          "price": "desde 679.000 €"
+        }
+      ],
+      "ctaText": "Configurar 4x4",
+      "ctaUrl": "#inquiry-form"
+    },
+    {
+      "id": "6x6",
+      "title": "Vehículos de expedición 6x6",
+      "subtitle": "Mayor autonomía y capacidad de carga",
+      "image": "/assets/images/vehicles/6x6 product picture.png",
+      "gallery": [
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_115426.jpg",
+          "alt": "interior vista general 1"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120011.jpg",
+          "alt": "interior vista general 2"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120456.jpg",
+          "alt": "interior detalle de la zona de trabajo"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122004.jpg",
+          "alt": "interior almacenamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122710.jpg",
+          "alt": "interior zona de refrigeración"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122837.jpg",
+          "alt": "interior armarios y cajones"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123219.jpg",
+          "alt": "interior zona de descanso 1"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123242.jpg",
+          "alt": "interior zona de descanso 2"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123332.jpg",
+          "alt": "interior equipamiento de confort"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123401.jpg",
+          "alt": "interior iluminación y diseño"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123617.jpg",
+          "alt": "interior materiales y acabados"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_123956.jpg",
+          "alt": "interior detalle de superficies"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_124331.jpg",
+          "alt": "interior tecnología y equipamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_124757.jpg",
+          "alt": "interior vista panorámica 1"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_125700.jpg",
+          "alt": "interior vista panorámica 2"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/IMG_5865.JPG",
+          "alt": "interior detalle"
+        }
+      ],
+      "thumbGallery": [
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_115426.jpg",
+          "alt": "interior vista general 1"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120011.jpg",
+          "alt": "interior vista general 2"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_120456.jpg",
+          "alt": "interior detalle de la zona de trabajo"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122004.jpg",
+          "alt": "interior almacenamiento"
+        },
+        {
+          "url": "/assets/images/vehicles/6x6 Bilder innen/20251106_122710.jpg",
+          "alt": "interior zona de refrigeración"
+        }
+      ],
+      "specs": {
+        "power": {
+          "label": "Potencia",
+          "value": "Hasta 530 CV"
+        },
+        "gvw": {
+          "label": "Peso bruto del vehículo",
+          "value": "Hasta 26.000 kg"
+        },
+        "range": {
+          "label": "Autonomía",
+          "value": "Hasta 2.500 km"
+        },
+        "cabin": {
+          "label": "Cabina",
+          "value": "2–4 personas"
+        }
+      },
+      "configurations": [
+        {
+          "name": "Pathfinder 6x6 Base",
+          "price": "desde 979.000 €"
+        }
+      ],
+      "ctaText": "Configurar 6x6",
+      "ctaUrl": "#inquiry-form"
+    },
+    {
+      "id": "8x8",
+      "title": "Vehículos de expedición 8x8",
+      "subtitle": "Máxima capacidad para expediciones extremas",
+      "image": "/assets/images/vehicles/Arocs 8x8.png",
+      "gallery": [
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03703_web.jpg",
+          "alt": "8x8 interior 01"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03707_web.jpg",
+          "alt": "8x8 interior 02"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03709_web.jpg",
+          "alt": "8x8 interior 03"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03730_web.jpg",
+          "alt": "8x8 interior 04"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03734_web.jpg",
+          "alt": "8x8 interior 05"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03739_web.jpg",
+          "alt": "8x8 interior 06"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03763_web.jpg",
+          "alt": "8x8 interior 07"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03768_web.jpg",
+          "alt": "8x8 interior 08"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03783_web.jpg",
+          "alt": "8x8 interior 09"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8459_web.jpg",
+          "alt": "8x8 interior 10"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8477_web.jpg",
+          "alt": "8x8 interior 11"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8479_web.jpg",
+          "alt": "8x8 interior 12"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8503_web.jpg",
+          "alt": "8x8 interior 13"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125253_0021_D_web.jpg",
+          "alt": "8x8 exterior 01"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125351_0025_D_web.jpg",
+          "alt": "8x8 exterior 02"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125418_0028_D_web.jpg",
+          "alt": "8x8 exterior 03"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125454_0030_D_web.jpg",
+          "alt": "8x8 exterior 04"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717130141_0046_D_web.jpg",
+          "alt": "8x8 exterior 05"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717132421_0065_D_web.jpg",
+          "alt": "8x8 exterior 06"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8884_web.jpg",
+          "alt": "8x8 exterior 07"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8901_web.jpg",
+          "alt": "8x8 exterior 08"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8902_web.jpg",
+          "alt": "8x8 exterior 09"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8903_web.jpg",
+          "alt": "8x8 exterior 10"
+        }
+      ],
+      "thumbGallery": [
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03703_web.jpg",
+          "alt": "8x8 interior 01"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03707_web.jpg",
+          "alt": "8x8 interior 02"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03709_web.jpg",
+          "alt": "8x8 interior 03"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03730_web.jpg",
+          "alt": "8x8 interior 04"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03734_web.jpg",
+          "alt": "8x8 interior 05"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03739_web.jpg",
+          "alt": "8x8 interior 06"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03763_web.jpg",
+          "alt": "8x8 interior 07"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03768_web.jpg",
+          "alt": "8x8 interior 08"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/DSC03783_web.jpg",
+          "alt": "8x8 interior 09"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8459_web.jpg",
+          "alt": "8x8 interior 10"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8477_web.jpg",
+          "alt": "8x8 interior 11"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8479_web.jpg",
+          "alt": "8x8 interior 12"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Innen/IMG_8503_web.jpg",
+          "alt": "8x8 interior 13"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125253_0021_D_web.jpg",
+          "alt": "8x8 exterior 01"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125351_0025_D_web.jpg",
+          "alt": "8x8 exterior 02"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125418_0028_D_web.jpg",
+          "alt": "8x8 exterior 03"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717125454_0030_D_web.jpg",
+          "alt": "8x8 exterior 04"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717130141_0046_D_web.jpg",
+          "alt": "8x8 exterior 05"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/DJI_20260717132421_0065_D_web.jpg",
+          "alt": "8x8 exterior 06"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8884_web.jpg",
+          "alt": "8x8 exterior 07"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8901_web.jpg",
+          "alt": "8x8 exterior 08"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8902_web.jpg",
+          "alt": "8x8 exterior 09"
+        },
+        {
+          "url": "/assets/images/blog/Auslieferung eines 8x8 Expeditionsmobils mit 8,5 Meter Wohnkabine/Aussen/IMG_8903_web.jpg",
+          "alt": "8x8 exterior 10"
+        }
+      ],
+      "specs": {
+        "power": {
+          "label": "Potencia",
+          "value": "Hasta 530 CV"
+        },
+        "gvw": {
+          "label": "Peso bruto del vehículo",
+          "value": "Hasta 32.000 kg"
+        },
+        "range": {
+          "label": "Autonomía",
+          "value": "Hasta 2.000 km"
+        },
+        "cabin": {
+          "label": "Cabina",
+          "value": "2–6 personas"
+        }
+      },
+      "configurations": [
+        {
+          "name": "Titan 8x8 Base",
+          "price": "desde 1.149.000 €"
+        }
+      ],
+      "ctaText": "Configurar 8x8",
+      "ctaUrl": "#inquiry-form"
+    }
+  ],
+  "coreTechnologies": {
+    "title": "Ingeniería de excelencia",
+    "subtitle": "Flexibilidad modular para un rendimiento sin concesiones.",
+    "items": [
+      {
+        "icon": "mountain",
+        "title": "DISEÑADOS PARA CARRETERA Y TODOTERRENO",
+        "description": "Preparados para dominar cualquier terreno, desde el frío de Alaska hasta las mesetas de Sudamérica."
+      },
+      {
+        "icon": "cog",
+        "title": "DOS CHASIS",
+        "description": "Una plataforma configurable con componentes modulares para cada viaje."
+      },
+      {
+        "icon": "shield",
+        "title": "INTERIORES DE LUJO A MEDIDA",
+        "description": "Materiales de primera calidad y una cuidada fabricación para disfrutar del máximo confort en ruta."
+      },
+      {
+        "icon": "gauge",
+        "title": "ACCESORIOS VERSÁTILES",
+        "description": "Portaequipajes, plataforma extraíble, estabilizadores, cabrestante o equipo de recuperación: usted decide."
+      }
+    ]
+  }
+}

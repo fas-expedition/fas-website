@@ -1,0 +1,101 @@
+{% set page = pageContent.about %}
+{% set team = pageContent.team %}
+
+<section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-zinc-950"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/10"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-2">{{ page.hero.title }}</h1>
+    <p class="text-xl lg:text-2xl text-zinc-300">{{ page.hero.subtitle }}</p>
+  </div>
+</section>
+
+<section class="bg-zinc-950 py-24 lg:py-32">
+  <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+    <h2 class="text-3xl font-bold tracking-wider uppercase mb-5">{{ page.intro.title }}</h2>
+    <p class="text-xl font-semibold text-white mb-10 leading-snug">{{ page.intro.tagline }}</p>
+    <p class="text-zinc-300 leading-relaxed mb-16">{{ page.intro.body }}</p>
+    <div class="space-y-16">
+      {% for section in page.sections %}
+      <div>
+        <h3 class="text-lg font-bold tracking-widest uppercase text-white mb-4">{{ section.title }}</h3>
+        {% if section.intro %}<p class="text-zinc-300 leading-relaxed mb-6">{{ section.intro }}</p>{% endif %}
+        {% if section.paragraphs %}
+        <div class="space-y-4 text-zinc-300 leading-relaxed">
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          {% if section.highlight %}<p class="text-xl font-bold text-white">{{ section.highlight }}</p>{% endif %}
+        </div>
+        {% endif %}
+        {% if section.values %}
+        <ul class="space-y-4 text-zinc-300 leading-relaxed">
+          {% for value in section.values %}
+          <li class="flex gap-4"><span class="text-white font-bold shrink-0">—</span><span><strong class="text-white">{{ value.title }}</strong> – {{ value.text }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-zinc-950 py-24 lg:py-32 border-t border-zinc-800">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold tracking-wider uppercase mb-4">{{ page.teamHeading }}</h2>
+      <p class="text-zinc-400 text-lg">{{ page.teamIntro }}</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      {% for section in team.sections %}
+      {% for person in section.people %}
+      <div class="team-card group cursor-pointer border border-zinc-800 hover:border-zinc-600 transition-colors bg-zinc-900" onclick="toggleTeamCard(this)">
+        <div class="relative overflow-hidden">
+          {% if person.image %}<img src="{{ person.image }}" alt="{{ person.name }}" class="w-full aspect-square object-cover object-top" loading="lazy">{% else %}
+          <div class="w-full aspect-square bg-zinc-800 flex items-center justify-center"><span class="text-zinc-600 text-4xl font-bold">{{ person.name[0] }}</span></div>{% endif %}
+          {% if person.description %}
+          <div class="team-card-indicator absolute bottom-2 right-2 w-7 h-7 bg-black/70 flex items-center justify-center transition-transform duration-300">
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>{% endif %}
+        </div>
+        <div class="p-4">
+          <p class="text-white font-bold text-sm tracking-wider leading-tight">{{ person.name }}</p>
+          {% if person.roles and person.roles.length > 0 %}<p class="text-zinc-500 text-xs mt-1 leading-tight">{{ person.roles[0] }}</p>{% endif %}
+          {% if person.description %}<div class="team-card-desc overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out"><p class="text-zinc-400 text-xs leading-relaxed mt-3 pt-3 border-t border-zinc-700">{{ person.description }}</p></div>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleTeamCard(card) {
+    const desc = card.querySelector('.team-card-desc');
+    const indicator = card.querySelector('.team-card-indicator svg');
+    if (!desc) return;
+    const isOpen = desc.style.maxHeight && desc.style.maxHeight !== '0px';
+    if (isOpen) {
+      desc.style.maxHeight = '0px';
+      card.querySelector('.team-card-indicator').classList.remove('bg-white/20');
+      if (indicator) indicator.style.transform = 'rotate(0deg)';
+    } else {
+      desc.style.maxHeight = desc.scrollHeight + 'px';
+      card.querySelector('.team-card-indicator').classList.add('bg-white/20');
+      if (indicator) indicator.style.transform = 'rotate(45deg)';
+    }
+  }
+</script>
+
+<section class="bg-black py-24">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {% for service in page.services %}
+      <div class="p-8 border border-zinc-800">
+        <h3 class="text-sm font-bold tracking-widest uppercase text-white mb-4">{{ service.title }}</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">{{ service.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

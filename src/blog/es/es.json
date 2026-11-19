@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/blog-post.njk",
+  "tags": "blog_es",
+  "locale": "es",
+  "permalink": "/es/{{ slug }}/index.html"
+}

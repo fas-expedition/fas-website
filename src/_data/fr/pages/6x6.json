@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Véhicules d’expédition 6x6",
+  "pageDescription": "Véhicules d’expédition FAS 6x6 : capacité de charge et autonomie élevées pour les expéditions exigeantes. Dès 320 000 €.",
+  "altSlug": {
+    "de": "6x6",
+    "en": "6x6",
+    "es": "6x6",
+    "fr": "6x6"
+  },
+  "hero": {
+    "title": "Système 6x6",
+    "subtitle": "Capacité de charge et autonomie maximales : une plateforme polyvalente pour les expéditions les plus exigeantes.",
+    "image": "/assets/images/vehicles/6x6 product picture.png"
+  },
+  "overview": {
+    "description": "La plateforme 6x6 associe une capacité de charge exceptionnelle à une remarquable mobilité tout-terrain. Ses trois essieux moteurs assurent une traction supérieure, même sur les terrains extrêmes. Le châssis allongé permet d’accueillir de grandes cellules habitables, des systèmes d’approvisionnement complets et des équipements lourds, idéal pour les expéditions autonomes de longue durée dans les régions reculées."
+  },
+  "specs": {
+    "power": {
+      "label": "Puissance",
+      "value": "Jusqu’à 530 ch"
+    },
+    "gvw": {
+      "label": "Poids total autorisé",
+      "value": "Jusqu’à 16 000 kg"
+    },
+    "range": {
+      "label": "Autonomie",
+      "value": "Jusqu’à 2 500 km"
+    },
+    "cabin": {
+      "label": "Cabine",
+      "value": "4–6 personnes"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Explorer 6x6 Base",
+      "price": "à partir de 320 000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Transmission à trois essieux",
+      "description": "Transmission intégrale permanente sur les trois essieux et différentiels verrouillables pour une traction supérieure sur les terrains extrêmes."
+    },
+    {
+      "icon": "cog",
+      "title": "Conception spacieuse",
+      "description": "Un châssis allongé pour une vaste cellule habitable avec cuisine complète, salle de bains et espace nuit."
+    },
+    {
+      "icon": "shield",
+      "title": "Systèmes d’autonomie",
+      "description": "Alimentation intégrée en énergie solaire, en eau et en électricité pour plusieurs semaines d’autonomie dans les régions isolées."
+    },
+    {
+      "icon": "gauge",
+      "title": "Capacité de charge",
+      "description": "Jusqu’à 7 000 kg de charge utile pour les équipements lourds, les provisions et le matériel d’expédition."
+    }
+  ],
+  "cta": {
+    "title": "Configurez votre 6x6",
+    "description": "Créez votre véhicule d’expédition 6x6 pour une autonomie et une portée maximales.",
+    "buttonText": "Demander des informations",
+    "buttonUrl": "#inquiry-form"
+  }
+}

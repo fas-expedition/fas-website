@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Véhicules d’expédition 4x4",
+  "pageDescription": "Véhicules d’expédition FAS 4x4 : compacts et prêts pour les aventures exigeantes. Configurations sur mesure dès 189 000 €.",
+  "altSlug": {
+    "de": "4x4",
+    "en": "4x4",
+    "es": "4x4",
+    "fr": "4x4"
+  },
+  "hero": {
+    "title": "Système 4x4",
+    "subtitle": "Compact, agile et prêt pour le tout-terrain : une plateforme polyvalente pour les expéditions exigeantes.",
+    "image": "/assets/images/vehicles/4x4 product picture.png"
+  },
+  "overview": {
+    "description": "La plateforme 4x4 offre un équilibre parfait entre agilité et capacités tout-terrain. Basés sur des châssis éprouvés avec transmission intégrale permanente, différentiels verrouillables et boîte de transfert avec gamme courte, ces véhicules maîtrisent tous les terrains. Leur conception modulaire permet des configurations sur mesure pour les expéditions, les opérations de secours ou les postes de travail mobiles."
+  },
+  "specs": {
+    "power": {
+      "label": "Puissance",
+      "value": "Jusqu’à 450 ch"
+    },
+    "gvw": {
+      "label": "Poids total autorisé",
+      "value": "Jusqu’à 5 500 kg"
+    },
+    "range": {
+      "label": "Autonomie",
+      "value": "Jusqu’à 1 200 km"
+    },
+    "cabin": {
+      "label": "Cabine",
+      "value": "2–3 personnes"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Explorer 4x4 Base",
+      "price": "à partir de 189 000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Capacités tout-terrain",
+      "description": "La transmission intégrale permanente, les différentiels verrouillables et la gamme courte assurent une traction maximale sur tous les terrains."
+    },
+    {
+      "icon": "cog",
+      "title": "Conception modulaire",
+      "description": "Des modules habitables et professionnels interchangeables, configurables selon chaque mission."
+    },
+    {
+      "icon": "shield",
+      "title": "Packs de protection",
+      "description": "Packs de protection balistique en option jusqu’à VR7 pour les opérations dans des zones de crise ou dangereuses."
+    },
+    {
+      "icon": "gauge",
+      "title": "Puissance",
+      "description": "Jusqu’à 450 ch pour une traction maximale et une conduite sûre, même à pleine charge."
+    }
+  ],
+  "cta": {
+    "title": "Configurez votre 4x4",
+    "description": "Créez le véhicule d’expédition 4x4 idéal, adapté à vos besoins.",
+    "buttonText": "Demander des informations",
+    "buttonUrl": "#inquiry-form"
+  }
+}

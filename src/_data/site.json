@@ -2,6 +2,13 @@
   "name": "FAS Expedition",
   "url": "https://fas-expedition.de",
   "defaultLocale": "de",
-  "locales": ["de", "en"],
+  "locales": ["de", "en", "es", "fr"],
+  "languageNames": {
+    "de": "Deutsch",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  },
+  "regionalLocales": { "de": "de-DE", "en": "en-GB", "es": "es-ES", "fr": "fr-FR" },
   "disabledNavItems": ["brabus", "configurator"]
 }

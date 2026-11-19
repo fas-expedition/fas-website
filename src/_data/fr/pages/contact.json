@@ -1,0 +1,44 @@
+{
+  "pageTitle": "Contact",
+  "pageDescription": "FAS Expedition : contactez-nous. Nous serons ravis de vous conseiller pour votre projet de véhicule d’expédition.",
+  "hero": { "title": "Contact", "subtitle": "Nous attendons votre demande avec intérêt" },
+  "form": {
+    "title": "Votre message",
+    "intro": "Vous avez des questions sur nos produits ou services ? Remplissez le formulaire et nous vous répondrons rapidement.",
+    "honeypot": "Ne pas remplir :",
+    "name": "Nom *",
+    "namePlaceholder": "Votre nom complet",
+    "email": "Adresse e-mail *",
+    "emailPlaceholder": "votre@e-mail.com",
+    "phone": "Téléphone",
+    "file": "Joindre des fichiers",
+    "message": "Votre message *",
+    "messagePlaceholder": "Décrivez votre demande…",
+    "submit": "Envoyer le message"
+  },
+  "details": {
+    "title": "Coordonnées",
+    "phoneLabel": "Téléphone",
+    "phone": "+49 (0) 2473 929 3422",
+    "emailLabel": "E-mail",
+    "email": "info@fas-expedition.de",
+    "addressLabel": "Adresse",
+    "company": "FAS Expedition GmbH",
+    "address": ["Trafoweg 2-4", "52152 Lammersdorf", "Allemagne"],
+    "visitLabel": "Nous rendre visite",
+    "visitText": "Vous souhaitez nous rendre visite ? Avec plaisir ! Prenez rendez-vous dès maintenant."
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "responsible": "Responsable du contenu",
+    "representative": "Représentée par son gérant :",
+    "managingDirector": "Ingénieur diplômé Andreas Böttcher",
+    "contact": "Contact",
+    "register": "Registre du commerce",
+    "registerValue": "Amtsgericht Aachen, HRB 24436",
+    "disclaimer": "Clause de non-responsabilité",
+    "disclaimerText": "Le contenu de ce site a été créé avec le plus grand soin et au mieux de nos connaissances. Toutefois, le propriétaire de ce site décline toute responsabilité quant à l’actualité, l’exhaustivité et l’exactitude des pages et contenus proposés.",
+    "vat": "N° de TVA",
+    "vatValue": "DE340249521"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "pageTitle": "BRABUS",
+  "pageDescription": "FAS × BRABUS : éditions performantes en série limitée. Véhicules d’expédition jusqu’à 900 HP et finition exclusive BRABUS.",
+  "altSlug": { "de": "brabus", "en": "brabus" },
+  "hero": {
+    "title": "BRABUS",
+    "subtitle": "Performance × Expédition",
+    "description": "L’alliance ultime des performances BRABUS et des capacités d’expédition. Des séries limitées pour les connaisseurs.",
+    "image": "/assets/images/vehicles/brabus-hero.svg",
+    "ctaText": "Découvrir les éditions",
+    "ctaUrl": "#editions"
+  },
+  "editions": {
+    "title": "Éditions limitées",
+    "subtitle": "L’exclusivité rencontre la performance",
+    "items": [
+      { "name": "BRABUS 700 Adventure", "image": "/assets/images/vehicles/brabus-700.svg", "badge": "Édition limitée", "specs": { "power": { "label": "Puissance", "value": "700 HP" }, "acceleration": { "label": "0–100 km/h", "value": "4.3 s" }, "topSpeed": { "label": "Vitesse maximale", "value": "240 km/h" }, "price": { "label": "À partir de", "value": "385 000 €" } }, "ctaText": "Demander des informations", "ctaUrl": "/fr/configurator" },
+      { "name": "BRABUS 900 Desert Storm", "image": "/assets/images/vehicles/brabus-900.svg", "badge": "Édition limitée", "specs": { "power": { "label": "Puissance", "value": "900 HP" }, "acceleration": { "label": "0–100 km/h", "value": "3.7 s" }, "topSpeed": { "label": "Vitesse maximale", "value": "270 km/h" }, "price": { "label": "À partir de", "value": "585 000 €" } }, "ctaText": "Demander des informations", "ctaUrl": "/fr/configurator" }
+    ]
+  },
+  "dna": {
+    "title": "L’ADN BRABUS",
+    "subtitle": "Ce qui caractérise chaque édition BRABUS",
+    "image": "/assets/images/vehicles/brabus-dna.svg",
+    "features": [
+      { "title": "Amélioration PowerXtra", "description": "Optimisation du calculateur électronique propre à BRABUS, avec pression de suralimentation accrue et cartographie personnalisée." },
+      { "title": "Pack fibre de carbone", "description": "Éléments en fibre de carbone apparente sur le capot, les ailes, les bas de caisse et le becquet de toit." },
+      { "title": "Intérieur exclusif", "description": "Cuir cousu main, touches d’Alcantara et combinaisons de couleurs configurables individuellement." },
+      { "title": "Jantes Monoblock", "description": "Jantes forgées BRABUS Monoblock au design exclusif, avec pneus haute performance." },
+      { "title": "Échappement sport", "description": "Système d’échappement en acier inoxydable à valves, avec la sonorité caractéristique de BRABUS." },
+      { "title": "Suspension sport", "description": "Suspension pneumatique adaptative réglée par BRABUS pour la route et le tout-terrain." }
+    ]
+  },
+  "cta": {
+    "title": "Vivez l’excellence",
+    "description": "Prenez rendez-vous pour un entretien privé et découvrez l’univers BRABUS.",
+    "primaryCtaText": "Prendre rendez-vous",
+    "primaryCtaUrl": "/fr/configurator",
+    "secondaryCtaText": "Contacter un spécialiste",
+    "secondaryCtaUrl": "/fr/configurator"
+  }
+}

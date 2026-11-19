@@ -28,10 +28,10 @@
       <div>
         <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.products"] }}</h4>
         <ul class="space-y-3">
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/#vehicle-4x4" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.4x4"] }}</a></li>
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/#vehicle-6x6" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.6x6"] }}</a></li>
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}expeditionsmobile{% else %}expedition-vehicles{% endif %}/#vehicle-8x8" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.8x8"] }}</a></li>
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}modulare-systeme{% else %}modular-systems{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.modularSystems"] }}</a></li>
+          <li><a href="{{ localizedRoutes['expedition-vehicles'] }}#vehicle-4x4" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.4x4"] }}</a></li>
+          <li><a href="{{ localizedRoutes['expedition-vehicles'] }}#vehicle-6x6" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.6x6"] }}</a></li>
+          <li><a href="{{ localizedRoutes['expedition-vehicles'] }}#vehicle-8x8" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.8x8"] }}</a></li>
+          <li><a href="{{ localizedRoutes['modular-systems'] }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.modularSystems"] }}</a></li>
         </ul>
       </div>
 
@@ -39,10 +39,10 @@
       <div>
         <h4 class="text-sm font-bold tracking-widest uppercase text-white mb-6">{{ translations["footer.company"] }}</h4>
         <ul class="space-y-3">
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}ueber-uns{% else %}about{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.about"] }}</a></li>
-          <li><a href="/{{ locale }}/team/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.team"] }}</a></li>
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}karriere{% else %}careers{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.careers"] }}</a></li>
-          <li><a href="/{{ locale }}/{% if locale == 'de' %}kontakt{% else %}contact{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.contact"] }}</a></li>
+          <li><a href="{{ localizedRoutes.about }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.about"] }}</a></li>
+          <li><a href="{{ localizedRoutes.team }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.team"] }}</a></li>
+          <li><a href="{{ localizedRoutes.careers }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.careers"] }}</a></li>
+          <li><a href="{{ localizedRoutes.contact }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.contact"] }}</a></li>
         </ul>
       </div>
 
@@ -52,9 +52,9 @@
     <div class="border-t border-zinc-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-zinc-400 text-sm">{{ translations["footer.copyright"] }}</p>
       <div class="flex space-x-6">
-        <a href="/{{ locale }}/{% if locale == 'de' %}kontakt{% else %}contact{% endif %}/#impressum" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.imprint"] }}</a>
-        <a href="/{{ locale }}/{% if locale == 'de' %}datenschutz{% else %}privacy{% endif %}/" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
-        <a href="/assets/downloads/Allgemeine%20Gescha%CC%88ftsbedingungen%20FAS%20Expedition%20GmbH%20NEU%20ohne%2001.pdf" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}</a>
+        <a href="{{ localizedRoutes.contact }}#impressum" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.imprint"] }}</a>
+        <a href="{{ localizedRoutes.privacy }}" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.privacy"] }}</a>
+        <a href="/assets/downloads/Allgemeine%20Gescha%CC%88ftsbedingungen%20FAS%20Expedition%20GmbH%20NEU%20ohne%2001.pdf" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors text-sm">{{ translations["footer.terms"] }}{% if locale == 'es' or locale == 'fr' %} (PDF · DE){% endif %}</a>
       </div>
     </div>
   </div>

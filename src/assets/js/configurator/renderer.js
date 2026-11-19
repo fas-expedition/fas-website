@@ -10,6 +10,7 @@
  * @returns {{ render: Function }}
  */
 export function createRenderer(store, navigation, productData, locale, uiStrings) {
+  const localeTag = { de: 'de-DE', en: 'en-GB', es: 'es-ES', fr: 'fr-FR' }[locale] || 'en-GB';
   const containers = {
     stepIndicator: document.getElementById('step-indicator'),
     mainContent: document.getElementById('configurator-content'),
@@ -245,7 +246,7 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
       sections.push(`
         <div class="mb-4">
           <span class="text-zinc-500 text-sm uppercase tracking-wider">${uiStrings['sidebar.platform']}</span>
-          <p class="text-lg font-bold mt-1">${platform ? platform.name[locale] : selections.platform}</p>
+          <p class="text-lg font-bold mt-1">${platform ? localized(platform.name) : selections.platform}</p>
         </div>
       `);
     }
@@ -255,7 +256,7 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
       sections.push(`
         <div class="mb-4">
           <span class="text-zinc-500 text-sm uppercase tracking-wider">${uiStrings['sidebar.cabinSize']}</span>
-          <p class="text-lg font-bold mt-1">${cabin ? cabin.name[locale] : selections.cabinSize}</p>
+          <p class="text-lg font-bold mt-1">${cabin ? localized(cabin.name) : selections.cabinSize}</p>
         </div>
       `);
     }
@@ -265,7 +266,7 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
       sections.push(`
         <div class="mb-4">
           <span class="text-zinc-500 text-sm uppercase tracking-wider">${uiStrings['sidebar.equipmentLine']}</span>
-          <p class="text-lg font-bold mt-1">${equip ? equip.name[locale] : selections.equipmentLine}</p>
+          <p class="text-lg font-bold mt-1">${equip ? localized(equip.name) : selections.equipmentLine}</p>
         </div>
       `);
     }
@@ -273,7 +274,7 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
     if (selections.accessories.length > 0) {
       const accNames = selections.accessories.map(id => {
         const acc = productData.accessories.find(a => a.id === id);
-        return acc ? acc.name[locale] : id;
+        return acc ? localized(acc.name) : id;
       });
       sections.push(`
         <div class="mb-4">
@@ -296,7 +297,7 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
           ...productData.accessories,
         ];
         const option = allOptions.find(o => o.id === id);
-        return option ? option.name[locale] : id;
+        return option ? localized(option.name) : id;
       });
       autoSelectedHtml = `
         <div class="mt-4 border-t border-zinc-800 pt-4">
@@ -387,15 +388,15 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
     const ariaDisabled = isDisabled ? 'aria-disabled="true"' : '';
     const tabIndex = isDisabled ? '' : 'tabindex="0"';
 
-    const name = option.name[locale] || option.name.de || option.id;
+    const name = localized(option.name) || option.id;
     const description = option.description
-      ? (option.description[locale] || option.description.de || '')
+      ? localized(option.description)
       : '';
 
     // Features list for equipment lines
     let featuresHtml = '';
     if (option.features) {
-      const features = option.features[locale] || option.features.de || [];
+      const features = option.features[locale] || option.features.en || option.features.de || [];
       featuresHtml = `<ul class="mt-3 space-y-1">${features.map(f => `<li class="text-sm text-zinc-400">&bull; ${f}</li>`).join('')}</ul>`;
     }
 
@@ -403,14 +404,14 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
     let specsHtml = '';
     if (option.specs) {
       specsHtml = `<div class="mt-3 grid grid-cols-2 gap-2 text-sm text-zinc-400">
-        ${Object.entries(option.specs).map(([key, val]) => `<span>${key}: ${val}</span>`).join('')}
+        ${Object.entries(option.specs).map(([key, val]) => `<span>${uiStrings[`spec.${key}`] || key}: ${val}</span>`).join('')}
       </div>`;
     }
 
     // Price display
     let priceHtml = '';
     if (option.price) {
-      const formatted = new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-GB', {
+      const formatted = new Intl.NumberFormat(localeTag, {
         style: 'currency', currency: 'EUR', maximumFractionDigits: 0
       }).format(option.price);
       priceHtml = `<p class="mt-3 text-sm font-bold text-zinc-300">${formatted}</p>`;
@@ -462,20 +463,20 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
 
     if (selections.platform) {
       const p = productData.platforms.find(x => x.id === selections.platform);
-      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.platform']}</span><p class="font-bold">${p ? p.name[locale] : selections.platform}</p></div>`);
+      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.platform']}</span><p class="font-bold">${p ? localized(p.name) : selections.platform}</p></div>`);
     }
     if (selections.cabinSize) {
       const c = productData.cabinSizes.find(x => x.id === selections.cabinSize);
-      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.cabinSize']}</span><p class="font-bold">${c ? c.name[locale] : selections.cabinSize}</p></div>`);
+      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.cabinSize']}</span><p class="font-bold">${c ? localized(c.name) : selections.cabinSize}</p></div>`);
     }
     if (selections.equipmentLine) {
       const e = productData.equipmentLines.find(x => x.id === selections.equipmentLine);
-      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.equipmentLine']}</span><p class="font-bold">${e ? e.name[locale] : selections.equipmentLine}</p></div>`);
+      items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.equipmentLine']}</span><p class="font-bold">${e ? localized(e.name) : selections.equipmentLine}</p></div>`);
     }
     if (selections.accessories.length > 0) {
       const accNames = selections.accessories.map(id => {
         const a = productData.accessories.find(x => x.id === id);
-        return a ? a.name[locale] : id;
+        return a ? localized(a.name) : id;
       });
       items.push(`<div class="mb-3"><span class="text-zinc-500 text-xs uppercase tracking-wider">${uiStrings['sidebar.accessories']}</span>${accNames.map(n => `<p class="text-sm">${n}</p>`).join('')}</div>`);
     }
@@ -607,6 +608,10 @@ export function createRenderer(store, navigation, productData, locale, uiStrings
   function escapeHtml(str) {
     if (!str) return '';
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function localized(values) {
+    return values?.[locale] || values?.en || values?.de || '';
   }
 
   // Subscribe to store for automatic re-render on state changes

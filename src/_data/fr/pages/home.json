@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Accueil",
+  "pageDescription": "FAS Expedition conçoit des véhicules d’expédition sur mesure et des systèmes modulaires en 4x4, 6x6 et 8x8.",
+  "altSlug": { "de": "", "en": "" },
+  "hero": {
+    "title": "Véhicules d’expédition sur mesure",
+    "subtitle": "Quand l’aventure rencontre l’ingénierie",
+    "description": "Des véhicules uniques et des systèmes modulaires pour aller plus loin.",
+    "image": "/assets/images/vehicles/arocs-title.png",
+    "ctaText": "Nous contacter",
+    "ctaUrl": "#inquiry-form"
+  },
+  "features": {
+    "title": "L’excellence en ingénierie",
+    "description": {
+      "title": "Précision de conception. Liberté d’aménagement. Qualité pour des décennies.",
+      "body": "FAS Expedition conçoit et construit des véhicules d’expédition sur mesure. Chaque véhicule est une pièce unique, conçue avec précision et fabriquée pour durer. Pour des voyages qui commencent là où s’arrêtent les solutions classiques."
+    },
+    "items": [
+      { "icon": "mountain", "title": "Sur route et hors piste", "description": "Conçus pour tous les terrains, du froid de l’Alaska aux hauts plateaux d’Amérique du Sud." },
+      { "icon": "cog", "title": "Systèmes modulaires", "description": "Une plateforme configurable et des éléments modulaires adaptés à chaque voyage." },
+      { "icon": "shield", "title": "Intérieur sur mesure", "description": "Des matériaux et des finitions haut de gamme pour voyager dans un confort optimal." },
+      { "icon": "gauge", "title": "Accessoires polyvalents", "description": "Galerie de toit, plateforme escamotable, béquilles, treuil ou matériel de désensablement : à vous de choisir." }
+    ]
+  },
+  "vehicles": {
+    "title": "Choisissez votre plateforme",
+    "items": [
+      { "id": "4x4", "title": "Châssis 4x4", "description": "Un équilibre entre agilité et capacités tout-terrain", "image": "/assets/images/vehicles/4x4.png", "specs": "Jusqu’à 16 500 kg de PTAC" },
+      { "id": "6x6", "title": "Châssis 6x6", "description": "Autonomie et charge utile accrues", "image": "/assets/images/vehicles/6x6.png", "specs": "Jusqu’à 26 000 kg de PTAC" },
+      { "id": "8x8", "title": "Châssis 8x8", "description": "Une capacité maximale pour les expéditions extrêmes", "image": "/assets/images/vehicles/8x8.png", "specs": "Jusqu’à 32 000 kg de PTAC" }
+    ]
+  },
+  "cta": {
+    "title": "Votre voyage commence ici",
+    "description": "Concevons ensemble le véhicule d’expédition qui vous ressemble."
+  }
+}

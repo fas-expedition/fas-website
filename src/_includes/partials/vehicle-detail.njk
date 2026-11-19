@@ -21,7 +21,7 @@
    ═══════════════════════════════════════════════════════════════════ #}
 <section class="py-24 lg:py-32">
   <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
-    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">Übersicht</h2>
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">{{ productUi[locale].vehicleDetail.overview }}</h2>
     <p class="text-lg text-zinc-300 max-w-3xl mb-12">{{ page.overview.description }}</p>
 
     {# Specs Grid #}
@@ -51,7 +51,7 @@
    ═══════════════════════════════════════════════════════════════════ #}
 <section class="py-24 lg:py-32 bg-zinc-950">
   <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
-    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">Konfigurationen</h2>
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-8">{{ productUi[locale].vehicleDetail.configurations }}</h2>
     <ul class="space-y-4">
       {% for config in page.configurations %}
       <li class="flex justify-between items-center border-b border-zinc-800 pb-4">
@@ -68,7 +68,7 @@
    ═══════════════════════════════════════════════════════════════════ #}
 <section class="py-24 lg:py-32">
   <div class="max-w-[1800px] mx-auto px-6 lg:px-12">
-    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-12">Ausstattung</h2>
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-wider uppercase mb-12">{{ productUi[locale].vehicleDetail.features }}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {% for feature in page.features %}
         {{ featureCard(feature.icon, feature.title, feature.description) }}

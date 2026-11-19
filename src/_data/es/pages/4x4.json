@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Vehículos de expedición 4x4",
+  "pageDescription": "Vehículos de expedición FAS 4x4: compactos y preparados para aventuras exigentes. Configuraciones a medida desde 189.000 €.",
+  "altSlug": {
+    "de": "4x4",
+    "en": "4x4",
+    "es": "4x4",
+    "fr": "4x4"
+  },
+  "hero": {
+    "title": "Sistema 4x4",
+    "subtitle": "Compacto, ágil y preparado para cualquier terreno: una plataforma versátil para expediciones exigentes.",
+    "image": "/assets/images/vehicles/4x4 product picture.png"
+  },
+  "overview": {
+    "description": "La plataforma 4x4 ofrece el equilibrio perfecto entre agilidad y capacidad todoterreno. Basados en chasis probados con tracción total permanente, diferenciales bloqueables y reductora, estos vehículos dominan cualquier terreno. Su diseño modular permite configuraciones a medida para expediciones, operaciones de rescate o puestos de trabajo móviles."
+  },
+  "specs": {
+    "power": {
+      "label": "Potencia",
+      "value": "Hasta 450 CV"
+    },
+    "gvw": {
+      "label": "Peso bruto del vehículo",
+      "value": "Hasta 5.500 kg"
+    },
+    "range": {
+      "label": "Autonomía",
+      "value": "Hasta 1.200 km"
+    },
+    "cabin": {
+      "label": "Cabina",
+      "value": "2–3 personas"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Explorer 4x4 Base",
+      "price": "desde 189.000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Capacidad todoterreno",
+      "description": "La tracción total permanente, los diferenciales bloqueables y la reductora proporcionan la máxima tracción en cualquier terreno."
+    },
+    {
+      "icon": "cog",
+      "title": "Diseño modular",
+      "description": "Módulos habitables y de trabajo intercambiables que se adaptan con flexibilidad a cada uso."
+    },
+    {
+      "icon": "shield",
+      "title": "Paquetes de protección",
+      "description": "Paquetes opcionales de protección balística hasta VR7 para operar en zonas de crisis y regiones inseguras."
+    },
+    {
+      "icon": "gauge",
+      "title": "Potencia",
+      "description": "Hasta 450 CV para obtener la máxima tracción y un comportamiento seguro incluso a plena carga."
+    }
+  ],
+  "cta": {
+    "title": "Configure su 4x4",
+    "description": "Cree su vehículo de expedición 4x4 ideal, adaptado a sus necesidades.",
+    "buttonText": "Solicitar información",
+    "buttonUrl": "#inquiry-form"
+  }
+}

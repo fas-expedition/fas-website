@@ -57,6 +57,11 @@ export function createFormHandler(store, locale, uiStrings) {
       });
     }
 
+    ['name', 'email', 'phone', 'company', 'notes'].forEach((field) => {
+      const input = formElement.querySelector(`[name="${field}"]`);
+      if (input) input.value = state.contact[field] || '';
+    });
+
     // Determine the submission URL from form action or fallback
     const actionUrl = formElement.getAttribute('action')
       || (typeof window !== 'undefined' ? window.location.pathname : '/');

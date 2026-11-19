@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Véhicules d’expédition 8x8",
+  "pageDescription": "Véhicules d’expédition FAS 8x8 : puissance et capacité maximales pour les conditions les plus extrêmes. Dès 685 000 €.",
+  "altSlug": {
+    "de": "8x8",
+    "en": "8x8",
+    "es": "8x8",
+    "fr": "8x8"
+  },
+  "hero": {
+    "title": "Système 8x8",
+    "subtitle": "Puissance et capacité maximales pour répondre aux exigences les plus extrêmes.",
+    "image": "/assets/images/vehicles/Arocs 8x8.png"
+  },
+  "overview": {
+    "description": "La plateforme 8x8 est la solution ultime pour les expéditions dans les conditions les plus extrêmes. Ses quatre essieux moteurs offrent des capacités tout-terrain et une capacité de charge exceptionnelles. Son grand empattement permet d’aménager de vastes espaces de vie et de travail. Elle est conçue pour des missions autonomes de longue durée dans les régions les plus reculées du monde."
+  },
+  "specs": {
+    "power": {
+      "label": "Puissance",
+      "value": "Jusqu’à 680 ch"
+    },
+    "gvw": {
+      "label": "Poids total autorisé",
+      "value": "Jusqu’à 36 000 kg"
+    },
+    "range": {
+      "label": "Autonomie",
+      "value": "Jusqu’à 2 500 km"
+    },
+    "cabin": {
+      "label": "Cabine",
+      "value": "6–10 personnes"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Titan 8x8 Base",
+      "price": "à partir de 685 000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Transmission à quatre essieux",
+      "description": "Transmission intégrale permanente sur quatre essieux avec différentiels verrouillables individuellement pour maîtriser tous les terrains."
+    },
+    {
+      "icon": "cog",
+      "title": "Grande conception modulaire",
+      "description": "Un système évolutif avec plusieurs modules de vie, de travail et de rangement pour une autonomie complète."
+    },
+    {
+      "icon": "shield",
+      "title": "Protection maximale",
+      "description": "Packs de protection balistique jusqu’à VR9 et ventilation de protection CBRN pour les opérations aux exigences de sécurité les plus élevées."
+    },
+    {
+      "icon": "gauge",
+      "title": "Autonomie extrême",
+      "description": "Un système de réservoirs multiples d’une capacité allant jusqu’à 1 200 litres pour plusieurs semaines sans infrastructure."
+    }
+  ],
+  "cta": {
+    "title": "Configurez votre 8x8",
+    "description": "Créez votre véhicule d’expédition 8x8 pour les missions les plus extrêmes.",
+    "buttonText": "Demander des informations",
+    "buttonUrl": "#inquiry-form"
+  }
+}

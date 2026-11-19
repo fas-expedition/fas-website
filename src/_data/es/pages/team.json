@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Nuestro equipo",
+  "pageDescription": "FAS Expedition: nuestro equipo de ingenieros, diseñadores y artesanos apasionados por los vehículos de expedición.",
+  "intro": "Casi todos los miembros del equipo sienten pasión por la acampada y los viajes: ¡vivimos y amamos lo que hacemos!",
+  "sections": [
+    { "title": "Dirección y administración", "people": [
+      { "name": "Andreas Böttcher", "qualifications": ["Ingeniero diplomado (BA) en tecnología de producción"], "roles": ["Director general (CEO)", "Director técnico y responsable de construcción de cabinas"], "description": "", "image": "/assets/images/team/andreas-boettcher.jpg" },
+      { "name": "Márika Böttcher", "qualifications": ["Diplomada en Administración de Empresas (BA), logística"], "roles": ["Directora comercial", "Ventas y control de gestión"], "description": "", "image": "/assets/images/team/marika-boettcher.jpg" },
+      { "name": "Stefan", "qualifications": [], "roles": ["Director comercial (CCO)", "Ventas, marketing y estrategia"], "description": "Stefan aporta experiencia empresarial y comercial, además de mucho entusiasmo y fiabilidad. Acompaña a nuestros clientes durante todo el proyecto y siempre hace un esfuerzo adicional.", "image": "/assets/images/team/stefan.png" },
+      { "name": "Monika", "qualifications": ["Administrativa de transporte cualificada"], "roles": ["Administración"], "description": "Nuestra querida Monika siempre echa una mano donde hace falta, y con una sonrisa. Su apoyo en contabilidad, recursos humanos y en las muchas pequeñas tareas del día a día nos permite centrarnos en lo esencial.", "image": "/assets/images/team/monika.jpg" }
+    ] },
+    { "title": "Ingeniería", "people": [
+      { "name": "Nils", "qualifications": ["Ingeniería aeroespacial (B.Eng.)", "Ingeniero de soldadura"], "roles": ["Ingeniero de fabricación de vehículos"], "description": "Nils forma parte del equipo desde sus comienzos. Su precisión y serenidad dan vida a nuevas soluciones técnicas. Sus diseños meditados contribuyen de forma decisiva a la imagen y el reconocimiento de los productos FAS.", "image": "/assets/images/team/nils.jpg" },
+      { "name": "Christine", "qualifications": ["Diseñadora diplomada (FH) en diseño de producto"], "roles": ["Diseñadora de construcción de cabinas"], "description": "Christine es nuestra fuente de creatividad. Nuestros clientes valoran mucho su comprensión del espacio y el color. También se pone manos a la obra y ayuda al equipo de cabinas a hacer realidad sus propios diseños de interiores.", "image": "/assets/images/team/christine.jpg" },
+      { "name": "Martin", "qualifications": ["Máster en ingeniería automotriz (M.Sc.)"], "roles": ["Ingeniero"], "description": "Lo que diseña Martin es sólido. No da nada por sentado y reta a sus compañeros con sus preguntas. Su serenidad, experiencia y acertado sentido del humor enriquecen al equipo en todos los aspectos.", "image": "/assets/images/team/martin.png" },
+      { "name": "Patrick", "qualifications": ["Ingeniería aeroespacial (B.Eng.), en curso"], "roles": ["Estudiante en prácticas"], "description": "Patrick aporta conocimientos universitarios recientes y mucho entusiasmo. Se desenvuelve igual de bien con la madera y el acero que con el software CAD.", "image": "/assets/images/team/patrick.jpg" },
+      { "name": "Jens", "qualifications": ["Técnico de ingeniería mecánica"], "roles": ["Ingeniero", "Informática"], "description": "Jens combina sólidos conocimientos de ingeniería con grandes competencias informáticas y entusiasmo por encontrar las mejores soluciones. Piensa en soluciones, no en problemas, y contagia a los demás con su trato cercano y entusiasta.", "image": "/assets/images/team/Jens.webp" }
+    ] },
+    { "title": "Construcción de cabinas", "people": [
+      { "name": "Jan", "qualifications": ["Técnico en mecatrónica del automóvil", "Especialista en tecnología de caravanas"], "roles": ["Construcción de cabinas"], "description": "Jan es nuestro todoterreno por excelencia: sabe hacer de todo y está muy bien conectado para lo demás. Resolver problemas es su especialidad y el optimismo, su compañero diario.", "image": "/assets/images/team/jan.jpg" },
+      { "name": "Harald", "qualifications": ["Técnico polivalente"], "roles": ["Construcción de cabinas"], "description": "Harald es el centro sereno del equipo de cabinas. Imperturbable ante el ajetreo del joven equipo, aporta experiencia, habilidad artesanal y una buena dosis de humor.", "image": "/assets/images/team/harald.jpg" },
+      { "name": "Mats", "qualifications": ["Mecánico industrial"], "roles": ["Construcción de cabinas"], "description": "Mats siempre está disponible para instalaciones complejas o retos mecánicos. Con gran experiencia y talento para improvisar, no para hasta que todo encaja.", "image": "/assets/images/team/mats.jpg" },
+      { "name": "Erik", "qualifications": ["Técnico en mecatrónica del automóvil", "Tecnología de vehículos comerciales"], "roles": ["Construcción de cabinas"], "description": "Erik aporta conocimientos sobre vehículos comerciales al joven equipo. Como enlace entre la construcción de cabinas y vehículos, facilita una integración aún más fluida.", "image": "/assets/images/team/erik.png" }
+    ] },
+    { "title": "Fabricación de vehículos", "people": [
+      { "name": "Tobia", "qualifications": ["Maestro mecánico industrial", "Mecánico industrial"], "roles": ["Jefe de taller de fabricación de vehículos"], "description": "Tobia hace que los procesos de fabricación sean previsibles y eficientes. Con dedicación incansable allana el camino hasta el producto terminado y promueve mejoras con proveedores y subcontratistas.", "image": "/assets/images/team/tobia.jpg" },
+      { "name": "Paul", "qualifications": ["Trabajador del metal", "Diseño metálico"], "roles": ["Fabricación de vehículos"], "description": "Si te preguntas si nuestras soldaduras se han hecho a máquina, estás mirando el trabajo de Paul. Su labor concentrada y precisa es la base de nuestros portaequipajes traseros, bacas y bastidores de cabina prémium.", "image": "/assets/images/team/paul.jpg" },
+      { "name": "Fabian", "qualifications": ["Constructor de depósitos y aparatos"], "roles": ["Fabricación de vehículos"], "description": "Nuestro miembro más joven no solo tiene buen pulso para soldar: también aporta rapidez para comprender y una amabilidad que enriquece al equipo.", "image": "/assets/images/team/fabian.jpg" }
+    ] }
+  ],
+  "recruiting": {
+    "title": "¡Únete al equipo!",
+    "body": "Buscamos constantemente refuerzos para nuestro joven equipo. Si compartes nuestra pasión por viajar o te imaginas formando parte del mundo de los vehículos de expedición, consulta nuestras vacantes actuales.",
+    "openings": [
+      { "title": "Montador de interiores / técnico de caravanas (m/f/d)", "url": "/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf" },
+      { "title": "Metalúrgico / técnico de vehículos comerciales (m/f/d)", "url": "/assets/downloads/stellenausschreibung-schlosser-2025.pdf" }
+    ],
+    "ctaText": "Contacta con nosotros",
+    "ctaUrl": "/es/contact/"
+  }
+}

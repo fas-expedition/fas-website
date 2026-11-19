@@ -1,0 +1,114 @@
+{
+  "de": {
+    "inquire": "Jetzt anfragen",
+    "expeditionVehicles": {
+      "priceFrom": "Preis ab:",
+      "inquiryTitle": "Finde das perfekte Expeditionsmobil",
+      "inquiryDescription": "Kontaktiere unser Team und entdecke, welche Konfiguration zu deinen Anforderungen passt.",
+      "openGallery": "Galerie öffnen für",
+      "openImage": "Bild öffnen",
+      "closeGallery": "Galerie schließen",
+      "previousImage": "Vorheriges Bild",
+      "nextImage": "Nächstes Bild",
+      "image": "Bild",
+      "of": "von"
+    },
+    "modularSystems": {
+      "learnMore": "Mehr erfahren",
+      "systemImageAlt": "Heckträgersystem mit Plattformen"
+    },
+    "vehicleDetail": {
+      "overview": "Übersicht",
+      "configurations": "Konfigurationen",
+      "features": "Ausstattung"
+    },
+    "lightbox": {
+      "close": "Lightbox schließen",
+      "enlargedImage": "Vergrößerte Ansicht"
+    }
+  },
+  "en": {
+    "inquire": "Inquire Now",
+    "expeditionVehicles": {
+      "priceFrom": "Price from:",
+      "inquiryTitle": "Find Your Perfect Expedition Vehicle",
+      "inquiryDescription": "Contact our team to discover which configuration meets your requirements.",
+      "openGallery": "Open gallery for",
+      "openImage": "Open image",
+      "closeGallery": "Close gallery",
+      "previousImage": "Previous image",
+      "nextImage": "Next image",
+      "image": "Image",
+      "of": "of"
+    },
+    "modularSystems": {
+      "learnMore": "Learn More",
+      "systemImageAlt": "Rear carrier system with platforms"
+    },
+    "vehicleDetail": {
+      "overview": "Overview",
+      "configurations": "Configurations",
+      "features": "Features"
+    },
+    "lightbox": {
+      "close": "Close lightbox",
+      "enlargedImage": "Enlarged view"
+    }
+  },
+  "es": {
+    "inquire": "Solicitar información",
+    "expeditionVehicles": {
+      "priceFrom": "Precio desde:",
+      "inquiryTitle": "Encuentre su vehículo de expedición ideal",
+      "inquiryDescription": "Contacte con nuestro equipo para descubrir qué configuración se adapta a sus necesidades.",
+      "openGallery": "Abrir galería de",
+      "openImage": "Abrir imagen",
+      "closeGallery": "Cerrar galería",
+      "previousImage": "Imagen anterior",
+      "nextImage": "Imagen siguiente",
+      "image": "Imagen",
+      "of": "de"
+    },
+    "modularSystems": {
+      "learnMore": "Más información",
+      "systemImageAlt": "Sistema portaequipajes trasero con plataformas"
+    },
+    "vehicleDetail": {
+      "overview": "Resumen",
+      "configurations": "Configuraciones",
+      "features": "Equipamiento"
+    },
+    "lightbox": {
+      "close": "Cerrar visor de imágenes",
+      "enlargedImage": "Vista ampliada"
+    }
+  },
+  "fr": {
+    "inquire": "Demander des informations",
+    "expeditionVehicles": {
+      "priceFrom": "À partir de :",
+      "inquiryTitle": "Trouvez votre véhicule d’expédition idéal",
+      "inquiryDescription": "Contactez notre équipe pour découvrir la configuration adaptée à vos besoins.",
+      "openGallery": "Ouvrir la galerie de",
+      "openImage": "Ouvrir l’image",
+      "closeGallery": "Fermer la galerie",
+      "previousImage": "Image précédente",
+      "nextImage": "Image suivante",
+      "image": "Image",
+      "of": "sur"
+    },
+    "modularSystems": {
+      "learnMore": "En savoir plus",
+      "systemImageAlt": "Système porte-charges arrière avec plateformes"
+    },
+    "vehicleDetail": {
+      "overview": "Présentation",
+      "configurations": "Configurations",
+      "features": "Équipements"
+    },
+    "lightbox": {
+      "close": "Fermer la visionneuse",
+      "enlargedImage": "Vue agrandie"
+    }
+  }
+}

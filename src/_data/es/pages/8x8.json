@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Vehículos de expedición 8x8",
+  "pageDescription": "Vehículos de expedición FAS 8x8: máxima potencia y capacidad para los retos más extremos. Desde 685.000 €.",
+  "altSlug": {
+    "de": "8x8",
+    "en": "8x8",
+    "es": "8x8",
+    "fr": "8x8"
+  },
+  "hero": {
+    "title": "Sistema 8x8",
+    "subtitle": "Máxima potencia y capacidad para afrontar los retos más extremos.",
+    "image": "/assets/images/vehicles/Arocs 8x8.png"
+  },
+  "overview": {
+    "description": "La plataforma 8x8 es la solución definitiva para expediciones en las condiciones más extremas. Sus cuatro ejes motrices ofrecen una capacidad todoterreno y una capacidad de carga excepcionales. La gran distancia entre ejes permite disponer de amplias zonas habitables y de trabajo. Está diseñada para misiones autónomas de larga duración en las regiones más remotas del planeta."
+  },
+  "specs": {
+    "power": {
+      "label": "Potencia",
+      "value": "Hasta 680 CV"
+    },
+    "gvw": {
+      "label": "Peso bruto del vehículo",
+      "value": "Hasta 36.000 kg"
+    },
+    "range": {
+      "label": "Autonomía",
+      "value": "Hasta 2.500 km"
+    },
+    "cabin": {
+      "label": "Cabina",
+      "value": "6–10 personas"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Titan 8x8 Base",
+      "price": "desde 685.000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Tracción de cuatro ejes",
+      "description": "Tracción total permanente en cuatro ejes con diferenciales bloqueables individualmente para dominar cualquier terreno."
+    },
+    {
+      "icon": "cog",
+      "title": "Gran diseño modular",
+      "description": "Sistema ampliable con varios módulos habitables, de trabajo y almacenamiento para lograr una autonomía completa."
+    },
+    {
+      "icon": "shield",
+      "title": "Protección máxima",
+      "description": "Paquetes de protección balística hasta VR9 y ventilación de protección CBRN para operaciones con los máximos requisitos de seguridad."
+    },
+    {
+      "icon": "gauge",
+      "title": "Autonomía extrema",
+      "description": "Sistema de depósitos múltiples con capacidad de hasta 1.200 litros para semanas de funcionamiento autónomo sin infraestructura."
+    }
+  ],
+  "cta": {
+    "title": "Configure su 8x8",
+    "description": "Cree su vehículo de expedición 8x8 personalizado para las misiones más exigentes.",
+    "buttonText": "Solicitar información",
+    "buttonUrl": "#inquiry-form"
+  }
+}

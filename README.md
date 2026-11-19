@@ -1,6 +1,6 @@
 # FAS Expedition Website
 
-Static marketing website for FAS Expedition vehicles, built with Eleventy 3.x and Tailwind CSS. Bilingual (German/English) with a dark luxury aesthetic.
+Static marketing website for FAS Expedition vehicles, built with Eleventy 3.x and Tailwind CSS. German is the default language; English, Spanish and French are also available. The language switcher links to the equivalent page or article when available. The former promotional banner is not rendered.
 
 ## Tech Stack
 
@@ -104,9 +104,9 @@ npm run clean
 |--------|---------|-------------|
 | `/de/` | `/en/` | Home — hero, features, vehicles, blog preview, CTA |
 | `/de/expeditionsmobile/` | `/en/expedition-vehicles/` | Vehicle lineup overview |
-| `/de/4x4/` | — | 4x4 vehicle detail page |
-| `/de/6x6/` | — | 6x6 vehicle detail page |
-| `/de/8x8/` | — | 8x8 vehicle detail page |
+| `/de/4x4/` | `/en/4x4/` | 4x4 vehicle detail page |
+| `/de/6x6/` | `/en/6x6/` | 6x6 vehicle detail page |
+| `/de/8x8/` | `/en/8x8/` | 8x8 vehicle detail page |
 | `/de/modulare-systeme/` | `/en/modular-systems/` | Modular rear carrier system |
 | `/de/brabus/` | `/en/brabus/` | BRABUS limited editions |
 | `/de/konfigurator/` | `/en/configurator/` | Vehicle configurator |
@@ -127,7 +127,7 @@ src/blog/
     └── *.md     # Blog posts
 ```
 
-German posts are served at `/{slug}/`, English at `/en/{slug}/`.
+German posts keep their existing `/{slug}/` URLs. English, Spanish and French posts are served at `/{locale}/{slug}/`. Keep the same filename and frontmatter slug for all translations of a post.
 
 Features:
 - Category filtering (client-side JS)
@@ -139,7 +139,7 @@ Features:
 
 ### Adding a Blog Post
 
-Create a Markdown file in `src/blog/de/` (and optionally `src/blog/en/` for the translation):
+Create a Markdown file in `src/blog/de/` and matching translations in `src/blog/en/`, `src/blog/es/` and `src/blog/fr/`:
 
 ```yaml
 ---

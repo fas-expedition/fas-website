@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Empleo",
+  "pageDescription": "FAS Expedition: oportunidades profesionales en Lammersdorf. Únete a nuestro equipo.",
+  "hero": { "title": "Empleo", "subtitle": "¡Únete al equipo! Buscamos constantemente refuerzos para nuestro joven equipo." },
+  "intro": "FAS Expedition GmbH es una empresa joven en el sector de los vehículos de expedición. Con nuestras dos divisiones principales, fabricación de vehículos y construcción de cabinas, ofrecemos a nuestros clientes vehículos todoterreno para viajar por el mundo, todo de un mismo proveedor.\n\nSi compartes nuestra pasión por viajar o te imaginas formando parte del mundo de los vehículos de expedición, consulta nuestras vacantes. ¡Esperamos tener noticias tuyas!",
+  "labels": { "jobOpening": "Oferta de empleo", "location": "Ubicación", "division": "División", "tasks": "Tus funciones", "profile": "Tu perfil", "benefits": "Te ofrecemos", "apply": "Solicitar ahora", "pdf": "Descargar PDF", "contactDirectly": "Envía tu solicitud directamente a:" },
+  "jobs": [
+    {
+      "title": "Técnico de caravanas / autocaravanas (m/f/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Construcción de cabinas",
+      "tasks": ["Construcción interior de vehículos de expedición prémium", "Instalación de componentes de mobiliario fabricados mediante CNC", "Tendido y conexión de sistemas eléctricos, de agua, calefacción y climatización", "Instalación de sistemas solares, TV, infraestructura Wi-Fi y electrodomésticos", "Montaje de equipamiento adicional, como iluminación exterior, cámaras, alarmas, sistemas de escalones y cocinas exteriores"],
+      "profile": ["Pasión por la perfección visual y funcional y por los materiales prémium", "Experiencia con la infraestructura técnica de autocaravanas", "Formación profesional en caravanas, electricidad, instalaciones, electrónica de vehículos comerciales o construcción naval", "Buenas habilidades de comunicación"],
+      "benefits": ["Horario y modelos de trabajo flexibles", "Posibilidad de trabajar a tiempo parcial", "Dependencia del responsable del equipo de construcción de cabinas"],
+      "ctaText": "Solicitar ahora",
+      "ctaUrl": "/es/contact/",
+      "pdfUrl": "/assets/downloads/Ausschreibung%20Caravantechniker%20FAS%20Expedition%20GmbH%202026.pdf"
+    },
+    {
+      "title": "Técnico de vehículos comerciales / mecatrónico (m/f/d)",
+      "location": "Lammersdorf, Eifel",
+      "division": "Fabricación de vehículos",
+      "tasks": ["Instalación, cableado y puesta en servicio de sistemas eléctricos de a bordo (24 V)", "Preparación eléctrica e instalación de componentes adicionales, como iluminación, cámaras, cabrestantes y sistemas de control de presión de neumáticos", "Configuración y programación de sistemas de control y supervisión, como CAN bus, unidades de control e interfaces de cabina", "Colaboración en trabajos mecánicos de desmontaje y montaje de subchasis, portaequipajes traseros, cajas de almacenamiento, depósitos, bacas y otros componentes"],
+      "profile": ["Pasión por los vehículos comerciales y por un cableado limpio", "Sólidos conocimientos de electricidad y electrónica de vehículos", "Experiencia con esquemas eléctricos y sistemas de diagnóstico, así como con sistemas de información de fabricantes y portales web para adquirir recambios originales", "Formación profesional en carrocería o fabricación de vehículos, preferiblemente en vehículos comerciales con especialización eléctrica/electrónica", "Buenas habilidades de comunicación y espíritu de equipo"],
+      "benefits": ["Horario y modelos de trabajo flexibles", "Posibilidad de trabajar a tiempo parcial", "Dependencia del jefe de taller de fabricación de vehículos"],
+      "ctaText": "Solicitar ahora",
+      "ctaUrl": "/es/contact/",
+      "pdfUrl": "/assets/downloads/Ausschreibung%20Nutzfahrzeug%20Mechatroniker%20FAS%20Expedition%20GmbH.pdf"
+    }
+  ],
+  "applicationCta": {
+    "title": "Solicita ahora",
+    "description": "Esperamos recibir tu candidatura digital por correo electrónico junto con tu currículum.",
+    "contactName": "Márika Böttcher",
+    "contactCompany": "FAS Expedition GmbH",
+    "contactAddress": "Trafoweg 2-4\n52152 Lammersdorf",
+    "contactEmail": "marika.boettcher@fas-expedition.de",
+    "ctaText": "Formulario de contacto",
+    "ctaUrl": "/es/contact/"
+  }
+}

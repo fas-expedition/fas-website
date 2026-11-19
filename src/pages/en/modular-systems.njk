@@ -45,7 +45,7 @@ eleventyComputed:
 
       {# Right Column: Product Image #}
       <div>
-        <img src="/assets/images/modules/HT XL mit Plattformen.png" alt="Rear carrier system with platforms" class="w-full h-auto relative hover-above-logo" loading="lazy" width="600" height="600">
+        <img src="/assets/images/modules/HT XL mit Plattformen.png" alt="{{ productUi[locale].modularSystems.systemImageAlt }}" class="w-full h-auto relative hover-above-logo" loading="lazy" width="600" height="600">
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ eleventyComputed:
           <h3 class="text-2xl font-bold uppercase tracking-wider mb-3">{{ module.title }}</h3>
           <p class="text-zinc-400 mb-4 leading-relaxed">{{ module.description }}</p>
           <a href="#inquiry-form" class="text-white hover:text-zinc-300 transition-colors font-semibold uppercase tracking-wider inline-flex items-center">
-            Learn More
+            {{ productUi[locale].modularSystems.learnMore }}
             <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
             </svg>
@@ -80,7 +80,7 @@ eleventyComputed:
       {% endfor %}
     </div>
     <div class="flex justify-center mt-16">
-      {{ primaryBtn("Inquire Now", "#inquiry-form", true) }}
+      {{ primaryBtn(productUi[locale].inquire, "#inquiry-form", true) }}
     </div>
   </div>
 </section>

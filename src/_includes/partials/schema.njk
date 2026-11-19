@@ -1,7 +1,7 @@
 {# JSON-LD Structured Data Schemas #}
 
 {# Organization Schema (homepage only) #}
-{% if page.url == '/' or page.url == '/de/' or page.url == '/en/' %}
+{% if page.url == localizedRoutes.index %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -9,7 +9,7 @@
   "name": "FAS Expedition",
   "url": "https://fas-expedition.de",
   "logo": "https://fas-expedition.de/assets/images/logo/fas-logo-white.png",
-  "description": "FAS Expedition – Spezialist für maßgeschneiderte Expeditionsmobile. Fahrzeugbau, Kabinenbau und Services aus einer Hand.",
+  "description": {{ pageDescription | dump | safe }},
   "sameAs": [
     "https://www.instagram.com/fas.expedition/",
     "https://www.facebook.com/fas.expedition/"
@@ -40,15 +40,15 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "{% if locale == 'de' %}Home{% else %}Home{% endif %}",
-      "item": "https://fas-expedition.de/{{ locale }}/"
+      "name": {{ translations["nav.home"] | dump | safe }},
+      "item": "{{ site.url }}{{ localizedRoutes.index }}"
     }
-    {% if page.url != '/' and page.url != '/de/' and page.url != '/en/' %}
+    {% if page.url != localizedRoutes.index %}
     ,{
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ pageTitle }}",
-      "item": "https://fas-expedition.de{{ page.url }}"
+      "name": {{ pageTitle | dump | safe }},
+      "item": "{{ site.url }}{{ page.url }}"
     }
     {% endif %}
   ]

@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Inicio",
+  "pageDescription": "FAS Expedition fabrica vehículos de expedición a medida y sistemas modulares para aventuras en 4x4, 6x6 y 8x8.",
+  "altSlug": { "de": "", "en": "" },
+  "hero": {
+    "title": "Vehículos de expedición a medida",
+    "subtitle": "Donde la aventura se encuentra con la ingeniería",
+    "description": "Vehículos únicos y sistemas modulares para llegar más lejos.",
+    "image": "/assets/images/vehicles/arocs-title.png",
+    "ctaText": "Solicitar información",
+    "ctaUrl": "#inquiry-form"
+  },
+  "features": {
+    "title": "Excelencia en ingeniería",
+    "description": {
+      "title": "Precisión en el diseño. Libertad en el equipamiento. Calidad para décadas.",
+      "body": "FAS Expedition diseña y fabrica vehículos de expedición a medida. Cada vehículo es único: se diseña con precisión y se fabrica para durar. Para viajes que empiezan donde terminan las soluciones convencionales."
+    },
+    "items": [
+      { "icon": "mountain", "title": "En carretera y fuera de ella", "description": "Diseñados para todo tipo de terreno, del frío de Alaska a los altiplanos de Sudamérica." },
+      { "icon": "cog", "title": "Sistemas modulares", "description": "Una plataforma configurable con componentes modulares para cada viaje." },
+      { "icon": "shield", "title": "Interior a medida", "description": "Materiales y acabados de primera calidad para viajar con el máximo confort." },
+      { "icon": "gauge", "title": "Accesorios versátiles", "description": "Baca, plataforma extensible, estabilizadores, cabrestante o equipo de rescate: tú eliges." }
+    ]
+  },
+  "vehicles": {
+    "title": "Elige tu plataforma",
+    "items": [
+      { "id": "4x4", "title": "Chasis 4x4", "description": "Equilibrio entre agilidad y capacidad todoterreno", "image": "/assets/images/vehicles/4x4.png", "specs": "Hasta 16.500 kg de MMA" },
+      { "id": "6x6", "title": "Chasis 6x6", "description": "Mayor autonomía y capacidad de carga", "image": "/assets/images/vehicles/6x6.png", "specs": "Hasta 26.000 kg de MMA" },
+      { "id": "8x8", "title": "Chasis 8x8", "description": "Máxima capacidad para expediciones extremas", "image": "/assets/images/vehicles/8x8.png", "specs": "Hasta 32.000 kg de MMA" }
+    ]
+  },
+  "cta": {
+    "title": "Tu viaje comienza aquí",
+    "description": "Diseña con nosotros el vehículo de expedición que imaginas."
+  }
+}

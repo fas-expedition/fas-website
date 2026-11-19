@@ -1,5 +1,7 @@
 {
   "nav.home": "Home",
+  "nav.sales": "Vertrieb",
+  "nav.openMenu": "Menü öffnen",
   "nav.about": "Über uns",
   "nav.expeditionMobile": "Expeditionsmobile",
   "nav.modularSystems": "Fahrzeugmodule",
@@ -31,6 +33,7 @@
   "footer.terms": "AGB",
   "footer.tagline": "ENGINEERING EXCELLENCE",
   "ui.exploreMore": "Mehr erfahren",
+  "ui.discover": "entdecken",
   "ui.configurator": "Zum Konfigurator",
   "ui.inquireNow": "Jetzt anfragen",
   "ui.contactSpecialist": "Spezialisten kontaktieren",

@@ -4,5 +4,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/**/*.test.ts'],
+    // Integration tests remove and rebuild the shared _site directory.
+    fileParallelism: false,
   },
 });

@@ -3,6 +3,14 @@ import { readFileSync, existsSync } from 'fs';
 import { loadHtml } from './helpers';
 
 describe('Unit Tests: Configuration and Content Validation', () => {
+  it.each([
+    '_site/de/index.html',
+    '_site/en/auslieferung-komplettkabine-auf-mercedes-arocs/index.html',
+  ])('does not render a promotional banner on %s', (file) => {
+    const $ = loadHtml(file);
+    expect($('#desktop-floating-banner, #mobile-banner-popup')).toHaveLength(0);
+  });
+
   describe('package.json', () => {
     const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
 

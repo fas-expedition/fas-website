@@ -2,6 +2,27 @@ const fs = require('fs');
 const path = require('path');
 const Image = require("@11ty/eleventy-img");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const site = require("./src/_data/site.json");
+const routes = require("./src/_data/routes.js");
+
+function alternateUrls(data) {
+  const inputPath = data.page?.inputPath || '';
+  const pageMatch = inputPath.match(/\/pages\/([^/]+)\/([^/]+)\.njk$/);
+  const blogMatch = inputPath.match(/\/blog\/([^/]+)\/([^/]+)\.md$/);
+  if (pageMatch && routes[pageMatch[1]]) {
+    const [ , locale, slug ] = pageMatch;
+    const url = `/${locale}/${slug === 'index' ? '' : `${slug}/`}`;
+    const key = Object.keys(routes[locale]).find(key => routes[locale][key] === url);
+    if (!key) return { [locale]: url };
+    return Object.fromEntries(site.locales.map(language => [language, routes[language][key]]));
+  }
+  if (blogMatch && data.slug) {
+    return Object.fromEntries(site.locales
+      .filter(language => fs.existsSync(path.join(__dirname, 'src/blog', language, `${blogMatch[2]}.md`)))
+      .map(language => [language, `${language === site.defaultLocale ? '' : `/${language}`}/${data.slug}/`]));
+  }
+  return {};
+}
 
 // Configure eleventy-img cache
 Image.concurrency = 10;
@@ -184,15 +205,11 @@ module.exports = function(eleventyConfig) {
     }
   });
 
-  // Blog date filter: formats ISO date as "DD. MMMM YYYY" in German
-  const MONTHS_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-  eleventyConfig.addFilter("blogDate", function(dateStr) {
+  eleventyConfig.addFilter("blogDate", function(dateStr, locale = site.defaultLocale) {
     if (!dateStr) return '';
-    const d = new Date(dateStr);
-    const day = d.getUTCDate();
-    const month = MONTHS_DE[d.getUTCMonth()];
-    const year = d.getUTCFullYear();
-    return `${day}. ${month} ${year}`;
+    return new Intl.DateTimeFormat(site.regionalLocales[locale], {
+      dateStyle: 'long', timeZone: 'UTC',
+    }).format(new Date(dateStr));
   });
 
   // Add section galleries to blog post content
@@ -215,51 +232,16 @@ module.exports = function(eleventyConfig) {
   };
   eleventyConfig.setLibrary("md", md);
 
-  // Blog collection: published posts sorted by date descending (German)
-  eleventyConfig.addCollection("publishedBlog", function(collectionApi) {
-    return collectionApi.getFilteredByTag("blog_de")
-      .filter(post => post.data.status === "published")
-      .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
-  });
-
-  // Blog collection: published posts sorted by date descending (English)
-  eleventyConfig.addCollection("publishedBlogEn", function(collectionApi) {
-    return collectionApi.getFilteredByTag("blog_en")
-      .filter(post => post.data.status === "published")
-      .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
-  });
-
-  // Blog categories: distinct categories from published posts (German)
-  eleventyConfig.addCollection("blogCategories", function(collectionApi) {
-    const posts = collectionApi.getFilteredByTag("blog_de")
-      .filter(post => post.data.status === "published");
-    const categories = new Set();
-    posts.forEach(p => {
-      // Support both old single category and new multiple categories
-      if (p.data.categories && Array.isArray(p.data.categories)) {
-        p.data.categories.forEach(cat => categories.add(cat));
-      } else if (p.data.category) {
-        categories.add(p.data.category);
-      }
-    });
-    return Array.from(categories).sort();
-  });
-
-  // Blog categories: distinct categories from published posts (English)
-  eleventyConfig.addCollection("blogCategoriesEn", function(collectionApi) {
-    const posts = collectionApi.getFilteredByTag("blog_en")
-      .filter(post => post.data.status === "published");
-    const categories = new Set();
-    posts.forEach(p => {
-      // Support both old single category and new multiple categories
-      if (p.data.categories && Array.isArray(p.data.categories)) {
-        p.data.categories.forEach(cat => categories.add(cat));
-      } else if (p.data.category) {
-        categories.add(p.data.category);
-      }
-    });
-    return Array.from(categories).sort();
-  });
+  const publishedPosts = (collectionApi, locale) => collectionApi.getFilteredByTag(`blog_${locale}`)
+    .filter(post => post.data.status === 'published')
+    .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
+  for (const locale of site.locales) {
+    const suffix = locale === site.defaultLocale ? '' : locale[0].toUpperCase() + locale.slice(1);
+    eleventyConfig.addCollection(`publishedBlog${suffix}`, api => publishedPosts(api, locale));
+    eleventyConfig.addCollection(`blogCategories${suffix}`, api => Array.from(new Set(
+      publishedPosts(api, locale).flatMap(post => post.data.categories || [post.data.category]).filter(Boolean)
+    )).sort((a, b) => a.localeCompare(b, locale)));
+  }
 
   // Build-time validation of vehicle detail page data
   eleventyConfig.on('eleventy.before', () => {
@@ -306,6 +288,9 @@ module.exports = function(eleventyConfig) {
 
   // Computed data for translations and pageContent
   eleventyConfig.addGlobalData("eleventyComputed", {
+    alternateUrls,
+    localizedRoutes: (data) => routes[data.locale],
+    productUi: (data) => data["product-ui"],
     translations: (data) => data[data.locale]?.translations,
     pageContent: (data) => data[data.locale]?.pages,
     pageTitle: (data) => {
@@ -314,7 +299,7 @@ module.exports = function(eleventyConfig) {
       const pages = data[data.locale]?.pages;
       if (!pages || !data.page?.inputPath) return data.pageTitle;
       const inputPath = data.page.inputPath;
-      const match = inputPath.match(/\/pages\/(?:de|en)\/(.+)\.njk$/);
+      const match = inputPath.match(/\/pages\/(?:de|en|es|fr)\/(.+)\.njk$/);
       if (!match) return data.pageTitle;
       const slug = match[1] === 'index' ? 'home' : match[1];
       // Normalize slug to match JSON keys (e.g., 'modulare-systeme' -> 'modular-systems')
@@ -326,7 +311,7 @@ module.exports = function(eleventyConfig) {
       const pages = data[data.locale]?.pages;
       if (!pages || !data.page?.inputPath) return data.pageDescription;
       const inputPath = data.page.inputPath;
-      const match = inputPath.match(/\/pages\/(?:de|en)\/(.+)\.njk$/);
+      const match = inputPath.match(/\/pages\/(?:de|en|es|fr)\/(.+)\.njk$/);
       if (!match) return data.pageDescription;
       const slug = match[1] === 'index' ? 'home' : match[1];
       const pageData = pages[slug] || pages[slug.replace(/-/g, '')];
@@ -337,7 +322,7 @@ module.exports = function(eleventyConfig) {
       const pages = data[data.locale]?.pages;
       if (!pages || !data.page?.inputPath) return data.altSlug;
       const inputPath = data.page.inputPath;
-      const match = inputPath.match(/\/pages\/(?:de|en)\/(.+)\.njk$/);
+      const match = inputPath.match(/\/pages\/(?:de|en|es|fr)\/(.+)\.njk$/);
       if (!match) return data.altSlug;
       const slug = match[1] === 'index' ? 'home' : match[1];
       const pageData = pages[slug] || pages[slug.replace(/-/g, '')];
@@ -349,7 +334,7 @@ module.exports = function(eleventyConfig) {
       const inputPath = data.page.inputPath;
       if (!inputPath.includes('/pages/')) return data.permalink;
       // Strip the pages/{locale}/ prefix and map to /{locale}/{slug}/
-      const match = inputPath.match(/\/pages\/(de|en)\/(.+)\.njk$/);
+      const match = inputPath.match(/\/pages\/(de|en|es|fr)\/(.+)\.njk$/);
       if (!match) return data.permalink;
       const locale = match[1];
       const slug = match[2];

@@ -10,7 +10,7 @@
   </div>
 
   {# Gradient Overlay #}
-  <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60"></div>
 
   {# Lower Gradient Overlay #}
   <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-transparent to-black opacity-20"></div>
@@ -20,10 +20,10 @@
     <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-wider uppercase mb-6" style="color: #1DD646;">
       {{ hero.title }}
     </h1>
-    <p class="text-base md:text-xl lg:text-2xl text-zinc-300 mb-4">
+    <p class="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4">
       {{ hero.subtitle }}
     </p>
-    <p class="text-zinc-400 text-sm md:text-base lg:text-lg mb-10 max-w-2xl mx-auto">
+    <p class="text-zinc-100 text-base md:text-lg lg:text-xl mb-10 max-w-2xl mx-auto">
       {{ hero.description }}
     </p>
     {{ primaryBtn(hero.ctaText, hero.ctaUrl, true) }}

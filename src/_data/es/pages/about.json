@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Sobre nosotros",
+  "pageDescription": "FAS Expedition: especialistas en vehículos de expedición a medida, fabricación de vehículos y construcción de cabinas.",
+  "hero": { "title": "Sobre nosotros", "subtitle": "Especialistas en vehículos de expedición" },
+  "intro": {
+    "title": "Quiénes somos: FAS Expedition",
+    "tagline": "La aventura comienza donde terminan las soluciones estándar.",
+    "body": "Un vehículo de expedición es mucho más que un vehículo. Es la base de la aventura, la independencia y la confianza para llegar con seguridad incluso a los lugares más remotos del mundo. Por eso, en FAS Expedition desarrollamos y fabricamos vehículos de expedición prémium concebidos sin concesiones para las condiciones más extremas. Combinamos conocimientos de ingeniería, artesanía de alta calidad y pasión por viajar en un concepto integral que va mucho más allá de la fabricación convencional de vehículos."
+  },
+  "sections": [
+    { "title": "Nuestra visión", "paragraphs": ["Hacemos posible una libertad sin límites lejos de las rutas habituales. Con nuestros vehículos de expedición prémium creamos la base para aventuras inolvidables, sin importar el terreno, el clima o la distancia. Nuestro equipo combina su entusiasmo por la acampada, la tecnología y los viajes de larga distancia con años de experiencia en la fabricación de vehículos. Esa pasión se refleja en cada detalle."] },
+    { "title": "Nuestra misión", "paragraphs": ["Desarrollamos y fabricamos vehículos de expedición individuales con los máximos estándares de calidad. Unimos excelencia en ingeniería, pasión por viajar y funcionalidad sin concesiones. Cada vehículo se diseña y planifica técnicamente por completo antes de iniciar la producción: la calidad no es fruto del azar, sino de una planificación rigurosa."] },
+    { "title": "Mucho más que fabricar vehículos", "paragraphs": ["No nos limitamos a fabricar vehículos de expedición: desarrollamos sistemas integrales bien pensados. El mobiliario, el suministro eléctrico, la tecnología del agua, la calefacción, la climatización y la tecnología del vehículo se coordinan desde el principio. También damos gran importancia a una documentación excepcionalmente completa. Aporta transparencia, facilita el mantenimiento y las reparaciones, y ayuda a nuestros clientes a conocer y utilizar su vehículo de forma óptima en cualquier lugar del mundo."] },
+    { "title": "Calidad hasta el último detalle", "paragraphs": ["Para nosotros, prémium significa mucho más que utilizar materiales de alta calidad. La calidad se aprecia en la fabricación precisa del mobiliario, las superficies cuidadosamente seleccionadas y un acabado pensado para durar. También importan los detalles que no se ven: sistemas eléctricos bien diseñados, baterías de gran capacidad, tratamiento moderno del agua, conceptos inteligentes de calefacción y climatización y una infraestructura técnica fiable en cualquier lugar del mundo. Nuestros clientes nos confían sus aventuras; respondemos con el máximo cuidado y un compromiso incondicional con la calidad."] },
+    { "title": "Nuestros valores", "intro": "Nuestra cultura empresarial se basa en convicciones que guían nuestro trabajo diario.", "values": [
+      { "title": "Libertad y aventura", "text": "Compartimos la pasión por descubrir nuevos caminos." },
+      { "title": "Calidad y precisión", "text": "Analizamos cada detalle y lo diseñamos para que dure." },
+      { "title": "Innovación e iniciativa", "text": "Nuestro joven equipo desarrolla ideas y asume responsabilidades." },
+      { "title": "Apertura y confianza", "text": "Una estructura horizontal, la comunicación sincera y el respeto mutuo crean un entorno donde surgen buenas soluciones." },
+      { "title": "Flexibilidad y autonomía", "text": "El trabajo autónomo y los modelos laborales flexibles son algo natural para nosotros." }
+    ] },
+    { "title": "Las personas marcan la diferencia", "paragraphs": ["Detrás de cada vehículo de expedición hay un equipo que trabaja con pasión. Creemos que los mejores resultados se consiguen cuando las personas disfrutan de lo que hacen. Por eso ofrecemos un entorno de trabajo moderno, prestaciones individuales y una cultura empresarial que reconoce y valora el compromiso.", "Nuestros empleados desarrollan continuamente sus competencias y aportan activamente sus ideas a nuestros productos. Esta combinación de experiencia, creatividad y entusiasmo es lo que hace único a cada vehículo FAS."] },
+    { "title": "Por qué nuestro logotipo lleva un lobo", "paragraphs": ["Muchos clientes nos preguntan qué significa nuestro logotipo.", "El lobo representa desde siempre la amplitud, la resistencia, la resiliencia y la independencia: cualidades que también caracterizan a nuestros vehículos de expedición. Permiten viajar de forma autónoma durante largas distancias, con gran autonomía y una capacidad todoterreno segura para llegar incluso a las regiones más remotas del mundo.", "El lobo también tiene un significado muy personal para nosotros: nuestra empresa se encuentra junto a las Hautes Fagnes (Hohes Venn), una reserva natural transfronteriza y conocida zona de protección del lobo en la frontera entre Alemania y Bélgica. Nuestra conexión con este paisaje único y su animal emblemático inspiró de forma natural nuestro logotipo.", "Así, el lobo representa tanto la aventura como nuestro hogar."] },
+    { "title": "Para quienes miran más allá", "paragraphs": ["Con la máxima excelencia en ingeniería, un trabajo artesanal preciso y una pasión auténtica, desarrollamos vehículos de expedición que funcionan con fiabilidad en todo el mundo y permiten a sus propietarios vivir lo que realmente significa viajar:"], "highlight": "Libertad sin límites." }
+  ],
+  "teamHeading": "Conoce a nuestro equipo",
+  "teamIntro": "Casi todos los miembros del equipo sienten pasión por la acampada y los viajes.",
+  "services": [
+    { "title": "Fabricación de vehículos", "text": "Modificaciones de chasis, subchasis, ampliaciones de batalla, sistemas de depósitos y estabilizadores: todo lo necesario para convertir tu vehículo en un auténtico compañero de viajes por el mundo." },
+    { "title": "Construcción de cabinas", "text": "Cabinas innovadoras con interiores elaborados con maestría, preparadas para cualquier nivel de conducción todoterreno." },
+    { "title": "Servicio", "text": "Inspección y mantenimiento del vehículo, asesoramiento sobre equipos de recuperación y modificaciones: para propietarios de todo tipo de vehículos de expedición." }
+  ]
+}

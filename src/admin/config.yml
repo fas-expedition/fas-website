@@ -15,7 +15,7 @@ public_folder: "/assets/images"
 
 i18n:
   structure: multiple_folders
-  locales: [de, en]
+  locales: [de, en, es, fr]
   default_locale: de
 
 collections:
@@ -36,7 +36,7 @@ collections:
       - { label: "Status", name: "status", widget: "select", options: ["published", "draft"], default: "draft", required: true, i18n: duplicate }
       - { label: "Auszug", name: "excerpt", widget: "text", required: true, i18n: true, pattern: [".{1,300}", "Maximal 300 Zeichen"] }
       - { label: "Autor", name: "author", widget: "string", required: true, default: "FAS Team", i18n: duplicate }
-      - { label: "Kategorie", name: "category", widget: "select", options: ["Auslieferung", "Expedition", "BRABUS", "Technologie", "Neuigkeiten", "Zu Verkaufen", "Delivery", "Technology", "News", "For Sale"], required: true, i18n: true }
+      - { label: "Kategorie", name: "category", widget: "select", options: ["Auslieferung", "Expedition", "BRABUS", "Technologie", "Neuigkeiten", "Zu Verkaufen", "Delivery", "Technology", "News", "For Sale", "Entrega", "Expedición", "Tecnología", "Noticias", "En venta", "Livraison", "Expédition", "Actualités", "À vendre"], required: true, i18n: true }
       - { label: "Titelbild", name: "image", widget: "image", required: false, i18n: duplicate }
       - { label: "Header-Bild", name: "headerImage", widget: "image", required: false, i18n: duplicate }
       - { label: "Audio URL", name: "audioUrl", widget: "string", required: false, i18n: duplicate }
@@ -374,6 +374,8 @@ collections:
         file: "src/_data/de/translations.json"
         fields:
           - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - Vertrieb", name: "nav.sales", widget: "string" }
+          - { label: "Nav - Menü öffnen", name: "nav.openMenu", widget: "string" }
           - { label: "Nav - Über uns", name: "nav.about", widget: "string" }
           - { label: "Nav - Expeditionsmobile", name: "nav.expeditionMobile", widget: "string" }
           - { label: "Nav - Fahrzeugmodule", name: "nav.modularSystems", widget: "string" }
@@ -405,6 +407,7 @@ collections:
           - { label: "Footer - Terms", name: "footer.terms", widget: "string" }
           - { label: "Footer - Tagline", name: "footer.tagline", widget: "string" }
           - { label: "UI - Explore More", name: "ui.exploreMore", widget: "string" }
+          - { label: "UI - Discover", name: "ui.discover", widget: "string" }
           - { label: "UI - Configurator", name: "ui.configurator", widget: "string" }
           - { label: "UI - Inquire Now", name: "ui.inquireNow", widget: "string" }
           - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }
@@ -417,6 +420,8 @@ collections:
         file: "src/_data/en/translations.json"
         fields:
           - { label: "Nav - Home", name: "nav.home", widget: "string" }
+          - { label: "Nav - Sales", name: "nav.sales", widget: "string" }
+          - { label: "Nav - Open menu", name: "nav.openMenu", widget: "string" }
           - { label: "Nav - About Us", name: "nav.about", widget: "string" }
           - { label: "Nav - Expedition Vehicles", name: "nav.expeditionMobile", widget: "string" }
           - { label: "Nav - Vehicle Modules", name: "nav.modularSystems", widget: "string" }
@@ -448,6 +453,7 @@ collections:
           - { label: "Footer - Terms", name: "footer.terms", widget: "string" }
           - { label: "Footer - Tagline", name: "footer.tagline", widget: "string" }
           - { label: "UI - Explore More", name: "ui.exploreMore", widget: "string" }
+          - { label: "UI - Discover", name: "ui.discover", widget: "string" }
           - { label: "UI - Configurator", name: "ui.configurator", widget: "string" }
           - { label: "UI - Inquire Now", name: "ui.inquireNow", widget: "string" }
           - { label: "UI - Contact Specialist", name: "ui.contactSpecialist", widget: "string" }

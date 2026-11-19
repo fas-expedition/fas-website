@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Notre équipe",
+  "pageDescription": "FAS Expedition : notre équipe d’ingénieurs, de concepteurs et d’artisans passionnés par les véhicules d’expédition.",
+  "intro": "Presque tous les membres de notre équipe ont attrapé le virus du camping et du voyage : nous aimons ce que nous faisons !",
+  "sections": [
+    { "title": "Direction et administration", "people": [
+      { "name": "Andreas Böttcher", "qualifications": ["Ingénieur diplômé (BA) en technologie de production"], "roles": ["Directeur général (CEO)", "Directeur technique et responsable de la construction des cellules"], "description": "", "image": "/assets/images/team/andreas-boettcher.jpg" },
+      { "name": "Márika Böttcher", "qualifications": ["Diplômée en gestion d’entreprise (BA), logistique"], "roles": ["Directrice commerciale", "Ventes et contrôle de gestion"], "description": "", "image": "/assets/images/team/marika-boettcher.jpg" },
+      { "name": "Stefan", "qualifications": [], "roles": ["Directeur commercial (CCO)", "Ventes, marketing et stratégie"], "description": "Stefan apporte son expérience entrepreneuriale et commerciale, ainsi qu’un bel enthousiasme et une grande fiabilité. Il accompagne nos clients tout au long de leur projet en allant toujours plus loin.", "image": "/assets/images/team/stefan.png" },
+      { "name": "Monika", "qualifications": ["Employée qualifiée en transport"], "roles": ["Administration"], "description": "Notre chère Monika donne un coup de main partout où il le faut, toujours avec le sourire. Son soutien en comptabilité, en ressources humaines et dans les nombreuses petites tâches du quotidien nous permet de nous concentrer sur l’essentiel.", "image": "/assets/images/team/monika.jpg" }
+    ] },
+    { "title": "Ingénierie", "people": [
+      { "name": "Nils", "qualifications": ["Ingénierie aérospatiale (B.Eng.)", "Ingénieur soudeur"], "roles": ["Ingénieur en construction automobile"], "description": "Nils fait partie de l’équipe depuis ses débuts. Sa précision calme donne vie à de nouvelles prouesses techniques. Ses conceptions réfléchies contribuent fortement à l’image et à la reconnaissance des produits FAS.", "image": "/assets/images/team/nils.jpg" },
+      { "name": "Christine", "qualifications": ["Diplômée en design produit (FH)"], "roles": ["Conceptrice de cellules habitables"], "description": "Christine est notre source de créativité. Nos clients apprécient beaucoup sa compréhension des volumes et des couleurs. Elle aime aussi mettre la main à l’ouvrage et aide l’équipe des cellules à réaliser ses propres créations d’intérieur.", "image": "/assets/images/team/christine.jpg" },
+      { "name": "Martin", "qualifications": ["Master en ingénierie automobile (M.Sc.)"], "roles": ["Ingénieur"], "description": "Les conceptions de Martin sont solides. Il ne tient rien pour acquis et pousse ses collègues à réfléchir avec ses questions pertinentes. Son calme, son expérience et son sens de l’humour enrichissent l’équipe à tous égards.", "image": "/assets/images/team/martin.png" },
+      { "name": "Patrick", "qualifications": ["Ingénierie aérospatiale (B.Eng.), en cours"], "roles": ["Étudiant salarié"], "description": "Patrick apporte des connaissances universitaires récentes et beaucoup d’enthousiasme. Il est aussi à l’aise avec le bois et l’acier qu’avec les logiciels de CAO.", "image": "/assets/images/team/patrick.jpg" },
+      { "name": "Jens", "qualifications": ["Technicien en construction mécanique"], "roles": ["Ingénieur", "Informatique"], "description": "Jens associe de solides compétences en ingénierie à une bonne maîtrise de l’informatique et au goût des meilleures solutions. Il pense solutions plutôt que problèmes et entraîne les autres par son approche sympathique.", "image": "/assets/images/team/Jens.webp" }
+    ] },
+    { "title": "Construction des cellules", "people": [
+      { "name": "Jan", "qualifications": ["Mécatronicien automobile", "Spécialiste des caravanes"], "roles": ["Construction des cellules"], "description": "Jan est notre véritable couteau suisse : il sait tout faire et dispose d’un excellent réseau pour le reste. Résoudre les problèmes est son domaine, l’optimisme son compagnon quotidien.", "image": "/assets/images/team/jan.jpg" },
+      { "name": "Harald", "qualifications": ["Polyvalent"], "roles": ["Construction des cellules"], "description": "Harald est le pilier calme de l’équipe des cellules. Imperturbable au milieu de l’agitation de la jeune équipe, il nous apporte son expérience, son savoir-faire et une bonne dose d’humour.", "image": "/assets/images/team/harald.jpg" },
+      { "name": "Mats", "qualifications": ["Mécanicien industriel"], "roles": ["Construction des cellules"], "description": "Mats répond toujours présent pour les installations complexes et les défis mécaniques. Grâce à son expertise et à son sens de l’improvisation, il ne s’arrête que lorsque tout est en place.", "image": "/assets/images/team/mats.jpg" },
+      { "name": "Erik", "qualifications": ["Mécatronicien automobile", "Technologie des véhicules utilitaires"], "roles": ["Construction des cellules"], "description": "Erik apporte son expertise des véhicules utilitaires à notre jeune équipe. À l’interface entre la construction des cellules et celle des véhicules, il facilite leur intégration.", "image": "/assets/images/team/erik.png" }
+    ] },
+    { "title": "Construction automobile", "people": [
+      { "name": "Tobia", "qualifications": ["Maître mécanicien industriel", "Mécanicien industriel"], "roles": ["Chef d’atelier, construction automobile"], "description": "Tobia rend les processus de construction automobile prévisibles et efficaces. Avec une implication sans faille, il facilite chaque étape jusqu’au produit fini et impulse des améliorations avec les fournisseurs et sous-traitants.", "image": "/assets/images/team/tobia.jpg" },
+      { "name": "Paul", "qualifications": ["Métallier", "Conception métallique"], "roles": ["Construction automobile"], "description": "Vous vous demandez si nos soudures sont faites à la machine ? Vous regardez probablement le travail de Paul. Sa précision et sa concentration sont à la base de nos porte-charges arrière, galeries de toit et cadres de cellule haut de gamme.", "image": "/assets/images/team/paul.jpg" },
+      { "name": "Fabian", "qualifications": ["Constructeur d’appareils et de réservoirs"], "roles": ["Construction automobile"], "description": "Le plus jeune membre de l’équipe a la main sûre pour souder, mais aussi une grande vivacité d’esprit et une gentillesse qui enrichissent toute l’équipe.", "image": "/assets/images/team/fabian.jpg" }
+    ] }
+  ],
+  "recruiting": {
+    "title": "Rejoignez l’équipe !",
+    "body": "Nous recherchons régulièrement de nouveaux talents pour renforcer notre jeune équipe. Si vous partagez notre passion du voyage ou souhaitez participer à l’univers des véhicules d’expédition, découvrez nos offres actuelles.",
+    "openings": [
+      { "title": "Aménageur intérieur / technicien caravanes (h/f/d)", "url": "/assets/downloads/stellenausschreibung-caravantechniker-2025.pdf" },
+      { "title": "Métallier / technicien véhicules utilitaires (h/f/d)", "url": "/assets/downloads/stellenausschreibung-schlosser-2025.pdf" }
+    ],
+    "ctaText": "Nous contacter",
+    "ctaUrl": "/fr/contact/"
+  }
+}

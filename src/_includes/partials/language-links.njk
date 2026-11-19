@@ -1,0 +1,4 @@
+{% for language in site.locales %}
+  <a href="{{ alternateUrls[language] or routes[language].index }}" hreflang="{{ language }}" lang="{{ language }}" aria-label="{{ site.languageNames[language] }}"{% if locale == language %} aria-current="page"{% endif %}
+     class="px-3 py-2 lg:py-0 text-xs font-bold uppercase transition-colors {% if locale == language %}bg-white text-black{% else %}text-zinc-400 hover:text-white{% endif %}">{{ language | upper }}</a>
+{% endfor %}

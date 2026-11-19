@@ -5,9 +5,9 @@
     {# Header #}
     <div class="flex items-center justify-between border-b border-zinc-800 p-6 flex-shrink-0">
       <h2 class="text-2xl font-bold tracking-wider uppercase">
-        {% if locale == "de" %}Anfrage stellen{% else %}Inquiry Form{% endif %}
+        {% if locale == "de" %}Anfrage stellen{% elif locale == "es" %}Solicitar información{% elif locale == "fr" %}Demander des informations{% else %}Inquiry Form{% endif %}
       </h2>
-      <button class="inquiry-form-close text-zinc-400 hover:text-white transition-colors" aria-label="Close form">
+      <button class="inquiry-form-close text-zinc-400 hover:text-white transition-colors" aria-label="{% if locale == 'es' %}Cerrar formulario{% elif locale == 'fr' %}Fermer le formulaire{% else %}Close form{% endif %}">
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -35,7 +35,7 @@
       {# Name #}
       <div>
         <label for="inquiry-name" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-          {% if locale == "de" %}Name{% else %}Name{% endif %} <span class="text-red-500">*</span>
+          {% if locale == "de" %}Name{% elif locale == "es" %}Nombre{% elif locale == "fr" %}Nom{% else %}Name{% endif %} <span class="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -43,7 +43,7 @@
           name="name"
           required
           class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-          placeholder="{% if locale == 'de' %}Ihr Name{% else %}Your Name{% endif %}"
+          placeholder="{% if locale == 'de' %}Ihr Name{% elif locale == 'es' %}Nombre y apellidos{% elif locale == 'fr' %}Nom et prénom{% else %}Your Name{% endif %}"
         />
       </div>
 
@@ -51,7 +51,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label for="inquiry-street" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}Straße & Hausnummer{% else %}Street & Number{% endif %}
+            {% if locale == "de" %}Straße & Hausnummer{% elif locale == "es" %}Calle y número{% elif locale == "fr" %}Rue et numéro{% else %}Street & Number{% endif %}
           </label>
           <input
             type="text"
@@ -59,12 +59,12 @@
             name="street"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}Straße{% else %}Street{% endif %}"
+            placeholder="{% if locale == 'de' %}Straße{% elif locale == 'es' %}Calle{% elif locale == 'fr' %}Rue{% else %}Street{% endif %}"
           />
         </div>
         <div>
           <label for="inquiry-postal" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}PLZ & Ort{% else %}Postal & City{% endif %}
+            {% if locale == "de" %}PLZ & Ort{% elif locale == "es" %}Código postal y ciudad{% elif locale == "fr" %}Code postal et ville{% else %}Postal & City{% endif %}
           </label>
           <input
             type="text"
@@ -72,12 +72,12 @@
             name="postal"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}12345 Stadt{% else %}12345 City{% endif %}"
+            placeholder="{% if locale == 'de' %}12345 Stadt{% elif locale == 'es' %}Código postal y ciudad{% elif locale == 'fr' %}Code postal et ville{% else %}12345 City{% endif %}"
           />
         </div>
         <div class="md:col-span-2">
           <label for="inquiry-country" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}Land{% else %}Country{% endif %}
+            {% if locale == "de" %}Land{% elif locale == "es" %}País{% elif locale == "fr" %}Pays{% else %}Country{% endif %}
           </label>
           <input
             type="text"
@@ -85,7 +85,7 @@
             name="country"
             required
             class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors"
-            placeholder="{% if locale == 'de' %}Deutschland{% else %}Country{% endif %}"
+            placeholder="{% if locale == 'de' %}Deutschland{% elif locale == 'es' %}España{% elif locale == 'fr' %}France{% else %}Country{% endif %}"
           />
         </div>
       </div>
@@ -107,7 +107,7 @@
         </div>
         <div>
           <label for="inquiry-phone" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-            {% if locale == "de" %}Telefon{% else %}Phone{% endif %} <span class="text-red-500">*</span>
+            {% if locale == "de" %}Telefon{% elif locale == "es" %}Teléfono{% elif locale == "fr" %}Téléphone{% else %}Phone{% endif %} <span class="text-red-500">*</span>
           </label>
           <input
             type="tel"
@@ -123,7 +123,7 @@
       {# Message #}
       <div>
         <label for="inquiry-message" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-          {% if locale == "de" %}Nachricht{% else %}Message{% endif %} <span class="text-red-500">*</span>
+          {% if locale == "de" %}Nachricht{% elif locale == "es" %}Mensaje{% elif locale == "fr" %}Message{% else %}Message{% endif %} <span class="text-red-500">*</span>
         </label>
         <textarea
           id="inquiry-message"
@@ -131,7 +131,7 @@
           required
           rows="5"
           class="w-full bg-black border border-zinc-700 px-4 py-3 text-white placeholder-zinc-600 focus:border-white focus:outline-none transition-colors resize-none"
-          placeholder="{% if locale == 'de' %}Teile uns deine Anfrage mit...{% else %}Tell us about your inquiry...{% endif %}"
+          placeholder="{% if locale == 'de' %}Teile uns deine Anfrage mit...{% elif locale == 'es' %}Cuéntanos en qué podemos ayudarte...{% elif locale == 'fr' %}Décrivez votre demande...{% else %}Tell us about your inquiry...{% endif %}"
         ></textarea>
       </div>
 
@@ -142,7 +142,7 @@
         class="w-full flex items-center justify-between border border-green-600 bg-green-700 px-4 py-3 text-white hover:bg-green-600 transition-colors"
       >
         <span class="font-semibold uppercase tracking-wider text-sm">
-          {% if locale == "de" %}Anfragedetails hinzufügen{% else %}Add Inquiry Details{% endif %}
+          {% if locale == "de" %}Anfragedetails hinzufügen{% elif locale == "es" %}Añadir detalles a la solicitud{% elif locale == "fr" %}Ajouter des détails à la demande{% else %}Add Inquiry Details{% endif %}
         </span>
         <svg class="w-5 h-5 transition-transform" id="inquiry-toggle-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
@@ -766,7 +766,7 @@
       {# Document Upload #}
       <div class="pt-4">
         <label for="inquiry-documents" class="block text-sm font-semibold uppercase tracking-wider mb-2">
-          {% if locale == "de" %}DOKUMENTE HOCHLADEN (z.B. Grundrisse / Raumplanung etc.){% else %}Upload Documents{% endif %}
+          {% if locale == "de" %}DOKUMENTE HOCHLADEN (z.B. GRUNDRISSE / RAUMPLANUNG ETC.){% elif locale == "es" %}SUBIR DOCUMENTOS (p. ej., planos o distribución){% elif locale == "fr" %}IMPORTER DES DOCUMENTS (ex. plans et aménagement){% else %}Upload Documents{% endif %}
         </label>
         <input 
           type="file" 
@@ -780,7 +780,7 @@
           id="inquiry-documents-display" 
           class="w-full bg-black border border-zinc-700 px-4 py-3 text-zinc-400 hover:border-white cursor-pointer transition-colors"
         >
-          {% if locale == "de" %}Klicken zum Hochladen{% else %}Click to Upload{% endif %}
+          {% if locale == "de" %}Klicken zum Hochladen{% elif locale == "es" %}Haz clic para subir archivos{% elif locale == "fr" %}Cliquez pour importer des fichiers{% else %}Click to Upload{% endif %}
         </div>
       </div>
 
@@ -790,18 +790,18 @@
           type="submit"
           class="flex-1 bg-white text-black px-8 py-3 font-bold tracking-widest uppercase hover:bg-zinc-200 transition-colors"
         >
-          {% if locale == "de" %}Anfrage senden{% else %}Send Inquiry{% endif %}
+          {% if locale == "de" %}Anfrage senden{% elif locale == "es" %}Enviar solicitud{% elif locale == "fr" %}Envoyer la demande{% else %}Send Inquiry{% endif %}
         </button>
         <button
           type="button"
           class="inquiry-form-close flex-1 border border-zinc-700 text-white px-8 py-3 font-bold tracking-widest uppercase hover:bg-zinc-900 transition-colors"
         >
-          {% if locale == "de" %}Abbrechen{% else %}Cancel{% endif %}
+          {% if locale == "de" %}Abbrechen{% elif locale == "es" %}Cancelar{% elif locale == "fr" %}Annuler{% else %}Cancel{% endif %}
         </button>
       </div>
 
       <p class="text-xs text-zinc-500 text-center">
-        <span class="text-red-500">*</span> {% if locale == "de" %}Erforderliche Felder{% else %}Required fields{% endif %}
+        <span class="text-red-500">*</span> {% if locale == "de" %}Erforderliche Felder{% elif locale == "es" %}Campos obligatorios{% elif locale == "fr" %}Champs obligatoires{% else %}Required fields{% endif %}
       </p>
     </form>
   </div>

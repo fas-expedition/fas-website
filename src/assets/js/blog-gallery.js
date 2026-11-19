@@ -3,6 +3,12 @@
  * Opens full-size images in a modal when thumbnails are clicked
  */
 (function() {
+  const [closeLabel, prevLabel, nextLabel] = ({
+    de: ['Galerie schließen', 'Vorheriges Bild', 'Nächstes Bild'],
+    en: ['Close gallery', 'Previous image', 'Next image'],
+    es: ['Cerrar galería', 'Imagen anterior', 'Imagen siguiente'],
+    fr: ['Fermer la galerie', 'Image précédente', 'Image suivante']
+  })[document.documentElement.lang];
   // Create modal HTML
   const modal = document.createElement('div');
   modal.id = 'gallery-modal';
@@ -11,7 +17,7 @@
     <button 
       id="gallery-close" 
       class="absolute top-4 right-4 text-white hover:text-zinc-300 transition-colors" 
-      aria-label="Close gallery">
+      aria-label="${closeLabel}">
       <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
       </svg>
@@ -19,7 +25,7 @@
     <button 
       id="gallery-prev" 
       class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" 
-      aria-label="Previous image">
+      aria-label="${prevLabel}">
       <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
       </svg>
@@ -32,7 +38,7 @@
     <button 
       id="gallery-next" 
       class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" 
-      aria-label="Next image">
+      aria-label="${nextLabel}">
       <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
       </svg>

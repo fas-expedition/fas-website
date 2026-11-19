@@ -1,0 +1,43 @@
+{
+  "de": {
+    "subtitle": "Neuigkeiten, Expeditionsberichte und technische Einblicke",
+    "homeSubtitle": "Aktuelle Neuigkeiten und Expeditionsberichte",
+    "all": "Alle",
+    "empty": "Noch keine Blog-Artikel verfügbar.",
+    "emptyCategory": "Keine Artikel in dieser Kategorie verfügbar.",
+    "readMore": "Weiterlesen",
+    "morePosts": "Weitere Beiträge",
+    "back": "Zurück zum Blog",
+    "contact": ["Kontaktfenster schließen", "Persönliche Beratung", "Bereit für Ihr Expeditionsmobil?", "Sprechen Sie direkt mit unserem Team oder senden Sie uns Ihre Anfrage.", "Vertrieb anrufen"]
+  },
+  "en": {
+    "subtitle": "News, expedition reports and technical insights",
+    "all": "All",
+    "empty": "No blog articles available yet.",
+    "emptyCategory": "No articles available in this category.",
+    "readMore": "Read more",
+    "morePosts": "More posts",
+    "back": "Back to blog",
+    "contact": ["Close contact prompt", "Personal consultation", "Ready for your expedition vehicle?", "Speak directly with our team or send us your inquiry.", "Call sales"]
+  },
+  "es": {
+    "subtitle": "Noticias, relatos de expedición y detalles técnicos",
+    "all": "Todos",
+    "empty": "Todavía no hay artículos disponibles.",
+    "emptyCategory": "No hay artículos en esta categoría.",
+    "readMore": "Leer más",
+    "morePosts": "Más artículos",
+    "back": "Volver al blog",
+    "contact": ["Cerrar ventana de contacto", "Asesoramiento personalizado", "¿Todo listo para tu vehículo de expedición?", "Habla directamente con nuestro equipo o envíanos tu consulta.", "Llamar a ventas"]
+  },
+  "fr": {
+    "subtitle": "Actualités, récits d’expédition et éclairages techniques",
+    "all": "Tous",
+    "empty": "Aucun article n’est encore disponible.",
+    "emptyCategory": "Aucun article dans cette catégorie.",
+    "readMore": "Lire la suite",
+    "morePosts": "Plus d’articles",
+    "back": "Retour au blog",
+    "contact": ["Fermer la fenêtre de contact", "Conseil personnalisé", "Prêt pour votre véhicule d’expédition ?", "Discutez directement avec notre équipe ou envoyez-nous votre demande.", "Appeler le service commercial"]
+  }
+}

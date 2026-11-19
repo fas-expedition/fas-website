@@ -1,3 +1,4 @@
+{% set contactPrompt = blogUi[locale].contact %}
 <aside
   id="contact-trigger-popup"
   class="fixed right-4 bottom-4 z-40 hidden w-[calc(100vw-2rem)] max-w-sm border border-zinc-800 bg-zinc-950/95 p-5 shadow-2xl shadow-black/60 backdrop-blur-md opacity-0 translate-y-4 transition-all duration-300 md:right-6 md:bottom-6"
@@ -7,7 +8,7 @@
   <button
     type="button"
     class="contact-popup-close absolute right-4 top-4 text-zinc-500 transition-colors hover:text-white"
-    aria-label="{% if locale == 'de' %}Kontaktfenster schließen{% else %}Close contact prompt{% endif %}"
+    aria-label="{{ contactPrompt[0] }}"
   >
     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
@@ -15,17 +16,13 @@
   </button>
 
   <p class="mb-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
-    {% if locale == 'de' %}Persönliche Beratung{% else %}Personal consultation{% endif %}
+    {{ contactPrompt[1] }}
   </p>
   <h2 id="contact-trigger-popup-title" class="pr-8 text-xl font-bold uppercase tracking-wider text-white">
-    {% if locale == 'de' %}Bereit für Ihr Expeditionsmobil?{% else %}Ready for your expedition vehicle?{% endif %}
+    {{ contactPrompt[2] }}
   </h2>
   <p class="mt-3 text-sm leading-relaxed text-zinc-400">
-    {% if locale == 'de' %}
-      Sprechen Sie direkt mit unserem Team oder senden Sie uns Ihre Anfrage.
-    {% else %}
-      Speak directly with our team or send us your inquiry.
-    {% endif %}
+    {{ contactPrompt[3] }}
   </p>
 
   <div class="mt-5 grid gap-3 sm:grid-cols-2">
@@ -33,13 +30,13 @@
       href="#inquiry-form"
       class="contact-popup-action inline-flex items-center justify-center bg-white px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-zinc-200"
     >
-      {% if locale == 'de' %}Jetzt anfragen{% else %}Inquire Now{% endif %}
+      {{ translations["ui.inquireNow"] }}
     </a>
     <a
       href="tel:+491517217199"
       class="contact-popup-action inline-flex items-center justify-center border border-zinc-700 px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white hover:bg-white hover:text-black"
     >
-      {% if locale == 'de' %}Vertrieb anrufen{% else %}Call sales{% endif %}
+      {{ contactPrompt[4] }}
     </a>
   </div>
 </aside>

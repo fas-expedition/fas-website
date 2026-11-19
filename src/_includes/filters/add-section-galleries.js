@@ -1,8 +1,12 @@
+const htmlEntities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+const escapeAttribute = value => String(value ?? '').replace(/[&<>"]/g, char => htmlEntities[char]);
+const enlargeLabels = { de: 'Bild vergrößern', en: 'Enlarge image', es: 'Ampliar imagen', fr: 'Agrandir l’image' };
+
 /**
  * Add galleries to blog post content after matching headlines and their first paragraph
  * Matches headline text, finds the next paragraph, then inserts gallery HTML after it
  */
-module.exports = function(content, sectionGalleries) {
+module.exports = function(content, sectionGalleries, locale = 'de') {
   if (!sectionGalleries || !Array.isArray(sectionGalleries) || sectionGalleries.length === 0) {
     return content;
   }
@@ -30,21 +34,21 @@ module.exports = function(content, sectionGalleries) {
     );
 
     // Build gallery HTML
-    const galleryHtml = `$1
+    const galleryHtml = `
     <div class="gallery-section mt-8 mb-12 py-8 border-t border-b border-zinc-800">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" style="grid-auto-rows: 1fr;">
         ${validImages.map(img => `
         <div class="overflow-hidden rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors" style="aspect-ratio: 1 / 1;">
           <button 
             class="gallery-thumb-trigger w-full h-full hover:opacity-70 transition-opacity cursor-pointer bg-zinc-900"
-            data-gallery-image="${img.src}"
-            data-gallery-alt="${img.alt}"
-            aria-label="Bild vergrößern"
+            data-gallery-image="${escapeAttribute(img.src)}"
+            data-gallery-alt="${escapeAttribute(img.alt)}"
+            aria-label="${enlargeLabels[locale]}"
             style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
             <picture style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
               <img 
-                src="${img.src}" 
-                alt="${img.alt}" 
+                src="${escapeAttribute(img.src)}"
+                alt="${escapeAttribute(img.alt)}"
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -58,7 +62,7 @@ module.exports = function(content, sectionGalleries) {
     </div>`;
 
     // Replace first occurrence
-    result = result.replace(headingPattern, galleryHtml);
+    result = result.replace(headingPattern, match => match + galleryHtml);
   });
 
   return result;

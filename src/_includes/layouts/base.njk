@@ -6,13 +6,7 @@
   <title>{{ pageTitle }} | FAS Expedition</title>
   <meta name="description" content="{{ pageDescription }}">
   
-  {# Canonical Tag #}
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  
-  {# Hreflang for Multi-language #}
-  <link rel="alternate" hreflang="de" href="{{ site.url }}/de/{{ altSlug.de if altSlug else '' }}">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/{{ altSlug.en if altSlug else '' }}">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/de/{{ altSlug.de if altSlug else '' }}">
+  {% include "partials/language-metadata.njk" %}
   
   {# Open Graph Tags #}
   <meta property="og:type" content="website">
@@ -20,12 +14,6 @@
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDescription }}">
   <meta property="og:site_name" content="FAS Expedition">
-  <meta property="og:locale" content="{{ 'de_DE' if locale == 'de' else 'en_GB' }}">
-  {% if locale == 'de' %}
-  <meta property="og:locale:alternate" content="en_GB">
-  {% else %}
-  <meta property="og:locale:alternate" content="de_DE">
-  {% endif %}
   
   {# Twitter Card Tags #}
   <meta name="twitter:card" content="summary_large_image">
@@ -46,7 +34,7 @@
   
   {# Additional SEO #}
   <meta name="robots" content="index, follow">
-  <meta name="language" content="{{ 'German' if locale == 'de' else 'English' }}">
+  <meta name="language" content="{{ {'de': 'German', 'en': 'English', 'es': 'Spanish', 'fr': 'French'}[locale] }}">
   
   <link rel="stylesheet" href="/assets/css/output.css?v={{ buildMeta.version }}">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

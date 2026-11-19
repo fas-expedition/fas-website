@@ -1,0 +1,50 @@
+---
+locale: es
+pageTitle: "Configurador"
+pageDescription: "Configura tu vehículo de expedición FAS paso a paso"
+altSlug:
+  de: "konfigurator"
+  en: "configurator"
+  es: "configurator"
+  fr: "configurator"
+---
+
+<script id="configurator-data" type="application/json">{{ configurator | dump | safe }}</script>
+<script id="configurator-ui-strings" type="application/json">{{ es["configurator-ui"] | dump | safe }}</script>
+
+<form id="configurator-form" name="vehicle-inquiry" method="POST"
+      data-netlify="true" netlify-honeypot="bot-field" class="hidden"
+      aria-hidden="true">
+  <input type="hidden" name="form-name" value="vehicle-inquiry">
+  <input type="hidden" name="bot-field">
+  <input type="hidden" name="locale" value="es">
+  <input type="hidden" name="configuration" id="form-configuration">
+  <input type="text" name="name" aria-label="{{ es['configurator-ui']['form.name'] }}">
+  <input type="email" name="email" aria-label="{{ es['configurator-ui']['form.email'] }}">
+  <input type="tel" name="phone" aria-label="{{ es['configurator-ui']['form.phone'] }}">
+  <input type="text" name="company" aria-label="{{ es['configurator-ui']['form.company'] }}">
+  <textarea name="notes" aria-label="{{ es['configurator-ui']['form.notes'] }}"></textarea>
+</form>
+
+<div class="min-h-screen pt-20 bg-black" data-configurator data-locale="es">
+  <div class="max-w-[1800px] mx-auto px-6 lg:px-12 py-12">
+    <div class="mb-12">
+      <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold tracking-wider uppercase mb-4">
+        {{ es["configurator-ui"]["heading.title"] }}
+      </h1>
+      <p class="text-zinc-500 text-sm md:text-base lg:text-lg">{{ es["configurator-ui"]["heading.subtitle"] }}</p>
+    </div>
+    <div id="step-indicator" class="mb-12 border-b border-zinc-800 pb-8"></div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div id="configurator-content" class="lg:col-span-2" aria-live="polite" aria-atomic="true">
+        <noscript><p class="text-zinc-400 text-lg">{{ es["configurator-ui"]["noscript.message"] }}</p></noscript>
+      </div>
+      <aside id="configurator-sidebar" class="lg:col-span-1"
+             aria-label="{{ es['configurator-ui']['aria.sidebar'] }}"></aside>
+    </div>
+    <div id="configurator-nav" class="sticky bottom-0 z-40 bg-black/95 backdrop-blur-md mt-12 flex justify-between items-center border-t border-zinc-800 pt-4 pb-4 -mx-6 px-6 lg:-mx-12 lg:px-12"></div>
+    <div id="configurator-notifications" role="status" aria-live="polite" aria-atomic="true"
+         aria-label="{{ es['configurator-ui']['aria.notifications'] }}"></div>
+  </div>
+</div>
+<script type="module" src="/assets/js/configurator/main.js?v={{ buildMeta.version }}"></script>

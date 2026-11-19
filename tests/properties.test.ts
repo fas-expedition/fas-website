@@ -30,30 +30,17 @@ describe('Property 1: All pages live under a locale prefix', () => {
  * **Validates: Requirements 3.4**
  */
 describe('Property 2: Locale switcher links to equivalent page', () => {
-  it('for any page, the inactive locale switcher link points to /{altLocale}/{altSlug}', () => {
+  it('links to the hreflang equivalent in both menus, including root-level German articles', () => {
     fc.assert(
       fc.property(
         fc.constantFrom(...htmlFiles),
         (filePath) => {
           const $ = loadHtml(filePath);
-          const locale = filePath.replace('_site/', '').split('/')[0];
-          const altLocale = locale === 'de' ? 'en' : 'de';
-
-          // Find the language switcher container and get the alternate locale link
-          const switcherLinks = $('div.hidden.lg\\:flex a').filter((_i, el) => {
-            const text = $(el).text().trim();
-            return text === 'DE' || text === 'EN';
-          });
-
-          // The inactive link is the one for the alternate locale
-          const altLink = switcherLinks.filter((_i, el) => {
-            return $(el).text().trim() === altLocale.toUpperCase();
-          });
-
-          expect(altLink.length).toBeGreaterThan(0);
-          const href = altLink.attr('href');
-          expect(href).toBeDefined();
-          expect(href!.startsWith(`/${altLocale}/`)).toBe(true);
+          for (const locale of ['de', 'en', 'es', 'fr']) {
+            const alternate = $(`head link[rel="alternate"][hreflang="${locale}"]`).attr('href');
+            const path = alternate ? new URL(alternate).pathname : `/${locale}/`;
+            expect($(`nav a[hreflang="${locale}"][href="${path}"]`)).toHaveLength(2);
+          }
         }
       ),
       { numRuns: 100 }

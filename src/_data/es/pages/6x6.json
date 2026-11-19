@@ -1,0 +1,70 @@
+{
+  "pageTitle": "Vehículos de expedición 6x6",
+  "pageDescription": "Vehículos de expedición FAS 6x6: gran capacidad de carga y autonomía para expediciones exigentes. Desde 320.000 €.",
+  "altSlug": {
+    "de": "6x6",
+    "en": "6x6",
+    "es": "6x6",
+    "fr": "6x6"
+  },
+  "hero": {
+    "title": "Sistema 6x6",
+    "subtitle": "Máxima capacidad de carga y autonomía: una plataforma versátil para las expediciones más exigentes.",
+    "image": "/assets/images/vehicles/6x6 product picture.png"
+  },
+  "overview": {
+    "description": "La plataforma 6x6 combina una enorme capacidad de carga con una excelente movilidad todoterreno. Sus tres ejes motrices ofrecen una tracción superior incluso en terrenos extremos. El bastidor alargado permite instalar amplias células habitables, sistemas completos de suministro y equipos pesados, ideal para expediciones autónomas de larga duración en regiones remotas."
+  },
+  "specs": {
+    "power": {
+      "label": "Potencia",
+      "value": "Hasta 530 CV"
+    },
+    "gvw": {
+      "label": "Peso bruto del vehículo",
+      "value": "Hasta 16.000 kg"
+    },
+    "range": {
+      "label": "Autonomía",
+      "value": "Hasta 2.500 km"
+    },
+    "cabin": {
+      "label": "Cabina",
+      "value": "4–6 personas"
+    }
+  },
+  "configurations": [
+    {
+      "name": "Explorer 6x6 Base",
+      "price": "desde 320.000 €"
+    }
+  ],
+  "features": [
+    {
+      "icon": "mountain",
+      "title": "Tracción de tres ejes",
+      "description": "Tracción total permanente en los tres ejes y diferenciales bloqueables para una tracción superior en terrenos extremos."
+    },
+    {
+      "icon": "cog",
+      "title": "Diseño espacioso",
+      "description": "Bastidor alargado para células habitables amplias con cocina completa, baño y zona de descanso."
+    },
+    {
+      "icon": "shield",
+      "title": "Sistemas autónomos",
+      "description": "Suministro integrado de energía solar, agua y electricidad para disfrutar de semanas de autonomía en zonas remotas."
+    },
+    {
+      "icon": "gauge",
+      "title": "Capacidad de carga",
+      "description": "Hasta 7.000 kg de carga útil para equipos pesados, provisiones y material de expedición."
+    }
+  ],
+  "cta": {
+    "title": "Configure su 6x6",
+    "description": "Cree su vehículo de expedición 6x6 ideal para disfrutar de la máxima autonomía y alcance.",
+    "buttonText": "Solicitar información",
+    "buttonUrl": "#inquiry-form"
+  }
+}
